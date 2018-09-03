@@ -4,23 +4,25 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatButtonModule} from '@angular/material/button';
-import {MatMenuModule} from '@angular/material/menu';
-import {MatToolbarModule} from '@angular/material/toolbar';
+import { DoctorLoginComponent } from './doctor-login/doctor-login.component';
+import { MaterialModule } from './material';
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    LandingPageComponent
+    LandingPageComponent,
+    DoctorLoginComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    MatButtonModule,
-    MatMenuModule,
-    MatToolbarModule
+    MaterialModule
+   
+  ],
+  entryComponents: [
+    DoctorLoginComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
