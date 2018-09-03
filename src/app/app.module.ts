@@ -6,6 +6,7 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DoctorLoginComponent } from './doctor-login/doctor-login.component';
 import { MaterialModule } from './material';
+import { PatientLoginComponent } from './patient-login/patient-login.component';
 
 
 
@@ -13,7 +14,8 @@ import { MaterialModule } from './material';
   declarations: [
     AppComponent,
     LandingPageComponent,
-    DoctorLoginComponent
+    DoctorLoginComponent,
+    PatientLoginComponent
   ],
   imports: [
     BrowserModule,
@@ -22,7 +24,8 @@ import { MaterialModule } from './material';
    
   ],
   entryComponents: [
-    DoctorLoginComponent
+    DoctorLoginComponent,
+    PatientLoginComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

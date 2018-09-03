@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {MatDialog} from '@angular/material';
 import { DoctorLoginComponent} from '../doctor-login/doctor-login.component';
+import { PatientLoginComponent } from '../patient-login/patient-login.component';
 @Component({
   selector: 'app-landing-page',
   templateUrl: './landing-page.component.html',
@@ -13,6 +14,10 @@ export class LandingPageComponent implements OnInit {
   openDialog() {
     const dialogRef = this.dialog.open(DoctorLoginComponent);
 
+  }
+
+  openPatient(){
+    const dialogRefer = this.dialog.open(PatientLoginComponent);
   }
   ngOnInit() {
   }
