@@ -12,6 +12,7 @@ import { CalendarComponent } from './calendar/calendar.component';
 import { MaterialModule } from  './material';
 import { PatientLoginComponent } from './patient-login/patient-login.component';
 import { DoctorLoginComponent } from './doctor-login/doctor-login.component';
+import { DoctorProfileComponent } from './doctor-profile/doctor-profile.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { DoctorLoginComponent } from './doctor-login/doctor-login.component';
     LandingPageComponent,
     PatientLoginComponent,
     DoctorLoginComponent,
-    CalendarComponent
+    CalendarComponent,
+    DoctorProfileComponent
   ],
   imports: [
     BrowserModule,
