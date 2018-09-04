@@ -1,11 +1,25 @@
 <div>
   <mat-tab-group>
-    <mat-tab label="Register">
+
+        <mat-tab label="Login"> 
+                <mat-form-field>
+                    <input matInput placeholder="Enter EmailId or PhoneNumber">
+                </mat-form-field>
+                <br>
+                <br>
+                <mat-form-field>
+                    <input matInput placeholder="Enter Password" type="password">
+                </mat-form-field>
+                <br>
+                <br>
+                <button mat-raised-button color="accent">Login</button>
+            </mat-tab>
+        <mat-tab label="Register">
         <mat-form-field>
             <input matInput placeholder="First Name">
-          </mat-form-field>
-<br>
-<br>
+         </mat-form-field>
+            <br>
+            <br>
           <mat-form-field>
               <input matInput placeholder="Last Name">
             </mat-form-field>
