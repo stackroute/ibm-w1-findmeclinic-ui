@@ -7,7 +7,7 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
 
 import { MaterialModule } from  './material';
 import { PatientLoginComponent } from './patient-login/patient-login.component';
-import { DocterLoginComponent } from './docter-login/docter-login.component';
+import { DoctorLoginComponent } from './doctor-login/doctor-login.component';
 
 import { RouterModule } from '@angular/router';
 import { PatientProfileComponent } from './patient-profile/patient-profile.component';
@@ -21,8 +21,7 @@ import { AppRoutingModule } from './/app-routing.module';
     AppComponent,
     LandingPageComponent,
     PatientLoginComponent,
-    DocterLoginComponent,
-    PatientProfileComponent
+    DoctorLoginComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +30,8 @@ import { AppRoutingModule } from './/app-routing.module';
     AppRoutingModule,
     RouterModule
   ],
-  entryComponents:[PatientLoginComponent],
+  entryComponents:[PatientLoginComponent,
+  DoctorLoginComponent],
   providers: [],
   bootstrap: [AppComponent]
 })
