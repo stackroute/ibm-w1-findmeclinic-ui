@@ -7,21 +7,22 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
 
 import { MaterialModule } from  './material';
 import { PatientLoginComponent } from './patient-login/patient-login.component';
-import { DocterLoginComponent } from './docter-login/docter-login.component';
+import { DoctorLoginComponent } from './doctor-login/doctor-login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LandingPageComponent,
     PatientLoginComponent,
-    DocterLoginComponent
+    DoctorLoginComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     MaterialModule
   ],
-  entryComponents:[PatientLoginComponent],
+  entryComponents:[PatientLoginComponent,
+  DoctorLoginComponent],
   providers: [],
   bootstrap: [AppComponent]
 })
