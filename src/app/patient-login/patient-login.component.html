@@ -1,0 +1,56 @@
+<div>
+  <mat-tab-group>
+
+        <mat-tab label="Login"> 
+                <mat-form-field>
+                    <input matInput placeholder="Enter EmailId or PhoneNumber">
+                </mat-form-field>
+                <br>
+                <br>
+                <mat-form-field>
+                    <input matInput placeholder="Enter Password" type="password">
+                </mat-form-field>
+                <br>
+                <br>
+                <button mat-raised-button color="accent">Login</button>
+            </mat-tab>
+        <mat-tab label="Register">
+        <mat-form-field>
+            <input matInput placeholder="First Name">
+         </mat-form-field>
+            <br>
+            <br>
+          <mat-form-field>
+              <input matInput placeholder="Last Name">
+            </mat-form-field>
+            <br>
+            <br>
+        <mat-form-field>
+            <input matInput placeholder="Enter EmailId" [formControl]="emailFormControl"
+            [errorStateMatcher]="matcher">
+     <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+       Please enter a valid email address
+     </mat-error>
+     <mat-error *ngIf="emailFormControl.hasError('required')">
+       Email is <strong>required</strong>
+     </mat-error>
+
+        </mat-form-field>
+        <br>
+        <br>
+        <mat-form-field>
+            <input matInput placeholder="Enter the  PhoneNumber">
+          </mat-form-field>
+          <br>
+          <br>
+        <mat-form-field>
+            <input matInput placeholder="Enter Password" type="password">
+        </mat-form-field>
+        <br>
+        <br>
+
+        
+        <button mat-raised-button color="accent">Register</button>
+    </mat-tab>
+</mat-tab-group>
+</div>

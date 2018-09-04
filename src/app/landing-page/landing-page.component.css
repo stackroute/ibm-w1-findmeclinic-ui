@@ -1,0 +1,37 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+.Head{
+   margin-left: 800px;
+}
+.Head button{
+   margin-right: 10px;
+}
+
+
+ 
+
+
+ .container-1 input{
+    margin-top: 14%;
+   display: inline;
+   width: 330px;
+   height: 50px;
+   background:rgb(220, 227, 233);
+   border: none;
+   font-size: 10pt;
+   color:black;
+   padding-left: 45px;
+
+ }
+ .container-1 input:hover{
+   outline:none;
+   background: #ffffff;
+ }
+ i {
+     padding-top: 15px;
+     margin-bottom: 10%;
+     height: 36px;
+   background:rgb(220, 227, 233);
+   color:black;
+   min-width: 40px;
+}
