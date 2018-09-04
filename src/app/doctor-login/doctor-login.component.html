@@ -16,19 +16,16 @@
             <button mat-raised-button color="accent">Login</button>
         </mat-tab>
         <mat-tab label="Register">
-                <mat-form-field>
-                        <input matInput placeholder="Enter FirstName">
-                    </mat-form-field>
-                    <br>
-                    <br>
-                <mat-form-field>
-                        <input matInput placeholder="Enter LastName">
-                    </mat-form-field>
-                    <br>
-                    <br>
-            <mat-form-field>
-                <input matInput placeholder="Enter EmailId">
-            </mat-form-field>
+               
+            <mat-form-field class="example-full-width">
+                <input matInput placeholder="Enter Email" [formControl]="emailFormControl">
+                <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+                  Please enter a valid email address
+                </mat-error>
+                <mat-error *ngIf="emailFormControl.hasError('required')">
+                  Email is <strong>required</strong>
+                </mat-error>
+              </mat-form-field>
             <br>
             <br>
             <mat-form-field>
