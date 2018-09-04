@@ -9,17 +9,27 @@ import { MaterialModule } from  './material';
 import { PatientLoginComponent } from './patient-login/patient-login.component';
 import { DocterLoginComponent } from './docter-login/docter-login.component';
 
+import { RouterModule } from '@angular/router';
+import { PatientProfileComponent } from './patient-profile/patient-profile.component';
+import { AppRoutingModule } from './/app-routing.module';
+
 @NgModule({
+  // const routes: Routes = [
+  //   { path:'patient-profile', component: PatientProfileComponent}
+  // ];
   declarations: [
     AppComponent,
     LandingPageComponent,
     PatientLoginComponent,
-    DocterLoginComponent
+    DocterLoginComponent,
+    PatientProfileComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
+    AppRoutingModule,
+    RouterModule
   ],
   entryComponents:[PatientLoginComponent],
   providers: [],
