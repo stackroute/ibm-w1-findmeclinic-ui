@@ -14,14 +14,12 @@ import { PatientProfileComponent } from './patient-profile/patient-profile.compo
 import { AppRoutingModule } from './/app-routing.module';
 
 @NgModule({
-  // const routes: Routes = [
-  //   { path:'patient-profile', component: PatientProfileComponent}
-  // ];
   declarations: [
     AppComponent,
     LandingPageComponent,
     PatientLoginComponent,
-    DoctorLoginComponent
+    DoctorLoginComponent,
+    PatientProfileComponent
   ],
   imports: [
     BrowserModule,
