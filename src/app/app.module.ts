@@ -9,23 +9,32 @@ import { MaterialModule } from  './material';
 import { PatientLoginComponent } from './patient-login/patient-login.component';
 import { DoctorLoginComponent } from './doctor-login/doctor-login.component';
 import { HttpClientModule } from '@angular/common/http';
+import { DoctorProfileComponent } from './doctor-profile/doctor-profile.component';
 
+
+import { RouterModule } from '@angular/router';
+import { PatientProfileComponent } from './patient-profile/patient-profile.component';
+import { AppRoutingModule } from './/app-routing.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     LandingPageComponent,
     PatientLoginComponent,
-    DoctorLoginComponent
+    DoctorLoginComponent,
+    PatientProfileComponent,
+    DoctorProfileComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     MaterialModule,
-    HttpClientModule
+    HttpClientModule,
+    AppRoutingModule,
+    RouterModule
   ],
   entryComponents:[PatientLoginComponent,
-  DoctorLoginComponent],
+  DoctorLoginComponent,DoctorProfileComponent],
   providers: [],
   bootstrap: [AppComponent]
 })
