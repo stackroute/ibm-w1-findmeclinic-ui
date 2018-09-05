@@ -1,16 +1,17 @@
-<div class="container">
 
 
  <mat-toolbar color="primary">
   <button mat-button  matTooltip="Download the Application"  >Download the App</button>
 <div class="Head">
 
- <button mat-raised-button color="primary" matTooltip="Book An Appointment">Book Now</button>
- <button mat-raised-button (click)="openPatient()" color="primary" matTooltip="Login As Patient">Patient</button>
- <button mat-raised-button (click)="openDialog()" color="primary" matTooltip="Login As a Doctor">Doctor</button>
+ <button mat-button  matTooltip="Book An Appointment">Book Now</button>
+ <button mat-button (click)="openPatient()" matTooltip="Login As Patient">Patient</button>
+ <button mat-button (click)="openDialog()"  matTooltip="Login As a Doctor">Doctor</button>
  </div>
  
  </mat-toolbar>
+ <div class="container">
+
     
  
  <div class="search">
@@ -31,6 +32,7 @@
 
 
 
+
 <div class="options">
     <div class="wrapper">
 
@@ -38,7 +40,7 @@
             <mat-icon>chat</mat-icon>
 
 
-            <span>Chat With a Doctor</span>    </a>&nbsp;
+            <span>Chat With a Doctor</span>    </a>
             <a href="#">
                     <mat-icon>chat</mat-icon>
                     <span>Read Articles</span>
@@ -133,32 +135,91 @@
             <mat-grid-tile>
                 <img src="/assets/phone.png">
             </mat-grid-tile>
-            </mat-grid-list>
+        </mat-grid-list>
+        <mat-grid-list cols="4">
+            <mat-grid-tile>
+                <img src="/assets/book.png">
+
+            </mat-grid-tile>
+            <mat-grid-tile>
+                    <img src="/assets/secure.png">
+
+
+            </mat-grid-tile>
+        </mat-grid-list>
         </div>
-         
-        </div>
+        <div class="MedicalRecords">
+                <mat-grid-list cols="2">
+                        <mat-grid-tile>
+                                <img src="/assets/health.png">
+                            </mat-grid-tile>
+                        <mat-grid-tile>
+                            <div>
+                       <div class="home home-details-section-title">
+                                    <p>Check Your Health Records In one App</p>
+                                    <p><strong> instantly!!</strong></p>
+                 
+                                 </div>
+                                 <div class="home-details-section-description">
+                                     <div>
+                                        <mat-icon>check_box</mat-icon>
+                                         <span>Secure</span>
+                                     </div>
+                                     <div>
+                                            <mat-icon>check_box</mat-icon>
+                                             <span>Health Records will be Accessed only by the Doctors</span>
+                                         </div>
+                                    
+                                              </div><br><br>
+                 
+                                              <div>
+                                                    <button mat-raised-button color="primary" matTooltip="Book An Appointment">Read More</button>
+                                              </div>
+                 
+                             </div>
+                 </mat-grid-tile>
+               
+                 </mat-grid-list>     
+               <footer>
+                    <mat-toolbar color="primary">
+                            <mat-toolbar-row>
+                              <p>FindMeClinic</p>
+                            </mat-toolbar-row>
+                          
+                            <mat-toolbar-row>
+                              <span>About</span>
+                              <span class="example-spacer"></span>
+                            </mat-toolbar-row>
+                            <mat-toolbar-row>
+                                    <span>Press</span>
+                                  </mat-toolbar-row>
+                          
+                            <mat-toolbar-row>
+                              <span>Blog</span>
+                             
+                            </mat-toolbar-row>
+                                                       <mat-toolbar-row>
+                                                            <div class="find">
+                                    <p class="findMeClinic">FindMEClinic</p>
+                                </div>
+
+                                  </mat-toolbar-row>
+
+                          </mat-toolbar>
+                         
+                          
+
+               </footer>
+                      
+                             
+            </div>  
+            
         
-       
+
+
+          
+               
         
-        
-       
-   
-   
-   
-  <!-- <mat-grid-tile>
-        <img src="/assets/encrypt.png">
-
-  </mat-grid-tile>
-  <mat-grid-tile>
-        <img src="/assets/encrypt.png">
-
-  </mat-grid-tile>
-
-
-
-    </mat-grid-list> -->
-        <!-- </div> -->
-
     
      
    

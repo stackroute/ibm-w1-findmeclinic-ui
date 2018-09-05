@@ -14,11 +14,6 @@ import {MatMenuModule} from '@angular/material/menu';
 
 import { MaterialModule } from  './material';
 import { PatientLoginComponent } from './patient-login/patient-login.component';
-<<<<<<< HEAD
-import { DocterLoginComponent } from './docter-login/docter-login.component';
-import {MatTooltipModule} from '@angular/material/tooltip';
-
-=======
 import { DoctorLoginComponent } from './doctor-login/doctor-login.component';
 import { HttpClientModule } from '@angular/common/http';
 import { DoctorProfileComponent } from './doctor-profile/doctor-profile.component';
@@ -27,7 +22,6 @@ import { DoctorProfileComponent } from './doctor-profile/doctor-profile.componen
 import { RouterModule } from '@angular/router';
 import { PatientProfileComponent } from './patient-profile/patient-profile.component';
 import { AppRoutingModule } from './/app-routing.module';
->>>>>>> da712295947f1b8de047440eaa4a9ef04bd6f8a8
 
 @NgModule({
   declarations: [
@@ -43,19 +37,13 @@ import { AppRoutingModule } from './/app-routing.module';
     BrowserModule,
     MatIconModule,
     BrowserAnimationsModule,
-<<<<<<< HEAD
-    MatListModule,
     MaterialModule,
     MatGridListModule,
-    MatTooltipModule,
-    MatMenuModule
-
-=======
-    MaterialModule,
+    MatListModule,
+    MatMenuModule,
     HttpClientModule,
     AppRoutingModule,
     RouterModule
->>>>>>> da712295947f1b8de047440eaa4a9ef04bd6f8a8
   ],
   entryComponents:[PatientLoginComponent,
   DoctorLoginComponent,DoctorProfileComponent],

@@ -1,10 +1,18 @@
  @import url(https://fonts.googleapis.com/css?family=Open+Sans);
 @import url(https://fonts.googleapis.com/css?family=Cabin:400);
 
+
+.Head{
+	margin-left: 60%;
+
+}
+.foot{
+	background: #000;
+}
 .search{
     background-image:url("/assets/hospital.jpg");
 	background-repeat: no-repeat;
-	height: 300px;
+	height: auto;
 	background-size: cover;
 	position: relative;
 	text-align: center;
@@ -21,7 +29,9 @@
 }
 .container{
 	background:blanchedalmond;
+	height: 100%;
 }
+
 .glass{
 	background: aliceblue;
 }
@@ -84,8 +94,24 @@ h1{
     margin-top: 20%;
 }
 .Appointment p{
+	height: auto;
+	
 	font-size: 30px;
     color: black;
+
+}
+.Appointment{
+	height: 100%;
+	background:silver;
+}
+.MedicalRecords{
+	background-color: lightgrey;
+	margin-top: -15%;
+}
+.MedicalRecords p{
+	font-size: 30px;
+	color: black;
+	height: 60%;
 
 }
 
@@ -203,6 +229,25 @@ h1{
 		box-shadow: 0 0 20px rgba(0,255,0,.6), inset 0 0 10px rgba(0,255,0,.4), 0 2px 0 #000;
     }
 }
+.mat-toolbar-row p{
+	color: white
+}
+
+footer{
+	background-color:blue;
+	height: 100%;
+}
+.example-icon {
+	padding: 0 14px;
+  }
+  
+  .example-spacer {
+	flex: 1 1 auto;
+  }
+  .find {
+margin-left: 40%;
+  }
+
 
 
 /* .Head{
