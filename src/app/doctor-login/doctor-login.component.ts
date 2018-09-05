@@ -19,6 +19,11 @@ id;
   ngOnInit() {
   }
 
+// method(){
+//   if(this.responseOptions.statusText==="OK"){
+//     alert("Registration Successful");
+//       }
+// }
 
   addDoctor(doctorData) {
     
@@ -31,9 +36,19 @@ id;
     this.dialogRef.close();
   }
   open():void{
-    this.dialog.open(DoctorLoginComponent);
-    
+    this.dialog.open(DoctorLoginComponent,{
+    }
+  );
+
+
   }
+  phoneFormComtrol = new FormControl('',[
+    Validators.required
+  ])
+
+  passFormControl = new FormControl('',[
+    Validators.required
+  ])
 
   emailFormControl = new FormControl('', [
     Validators.required,

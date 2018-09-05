@@ -1,23 +1,25 @@
 
 
    <div >
-    <mat-tab-group>
+    <mat-tab-group class="modelform">
         <mat-tab label="Login">
-            <mat-form-field>
+            <mat-form-field class="fullwidth">
                 <input matInput placeholder="Enter EmailId or PhoneNumber">
             </mat-form-field>
             <br>
             <br>
-            <mat-form-field>
+            <mat-form-field  class="fullwidth">
                 <input matInput placeholder="Enter Password" type="password">
             </mat-form-field>
             <br>
             <br>
-            <button mat-raised-button color="accent">Login</button>
+            <h5>Not an existing doctor? Then register!</h5>
+            <br>
+            <button (click)="close()" mat-raised-button color="accent">Login</button>
         </mat-tab>
         <mat-tab label="Register">
                
-            <mat-form-field class="example-full-width">
+            <mat-form-field  class="fullwidth">
                 <input matInput  [(ngModel)]="doctor.doctorEmail" name="doctorEmail" placeholder="Enter Email" [formControl]="emailFormControl">
                 <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
                   Please enter a valid email address
@@ -28,17 +30,23 @@
               </mat-form-field>
             <br>
             <br>
-            <mat-form-field>
-                <input matInput  [(ngModel)]="doctor.doctorPhoneNumber" name="doctorPhoneNumber" placeholder="Enter PhoneNumber">
+            <mat-form-field  class="fullwidth">
+                <input matInput  [(ngModel)]="doctor.doctorPhoneNumber" name="doctorPhoneNumber" placeholder="Enter PhoneNumber" [formControl]="phoneFormComtrol">
+                 <mat-error *ngIf="phoneFormComtrol.hasError('required')">
+                    Please enter a value!
+                  </mat-error>
             </mat-form-field>
             <br>
             <br>
-            <mat-form-field>
-                <input matInput [(ngModel)]="doctor.doctorPassword" name="doctorPassword"  placeholder="Enter password">
+            <mat-form-field  class="fullwidth">
+                <input matInput [(ngModel)]="doctor.doctorPassword" name="doctorPassword"  placeholder="Enter password" [formControl]="passFormControl">
+                  <mat-error *ngIf="passFormControl.hasError('required')">
+                    Please enter a value!
+                  </mat-error>  
             </mat-form-field>
             <br>
             <br>
-            <button mat-raised-button  (click)="addDoctor(doctor)" (click)="close()" (click)="open()" color="accent">Register</button>
+            <button mat-raised-button  (click)="addDoctor(doctor)" (click)="close()" (click)="open()"  color="accent">Register</button>
         </mat-tab>
     </mat-tab-group>
  </div>
