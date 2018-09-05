@@ -7,6 +7,8 @@ import {MatMenuModule} from '@angular/material/menu';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {  MatChipsModule,MatSelectModule} from '@angular/material';
 import { NgModule } from '@angular/core';
+import {MatCardModule} from '@angular/material/card';
+
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 @NgModule({
  imports: [
@@ -26,6 +28,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
   MatButtonModule,
   MatTabsModule,
   MatSelectModule,
+  MatCardModule
       ],
  exports: [
      MatDialogModule,

@@ -1,12 +1,343 @@
+ @import url(https://fonts.googleapis.com/css?family=Open+Sans);
+@import url(https://fonts.googleapis.com/css?family=Cabin:400);
 
-
-.Head{
-   margin-left: 800px;
+.search{
+    background-image:url("/assets/hospital.jpg");
+	background-repeat: no-repeat;
+	height: 300px;
+	background-size: cover;
+	position: relative;
+	text-align: center;
+	width: 100%;
 }
-.Head button{
-   margin-right: 10px;
+.images img{
+	height: 30%;
+}
+.security{
+	position: relative;
+}
+.hello{
+	background-color: aliceblue;
+}
+.container{
+	background:blanchedalmond;
+}
+.glass{
+	background: aliceblue;
+}
+.security img{
+width: 10%;
+height: 25%;
+}
+
+.page{
+	background-color:aliceblue;
+}
+.search:before,
+.search:after {
+	content: '';
+	display: block;	
+	height: 1px;
+	left: 50%;
+	margin: 0 0 0 -400px;
+	position: absolute;
+	width: 800px;
+}
+.options{
+	text-align: center;
+	overflow: hidden;
+	background-color: #1d2869;
+	padding: 17px 0;
+	
+}
+.wrapper{
+	width: auto;
+    margin: 0 auto;
+    display: inline-block;
+	
+}
+.chat{
+	float: left;
+    text-align: center;
+    color: #FFF;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.options a{
+	margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+
+	
+		color: silver;
+		text-decoration: none;
+
+}
+
+h1{
+    font-size: 100px;
+    color: black;
+    margin-top: 20%;
+}
+.Appointment p{
+	font-size: 30px;
+    color: black;
+
 }
 
 
+
+
+.search form {
+	background: rgba(17, 17, 17, 0.24);
+	background: linear-gradient(#1b1b1b, #111);
+	border: 1px solid #000;
+	border-radius: 5px;
+	box-shadow: inset 0 0 0 1px #272727;
+	display: inline-block;
+	font-size: 0px;
+	margin: 150px auto 0;
+	padding: 20px;
+	position: relative;
+	z-index: 1;
+}
+
+.search input {
+	background: aliceblue;	
+	 border: 1px solid #444; 
+	border-radius: 5px 0 0 5px;
+	box-shadow: 0 2px 0 rgba(241, 237, 237, 0.219);
+	color: #888;
+	display: block;
+	float: left;
+	font-family: 'Cabin', helvetica, arial, sans-serif;
+	font-size: 13px;
+	font-weight: 400;
+	height: 40px;
+	margin: 0;
+	padding: 0 10px;
+	text-shadow: 0 -1px 0 rgb(231, 223, 223);
+	width: 300px;
+}
+
+.ie .search input {
+	line-height: 40px;
+} 
+
+.search input::-webkit-input-placeholder {
+   color: #888;
+}
+
+.search input:-moz-placeholder {
+   color: #888;
+} 
+
+ .search input:focus {
+	animation: glow 800ms ease-out infinite alternate;
+	background: #222922;
+	background: linear-gradient(#333933, #222922);
+	border-color: #393;
+	box-shadow: 0 0 5px rgba(0,255,0,.2), inset 0 0 5px rgba(0,255,0,.1), 0 2px 0 #000;
+	color: #efe;
+	outline: none;
+}
+
+
+.search input:focus::-webkit-input-placeholder { 
+	color: #efe;
+}
+
+.search input:focus:-moz-placeholder {
+	color: #efe;
+}
+
+.search button {
+	background:aliceblue;
+	background: linear-gradient(#333, #222);
+	box-sizing: border-box;
+	border: 1px solid #444;
+	border-left-color: #000;
+	border-radius: 0 5px 5px 0;
+	box-shadow: 0 2px 0 #000;
+	color: #fff;
+	display: block;
+	float: left;
+	font-family: 'Cabin', helvetica, arial, sans-serif;
+	font-size: 13px;
+	font-weight: 400;
+	height: 40px;
+	line-height: 40px;
+	margin: 0;
+	padding: 0;
+	position: relative;
+	text-shadow: 0 -1px 0 #000;
+	width: 80px;
+}	
+
+.search button:hover,
+.search button:focus {
+	background: #292929;
+	background: linear-gradient(#393939, #292929);
+	color: #5f5;
+	outline: none;
+}
+
+.search button:active {
+	background:aliceblue;
+	background: linear-gradient(#393939, #292929);
+	box-shadow: 0 1px 0 #000, inset 1px 0 1px #222;
+	top: 1px;
+}
+
+@keyframes glow {
+    0% {
+		border-color: #393;
+		box-shadow: 0 0 5px rgba(0,255,0,.2), inset 0 0 5px rgba(0,255,0,.1), 0 2px 0 #000;
+    }	
+    100% {
+		border-color: #6f6;
+		box-shadow: 0 0 20px rgba(0,255,0,.6), inset 0 0 10px rgba(0,255,0,.4), 0 2px 0 #000;
+    }
+}
+
+
+/* .Head{
+	margin-right: 10%;
+}
+
+.box{
+    background:blue;
+}
+.example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+  }
+  
+  .example-full-width {
+    width: 100%;
+  }
+  .errspan {
+    float: right;
+    margin-right: 6px;
+    margin-top: -20px;
+    position: relative;
+    z-index: 2;
+    color: red;
+}
+  
+.container-1{
+    margin-left: 30%;
+}
+
+  .container-1 input{
+    display: inline;
+    width: 330px;
+    height: 50px;
+    background:rgb(220, 227, 233);
+    border: none;
+    font-size: 10pt;
+    color:black;
+    padding-left: 45px;
+    
+  }
  
 
+  
+  i {
+      padding-top: 14px;
+      margin-bottom: 10%;
+      height: 36px;
+    background:rgb(220, 227, 233);
+    color:black;
+    min-width: 40px;
+}
+.container1{
+	
+	background: aliceblue;
+}
+
+.example-card {
+    max-width: 400px;
+  }
+  
+  .example-header-image {
+      width:100%;
+      height: auto;
+    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+    background-size: cover;
+  }
+  .Options{
+      margin-top: 34%;
+
+  }
+  .mat-toolbar button{
+	  padding: 0 14px;
+  } */ 
+  /* .image-container{
+    width: 50%;
+
+  }
+  .home-details-wrapper left{
+	  width: 50%;
+  }
+  .left{
+	  float: left;
+	  display: inline-block;
+  }
+  .u-d-inline {
+    display: inline;
+}
+.home-details-section-title {
+    font-size: 40px;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.image-illustrator{
+	text-align: center;
+    margin: 0 auto;
+}
+.home-details-section-description{
+	font-size: 18px;
+    line-height: 1.3;
+    color: #787887;
+}
+.home-details-section-description mat-icon{
+	color: #14bef0;
+    font-size: 24px;
+    vertical-align: -3px;
+}
+.u-t-bold {
+    font-weight: bold;
+}
+  .right{
+	  float: right;
+	  /* display: inline-block; */
+  /* }
+  
+
+.span{
+	color: #b8bbd9;
+    font-size: 14px;
+    text-decoration: none;
+    padding: 0 30px;
+    line-height: 28px;
+}  */
+
+  /* .container button{
+	  position: relative;
+	  padding: 5px;
+	  padding-right: 50px;
+	  left: 100px;
+	  
+	  
+	  
+  } */
+
+
+   

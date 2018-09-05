@@ -1,25 +1,164 @@
-<mat-toolbar>
-  <button mat-button>Download the App</button>
- 
- <div class="Head">
- <button mat-raised-button color="primary">Book Now</button>
- <button mat-raised-button (click)="openPatient()" color="primary">Patient</button>
- <button mat-raised-button (click)="openDialog()" color="primary">Doctor</button>
- 
+<div class="container">
+
+
+ <mat-toolbar color="primary">
+  <button mat-button  matTooltip="Download the Application"  >Download the App</button>
+<div class="Head">
+
+ <button mat-raised-button color="primary" matTooltip="Book An Appointment">Book Now</button>
+ <button mat-raised-button (click)="openPatient()" color="primary" matTooltip="Login As Patient">Patient</button>
+ <button mat-raised-button (click)="openDialog()" color="primary" matTooltip="Login As a Doctor">Doctor</button>
  </div>
  
  </mat-toolbar>
- <!-- <div class="box">
- <div class="container-1">
-    <i class="fa fa-map-marker" aria-hidden="true"></i>
+    
  
-      <input type="search" id="search" placeholder="Search..." />
- 
- 
-      <input type="search" id="location" placeholder="Search..." />
-      <i class="fa fa-search-plus" aria-hidden="true"></i>
- 
- 
- 
- </div>
- </div> -->
+ <div class="search">
+	<form action="" method="">		    
+		<input type="search" matInput placeholder="Search by Location" matTooltip="Click to detect your Location">		    	
+    <button>Detect</button>
+    <input type="search" placeholder="Searching for Doctors?">		    	
+
+	</form>
+</div>
+
+
+
+
+
+
+
+
+
+
+<div class="options">
+    <div class="wrapper">
+
+    <a href="#" class="chat">
+            <mat-icon>chat</mat-icon>
+
+
+            <span>Chat With a Doctor</span>    </a>&nbsp;
+            <a href="#">
+                    <mat-icon>chat</mat-icon>
+                    <span>Read Articles</span>
+
+
+            </a>
+           
+        </div>
+    </div>
+    
+    
+           <section class="page">
+      <mat-grid-list cols="2" rowHeight="2:1">
+    
+   
+        <mat-grid-tile>
+        <div class="home-details-wrapper ">
+            <div class="home-details-section-details">
+                <div class="home home-details-section-title">
+                    <h2 class="u-d-inline">Safety of your data is our</h2>
+                    <h2 class="u-t-bold">top priority</h2>
+
+                </div>
+                <div class="home-details-section-description">
+                    <div>
+                       <mat-icon>check_box</mat-icon>
+                        <span>Multi-Level Security</span>
+                    </div>
+                    <div>
+                            <mat-icon>check_box</mat-icon>
+                             <span>Multi-Level Security</span>
+                         </div>
+                         <div>
+                                <mat-icon>check_box</mat-icon>
+                                 <span>Multi-Level Security</span>
+                             </div>
+                             </div><br><br>
+
+                             <div>
+                                   <button mat-raised-button color="primary" matTooltip="Book An Appointment">Read More</button>
+                             </div>
+
+            </div>
+
+        </div>
+
+
+
+        </mat-grid-tile>
+        <div class="images">
+        <mat-grid-tile>
+            <div class="image-illustration">
+            <img src="/assets/securit.webp">
+        </div>
+            
+        </mat-grid-tile>
+        <mat-grid-tile>
+                <img src="/assets/encrypt1.png"><br>
+
+
+        </mat-grid-tile>
+        <mat-grid-tile>
+                <img src="/assets/securit.png"><br>
+
+            </mat-grid-tile>
+        </div>
+            </mat-grid-list>
+           </section>
+           <div class="Appointment">
+               <mat-grid-list cols="2">
+                   <mat-grid-tile>
+                       <div>
+                  <div class="home home-details-section-title">
+                               <p>Book Your appointments with Doctors</p>
+                               <p><strong> instantly!!</strong></p>
+            
+                            </div>
+                            <div class="home-details-section-description">
+                                <div>
+                                   <mat-icon>check_box</mat-icon>
+                                    <span>Verified Doctors</span>
+                                </div>
+                               
+                                         </div><br><br>
+            
+                                         <div>
+                                               <button mat-raised-button color="primary" matTooltip="Book An Appointment">Read More</button>
+                                         </div>
+            
+                        </div>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <img src="/assets/phone.png">
+            </mat-grid-tile>
+            </mat-grid-list>
+        </div>
+         
+        </div>
+        
+       
+        
+        
+       
+   
+   
+   
+  <!-- <mat-grid-tile>
+        <img src="/assets/encrypt.png">
+
+  </mat-grid-tile>
+  <mat-grid-tile>
+        <img src="/assets/encrypt.png">
+
+  </mat-grid-tile>
+
+
+
+    </mat-grid-list> -->
+        <!-- </div> -->
+
+    
+     
+   
