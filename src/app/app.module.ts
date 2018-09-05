@@ -34,14 +34,41 @@ import { AppRoutingModule } from './/app-routing.module';
   ],
   imports: [
     MatCardModule,
+    MatGridListModule,
+    MatMenuModule,
+    MatListModule,
     BrowserModule,
     MatIconModule,
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+    MatGridListModule,
+    MatMenuModule,
+    MatListModule,
+=======
+>>>>>>> 031c3b91bf685c046cab7f60bbd320db699f082e
+>>>>>>> 09e37e66c6a02ba8224415a5873947fd2ea5c188
+>>>>>>> 95139412b6141daa179efa4019dd4bcb21e54369
     BrowserAnimationsModule,
     MaterialModule,
     HttpClientModule,
     AppRoutingModule,
+<<<<<<< HEAD
     RouterModule,
     MatGridListModule
+=======
+<<<<<<< HEAD
+    RouterModule
+<<<<<<< HEAD
+=======
+=======
+    RouterModule,
+    MatGridListModule
+>>>>>>> 031c3b91bf685c046cab7f60bbd320db699f082e
+>>>>>>> 09e37e66c6a02ba8224415a5873947fd2ea5c188
+>>>>>>> 95139412b6141daa179efa4019dd4bcb21e54369
   ],
   entryComponents:[PatientLoginComponent,
   DoctorLoginComponent,DoctorProfileComponent],

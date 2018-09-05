@@ -27,6 +27,9 @@ id;
   this.doctor=data;
   });
   }
+<<<<<<< HEAD
+  
+=======
   close() {
     this.dialogRef.close();
   }
@@ -34,6 +37,7 @@ id;
     this.dialog.open(DoctorLoginComponent);
     
   }
+>>>>>>> 09e37e66c6a02ba8224415a5873947fd2ea5c188
 
   emailFormControl = new FormControl('', [
     Validators.required,

@@ -22,10 +22,6 @@ export class LandingPageComponent implements OnInit {
     dialogRef.afterClosed().subscribe(data => console.log("the dailog box is closed"));
   }
 
-
-  
-
-
   openDialog() {
     const dialogRef = this.dialog.open(DoctorLoginComponent);
  
