@@ -39,28 +39,19 @@ import { AppRoutingModule } from './/app-routing.module';
     MatListModule,
     BrowserModule,
     MatIconModule,
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
+
     MatGridListModule,
     MatMenuModule,
     MatListModule,
-=======
->>>>>>> 031c3b91bf685c046cab7f60bbd320db699f082e
->>>>>>> 09e37e66c6a02ba8224415a5873947fd2ea5c188
+
     BrowserAnimationsModule,
     MaterialModule,
     HttpClientModule,
     AppRoutingModule,
-<<<<<<< HEAD
-    RouterModule
-<<<<<<< HEAD
-=======
-=======
+
     RouterModule,
     MatGridListModule
->>>>>>> 031c3b91bf685c046cab7f60bbd320db699f082e
->>>>>>> 09e37e66c6a02ba8224415a5873947fd2ea5c188
+
   ],
   entryComponents:[PatientLoginComponent,
   DoctorLoginComponent,DoctorProfileComponent],
