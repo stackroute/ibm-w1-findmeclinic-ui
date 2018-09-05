@@ -9,6 +9,7 @@ import { MaterialModule } from  './material';
 import { PatientLoginComponent } from './patient-login/patient-login.component';
 import { DoctorLoginComponent } from './doctor-login/doctor-login.component';
 import { HttpClientModule } from '@angular/common/http';
+import { DoctorProfileComponent } from './doctor-profile/doctor-profile.component';
 
 
 import { RouterModule } from '@angular/router';
@@ -21,7 +22,8 @@ import { AppRoutingModule } from './/app-routing.module';
     LandingPageComponent,
     PatientLoginComponent,
     DoctorLoginComponent,
-    PatientProfileComponent
+    PatientProfileComponent,
+    DoctorProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +34,7 @@ import { AppRoutingModule } from './/app-routing.module';
     RouterModule
   ],
   entryComponents:[PatientLoginComponent,
-  DoctorLoginComponent],
+  DoctorLoginComponent,DoctorProfileComponent],
   providers: [],
   bootstrap: [AppComponent]
 })
