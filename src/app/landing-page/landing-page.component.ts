@@ -9,6 +9,7 @@ import {DoctorLoginComponent} from '../doctor-login/doctor-login.component';
   styleUrls: ['./landing-page.component.css']
 })
 export class LandingPageComponent implements OnInit {
+  
 
   constructor(public dialog : MatDialog) { }
 

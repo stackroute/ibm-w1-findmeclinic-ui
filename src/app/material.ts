@@ -7,7 +7,16 @@ import {MatMenuModule} from '@angular/material/menu';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {  MatChipsModule,MatSelectModule} from '@angular/material';
 import { NgModule } from '@angular/core';
+import {MatCardModule} from '@angular/material/card';
+
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {MatIconModule} from '@angular/material/icon';
+import {MatListModule} from '@angular/material/list';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatTableModule} from '@angular/material/table';
+import {MatBadgeModule} from '@angular/material/badge';
+
+
 @NgModule({
  imports: [
      MatDialogModule,
@@ -26,6 +35,12 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
   MatButtonModule,
   MatTabsModule,
   MatSelectModule,
+  MatIconModule,
+  MatListModule,
+  MatSidenavModule,
+  MatTableModule,
+  MatBadgeModule
+
       ],
  exports: [
      MatDialogModule,
@@ -43,7 +58,13 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
   MatButtonModule,
   MatTabsModule,
   MatSelectModule,
-     MatToolbarModule
+     MatToolbarModule,
+     MatIconModule,
+     MatListModule,
+     MatSidenavModule,
+     MatTableModule,
+     MatBadgeModule
+
  ]
 })
 export class MaterialModule
