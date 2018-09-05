@@ -27,7 +27,9 @@ import { AppRoutingModule } from './/app-routing.module';
     BrowserModule,
     BrowserAnimationsModule,
     MaterialModule,
-    HttpClientModule
+    HttpClientModule,
+    AppRoutingModule,
+    RouterModule
   ],
   entryComponents:[PatientLoginComponent,
   DoctorLoginComponent],
