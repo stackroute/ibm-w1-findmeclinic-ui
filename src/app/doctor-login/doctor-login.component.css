@@ -7,4 +7,11 @@
     width: 100%;
   }
   
-  
+  .modelform {
+    width: 350px;
+    height: 350px;
+    text-align: center;
+  }
+.fullwidth {
+  width: 100%;
+}

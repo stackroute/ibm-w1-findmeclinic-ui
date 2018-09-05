@@ -9,7 +9,11 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import {MatIconModule,MatListModule} from '@angular/material';
 import {MatMenuModule} from '@angular/material/menu';
 
-
+//Calendar Modules for Calendar Component
+import { FlatpickrModule } from 'angularx-flatpickr';
+import { CalendarModule, DateAdapter } from 'angular-calendar';
+import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
+import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 import { MaterialModule } from  './material';
@@ -22,6 +26,7 @@ import { DoctorProfileComponent } from './doctor-profile/doctor-profile.componen
 import { RouterModule } from '@angular/router';
 import { PatientProfileComponent } from './patient-profile/patient-profile.component';
 import { AppRoutingModule } from './/app-routing.module';
+import { CalendarComponent } from './calendar/calendar.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +35,8 @@ import { AppRoutingModule } from './/app-routing.module';
     PatientLoginComponent,
     DoctorLoginComponent,
     PatientProfileComponent,
-    DoctorProfileComponent
+    DoctorProfileComponent,
+    CalendarComponent
   ],
   imports: [
     MatCardModule,
@@ -50,8 +56,22 @@ import { AppRoutingModule } from './/app-routing.module';
     AppRoutingModule,
 
     RouterModule,
+<<<<<<< HEAD
     MatGridListModule
 
+=======
+    MatGridListModule,
+
+    RouterModule,
+    MatGridListModule,
+
+    NgbModalModule,
+   FlatpickrModule.forRoot(),
+   CalendarModule.forRoot({
+     provide: DateAdapter,
+     useFactory: adapterFactory
+   })
+>>>>>>> 816404698f52b26899f522850fd7cb7914b8822c
   ],
   entryComponents:[PatientLoginComponent,
   DoctorLoginComponent,DoctorProfileComponent],
