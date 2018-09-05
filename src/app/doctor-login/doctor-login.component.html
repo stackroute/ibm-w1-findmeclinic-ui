@@ -1,0 +1,44 @@
+
+
+   <div>
+    <mat-tab-group>
+        <mat-tab label="Login">
+            <mat-form-field>
+                <input matInput placeholder="Enter EmailId or PhoneNumber">
+            </mat-form-field>
+            <br>
+            <br>
+            <mat-form-field>
+                <input matInput placeholder="Enter Password" type="password">
+            </mat-form-field>
+            <br>
+            <br>
+            <button mat-raised-button color="accent">Login</button>
+        </mat-tab>
+        <mat-tab label="Register">
+               
+            <mat-form-field class="example-full-width">
+                <input matInput  [(ngModel)]="doctor.doctorEmail" name="doctorEmail" placeholder="Enter Email" [formControl]="emailFormControl">
+                <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+                  Please enter a valid email address
+                </mat-error>
+                <mat-error *ngIf="emailFormControl.hasError('required')">
+                  Email is <strong>required</strong>
+                </mat-error>
+              </mat-form-field>
+            <br>
+            <br>
+            <mat-form-field>
+                <input matInput  [(ngModel)]="doctor.doctorPhoneNumber" name="doctorPhoneNumber" placeholder="Enter PhoneNumber">
+            </mat-form-field>
+            <br>
+            <br>
+            <mat-form-field>
+                <input matInput [(ngModel)]="doctor.doctorPassword" name="doctorPassword"  placeholder="Enter password">
+            </mat-form-field>
+            <br>
+            <br>
+            <button mat-raised-button  (click)="addDoctor(doctor)" color="accent">Register</button>
+        </mat-tab>
+    </mat-tab-group>
+ </div>

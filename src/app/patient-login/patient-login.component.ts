@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroupDirective, NgForm, Validators} from '@angular/forms';
 import {ErrorStateMatcher} from '@angular/material/core';
+import { MatDialogRef } from '@angular/material';
 
 
 export class MyErrorStateMatcher implements ErrorStateMatcher {
@@ -16,9 +17,13 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
 })
 export class PatientLoginComponent implements OnInit {
 
-  constructor() { }
+  constructor(private dialogRef: MatDialogRef<PatientLoginComponent>) { }
 
   ngOnInit() {
+  }
+
+  close() {
+    this.dialogRef.close();
   }
 
   emailFormControl = new FormControl('', [

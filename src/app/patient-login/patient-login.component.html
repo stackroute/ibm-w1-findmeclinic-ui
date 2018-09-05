@@ -12,17 +12,19 @@
                 </mat-form-field>
                 <br>
                 <br>
-                <button mat-raised-button color="accent">Login</button>
+                 <button mat-raised-button color="accent"> 
+                        <a routerLink="patient-profile" (click)="close()" role="button">Login</a>
+
+                        
+                     </button> 
+                <!-- <a routerLink="patient-profile">Login </a> -->
+                
             </mat-tab>
+             
+
+
         <mat-tab label="Register">
-        <mat-form-field>
-            <input matInput placeholder="First Name">
-         </mat-form-field>
-            <br>
-            <br>
-          <mat-form-field>
-              <input matInput placeholder="Last Name">
-            </mat-form-field>
+        
             <br>
             <br>
         <mat-form-field>
@@ -52,5 +54,8 @@
         
         <button mat-raised-button color="accent">Register</button>
     </mat-tab>
+
+    
 </mat-tab-group>
+
 </div>

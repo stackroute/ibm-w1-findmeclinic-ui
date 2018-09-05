@@ -1,0 +1,21 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <button mat-icon-button (click)="drawer.toggle()"><mat-icon>menu</mat-icon></button>
+    <span>Find Me Clinic</span>
+    <button mat-button color="Warning">Download The App</button>
+    <button mat-button color="Warning"></button>
+    <p class="badge-style">
+        <span matBadge="AD" matBadgeOverlap="false" matBadgeColor="Warning"></span>
+      </p>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<mat-drawer-container class="example-container" autosize>
+  <mat-drawer #drawer class="example-sidenav" mode="side">
+    <button (click)="showFiller = !showFiller" mat-raised-button>
+      Appointments
+    </button><br><br>
+    <button (click)="showFiller = !showFiller" mat-raised-button>
+        Files
+      </button>
+  </mat-drawer>

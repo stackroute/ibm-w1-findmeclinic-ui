@@ -1,0 +1,38 @@
+
+<div class="example-container" >
+  <mat-toolbar color="primary" class="example-toolbar">
+    <button mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
+    <h1 class="example-app-name">FindMeClinic</h1>
+    
+    <div class="button-group">
+        <button mat-button type="submit" class="btn btn-success">Book</button>
+    </div>
+
+      <p class="badge-style">
+        <span matBadge="AA" matBadgeOverlap="false" matBadgeColor="warn"></span>
+      </p>
+    
+
+    
+  </mat-toolbar>
+
+  <mat-sidenav-container class="example-sidenav-container">
+    <mat-sidenav #snav fixedTopGap="5">
+      <mat-nav-list>
+         <mat-list-item>Records</mat-list-item>
+         <mat-list-item>Lab Reports</mat-list-item>
+         <mat-list-item>Family Tree</mat-list-item>
+        </mat-nav-list>
+
+        
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+      
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+
+  
+</div>
+
+
