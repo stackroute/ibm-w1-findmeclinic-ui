@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroupDirective, NgForm, Validators} from '@angular/forms';
 import {ErrorStateMatcher} from '@angular/material/core';
 import { MatDialogRef } from '@angular/material';
+import { Router } from '@angular/router';
 
 
 export class MyErrorStateMatcher implements ErrorStateMatcher {
@@ -17,13 +18,14 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
 })
 export class PatientLoginComponent implements OnInit {
 
-  constructor(private dialogRef: MatDialogRef<PatientLoginComponent>) { }
+  constructor(private dialogRef: MatDialogRef<PatientLoginComponent>, private router:Router) { }
 
   ngOnInit() {
   }
 
   close() {
     this.dialogRef.close();
+    this.router.navigate(['patient-profile']);
   }
 
   emailFormControl = new FormControl('', [
