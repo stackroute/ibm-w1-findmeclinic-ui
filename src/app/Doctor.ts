@@ -1,5 +1,5 @@
 export class Doctor{
-    email:string;
-    phoneNumber:string;
-    password:string;
+    doctorEmail:string;
+    doctorPhoneNumber:string;
+    doctorPassword:string;
 }
