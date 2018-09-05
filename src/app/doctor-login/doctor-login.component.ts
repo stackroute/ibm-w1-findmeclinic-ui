@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, Validators} from '@angular/forms';
+import { Doctor } from '../Doctor';
+import { DoctorService } from '../doctor.service';
 
 
 @Component({
@@ -9,10 +11,22 @@ import {FormControl, Validators} from '@angular/forms';
 })
 export class DoctorLoginComponent implements OnInit {
 
-  constructor() { }
+doctor;
+id;
+  constructor(private doctorService:DoctorService) { this.doctor=new Doctor();}
 
   ngOnInit() {
   }
+
+
+  addDoctor(doctorData) {
+    
+    //this.movie=movieData;
+    return this.doctorService.registerDoctor(doctorData).subscribe(data =>{ console.log("Doctor Added successfully")
+  this.doctor=data;
+  });
+  }
+
 
   emailFormControl = new FormControl('', [
     Validators.required,
