@@ -1,6 +1,6 @@
 
 
-   <div>
+   <div >
     <mat-tab-group>
         <mat-tab label="Login">
             <mat-form-field>
@@ -13,10 +13,7 @@
             </mat-form-field>
             <br>
             <br>
-            <button mat-raised-button color="accent">
-                <a routerLink="doctor-profile" (click)="close()" role="button">Login</a>
-
-            </button> 
+            <button mat-raised-button color="accent" (click)="close()">Login</button>
         </mat-tab>
         <mat-tab label="Register">
                
@@ -41,7 +38,7 @@
             </mat-form-field>
             <br>
             <br>
-            <button mat-raised-button  (click)="addDoctor(doctor)" color="accent">Register</button>
+            <button mat-raised-button  (click)="addDoctor(doctor)" (click)="close()" (click)="open()" color="accent">Register</button>
         </mat-tab>
     </mat-tab-group>
  </div>
