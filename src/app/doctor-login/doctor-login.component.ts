@@ -26,7 +26,7 @@ id;
   this.doctor=data;
   });
   }
-
+  
 
   emailFormControl = new FormControl('', [
     Validators.required,
