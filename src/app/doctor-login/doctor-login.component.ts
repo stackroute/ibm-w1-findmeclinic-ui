@@ -44,8 +44,6 @@ id;
 
 
   }
-<<<<<<< HEAD
-=======
   phoneFormComtrol = new FormControl('',[
     Validators.required
   ])
@@ -53,7 +51,6 @@ id;
   passFormControl = new FormControl('',[
     Validators.required
   ])
->>>>>>> 816404698f52b26899f522850fd7cb7914b8822c
 
   emailFormControl = new FormControl('', [
     Validators.required,
