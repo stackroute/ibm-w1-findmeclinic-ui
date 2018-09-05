@@ -15,6 +15,4 @@ export class DoctorService {
   registerDoctor(doctor): Observable<Doctor> {
     return this.http.post<Doctor>(this.addUrl,doctor);
   }
-
 }
-

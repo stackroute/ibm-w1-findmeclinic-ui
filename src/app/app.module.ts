@@ -56,6 +56,10 @@ import { CalendarComponent } from './calendar/calendar.component';
     AppRoutingModule,
 
     RouterModule,
+<<<<<<< HEAD
+    MatGridListModule
+
+=======
     MatGridListModule,
 
     RouterModule,
@@ -67,6 +71,7 @@ import { CalendarComponent } from './calendar/calendar.component';
      provide: DateAdapter,
      useFactory: adapterFactory
    })
+>>>>>>> 816404698f52b26899f522850fd7cb7914b8822c
   ],
   entryComponents:[PatientLoginComponent,
   DoctorLoginComponent,DoctorProfileComponent],

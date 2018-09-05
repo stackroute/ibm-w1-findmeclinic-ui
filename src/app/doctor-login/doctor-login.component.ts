@@ -20,6 +20,11 @@ id;
   ngOnInit() {
   }
 
+// method(){
+//   if(this.responseOptions.statusText==="OK"){
+//     alert("Registration Successful");
+//       }
+// }
 
   addDoctor(doctorData) {
     
@@ -33,9 +38,22 @@ id;
     this.router.navigate(["doctor-profile"]);
   }
   open():void{
-    this.dialog.open(DoctorLoginComponent);
-    
+    this.dialog.open(DoctorLoginComponent,{
+    }
+  );
+
+
   }
+<<<<<<< HEAD
+=======
+  phoneFormComtrol = new FormControl('',[
+    Validators.required
+  ])
+
+  passFormControl = new FormControl('',[
+    Validators.required
+  ])
+>>>>>>> 816404698f52b26899f522850fd7cb7914b8822c
 
   emailFormControl = new FormControl('', [
     Validators.required,
