@@ -25,7 +25,7 @@
             <br>
             <br>
         <mat-form-field>
-            <input matInput placeholder="Enter EmailId" [formControl]="emailFormControl"
+            <input matInput [(ngModel)]="patient.patientEmail" placeholder="Enter EmailId" [formControl]="emailFormControl"
             [errorStateMatcher]="matcher">
      <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
        Please enter a valid email address
@@ -38,18 +38,18 @@
         <br>
         <br>
         <mat-form-field>
-            <input matInput placeholder="Enter the  PhoneNumber">
+            <input matInput [(ngModel)]="patient.patientPhoneNumber" placeholder="Enter the  PhoneNumber">
           </mat-form-field>
           <br>
           <br>
         <mat-form-field>
-            <input matInput placeholder="Enter Password" type="password">
+            <input matInput [(ngModel)]="patient.patientPassword" placeholder="Enter Password" type="password">
         </mat-form-field>
         <br>
         <br>
 
         
-        <button mat-raised-button color="accent">Register</button>
+        <button mat-raised-button (click)="addPatient(patient)" (click)="closeRegister()" color="accent">Register</button>
     </mat-tab>
 
     
