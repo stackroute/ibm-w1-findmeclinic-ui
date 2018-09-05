@@ -35,16 +35,12 @@ import {MatBadgeModule} from '@angular/material/badge';
   MatButtonModule,
   MatTabsModule,
   MatSelectModule,
-<<<<<<< HEAD
-  MatCardModule
-=======
   MatIconModule,
   MatListModule,
   MatSidenavModule,
   MatTableModule,
   MatBadgeModule
 
->>>>>>> da712295947f1b8de047440eaa4a9ef04bd6f8a8
       ],
  exports: [
      MatDialogModule,
