@@ -14,7 +14,7 @@
   <mat-sidenav-container class="example-sidenav-container">
     <mat-sidenav #snav fixedTopGap="5">
       <mat-nav-list>
-         <mat-list-item routerLink="/doctor-appointment">Appointments</mat-list-item>
+         <mat-list-item (click)="showFiller = !showFiller">Appointments</mat-list-item>
          <mat-list-item>Reports</mat-list-item>
         
         </mat-nav-list>
@@ -23,7 +23,9 @@
     </mat-sidenav>
 
     <mat-sidenav-content>
-      
+      <div *ngIf="showFiller" style="margin-top: 5%">
+        <app-calendar></app-calendar>
+      </div>
     </mat-sidenav-content>
   </mat-sidenav-container>
 
