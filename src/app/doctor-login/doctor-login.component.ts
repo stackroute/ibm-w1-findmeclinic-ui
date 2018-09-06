@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import {FormControl, Validators} from '@angular/forms';
+import { FormControl, Validators } from '@angular/forms';
 import { Doctor } from '../Doctor';
 import { DoctorService } from '../doctor.service';
 import { MatDialogRef } from '@angular/material';
-import {MatDialog} from '@angular/material';
+import { MatDialog } from '@angular/material';
 import { Router } from '@angular/router';
 
 @Component({
@@ -13,48 +13,58 @@ import { Router } from '@angular/router';
 })
 export class DoctorLoginComponent implements OnInit {
 
-doctor;
-id;
-  constructor(private doctorService:DoctorService,private dialogRef: MatDialogRef<DoctorLoginComponent>,public dialog : MatDialog, private router:Router) { this.doctor=new Doctor();}
+  doctor;
+  id;
+  isRegistered = false;
+
+  constructor(private doctorService: DoctorService, private dialogRef: MatDialogRef<DoctorLoginComponent>, public dialog: MatDialog, private router: Router) { this.doctor = new Doctor(); }
 
   ngOnInit() {
   }
 
-// method(){
-//   if(this.responseOptions.statusText==="OK"){
-//     alert("Registration Successful");
-//       }
-// }
+
+ 
 
   addDoctor(doctorData) {
-    
-    //this.movie=movieData;
-    return this.doctorService.registerDoctor(doctorData).subscribe(data =>{ console.log("Doctor Added successfully")
-  this.doctor=data;
-  });
+    return this.doctorService.registerDoctor(doctorData).subscribe(data => {
+      console.log("Doctor ");
+    });
   }
   close() {
     this.dialogRef.close();
+    
+  }
+  navigate(){
     this.router.navigate(["doctor-profile"]);
   }
-  open():void{
-    this.dialog.open(DoctorLoginComponent,{
+  open(): void {
+    this.dialog.open(DoctorLoginComponent, {
     }
-  );
+    );
 
 
   }
-  phoneFormComtrol = new FormControl('',[
+  phoneFormComtrol = new FormControl('', [
     Validators.required
   ])
 
-  passFormControl = new FormControl('',[
+  passFormControl = new FormControl('', [
     Validators.required
   ])
 
   emailFormControl = new FormControl('', [
     Validators.required,
     Validators.email,
-  ]);
+  ])
+  logpassFormControl = new FormControl('', [
+    Validators.required
+  ])
+
+  logFormControl = new FormControl('', [
+    Validators.required,
+    Validators.email,
+  ])
+
+  ;
 
 }
