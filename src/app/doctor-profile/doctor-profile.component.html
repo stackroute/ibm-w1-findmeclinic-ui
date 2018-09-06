@@ -14,7 +14,7 @@
   <mat-sidenav-container class="example-sidenav-container">
     <mat-sidenav #snav fixedTopGap="5">
       <mat-nav-list>
-         <mat-list-item (click)="showFiller = !showFiller">Appointments</mat-list-item>
+         <mat-list-item (click)="showFiller = !showFiller" (click)="snav.toggle()">Appointments</mat-list-item>
          <mat-list-item>Reports</mat-list-item>
         
         </mat-nav-list>
