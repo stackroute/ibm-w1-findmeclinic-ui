@@ -23,14 +23,6 @@ export class DoctorLoginComponent implements OnInit {
   }
 
 
-<<<<<<< HEAD
- 
-
-  addDoctor(doctorData) {
-    return this.doctorService.registerDoctor(doctorData).subscribe(data => {
-      console.log("Doctor ");
-    });
-=======
 
   addDoctor(doctorData) {
     
@@ -38,26 +30,17 @@ export class DoctorLoginComponent implements OnInit {
     return this.doctorService.registerDoctor(doctorData).subscribe(data =>{ console.log("Doctor Added successfully")
   this.doctor=data;
   });
->>>>>>> ce1de6ee2d610ab4d7f0f78dd9b0cb8d27fea422
   }
-  navigate() {
-    this.dialogRef.close();
-    
-  }
+  
   navigate(){
     this.router.navigate(["doctor-profile"]);
   }
-<<<<<<< HEAD
-  open(): void {
-    this.dialog.open(DoctorLoginComponent, {
-=======
 
   close(){
     this.dialogRef.close();
   }
   open():void{
     this.dialog.open(DoctorLoginComponent,{
->>>>>>> ce1de6ee2d610ab4d7f0f78dd9b0cb8d27fea422
     }
     );
 
