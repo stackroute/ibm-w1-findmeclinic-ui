@@ -42,7 +42,7 @@ export class CalendarComponent implements OnInit {
   @ViewChild('modalContent')
   modalContent: TemplateRef<any>;
 
-  view: CalendarView = CalendarView.Month;
+  view: CalendarView = CalendarView.Week;
 
   CalendarView = CalendarView;
 

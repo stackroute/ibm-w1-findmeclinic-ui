@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .form {
     width: 350px;
     height: 390px;
@@ -11,3 +12,20 @@
     font-family: 'Courier New', Courier, monospace;
     font-size: 200px;
  }
+=======
+ .form {
+    width: 350px;
+    height: 390px;
+    text-align: center;
+  }
+  
+  .formheight{
+    width:75%;
+  }
+  .p {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 200px;
+  }
+  
+   
+>>>>>>> bad345d2441e256beebfafb173c31cc580e75a96

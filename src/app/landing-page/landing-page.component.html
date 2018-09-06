@@ -1,27 +1,25 @@
+<mat-toolbar color="primary">
+    <button mat-button matTooltip="Download the Application">Download the App</button>
+    <div class="Head">
+
+        <button mat-button matTooltip="Book An Appointment">Book Now</button>
+        <button mat-button (click)="openPatient()" matTooltip="Login As Patient">Patient</button>
+        <button mat-button (click)="openDialog()" matTooltip="Login As a Doctor">Doctor</button>
+    </div>
+
+</mat-toolbar>
+<div>
 
 
- <mat-toolbar color="primary">
-  <button mat-button  matTooltip="Download the Application"  >Download the App</button>
-<div class="Head">
 
- <button mat-button  matTooltip="Book An Appointment">Book Now</button>
- <button mat-button (click)="openPatient()" matTooltip="Login As Patient">Patient</button>
- <button mat-button (click)="openDialog()"  matTooltip="Login As a Doctor">Doctor</button>
- </div>
- 
- </mat-toolbar>
- <div >
+    <div class="search">
+        <form action="" method="">
+            <input type="search" matInput placeholder="Search by Location" matTooltip="Click to detect your Location">
+            <button>Detect</button>
+            <input type="search" placeholder="Searching for Doctors?">
 
-    
- 
- <div class="search">
-	<form action="" method="">		    
-		<input type="search" matInput placeholder="Search by Location" matTooltip="Click to detect your Location">		    	
-    <button>Detect</button>
-    <input type="search" placeholder="Searching for Doctors?">		    	
-
-	</form>
-</div>
+        </form>
+    </div>
 
 
 
@@ -33,192 +31,200 @@
 
 
 
-<div class="options">
-    <div class="wrapper">
+    <div class="options">
+        <div class="wrapper">
+            
 
-    <a href="#" class="chat">
-            <mat-icon>chat</mat-icon>
+            <a href="#" class="chat">
+                <mat-icon>chat</mat-icon>
 
 
-            <span>Chat With a Doctor</span>    </a>
+                <span>Chat With a Doctor</span>
+            </a>
             <a href="#">
-                    <mat-icon>chat</mat-icon>
-                    <span>Read Articles</span>
+                <mat-icon>chat</mat-icon>
+                <span>Read Articles</span>
 
 
             </a>
-           
+
         </div>
     </div>
-    
-    
-           <section class="page">
-      <mat-grid-list cols="2" rowHeight="2:0.75">
-    
-   
-        <mat-grid-tile>
-        <div class="home-details-wrapper ">
-            <div class="home-details-section-details">
-                <div class="home home-details-section-title">
-                    <h2 class="u-d-inline">Safety of your data is our</h2>
-                    <h2 class="u-t-bold">top priority</h2>
+
+
+    <section class="page">
+        <mat-grid-list cols="2" rowHeight="2:0.75">
+
+
+            <mat-grid-tile>
+                <div class="home-details-wrapper ">
+                    <div class="home-details-section-details">
+                        <div class="home home-details-section-title">
+                            <h2 class="u-d-inline">Safety of your data is our</h2>
+                            <h2 class="u-t-bold">top priority</h2>
+
+                        </div>
+                        <div class="home-details-section-description">
+                            <div>
+                                <mat-icon>check_box</mat-icon>
+                                <span>Multi-Level Security</span>
+                            </div>
+                            <div>
+                                <mat-icon>check_box</mat-icon>
+                                <span>Multi-Level Security</span>
+                            </div>
+                            <div>
+                                <mat-icon>check_box</mat-icon>
+                                <span>Multi-Level Security</span>
+                            </div>
+                        </div>
+                        <br>
+                        <br>
+
+                        <div>
+                            <button mat-raised-button color="primary" matTooltip="Book An Appointment">Read More</button>
+                        </div>
+
+                    </div>
 
                 </div>
-                <div class="home-details-section-description">
-                    <div>
-                       <mat-icon>check_box</mat-icon>
-                        <span>Multi-Level Security</span>
-                    </div>
-                    <div>
-                            <mat-icon>check_box</mat-icon>
-                             <span>Multi-Level Security</span>
-                         </div>
-                         <div>
-                                <mat-icon>check_box</mat-icon>
-                                 <span>Multi-Level Security</span>
-                             </div>
-                             </div><br><br>
-
-                             <div>
-                                   <button mat-raised-button color="primary" matTooltip="Book An Appointment">Read More</button>
-                             </div>
-
-            </div>
-
-        </div>
 
 
-
-        </mat-grid-tile>
-        <div class="images">
-        <mat-grid-tile>
-            <div class="image-illustration">
-            <img src="/assets/securit.webp">
-        </div>
-            
-        </mat-grid-tile>
-        <mat-grid-tile>
-                <img src="/assets/encrypt1.png"><br>
-
-
-        </mat-grid-tile>
-        <mat-grid-tile>
-                <img src="/assets/securit.png"><br>
 
             </mat-grid-tile>
-        </div>
-            </mat-grid-list>
-           </section>
-           <div class="Appointment">
-               <mat-grid-list cols="2" rowHeight="2:1">
-                   <mat-grid-tile>
-                       <div>
-                  <div class="home-details-section-title">
-                               <p>Book Your appointments with Doctors</p>
-                               <p><strong> instantly!!</strong></p>
-            
-                            </div>
-                            <div class="home-details-section-description">
-                                <div>
-                                   <mat-icon>check_box</mat-icon>
-                                    <span>Verified Doctors</span>
-                                </div>
-                                <div>
-                                    <mat-icon>check_box</mat-icon>
-                                     <span>Verified Clinic</span>
-                                 </div>
-                                <div>
-                                    <mat-icon>check_box</mat-icon>
-                                     <span>Verified Hospitals</span>
-                                 </div>
-                               
-                                         </div><br><br>
-            
-                                         <div>
-                                               <button mat-raised-button color="primary" matTooltip="Book An Appointment">Read More</button>
-                                         </div>
-            
+            <div class="images">
+                <mat-grid-tile>
+                    <div class="image-illustration">
+                        <img src="/assets/securit.webp">
+                    </div>
+
+                </mat-grid-tile>
+                <mat-grid-tile>
+                    <img src="/assets/encrypt1.png">
+                    <br>
+
+
+                </mat-grid-tile>
+                <mat-grid-tile>
+                    <img src="/assets/securit.png">
+                    <br>
+
+                </mat-grid-tile>
+            </div>
+        </mat-grid-list>
+    </section>
+    <div class="Appointment">
+        <mat-grid-list cols="2" rowHeight="2:1">
+            <mat-grid-tile>
+                <div>
+                    <div class="home-details-section-title">
+                        <p>Book Your appointments with Doctors</p>
+                        <p>
+                            <strong> instantly!!</strong>
+                        </p>
+
+                    </div>
+                    <div class="home-details-section-description">
+                        <div>
+                            <mat-icon>check_box</mat-icon>
+                            <span>Verified Doctors</span>
                         </div>
+                        <div>
+                            <mat-icon>check_box</mat-icon>
+                            <span>Verified Clinic</span>
+                        </div>
+                        <div>
+                            <mat-icon>check_box</mat-icon>
+                            <span>Verified Hospitals</span>
+                        </div>
+
+                    </div>
+                    <br>
+                    <br>
+
+                    <div>
+                        <button mat-raised-button color="primary" matTooltip="Book An Appointment">Read More</button>
+                    </div>
+
+                </div>
             </mat-grid-tile>
             <mat-grid-tile>
                 <img src="/assets/phone.png">
             </mat-grid-tile>
         </mat-grid-list>
-        
-        </div>
-        <div class="MedicalRecords">
-                <mat-grid-list cols="2" rowHeight="2:1">
-                        <mat-grid-tile>
-                                <img src="/assets/health.png">
-                            </mat-grid-tile>
-                        <mat-grid-tile>
-                            <div>
-                       <div class="home home-details-section-title">
-                                    <p>Check Your Health Records In one App</p>
-                                    <p><strong> instantly!!</strong></p>
-                 
-                                 </div>
-                                 <div class="home-details-section-description">
-                                     <div>
-                                        <mat-icon>check_box</mat-icon>
-                                         <span>Secure</span>
-                                     </div>
-                                     <div>
-                                            <mat-icon>check_box</mat-icon>
-                                             <span>Health Records will be Accessed only by the Doctors</span>
-                                         </div>
-                                    
-                                              </div><br><br>
-                 
-                                              <div>
-                                                    <button mat-raised-button color="primary" matTooltip="Book An Appointment">Read More</button>
-                                              </div>
-                 
-                             </div>
-                 </mat-grid-tile>
-               
-                 </mat-grid-list>     
-              
-                      
-                             
-            </div>  
-            <footer>
-                <mat-toolbar color="primary">
-                        <mat-toolbar-row>
-                          <p>FindMeClinic</p>
-                        </mat-toolbar-row>
-                      
-                        <mat-toolbar-row>
-                          <span>About</span>
-                          <span class="example-spacer"></span>
-                        </mat-toolbar-row>
-                        <mat-toolbar-row>
-                                <span>Press</span>
-                              </mat-toolbar-row>
-                      
-                        <mat-toolbar-row>
-                          <span>Blog</span>
-                         
-                        </mat-toolbar-row>
-                                                   <mat-toolbar-row>
-                                                        <div class="find">
-                                <p class="findMeClinic">FindMEClinic</p>
-                            </div>
 
-                              </mat-toolbar-row>
+    </div>
+    <div class="MedicalRecords">
+        <mat-grid-list cols="2" rowHeight="2:1">
+            <mat-grid-tile>
+                <img src="/assets/health.png">
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <div>
+                    <div class="home home-details-section-title">
+                        <p>Check Your Health Records In one App</p>
+                        <p>
+                            <strong> instantly!!</strong>
+                        </p>
 
-                      </mat-toolbar>
-                     
-                      
+                    </div>
+                    <div class="home-details-section-description">
+                        <div>
+                            <mat-icon>check_box</mat-icon>
+                            <span>Secure</span>
+                        </div>
+                        <div>
+                            <mat-icon>check_box</mat-icon>
+                            <span>Health Records will be Accessed only by the Doctors</span>
+                        </div>
 
-           </footer>
+                    </div>
+                    <br>
+                    <br>
+
+                    <div>
+                        <button mat-raised-button color="primary" matTooltip="Book An Appointment">Read More</button>
+                    </div>
+
+                </div>
+            </mat-grid-tile>
+
+        </mat-grid-list>
+
+
+
+    </div>
+   <!--Footer-->
+<footer class="page-footer" >
+
+    <!--Footer Links-->
+    <div class="container-fluid text-center text-md-left">
+        <div class="row">
+
+            <!--First column-->
+            <div class="col-md-6">
+                    <img src="/assets/logo.png" alt="FindMeClinic"> 
+                    <div class="col-md-6">
+                    <ul class="list-unstyled">
+                        <li><a href="#">About FindMeClinic</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        
+                    </ul>
+                </div>
+            </div>
             
-        
+        </div>
+    </div>
+    <!--/.Footer Links-->
 
-
-          
-               
-        
-    
-     
-   
+    <!--Copyright-->
+    <div class="footer-copyright text-center py-3">
+        <div class="container-fluid">
+            <img src="/assets/logo.png" alt="FindMeClinic"> <br>
+       <p>     © 2017 Copyright:  FindMeClinic </p>
+        </div>
+    </div>
+    <!--/.Copyright-->
+</footer>
+<!--/.Footer-->

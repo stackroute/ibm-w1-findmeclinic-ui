@@ -45,6 +45,7 @@ patient;
   closeRegister(){
     this.dialogRef.close();
   }
+<<<<<<< HEAD
 
   openLogin(newPatient){
     this.patientService.login(newPatient).subscribe((data)=>
@@ -56,11 +57,24 @@ patient;
     })
   }
  
+=======
+  emailPhoneNumberFormControl = new FormControl('', [
+    Validators.required,
+  ])
 
+
+  emailPasswordFormControl = new FormControl('', [
+    Validators.required,
+  ])
+>>>>>>> bad345d2441e256beebfafb173c31cc580e75a96
+
+  
   emailFormControl = new FormControl('', [
     Validators.required,
     Validators.email,
   ]);
+
+
 
   matcher = new MyErrorStateMatcher();
 
