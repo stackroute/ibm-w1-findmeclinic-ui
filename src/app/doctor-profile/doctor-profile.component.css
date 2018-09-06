@@ -15,14 +15,7 @@
     z-index: 2;
   }
   
-  .text{
-    text-align: center;
-    color: red;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 200%;
-   
-  
-  }
+
   
   .example-sidenav-container {
     /* When the sidenav is not fixed, stretch the sidenav container to fill the available space. This
