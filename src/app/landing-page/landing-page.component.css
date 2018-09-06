@@ -1,10 +1,45 @@
  @import url(https://fonts.googleapis.com/css?family=Open+Sans);
 @import url(https://fonts.googleapis.com/css?family=Cabin:400);
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
+.example-container {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.button-group{
+    position: absolute;
+    right:30px;
+    margin:0;
+}
 
 .Head{
-	margin-left: 60%;
+	position: absolute;
+	margin: 0%;
+	margin-left: 20%;
 
+}
+mat-button{
+	min-width: 1%;
+}
+
+.example-container {
+	display: flex;
+	flex-direction: column;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+  }
+  .button-group{
+    position: absolute;
+    right:0px;
+    margin:0;
 }
 .page-footer a:hover{
 	color: white;
@@ -13,26 +48,22 @@
 .foot{
 	background: #000;
 }
-.search{
-    background-image:url("/assets/hospital.jpg");
-	background-repeat: no-repeat;
-	height: auto;
-	background-size: cover;
-	position: relative;
-	text-align: center;
-	width: 100%;
-}
-.images img{
-	height: 30%;
+
+.image-illustration{
+	margin-top: 8%;
 }
 .security{
 	position: relative;
+}
+.home-details-wrapper{
+	margin-left: 20%;
+	margin-top: 10%;
 }
 .container-fluid img{
 	width: 10%;
 }
 .page-footer img{
-	width: 20%;
+	width: 30%;
 }
 
 .page-footer p{
@@ -55,16 +86,7 @@ height: 25%;
 .page{
 	background-color:aliceblue;
 }
-.search:before,
-.search:after {
-	content: '';
-	display: block;	
-	height: 1px;
-	left: 50%;
-	margin: 0 0 0 -400px;
-	position: absolute;
-	width: 800px;
-}
+
 .options{
 	text-align: center;
 	overflow: hidden;
@@ -108,11 +130,11 @@ h1{
 	height: 40%;
 }
 .Appointment{
-	background:silver;
+	height: 60%;
 }
 .MedicalRecords{
-	background-color: lightgrey;
 	margin-top: 0px;
+	padding: 0px;
 }
 .MedicalRecords p{
 	font-size: 30px;
@@ -121,8 +143,25 @@ h1{
 
 }
 
+.appointments-section{
+margin-top: 10%;
+}
+.appointments-section-img img{
+	width: 30%;
+	height: 30%;
+}
 
 
+
+search{
+    background-image:url("/assets/hospital.jpg");
+	background-repeat: no-repeat;
+	height: auto;
+	background-size: cover;
+	position: relative;
+	text-align: center;
+	width: auto;
+}
 
 .search form {
 	background: rgba(17, 17, 17, 0.24);
@@ -225,6 +264,7 @@ h1{
 	top: 1px;
 }
 
+
 @keyframes glow {
     0% {
 		border-color: #393;
@@ -234,7 +274,7 @@ h1{
 		border-color: #6f6;
 		box-shadow: 0 0 20px rgba(0,255,0,.6), inset 0 0 10px rgba(0,255,0,.4), 0 2px 0 #000;
     }
-}
+} 
 .mat-toolbar-row p{
 	color: white
 }
@@ -252,9 +292,15 @@ footer{
   .find {
 margin-left: 40%;
   }
+.MedicalRecords-section{
+	margin-top: 10%;
+}
+
+.MedicalRecords{
+	height: 60%;
+}
 
 
-
-
-
-   
+   .Page{
+	   height: 50%;
+   }
