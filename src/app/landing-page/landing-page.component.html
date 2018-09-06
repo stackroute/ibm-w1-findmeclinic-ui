@@ -1,230 +1,215 @@
-<mat-toolbar color="primary">
-    <button mat-button matTooltip="Download the Application">Download the App</button>
-    <div class="Head">
 
-        <button mat-button matTooltip="Book An Appointment">Book Now</button>
-        <button mat-button (click)="openPatient()" matTooltip="Login As Patient">Patient</button>
-        <button mat-button (click)="openDialog()" matTooltip="Login As a Doctor">Doctor</button>
-    </div>
+<div class="example-container" >
+        <mat-toolbar color="primary" class="example-toolbar">
+                <button mat-button type="submit">Download App</button>
 
-</mat-toolbar>
-<div>
-
-
-
-    <div class="search">
-        <form action="" method="">
-            <input type="search" matInput placeholder="Search by Location" matTooltip="Click to detect your Location">
-            <button>Detect</button>
-            <input type="search" placeholder="Searching for Doctors?">
-
-        </form>
-    </div>
-
-
-
-
-
-
-
-
-
-
-
-    <div class="options">
-        <div class="wrapper">
-            
-
-            <a href="#" class="chat">
-                <mat-icon>chat</mat-icon>
-
-
-                <span>Chat With a Doctor</span>
-            </a>
-            <a href="#">
-                <mat-icon>chat</mat-icon>
-                <span>Read Articles</span>
-
-
-            </a>
+       
+              <div class="button-group">
+                <button mat-button type="submit" class="btn btn-success" >Book </button>
+                <button mat-button (click)="openPatient()" matTooltip="Login As Patient">Patient</button>
+                <button mat-button (click)="openDialog()" matTooltip="Login As a Doctor">Doctor</button>
 
         </div>
+        
+              </mat-toolbar>
+              </div>
+              <div class="container-fluid" style="background-color:#1d2869 ">
+
+              <div class="search">
+                    <form action="" method="">
+                        <input type="search" matInput placeholder="Search by Location" matTooltip="Click to detect your Location">
+                        <button>Detect</button>
+                        <input type="search" placeholder="Searching for Doctors?">
+            
+                    </form>
+                </div>
+                </div>
+            
+<div class="container-fluid" style="background-color:#1d2869 ">
+        <div class="options">
+            <div class="wrapper">
+                
+    
+                <a href="#" class="chat">
+                    <mat-icon>chat</mat-icon>
+    
+    
+                    <span>Chat With a Doctor</span>
+                </a>
+                <a href="#">
+                    <mat-icon>chat</mat-icon>
+                    <span>Read Articles</span>
+    
+    
+                </a>
+    
+            </div>
+        </div>
+        </div>
+        <div class="Page" style="background-color: aliceblue;">   
+                <div class="container-fluid" >
+       
+         <div class="row">
+           <div class="col-sm-6">
+                   <div class="home-details-wrapper ">
+                           <div class="home-details-section-details">
+                               <div class="home home-details-section-title">
+                                   <h2 class="u-d-inline">Safety of your data is our</h2>
+                                   <h2 class="u-t-bold">top priority</h2>
+       
+                               </div>
+                               <div class="home-details-section-description">
+                                   <div>
+                                       <mat-icon>check_box</mat-icon>
+                                       <span>Multi-Level Security</span>
+                                   </div>
+                                   <div>
+                                       <mat-icon>check_box</mat-icon>
+                                       <span>Multi-Level Security</span>
+                                   </div>
+                                   <div>
+                                       <mat-icon>check_box</mat-icon>
+                                       <span>Multi-Level Security</span>
+                                   </div>
+                               </div>
+                               <br>
+                               <br>
+       
+                               <div>
+                                   <button mat-raised-button color="primary" matTooltip="Book An Appointment">Read More</button>
+                               </div>
+       
+                           </div>
+       
+                       </div>
+       
+           </div>
+           <div class="col-sm-6" >
+                <div class="images">
+                            <div class="image-illustration">
+                                <!-- <img src="/assets/securit.webp"> -->
+                            </div>    </div>
+      </div>
     </div>
-
-
-    <section class="page">
-        <mat-grid-list cols="2" rowHeight="2:0.75">
-
-
-            <mat-grid-tile>
-                <div class="home-details-wrapper ">
-                    <div class="home-details-section-details">
-                        <div class="home home-details-section-title">
-                            <h2 class="u-d-inline">Safety of your data is our</h2>
-                            <h2 class="u-t-bold">top priority</h2>
-
+    </div>
+    </div>
+    <div class="Appointment" style="background-color: antiquewhite">
+        <div class="container-fluid" >
+      <div class="row">
+        <div class="col-sm-6">
+    <div class="appointments-section">
+                        <div class="home-details-section-title">
+                            <p>Book Your appointments with Doctors</p>
+                            <p>
+                                <strong> instantly!!</strong>
+                            </p>
+    
                         </div>
                         <div class="home-details-section-description">
                             <div>
                                 <mat-icon>check_box</mat-icon>
-                                <span>Multi-Level Security</span>
+                                <span>Verified Doctors</span>
                             </div>
                             <div>
                                 <mat-icon>check_box</mat-icon>
-                                <span>Multi-Level Security</span>
+                                <span>Verified Clinic</span>
                             </div>
                             <div>
                                 <mat-icon>check_box</mat-icon>
-                                <span>Multi-Level Security</span>
+                                <span>Verified Hospitals</span>
                             </div>
+    
                         </div>
                         <br>
                         <br>
-
+    
                         <div>
                             <button mat-raised-button color="primary" matTooltip="Book An Appointment">Read More</button>
                         </div>
-
-                    </div>
-
-                </div>
-
-
-
-            </mat-grid-tile>
-            <div class="images">
-                <mat-grid-tile>
-                    <div class="image-illustration">
-                        <img src="/assets/securit.webp">
-                    </div>
-
-                </mat-grid-tile>
-                <mat-grid-tile>
-                    <img src="/assets/encrypt1.png">
-                    <br>
-
-
-                </mat-grid-tile>
-                <mat-grid-tile>
-                    <img src="/assets/securit.png">
-                    <br>
-
-                </mat-grid-tile>
-            </div>
-        </mat-grid-list>
-    </section>
-    <div class="Appointment">
-        <mat-grid-list cols="2" rowHeight="2:1">
-            <mat-grid-tile>
-                <div>
-                    <div class="home-details-section-title">
-                        <p>Book Your appointments with Doctors</p>
-                        <p>
-                            <strong> instantly!!</strong>
-                        </p>
-
-                    </div>
-                    <div class="home-details-section-description">
-                        <div>
-                            <mat-icon>check_box</mat-icon>
-                            <span>Verified Doctors</span>
-                        </div>
-                        <div>
-                            <mat-icon>check_box</mat-icon>
-                            <span>Verified Clinic</span>
-                        </div>
-                        <div>
-                            <mat-icon>check_box</mat-icon>
-                            <span>Verified Hospitals</span>
-                        </div>
-
-                    </div>
-                    <br>
-                    <br>
-
-                    <div>
-                        <button mat-raised-button color="primary" matTooltip="Book An Appointment">Read More</button>
-                    </div>
-
-                </div>
-            </mat-grid-tile>
-            <mat-grid-tile>
-                <img src="/assets/phone.png">
-            </mat-grid-tile>
-        </mat-grid-list>
-
+    
+                    </div>    </div>
+        <div class="col-sm-6">
+            <div class="appointments-section-img">
+       <!-- <img src="/assets/phone.png">     -->
+      </div>
+      </div>
     </div>
-    <div class="MedicalRecords">
-        <mat-grid-list cols="2" rowHeight="2:1">
-            <mat-grid-tile>
-                <img src="/assets/health.png">
-            </mat-grid-tile>
-            <mat-grid-tile>
-                <div>
-                    <div class="home home-details-section-title">
-                        <p>Check Your Health Records In one App</p>
-                        <p>
-                            <strong> instantly!!</strong>
-                        </p>
-
-                    </div>
-                    <div class="home-details-section-description">
-                        <div>
-                            <mat-icon>check_box</mat-icon>
-                            <span>Secure</span>
-                        </div>
-                        <div>
-                            <mat-icon>check_box</mat-icon>
-                            <span>Health Records will be Accessed only by the Doctors</span>
-                        </div>
-
-                    </div>
-                    <br>
-                    <br>
-
-                    <div>
-                        <button mat-raised-button color="primary" matTooltip="Book An Appointment">Read More</button>
-                    </div>
-
-                </div>
-            </mat-grid-tile>
-
-        </mat-grid-list>
-
-
-
     </div>
-   <!--Footer-->
-<footer class="page-footer" >
+    </div>
+    <div class="MedicalRecords" style="	background-color: lightgrey;">
 
-    <!--Footer Links-->
-    <div class="container-fluid text-center text-md-left">
-        <div class="row">
-
-            <!--First column-->
-            <div class="col-md-6">
-                    <img src="/assets/logo.png" alt="FindMeClinic"> 
-                    <div class="col-md-6">
-                    <ul class="list-unstyled">
-                        <li><a href="#">About FindMeClinic</a></li>
-                        <li><a href="#">Blog</a></li>
-                        <li><a href="#">Contact Us</a></li>
-                        
-                    </ul>
+            <div class="container-fluid">
+            
+              <div class="row">
+                <div class="col-sm-6">
+                        <!-- <img src="/assets/health.png"> -->
+                    </div>
+                <div class="col-sm-6">
+                        <div class="MedicalRecords-section">
+                                <div class="home home-details-section-title">
+                                    <p>Check Your Health Records In one App</p>
+                                    <p>
+                                        <strong> instantly!!</strong>
+                                    </p>
+            
+                                </div>
+                                <div class="home-details-section-description">
+                                    <div>
+                                        <mat-icon>check_box</mat-icon>
+                                        <span>Secure</span>
+                                    </div>
+                                    <div>
+                                        <mat-icon>check_box</mat-icon>
+                                        <span>Health Records will be Accessed only by the Doctors</span>
+                                    </div>
+            
+                                </div>
+                                <br>
+                                <br>
+            
+                                <div>
+                                    <button mat-raised-button color="primary" matTooltip="Book An Appointment">Read More</button>
+                                </div>
+            
+                            </div>
                 </div>
+                </div>
+              </div>
             </div>
             
-        </div>
-    </div>
-    <!--/.Footer Links-->
-
-    <!--Copyright-->
-    <div class="footer-copyright text-center py-3">
-        <div class="container-fluid">
-            <img src="/assets/logo.png" alt="FindMeClinic"> <br>
-       <p>     © 2017 Copyright:  FindMeClinic </p>
-        </div>
-    </div>
-    <!--/.Copyright-->
-</footer>
-<!--/.Footer-->
+               
+            
+               <!--Footer-->
+            <footer class="page-footer" >
+            
+                <!--Footer Links-->
+                <div class="container-fluid text-center text-md-left">
+                    <div class="row">
+            
+                        <!--First column-->
+                        <div class="col-md-6">
+                                <img src="/assets/logo.png" alt="FindMeClinic"> 
+                                <div class="col-md-6">
+                                <ul class="list-unstyled">
+                                    <li><a href="#">About FindMeClinic</a></li>
+                                    <li><a href="#">Blog</a></li>
+                                    <li><a href="#">Contact Us</a></li>
+                                    
+                                </ul>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                <!--/.Footer Links-->
+            
+                <!--Copyright-->
+                <div class="footer-copyright text-center py-3">
+                    <div class="container-fluid">
+                        <img src="/assets/logo.png" alt="FindMeClinic"> <br>
+                   <p>     © 2017 Copyright:  FindMeClinic </p>
+                    </div>
+                </div>
+                <!--/.Copyright-->
+            </footer>
+            <!--/.Footer-->
