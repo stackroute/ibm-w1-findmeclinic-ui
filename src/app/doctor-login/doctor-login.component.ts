@@ -20,22 +20,22 @@ id;
   ngOnInit() {
   }
 
-// method(){
-//   if(this.responseOptions.statusText==="OK"){
-//     alert("Registration Successful");
-//       }
-// }
+
 
   addDoctor(doctorData) {
     
-    //this.movie=movieData;
+  
     return this.doctorService.registerDoctor(doctorData).subscribe(data =>{ console.log("Doctor Added successfully")
   this.doctor=data;
   });
   }
-  close() {
+  navigate() {
     this.dialogRef.close();
     this.router.navigate(["doctor-profile"]);
+  }
+
+  close(){
+    this.dialogRef.close();
   }
   open():void{
     this.dialog.open(DoctorLoginComponent,{
