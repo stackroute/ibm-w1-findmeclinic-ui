@@ -153,15 +153,15 @@ margin-top: 10%;
 
 
 
-search{
-    background-image:url("/assets/hospital.jpg");
-	background-repeat: no-repeat;
+/* search{ */
+	
+	/* background-repeat: no-repeat;
 	height: auto;
 	background-size: cover;
 	position: relative;
-	text-align: center;
-	width: auto;
-}
+	text-align: center; */
+	/* width: auto; */
+/* } */
 
 .search form {
 	background: rgba(17, 17, 17, 0.24);
@@ -171,7 +171,8 @@ search{
 	box-shadow: inset 0 0 0 1px #272727;
 	display: inline-block;
 	font-size: 0px;
-	margin: 150px auto 0;
+	margin-top: 150px;
+	margin-left: 35%;
 	padding: 20px;
 	position: relative;
 	z-index: 1;
@@ -190,9 +191,9 @@ search{
 	font-weight: 400;
 	height: 40px;
 	margin: 0;
-	padding: 0 10px;
+	/* padding: 0 10px; */
 	text-shadow: 0 -1px 0 rgb(231, 223, 223);
-	width: 300px;
+	width: 180px;
 }
 
 .ie .search input {
