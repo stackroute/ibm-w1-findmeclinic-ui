@@ -45,19 +45,6 @@ patient;
   closeRegister(){
     this.dialogRef.close();
   }
-<<<<<<< HEAD
-
-  openLogin(newPatient){
-    this.patientService.login(newPatient).subscribe((data)=>
-    {
-
-      console.log(data)
-     // this.token.saveToken(data.token);
-
-    })
-  }
- 
-=======
   emailPhoneNumberFormControl = new FormControl('', [
     Validators.required,
   ])
@@ -66,7 +53,6 @@ patient;
   emailPasswordFormControl = new FormControl('', [
     Validators.required,
   ])
->>>>>>> bad345d2441e256beebfafb173c31cc580e75a96
 
   
   emailFormControl = new FormControl('', [
