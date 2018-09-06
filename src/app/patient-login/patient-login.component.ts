@@ -45,6 +45,16 @@ patient;
   closeRegister(){
     this.dialogRef.close();
   }
+
+  openLogin(newPatient){
+    this.patientService.login(newPatient).subscribe((data)=>
+    {
+
+      console.log(data)
+     // this.token.saveToken(data.token);
+
+    })
+  }
  
 
   emailFormControl = new FormControl('', [

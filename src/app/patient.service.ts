@@ -16,4 +16,9 @@ export class PatientService {
   registerPatient(patient):Observable<Patient>{
     return this.http.post<Patient>(this.baseurl,patient);
   }
+
+  login(patient:Patient):Observable<any> {
+    return this.http.post(this.baseurl+"/login",patient);
+        
+}
 }
