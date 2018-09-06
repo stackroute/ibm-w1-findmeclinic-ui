@@ -1,6 +1,8 @@
 <div>
     <mat-tab-group class="modelform">
         <mat-tab label="Login">
+            <br>
+            <br>
             <mat-form-field class="fullwidth">
                 <input matInput placeholder="Enter EmailId or PhoneNumber" [formControl]="logFormControl">
                 <mat-error *ngIf="logFormControl.hasError('required')">
@@ -18,9 +20,14 @@
             </mat-form-field>
             <br>
             <br>
+<<<<<<< HEAD
             <h5>Not an existing doctor? Then register!</h5>
             <br>
             <button mat-raised-button color="accent" (click)="close()" (click)="navigate()">Login</button>
+=======
+            <h6>If you dont have account. Then Register!</h6>
+            <button mat-raised-button color="accent"   (click)="navigate()">Login</button>
+>>>>>>> ce1de6ee2d610ab4d7f0f78dd9b0cb8d27fea422
         </mat-tab>
         <mat-tab label="Register">
 
@@ -52,7 +59,12 @@
             </mat-form-field>
             <br>
             <br>
+<<<<<<< HEAD
             <button mat-raised-button (click)="addDoctor(doctor)" (click)="close()" (click)="open()" color="accent">Register</button>
+=======
+            
+            <button mat-raised-button  (click)="addDoctor(doctor)" (click)="close()" (click)="open()"  color="accent">Register</button>
+>>>>>>> ce1de6ee2d610ab4d7f0f78dd9b0cb8d27fea422
         </mat-tab>
     </mat-tab-group>
 </div>
