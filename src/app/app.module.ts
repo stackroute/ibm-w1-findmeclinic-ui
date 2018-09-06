@@ -60,7 +60,7 @@ import { CalendarComponent } from './calendar/calendar.component';
 
     RouterModule,
     MatGridListModule,
-
+//For calendar
     NgbModalModule,
    FlatpickrModule.forRoot(),
    CalendarModule.forRoot({
