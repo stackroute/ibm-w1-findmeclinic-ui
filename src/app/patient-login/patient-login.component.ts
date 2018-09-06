@@ -45,12 +45,22 @@ patient;
   closeRegister(){
     this.dialogRef.close();
   }
- 
+  emailPhoneNumberFormControl = new FormControl('', [
+    Validators.required,
+  ])
 
+
+  emailPasswordFormControl = new FormControl('', [
+    Validators.required,
+  ])
+
+  
   emailFormControl = new FormControl('', [
     Validators.required,
     Validators.email,
   ]);
+
+
 
   matcher = new MyErrorStateMatcher();
 
