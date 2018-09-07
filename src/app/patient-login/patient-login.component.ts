@@ -6,6 +6,9 @@ import { Router } from '@angular/router';
 import { PatientService } from '../patient.service';
 import { Patient } from '../patient';
 import {MatDialog} from '@angular/material';
+import {TokenStorage} from '../tokenStorage';
+import { AlertsService } from 'angular-alert-module';
+
 
 export class MyErrorStateMatcher implements ErrorStateMatcher {
   isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
@@ -20,18 +23,17 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
 })
 export class PatientLoginComponent implements OnInit {
 patient;
-  constructor(private dialogRef: MatDialogRef<PatientLoginComponent>, private router:Router, private patientService :PatientService, public dialog : MatDialog) { 
+registeredPatient;
+  constructor(private dialogRef: MatDialogRef<PatientLoginComponent>, 
+    private alerts : AlertsService,private router:Router, private patientService :PatientService, public dialog : MatDialog,private token:TokenStorage) { 
     this.patient=new Patient();
+    this.registeredPatient = new Patient();
   }
 
   ngOnInit() {
   }
 
-  close() {
-    this.dialogRef.close();
-    this.router.navigate(['patient-profile']);
-  }
-
+ 
   
   open(){
     this.dialog.open(PatientLoginComponent);
@@ -44,6 +46,27 @@ patient;
   }
   closeRegister(){
     this.dialogRef.close();
+  }
+
+  openLogin(patient)
+  {
+
+    return this.patientService.login(patient).subscribe(data=> 
+      {
+        this.dialogRef.close();
+        this.token.saveToken(data);
+        this.router.navigate(['patient-profile']);
+      }
+      
+      ,error=>{
+
+      this.alerts.setMessage("please check your credentials",'error');
+       this.alerts.setDefaults('timeout',0);
+        } 
+    
+    )
+
+
   }
   emailPhoneNumberFormControl = new FormControl('', [
     Validators.required,

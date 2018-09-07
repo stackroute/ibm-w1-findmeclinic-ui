@@ -15,4 +15,8 @@ export class DoctorService {
   registerDoctor(doctor): Observable<Doctor> {
     return this.http.post<Doctor>(this.addUrl,doctor);
   }
+
+  login(doctor:Doctor):Observable<any> {
+    return this.http.post(this.addUrl+"/login",doctor,{responseType: 'text'});
+}
 }
