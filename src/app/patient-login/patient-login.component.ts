@@ -23,9 +23,11 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
 })
 export class PatientLoginComponent implements OnInit {
 patient;
+registeredPatient;
   constructor(private dialogRef: MatDialogRef<PatientLoginComponent>, 
     private alerts : AlertsService,private router:Router, private patientService :PatientService, public dialog : MatDialog,private token:TokenStorage) { 
     this.patient=new Patient();
+    this.registeredPatient = new Patient();
   }
 
   ngOnInit() {

@@ -1,11 +1,10 @@
 <div>
-    <mat-tab-group class="form">
-    
+    <mat-tab-group class="form">    
           <mat-tab label="Login">
               <br>
               <br>
                   <mat-form-field class="formheight">
-                      <input matInput [(ngModel)]="patient.patientEmail" placeholder="Enter EmailId or PhoneNumber" [formControl]="emailPhoneNumberFormControl">
+                      <input matInput [(ngModel)]="registeredPatient.patientEmail" placeholder="Enter EmailId or PhoneNumber" [formControl]="emailPhoneNumberFormControl">
                       <mat-error *ngIf="emailPhoneNumberFormControl.hasError('required')">
                         PhoneNumber or Email is <strong>required</strong>
                           </mat-error>
@@ -14,7 +13,7 @@
                   <br>
                   <br>
                   <mat-form-field  class="formheight">
-                      <input matInput [(ngModel)]="patient.patientPassword" placeholder="Enter Password" type="password" [formControl]="emailPasswordFormControl">
+                      <input matInput [(ngModel)]="registeredPatient.patientPassword" placeholder="Enter Password" type="password" [formControl]="emailPasswordFormControl">
                       <mat-error *ngIf="emailPasswordFormControl.hasError('required')">
                         Password is <strong>required</strong>
                           </mat-error>
@@ -23,55 +22,61 @@
               <br>
               <br>
               <p>If you dont have an account, then Register</p>
-                          <button mat-raised-button color="primary" (click)="openLogin(patient)" > Login
+                          <button mat-raised-button color="primary" (click)="openLogin(registeredPatient)" > Login
     
                        </button>
                        <app-alerts ></app-alerts>
 
               </mat-tab>
-    
-    
-    
-          <mat-tab label="Register">
-    
-              <br>
-            
-          <mat-form-field  class="formheight">
-              <input matInput [(ngModel)]="patient.patientEmail" placeholder="Enter EmailId" [formControl]="emailFormControl"
-              [errorStateMatcher]="matcher">
-       <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
-         Please enter a valid email address
-       </mat-error>
-       <mat-error *ngIf="emailFormControl.hasError('required')">
-         Email is <strong>required</strong>
-       </mat-error>
-    
-          </mat-form-field >
-          <br>
-          <br>
-          <mat-form-field  class="formheight">
-              <input matInput [(ngModel)]="patient.patientPhoneNumber" placeholder="Enter the  PhoneNumber" [formControl]="emailPhoneNumberFormControl">
-              <mat-error *ngIf="emailPhoneNumberFormControl.hasError('required')">
-            PhoneNumber is <strong>required</strong>
-              </mat-error>
-            </mat-form-field>
-            <br>
-            <br>
-          <mat-form-field  class="formheight">
-              <input matInput [(ngModel)]="patient.patientPassword" placeholder="Enter Password" type="password" [formControl]="emailPasswordFormControl">
-              <mat-error *ngIf="emailPasswordFormControl.hasError('required')">
-                Password is <strong>required</strong>
-              </mat-error>
-            </mat-form-field>
-          <br>
-          <br>
-    
-    
-          <button mat-raised-button (click)="addPatient(patient)" (click)="open()" (click)="closeRegister()" color="primary">Register</button>
 
+
+
+
+
+        <mat-tab label="Register">
     
-      </mat-tab>
+            <br>
+          
+        <mat-form-field  class="formheight">
+            <input matInput [(ngModel)]="patient.patientEmail" placeholder="Enter EmailId" [formControl]="emailFormControl"
+            [errorStateMatcher]="matcher">
+     <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+       Please enter a valid email address
+     </mat-error>
+     <mat-error *ngIf="emailFormControl.hasError('required')">
+       Email is <strong>required</strong>
+     </mat-error>
+  
+        </mat-form-field >
+        <br>
+        <br>
+        <mat-form-field  class="formheight">
+            <input matInput [(ngModel)]="patient.patientPhoneNumber" placeholder="Enter the  PhoneNumber" [formControl]="emailPhoneNumberFormControl">
+            <mat-error *ngIf="emailPhoneNumberFormControl.hasError('required')">
+          PhoneNumber is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+          <br>
+          <br>
+        <mat-form-field  class="formheight">
+            <input matInput [(ngModel)]="patient.patientPassword" placeholder="Enter Password" type="password" [formControl]="emailPasswordFormControl">
+            <mat-error *ngIf="emailPasswordFormControl.hasError('required')">
+              Password is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+        <br>
+        <br>
+  
+  
+        <button mat-raised-button (click)="addPatient(patient)" (click)="open()" (click)="closeRegister()" color="primary">Register</button>
+
+  
+    </mat-tab>
+  
     
+    
+    
+         
     
     </mat-tab-group>
     <!-- <router-outlet></router-outlet> -->
