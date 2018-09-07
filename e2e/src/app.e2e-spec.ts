@@ -1,4 +1,6 @@
 import { AppPage } from './app.po';
+import { browser, by, element } from 'protractor';
+
 
 describe('workspace-project App', () => {
   let page: AppPage;
@@ -7,8 +9,13 @@ describe('workspace-project App', () => {
     page = new AppPage();
   });
 
-  it('should display welcome message', () => {
+  it('should display download App', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('Welcome to find-me-clinic-UI!');
+    expect(page.getParagraphText()).toEqual('Download App');
   });
+  it('should show Patient',()=>{
+    page.navigateTo();
+    expect(page.getPatientButton()).toBe('Login');
+  })
+  
 });

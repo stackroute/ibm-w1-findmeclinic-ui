@@ -27,15 +27,8 @@ mat-button{
 	min-width: 1%;
 }
 
-.example-container {
-	display: flex;
-	flex-direction: column;
-	position: absolute;
-	top: 0;
-	bottom: 0;
-	left: 0;
-	right: 0;
-  }
+
+
   .button-group{
     position: absolute;
     right:0px;
@@ -49,19 +42,15 @@ mat-button{
 	background: #000;
 }
 
-.image-illustration{
-	margin-top: 8%;
-}
+
 .security{
 	position: relative;
 }
 .home-details-wrapper{
-	margin-left: 20%;
 	margin-top: 10%;
+	margin-left: 20%;
 }
-.container-fluid img{
-	width: 10%;
-}
+
 .page-footer img{
 	width: 30%;
 }
@@ -78,18 +67,12 @@ mat-button{
 .glass{
 	background: aliceblue;
 }
-.security img{
-width: 10%;
-height: 25%;
-}
 
-.page{
-	background-color:aliceblue;
-}
+
 
 .options{
 	text-align: center;
-	overflow: hidden;
+	/* overflow: hidden; */
 	background-color: #1d2869;
 	padding: 17px 0;
 	
@@ -100,8 +83,7 @@ height: 25%;
 .options a{
 	
     font-size: 100%;
-    font: inherit;
-	vertical-align: baseline;
+    
 	padding-right: 10%;
 
 	
@@ -111,6 +93,10 @@ height: 25%;
 }
 .options a:hover{
 	color: white;
+}
+.MedicalRecords img{
+width: -10%;
+height: -10%;
 }
 
 h1{
@@ -127,10 +113,13 @@ h1{
 }
 
 .Appointment img{
-	height: 40%;
+	margin-left: 10%;
+	margin-top: 15%;
+	width: 60%;
+	height: 30%;;
 }
 .Appointment{
-	height: 60%;
+	height: 84%;
 }
 .MedicalRecords{
 	margin-top: 0px;
@@ -298,10 +287,18 @@ margin-left: 40%;
 }
 
 .MedicalRecords{
-	height: 60%;
+	height: 100%;
+}
+.MedicalRecords img{
+	margin-top: 10%;
 }
 
 
    .Page{
-	   height: 50%;
+	   width: 100%;
+	   height: 80%;
+   }
+   .images img{
+	   width: 50%;
+	   height: auto;
    }

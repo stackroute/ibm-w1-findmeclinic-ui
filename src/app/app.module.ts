@@ -8,6 +8,8 @@ import {MatCardModule} from '@angular/material/card';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatIconModule,MatListModule} from '@angular/material';
 import {MatMenuModule} from '@angular/material/menu';
+import {MatToolbarModule} from '@angular/material/toolbar';
+
 
 //Calendar Modules for Calendar Component
 import { FlatpickrModule } from 'angularx-flatpickr';
@@ -45,6 +47,7 @@ import { CalendarComponent } from './calendar/calendar.component';
     MatListModule,
     BrowserModule,
     MatIconModule,
+    MatToolbarModule,
 
     MatGridListModule,
     MatMenuModule,
