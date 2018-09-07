@@ -59,9 +59,9 @@ registeredPatient;
       }
       
       ,error=>{
-
-      this.alerts.setMessage("please check your credentials",'error');
+       this.alerts.setMessage("please check your credentials",'error');
        this.alerts.setDefaults('timeout',0);
+       
         } 
     
     )
