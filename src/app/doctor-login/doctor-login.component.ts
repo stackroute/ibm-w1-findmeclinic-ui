@@ -43,7 +43,7 @@ export class DoctorLoginComponent implements OnInit {
 
         {
           this.snackBar.openFromComponent(FailRegisterComponent, {
-            duration: 500,
+            duration: 1000,
         });
        // this.alert.setMessage("email or phoneNumber is already taken",'error');
         //this.alert.setDefaults("timeout",0);
@@ -60,7 +60,7 @@ export class DoctorLoginComponent implements OnInit {
     error=>
   {
     this.snackBar.openFromComponent(InvalidDoctorComponent, {
-      duration: 500,
+      duration: 1000,
   });
 })}
 

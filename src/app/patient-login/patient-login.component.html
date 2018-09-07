@@ -4,9 +4,9 @@
               <br>
               <br>
                   <mat-form-field class="formheight">
-                      <input matInput [(ngModel)]="registeredPatient.patientEmail" placeholder="Enter EmailId or PhoneNumber" [formControl]="emailPhoneNumberFormControl">
+                      <input matInput [(ngModel)]="registeredPatient.patientEmail" placeholder="Enter EmailId " [formControl]="emailPhoneNumberFormControl">
                       <mat-error *ngIf="emailPhoneNumberFormControl.hasError('required')">
-                        PhoneNumber or Email is <strong>required</strong>
+                        Email is <strong>required</strong>
                           </mat-error>
                     </mat-form-field>
 
@@ -71,13 +71,7 @@
         <button mat-raised-button (click)="addPatient(patient)" (click)="closeRegister()" color="primary">Register</button>
 
   
-    </mat-tab>
-  
-    
-    
-    
-         
-    
+    </mat-tab> 
     </mat-tab-group>
     <!-- <router-outlet></router-outlet> -->
     </div>
