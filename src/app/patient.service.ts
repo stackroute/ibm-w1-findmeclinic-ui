@@ -18,7 +18,7 @@ export class PatientService {
   }
 
   login(patient:Patient):Observable<any> {
-    return this.http.post(this.baseurl+"/login",patient);
+    return this.http.post(this.baseurl+"/login",patient,{responseType:'text'});
         
 }
 }
