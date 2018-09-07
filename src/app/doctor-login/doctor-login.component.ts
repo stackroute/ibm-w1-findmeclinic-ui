@@ -6,6 +6,8 @@ import { MatDialogRef } from '@angular/material';
 import { MatDialog } from '@angular/material';
 import { Router } from '@angular/router';
 import { DoctorTokenStorage} from '../doctorTokenStorage';
+import { AlertsService } from 'angular-alert-module';  
+
 @Component({
   selector: 'app-doctor-login',
   templateUrl: './doctor-login.component.html',
@@ -14,10 +16,14 @@ import { DoctorTokenStorage} from '../doctorTokenStorage';
 export class DoctorLoginComponent implements OnInit {
 
   doctor;
+  doctor1;
   id;
   isRegistered = false;
 
-  constructor(private doctorService: DoctorService,private token:DoctorTokenStorage, private dialogRef: MatDialogRef<DoctorLoginComponent>, public dialog: MatDialog, private router: Router) { this.doctor = new Doctor(); }
+  constructor(private doctorService: DoctorService,private token:DoctorTokenStorage, private dialogRef: MatDialogRef<DoctorLoginComponent>, public dialog: MatDialog, private router: Router,private alert:AlertsService)
+   { this.doctor = new Doctor();
+    this.doctor1 = new Doctor();
+   }
 
   ngOnInit() {
   }
@@ -27,12 +33,17 @@ export class DoctorLoginComponent implements OnInit {
   addDoctor(doctorData) {
     
   
-    return this.doctorService.registerDoctor(doctorData).subscribe(data =>{ console.log("Doctor Added successfully")
-  this.doctor=data;
-  });
+    return this.doctorService.registerDoctor(doctorData).subscribe(data =>{
+              this.dialog.open(DoctorLoginComponent)
+       this.dialogRef.close();
+       console.log("Doctor is added ")},error=>{
+        this.alert.setMessage("email or phoneNumber is already taken",'error');
+        this.alert.setDefaults("timeout",0);
+      });
+    
   }
   move(doctorData){
-    this.dialogRef.close();
+    //this.dialogRef.close();
     return this.doctorService.login(doctorData).subscribe(data=>
       {
         this.token.saveToken(data);

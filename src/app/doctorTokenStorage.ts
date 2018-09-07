@@ -19,7 +19,7 @@ export class DoctorTokenStorage {
    localStorage.setItem(TOKEN_KEY,  token);
  }
 
- public getToken(): string {
-   return localStorage.getItem(TOKEN_KEY);
- }
+//  public getToken(): string {
+//    return localStorage.getItem(TOKEN_KEY);
+//  }
 }
