@@ -25,13 +25,16 @@ import { PatientLoginComponent } from './patient-login/patient-login.component';
 import { DoctorLoginComponent } from './doctor-login/doctor-login.component';
 import { HttpClientModule } from '@angular/common/http';
 import { DoctorProfileComponent } from './doctor-profile/doctor-profile.component';
-
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { FailPatientComponent } from './patient-login/fail-patient.component';
 
 import { RouterModule } from '@angular/router';
 import { PatientProfileComponent } from './patient-profile/patient-profile.component';
 import { AppRoutingModule } from './/app-routing.module';
 import { CalendarComponent } from './calendar/calendar.component';
-
+import { InvalidPatientComponent } from './patient-login/invalid-patient.component';
+import { InvalidDoctorComponent } from './doctor-login/invalid-doctor.component';
+import { FailRegisterComponent} from './doctor-login/fail-register.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,7 +43,11 @@ import { CalendarComponent } from './calendar/calendar.component';
     DoctorLoginComponent,
     PatientProfileComponent,
     DoctorProfileComponent,
-    CalendarComponent
+    CalendarComponent,InvalidPatientComponent,
+    InvalidDoctorComponent,
+    FailRegisterComponent,
+
+    FailPatientComponent
   ],
   imports: [
     MatCardModule,
@@ -50,6 +57,7 @@ import { CalendarComponent } from './calendar/calendar.component';
     BrowserModule,
     MatIconModule,
     MatToolbarModule,
+    MatSnackBarModule,
 
     MatGridListModule,
     MatMenuModule,
@@ -74,7 +82,7 @@ import { CalendarComponent } from './calendar/calendar.component';
      useFactory: adapterFactory
    })
   ],
-  entryComponents:[PatientLoginComponent,
+  entryComponents:[PatientLoginComponent,InvalidPatientComponent,FailPatientComponent,InvalidDoctorComponent,FailRegisterComponent,
   DoctorLoginComponent,DoctorProfileComponent],
   providers: [],
   bootstrap: [AppComponent]

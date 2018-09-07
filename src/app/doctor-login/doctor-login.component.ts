@@ -7,6 +7,9 @@ import { MatDialog } from '@angular/material';
 import { Router } from '@angular/router';
 import { DoctorTokenStorage} from '../doctorTokenStorage';
 import { AlertsService } from 'angular-alert-module';  
+import {MatSnackBar} from '@angular/material';
+import { InvalidDoctorComponent } from './invalid-doctor.component';
+import { FailRegisterComponent } from './fail-register.component';
 
 @Component({
   selector: 'app-doctor-login',
@@ -20,7 +23,7 @@ export class DoctorLoginComponent implements OnInit {
   id;
   isRegistered = false;
 
-  constructor(private doctorService: DoctorService,private token:DoctorTokenStorage, private dialogRef: MatDialogRef<DoctorLoginComponent>, public dialog: MatDialog, private router: Router,private alert:AlertsService)
+  constructor(private doctorService: DoctorService,private snackBar:MatSnackBar,private token:DoctorTokenStorage, private dialogRef: MatDialogRef<DoctorLoginComponent>, public dialog: MatDialog, private router: Router,private alert:AlertsService)
    { this.doctor = new Doctor();
     this.doctor1 = new Doctor();
    }
@@ -37,9 +40,14 @@ export class DoctorLoginComponent implements OnInit {
               this.dialog.open(DoctorLoginComponent)
        this.dialogRef.close();
        console.log("Doctor is added ")},error=>{
-        this.alert.setMessage("email or phoneNumber is already taken",'error');
-        this.alert.setDefaults("timeout",0);
-      });
+
+        {
+          this.snackBar.openFromComponent(FailRegisterComponent, {
+            duration: 500,
+        });
+       // this.alert.setMessage("email or phoneNumber is already taken",'error');
+        //this.alert.setDefaults("timeout",0);
+      }})
     
   }
   move(doctorData){
@@ -48,8 +56,15 @@ export class DoctorLoginComponent implements OnInit {
       {
         this.token.saveToken(data);
         this.router.navigate(['doctor-profile']);
-      })
-  }
+      },
+    error=>
+  {
+    this.snackBar.openFromComponent(InvalidDoctorComponent, {
+      duration: 500,
+  });
+})}
+
+  
 
 
   close(){

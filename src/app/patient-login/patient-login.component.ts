@@ -8,8 +8,9 @@ import { Patient } from '../patient';
 import {MatDialog} from '@angular/material';
 import {TokenStorage} from '../tokenStorage';
 import { AlertsService } from 'angular-alert-module';
-
-
+import {MatSnackBar} from '@angular/material';
+import { InvalidPatientComponent } from './invalid-patient.component';
+import { FailPatientComponent } from './fail-patient.component';
 export class MyErrorStateMatcher implements ErrorStateMatcher {
   isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
     const isSubmitted = form && form.submitted;
@@ -24,7 +25,7 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
 export class PatientLoginComponent implements OnInit {
 patient;
 registeredPatient;
-  constructor(private dialogRef: MatDialogRef<PatientLoginComponent>, 
+  constructor(private dialogRef: MatDialogRef<PatientLoginComponent>, private snackBar:MatSnackBar,
     private alerts : AlertsService,private router:Router, private patientService :PatientService, public dialog : MatDialog,private token:TokenStorage) { 
     this.patient=new Patient();
     this.registeredPatient = new Patient();
@@ -42,7 +43,15 @@ registeredPatient;
  
 
   addPatient(Patientdata){
-    return this.patientService.registerPatient(Patientdata).subscribe(data => console.log("the patient added"));
+    return this.patientService.registerPatient(Patientdata).subscribe(data => console.log("the patient added"),
+    error=>{
+
+      {
+        this.snackBar.openFromComponent(FailPatientComponent, {
+          duration: 500,
+      });
+    }
+  })
   }
   closeRegister(){
     this.dialogRef.close();
@@ -59,8 +68,11 @@ registeredPatient;
       }
       
       ,error=>{
-       this.alerts.setMessage("please check your credentials",'error');
-       this.alerts.setDefaults('timeout',0);
+        this.snackBar.openFromComponent(InvalidPatientComponent, {
+          duration: 500,
+        });
+       //this.alerts.setMessage("please check your credentials",'error');
+      // this.alerts.setDefaults('timeout',0);
        
         } 
     
