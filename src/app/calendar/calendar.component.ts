@@ -48,11 +48,6 @@ export class CalendarComponent implements OnInit {
 
   viewDate: Date = new Date();
 
-  modalData: {
-    action: string;
-    event: CalendarEvent;
-  };
-
   actions: CalendarEventAction[] = [];
 
   refresh: Subject<any> = new Subject();
