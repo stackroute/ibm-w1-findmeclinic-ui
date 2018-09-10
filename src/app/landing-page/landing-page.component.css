@@ -182,7 +182,7 @@ margin-top: 10%;
 	margin: 0;
 	/* padding: 0 10px; */
 	text-shadow: 0 -1px 0 rgb(231, 223, 223);
-	width: 180px;
+	width: auto
 }
 
 .ie .search input {
