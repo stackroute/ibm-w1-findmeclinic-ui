@@ -48,11 +48,6 @@ export class CalendarComponent implements OnInit {
 
   viewDate: Date = new Date();
 
-  modalData: {
-    action: string;
-    event: CalendarEvent;
-  };
-
   actions: CalendarEventAction[] = [];
 
   refresh: Subject<any> = new Subject();
@@ -61,21 +56,7 @@ export class CalendarComponent implements OnInit {
 
   activeDayIsOpen: boolean = true;
 
-  constructor(private modal: NgbModal) {}
-
-  dayClicked({ date, events }: { date: Date; events: CalendarEvent[] }): void {
-    if (isSameMonth(date, this.viewDate)) {
-      this.viewDate = date;
-      if (
-        (isSameDay(this.viewDate, date) && this.activeDayIsOpen === true) ||
-        events.length === 0
-      ) {
-        this.activeDayIsOpen = false;
-      } else {
-        this.activeDayIsOpen = true;
-      }
-    }
-  }
+  constructor(private modal: NgbModal) { }
 
   addEvent(): void {
     this.events.push({
@@ -83,17 +64,12 @@ export class CalendarComponent implements OnInit {
       start: startOfDay(new Date()),
       end: endOfDay(new Date()),
       color: colors.red,
-      draggable: true,
-      resizable: {
-        beforeStart: true,
-        afterEnd: true
-      }
     });
     this.refresh.next();
     console.log(this.addEvent);
   }
-  
-  
+
+
 
   ngOnInit() {
   }

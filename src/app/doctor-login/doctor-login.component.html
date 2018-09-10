@@ -7,16 +7,17 @@
             <br>
             <br>
             <mat-form-field class="fullwidth">
-                <input matInput placeholder="Enter EmailId or PhoneNumber" [formControl]="logFormControl">
+                <input matInput [(ngModel)]="doctor1.doctorEmail" placeholder="Enter Email" [formControl]="logFormControl">
                 <mat-error *ngIf="logFormControl.hasError('required')">
-                    Email or PhoneNumber
+                    Email
                     <strong>required</strong>
                 </mat-error>
             </mat-form-field>
             <br>
             <br>
             <mat-form-field class="fullwidth">
-                <input matInput placeholder="Enter Password" type="password" [formControl]="logpassFormControl">
+                <input matInput [(ngModel)]="doctor1.doctorPassword" placeholder="Enter Password" type="password"
+                    [formControl]="logpassFormControl">
                 <mat-error *ngIf="logpassFormControl.hasError('required')">
                     Please enter a value!
                 </mat-error>
@@ -24,12 +25,13 @@
             <br>
             <br>
             <h6>If you dont have account. Then Register!</h6>
-            <button mat-raised-button color="accent"   (click)="navigate()" (click)="close()">Login</button>
+            <button mat-raised-button color="primary" (click)="close()" (click)="move(doctor1)">Login</button>
         </mat-tab>
         <mat-tab label="Register">
 
             <mat-form-field class="fullwidth">
-                <input matInput [(ngModel)]="doctor.doctorEmail" name="doctorEmail" placeholder="Enter Email" [formControl]="emailFormControl">
+                <input matInput [(ngModel)]="doctor.doctorEmail" name="doctorEmail" placeholder="Enter Email"
+                    [formControl]="emailFormControl">
                 <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
                     Please enter a valid email address
                 </mat-error>
@@ -41,7 +43,8 @@
             <br>
             <br>
             <mat-form-field class="fullwidth">
-                <input matInput [(ngModel)]="doctor.doctorPhoneNumber" name="doctorPhoneNumber" placeholder="Enter PhoneNumber" [formControl]="phoneFormComtrol">
+                <input matInput [(ngModel)]="doctor.doctorPhoneNumber" name="doctorPhoneNumber" placeholder="Enter PhoneNumber"
+                    [formControl]="phoneFormComtrol">
                 <mat-error *ngIf="phoneFormComtrol.hasError('required')">
                     Please enter a value!
                 </mat-error>
@@ -49,16 +52,17 @@
             <br>
             <br>
             <mat-form-field class="fullwidth">
-                <input matInput [(ngModel)]="doctor.doctorPassword" type="password" name="doctorPassword" placeholder="Enter password" [formControl]="passFormControl">
+                <input matInput [(ngModel)]="doctor.doctorPassword" type="password" name="doctorPassword" placeholder="Enter password"
+                    [formControl]="passFormControl">
                 <mat-error *ngIf="passFormControl.hasError('required')">
                     Please enter a value!
                 </mat-error>
             </mat-form-field>
             <br>
             <br>
-            
-            <button mat-raised-button  (click)="addDoctor(doctor)" (click)="close()" (click)="open()"  color="accent">Register</button>
+
+            <button mat-raised-button (click)="addDoctor(doctor)" color="primary">Register</button>
+            <app-alerts></app-alerts>
         </mat-tab>
     </mat-tab-group>
 </div>
-

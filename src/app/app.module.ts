@@ -8,12 +8,16 @@ import {MatCardModule} from '@angular/material/card';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatIconModule,MatListModule} from '@angular/material';
 import {MatMenuModule} from '@angular/material/menu';
+import {MatToolbarModule} from '@angular/material/toolbar';
+
 
 //Calendar Modules for Calendar Component
 import { FlatpickrModule } from 'angularx-flatpickr';
 import { CalendarModule, DateAdapter } from 'angular-calendar';
 import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
+import { AlertsModule } from 'angular-alert-module';
+
 
 
 import { MaterialModule } from  './material';
@@ -21,13 +25,16 @@ import { PatientLoginComponent } from './patient-login/patient-login.component';
 import { DoctorLoginComponent } from './doctor-login/doctor-login.component';
 import { HttpClientModule } from '@angular/common/http';
 import { DoctorProfileComponent } from './doctor-profile/doctor-profile.component';
-
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { FailPatientComponent } from './patient-login/fail-patient.component';
 
 import { RouterModule } from '@angular/router';
 import { PatientProfileComponent } from './patient-profile/patient-profile.component';
 import { AppRoutingModule } from './/app-routing.module';
 import { CalendarComponent } from './calendar/calendar.component';
-
+import { InvalidPatientComponent } from './patient-login/invalid-patient.component';
+import { InvalidDoctorComponent } from './doctor-login/invalid-doctor.component';
+import { FailRegisterComponent} from './doctor-login/fail-register.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,7 +43,11 @@ import { CalendarComponent } from './calendar/calendar.component';
     DoctorLoginComponent,
     PatientProfileComponent,
     DoctorProfileComponent,
-    CalendarComponent
+    CalendarComponent,InvalidPatientComponent,
+    InvalidDoctorComponent,
+    FailRegisterComponent,
+
+    FailPatientComponent
   ],
   imports: [
     MatCardModule,
@@ -45,6 +56,8 @@ import { CalendarComponent } from './calendar/calendar.component';
     MatListModule,
     BrowserModule,
     MatIconModule,
+    MatToolbarModule,
+    MatSnackBarModule,
 
     MatGridListModule,
     MatMenuModule,
@@ -60,15 +73,16 @@ import { CalendarComponent } from './calendar/calendar.component';
 
     RouterModule,
     MatGridListModule,
-
+//For calendar
     NgbModalModule,
    FlatpickrModule.forRoot(),
+   AlertsModule.forRoot(),
    CalendarModule.forRoot({
      provide: DateAdapter,
      useFactory: adapterFactory
    })
   ],
-  entryComponents:[PatientLoginComponent,
+  entryComponents:[PatientLoginComponent,InvalidPatientComponent,FailPatientComponent,InvalidDoctorComponent,FailRegisterComponent,
   DoctorLoginComponent,DoctorProfileComponent],
   providers: [],
   bootstrap: [AppComponent]
