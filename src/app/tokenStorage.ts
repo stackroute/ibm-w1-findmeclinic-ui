@@ -20,4 +20,9 @@ export class TokenStorage {
   public getToken(): string {
     return localStorage.getItem(TOKEN_KEY);
   }
+
+  public removeToken() {
+    window.localStorage.removeItem(TOKEN_KEY);
+   
+  }
 }

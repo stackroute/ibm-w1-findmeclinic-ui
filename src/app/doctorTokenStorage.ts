@@ -19,6 +19,11 @@ export class DoctorTokenStorage {
    localStorage.setItem(TOKEN_KEY,  token);
  }
 
+ public removeToken() {
+  window.localStorage.removeItem(TOKEN_KEY);
+ 
+}
+
 //  public getToken(): string {
 //    return localStorage.getItem(TOKEN_KEY);
 //  }

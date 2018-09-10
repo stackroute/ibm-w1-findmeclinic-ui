@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { DoctorTokenStorage } from '../doctorTokenStorage';
 
 @Component({
   selector: 'app-doctor-profile',
@@ -15,9 +17,15 @@ export class DoctorProfileComponent implements OnInit {
     }
     return this.showFiller
   }
-  constructor() { }
+  constructor(private router: Router, private token: DoctorTokenStorage) { }
 
   ngOnInit() {
   }
 
+  logout() {
+
+    this.token.removeToken();
+    this.router.navigate(['landing-page']);
+    
+  }
 }

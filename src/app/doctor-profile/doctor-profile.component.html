@@ -7,9 +7,12 @@
   
    
 
-      <p class="badge-style">
-        <span matBadge="AD" matBadgeOverlap="false" matBadgeColor="warn"></span>
-      </p>  
+    <div  class="badge-style">
+      <button [matMenuTriggerFor]="menu" mat-mini-fab color="warn">AA</button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item (click)="logout()">Logout</button>
+      </mat-menu>
+    </div>
   </mat-toolbar>
 
   
