@@ -1,216 +1,182 @@
-<div class="example-container" >
-        <mat-toolbar color="primary" class="example-toolbar">
+<div class="main">
+    <mat-toolbar color="white" class="main-toolbar">
+        <div class="logo">
+            <img src="../../assets/logo.png" height="60px">
 
-                <button mat-button type="submit">Download App</button>
-
-       
-              <div class="button-group">
-                <button mat-button type="submit" class="btn btn-success" >Book </button>
-                <button mat-button (click)="openPatient()" matTooltip="Login As Pat
-                ient">Patient</button>
-                <button mat-button (click)="openDialog()" matTooltip="Login As a Doctor">Doctor</button>
-
+            <button mat-button type="submit">Download App</button>
         </div>
-        
-              </mat-toolbar>
-           
-            </div>
-              <div class="container-fluid" style="background-color:#1d2869 ">
+        <div class="button-group">
+            <button mat-button type="submit" class="btn btn-success">Book </button>
+            <button mat-button (click)="openPatient()" matTooltip="Login As Patient">Patient</button>
+            <button mat-button (click)="openDialog()" matTooltip="Login As a Doctor">Doctor</button>
+        </div>
 
-              <div class="search">
-                    <form action="" method="">
-                        <input type="search" matInput placeholder="Search by Location" matTooltip="Click to detect your Location">
-                        <button>Detect</button>
-                        <input type="search" placeholder="Searching for Doctors?">
-            
-                    </form>
-                </div>
-                </div>
-            
-<div class="container-fluid" style="background-color:#1d2869 ">
-        <div class="options">
-            <div class="wrapper">
-                
-    
-                <a href="#" class="chat">
-                    <mat-icon>chat</mat-icon>
-    
-    
-                    <span>Chat With a Doctor</span>
-                </a>
-                <a href="#">
-                    <mat-icon>chat</mat-icon>
-                    <span>Read Articles</span>
-    
-    
-                </a>
-    
+    </mat-toolbar>
+
+
+    <div class="container">
+
+        <div class="search">
+            <form action="" method="">
+                <input type="search" matInput placeholder="Search by Location" matTooltip="Click to detect your Location">
+                <button>Detect</button>
+                <input type="search" placeholder="Searching for Doctors?">
+
+            </form>
+        </div>
+
+    </div>
+    <div class="super">
+        <div class="mainCard">
+            <div class="display">
+                <mat-card class="example-card">
+                    <mat-card-header>
+                        <mat-card-title>Family tree</mat-card-title>
+
+                    </mat-card-header>
+                    <img mat-card-image src="../../src/assets/family.jpg">
+                    <mat-card-content>
+                        <p>
+                            FindMeClinic connects our clients with everything they need to take good care of themselves and their FAMILY - assessing
+                            health issues, finding the right doctor, booking diagnostic tests, obtaining medicines, storing
+                            health records or learning new ways to live healthier.
+                        </p>
+                    </mat-card-content>
+                </mat-card>
+
+            </div>
+
+            <div class="display">
+                <mat-card class="example-card">
+                    <mat-card-header>
+                        <mat-card-title>Zero Cancellations</mat-card-title>
+
+                    </mat-card-header>
+                    <img mat-card-image src="../../assets/zero.jpg">
+                    <mat-card-content>
+                        <p>
+                            There may be circumstances when short notice cancellations may be unavoidable for unforeseen reasons such as sudden debilitating
+                         contagious illness or similar matter preventing you keeping your booking commitment. There is no cancellation charges here.
+                        </p>
+                    </mat-card-content>
+                </mat-card>
+
+            </div>
+            <div class="display">
+                <mat-card class="example-card">
+                    <mat-card-header>
+                        <mat-card-title>Lab Tests</mat-card-title>
+
+                    </mat-card-header>
+                    <img mat-card-image src="../../assets/lab.jpg">
+                    <mat-card-content>
+                        <p>
+                            All laboratories are not the same for the simple reason that not all tests are the same. Just as tests vary in complexity,
+                            and the technology needed to perform them, so too laboratories vary in their complexity. AND
+                            So we can help you find laboratories!!!
+                        </p>
+                    </mat-card-content>
+                </mat-card>
+
+            </div>
+
+            <div class="display">
+                <mat-card class="example-card">
+                    <mat-card-header>
+                        <mat-card-title>Book From Home</mat-card-title>
+                    </mat-card-header>
+                    <img mat-card-image src="../../assets/booking.jpg">
+                    <mat-card-content>
+                        <p>
+                            Health and time is directly proprtional. Why to wait in line and search for doctors? FindMeCLinic is the right
+                            platform that provides you the solution to search for doctors,book appointments for you and family,and store your
+                            medical records and lab test results .
+                        </p>
+                    </mat-card-content>
+                </mat-card>
             </div>
         </div>
-        </div>
-        <div class="Page" style="background-color: aliceblue;">   
-                <div class="container-fluid" >
-       
-         <div class="row">
-           <div class="col-sm-6">
-                   <div class="home-details-wrapper ">
-                           <div class="home-details-section-details">
-                               <div class="home home-details-section-title">
-                                   <h2 class="u-d-inline">Safety of your data is our</h2>
-                                   <h2 class="u-t-bold">top priority</h2>
-       
-                               </div>
-                               <div class="home-details-section-description">
-                                   <div>
-                                       <mat-icon>check_box</mat-icon>
-                                       <span>Multi-Level Security</span>
-                                   </div>
-                                   <div>
-                                       <mat-icon>check_box</mat-icon>
-                                       <span>Secure Your Health Records</span>
-                                   </div>
-                                   <div>
-                                       <mat-icon>check_box</mat-icon>
-                                       <span>Ease of Use</span>
-                                   </div>
-                               </div>
-                              <br>
-       
-                               <div>
-                                   <button mat-raised-button color="primary" matTooltip="Click here to read more">Read More</button>
-                               </div>
-       
-                           </div>
-       
-                       </div>
-       
-           </div>
-           <div class="col-sm-6" >
-                <div class="images">
-                            <div class="image-illustration">
-                                <img src="/assets/securit.webp">
-                            </div>    </div>
-      </div>
     </div>
-    </div>
-    </div>
-    <div class="Appointment" style="background-color: antiquewhite">
-        <div class="container-fluid" >
-      <div class="row">
-        <div class="col-sm-6">
-    <div class="appointments-section">
-                        <div class="home-details-section-title">
-                            <p>Book Your appointments with Doctors</p>
-                            <p>
-                                <strong> instantly!!</strong>
-                            </p>
-    
-                        </div>
-                        <div class="home-details-section-description">
-                            <div>
-                                <mat-icon>check_box</mat-icon>
-                                <span>Verified Doctors</span>
-                            </div>
-                            <div>
-                                <mat-icon>check_box</mat-icon>
-                                <span>Verified Clinic</span>
-                            </div>
-                            <div>
-                                <mat-icon>check_box</mat-icon>
-                                <span>Verified Hospitals</span>
-                            </div>
-    
-                        </div>
-                        <br>
-                        <br>
-    
-                        <div>
-                            <button mat-raised-button color="primary" matTooltip="Book An Appointment">Read More</button>
-                        </div>
-    
-                    </div>    </div>
-        <div class="col-sm-6">
-            <div class="appointments-section-img">
-       <img src="/assets/phone.png">    
-      </div>
-      </div>
-    </div>
-    </div>
-    </div>
-    <div class="MedicalRecords" style="	background-color: lightgrey;">
 
-            <div class="container-fluid">
-            
-              <div class="row">
-                <div class="col-sm-6">
-                        <img src="/assets/health.png">
-                    </div>
-                <div class="col-sm-6">
-                        <div class="MedicalRecords-section">
-                                <div class="home home-details-section-title">
-                                    <p>Check Your Health Records In one App</p>
-                                    <p>
-                                        <strong> instantly!!</strong>
-                                    </p>
-            
-                                </div>
-                                <div class="home-details-section-description">
-                                    <div>
-                                        <mat-icon>check_box</mat-icon>
-                                        <span>Secure</span>
-                                    </div>
-                                    <div>
-                                        <mat-icon>check_box</mat-icon>
-                                        <span>Health Records will be Accessed only by the Doctors</span>
-                                    </div>
-            
-                                </div>
-                                
-                                <br>
-            
-                                <div>
-                                    <button mat-raised-button color="primary" matTooltip="Book An Appointment">Read More</button>
-                                </div>
-            
-                            </div>
+
+    <!--Footer-->
+    <footer class="page-footer" id="myFooter">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3 myCols">
+                    <h5>Get started</h5>
+                    <ul>
+                        <li>
+                            <a href="#">Home</a>
+                        </li>
+                        <li>
+                            <a href="#">Sign up</a>
+                        </li>
+                        <li>
+                            <a href="#">Downloads</a>
+                        </li>
+                    </ul>
                 </div>
+                <div class="col-sm-3 myCols">
+                    <h5>About us</h5>
+                    <ul>
+                        <li>
+                            <a href="#">Company Information</a>
+                        </li>
+                        <li>
+                            <a href="#">Contact us</a>
+                        </li>
+                        <li>
+                            <a href="#">Reviews</a>
+                        </li>
+                    </ul>
                 </div>
-              </div>
+                <div class="col-sm-3 myCols">
+                    <h5>Support</h5>
+                    <ul>
+                        <li>
+                            <a href="#">FAQ</a>
+                        </li>
+                        <li>
+                            <a href="#">Help desk</a>
+                        </li>
+                        <li>
+                            <a href="#">Forums</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-sm-3 myCols">
+                    <h5>Legal</h5>
+                    <ul>
+                        <li>
+                            <a href="#">Terms of Service</a>
+                        </li>
+                        <li>
+                            <a href="#">Terms of Use</a>
+                        </li>
+                        <li>
+                            <a href="#">Privacy Policy</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-            
-               
-            
-               <!--Footer-->
-            <footer class="page-footer" >
-            
-                <!--Footer Links-->
-                <div class="container-fluid text-center text-md-left">
-                    <div class="row">
-            
-                        <!--First column-->
-                        <div class="col-md-6">
-                                <img src="/assets/logo.png" alt="FindMeClinic"> 
-                                <div class="col-md-6">
-                                <ul class="list-unstyled">
-                                    <li><a href="#">About FindMeClinic</a></li>
-                                    <li><a href="#">Blog</a></li>
-                                    <li><a href="#">Contact Us</a></li>
-                                    
-                                </ul>
-                            </div>
-                        </div>
-                        
-                    </div>
-                </div>
-                <!--/.Footer Links-->
-            
-                <!--Copyright-->
-                <div class="footer-copyright text-center py-3">
-                    <div class="container-fluid">
-                        <img src="/assets/logo.png" alt="FindMeClinic"> <br>
-                   <p>     © 2017 Copyright:  FindMeClinic </p>
-                    </div>
-                </div>
-                <!--/.Copyright-->
-            </footer>
-            <!--/.Footer-->
+        </div>
+        <div class="social-networks">
+            <a href="#" class="twitter">
+                <i class="fa fa-twitter"></i>
+            </a>
+            <a href="#" class="facebook">
+                <i class="fa fa-facebook-official"></i>
+            </a>
+            <a href="#" class="google">
+                <i class="fa fa-google-plus"></i>
+            </a>
+        </div>
+        <div class="footer-copyright">
+            <p>© 2018 FindMeClinic </p>
+        </div>
+    </footer>
+
+
+
+</div>
