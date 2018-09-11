@@ -1,20 +1,24 @@
-<div class="example-container" >
-        <mat-toolbar color="primary" class="example-toolbar">
-
-                <button mat-button type="submit">Download App</button>
-
+<nav class="navbar navbar-expand-lg navbar-dark">
+    <button mat-button type="submit" class="btn btn-success">Download The App</button>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+            <button mat-button type="submit" class="btn btn-success">Book </button>
+        </li>
+        <li class="nav-item">
+            <button mat-button (click)="openPatient()" matTooltip="Login As Patient">Patient</button>
+        </li>
+        <li class="nav-item">
+            <button mat-button (click)="openDialog()" matTooltip="Login As a Doctor">Doctor</button>
+        </li>
        
-              <div class="button-group">
-                <button mat-button type="submit" class="btn btn-success" >Book </button>
-                <button mat-button (click)="openPatient()" matTooltip="Login As Pat
-                ient">Patient</button>
-                <button mat-button (click)="openDialog()" matTooltip="Login As a Doctor">Doctor</button>
+      </ul>
+    </div>
+  </nav>
 
-        </div>
-        
-              </mat-toolbar>
-           
-            </div>
               <div class="container-fluid" style="background-color:#1d2869 ">
 
               <div class="search">

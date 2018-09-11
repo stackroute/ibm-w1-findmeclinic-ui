@@ -2,6 +2,20 @@
 @import url(https://fonts.googleapis.com/css?family=Cabin:400);
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
+
+.navbar {
+    background-color: #364EB9;
+}
+.navbar-nav{
+	color: #fff;
+	margin-left: 70%;
+}
+.navbar  button{
+    color: #fff;
+}
+nav {
+	margin-bottom: 0%;
+}
 .example-container {
   display: flex;
   flex-direction: column;
