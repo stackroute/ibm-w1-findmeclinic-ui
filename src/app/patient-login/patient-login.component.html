@@ -1,8 +1,8 @@
 <div>
-    <mat-tab-group class="form">    
-          <mat-tab label="Login">
+    <mat-tab-group  class="form">    
+          <mat-tab  label="Login">
               <br>
-              <br>
+            
                   <mat-form-field class="formheight">
                       <input matInput [(ngModel)]="registeredPatient.patientEmail" placeholder="Enter EmailId " [formControl]="emailPhoneNumberFormControl">
                       <mat-error *ngIf="emailPhoneNumberFormControl.hasError('required')">
@@ -19,9 +19,9 @@
                           </mat-error>
                     </mat-form-field>
                   <br>
+            
               <br>
-              <br>
-              <p>If you dont have an account, then Register</p>
+              <h6>Dont have an account?then Register</h6>
                           <button mat-raised-button color="primary" (click)="openLogin(registeredPatient)" > Login
     
                        </button>
@@ -33,11 +33,11 @@
 
 
 
-        <mat-tab label="Register">
+        <mat-tab  label="Register">
     
             <br>
           
-        <mat-form-field  class="formheight">
+        <mat-form-field   class="formheight">
             <input matInput [(ngModel)]="patient.patientEmail" placeholder="Enter EmailId" [formControl]="emailFormControl"
             [errorStateMatcher]="matcher">
      <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">

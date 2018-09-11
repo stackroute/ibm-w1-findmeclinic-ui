@@ -1,11 +1,16 @@
+
+ 
+ 
  .form {
-    width: 350px;
-    height: 390px;
-    text-align: center;
+ 
+  width: auto;
+  height: 390px;
+  text-align: center;
+ 
   }
   
   .formheight{
-    width:75%;
+    width:auto;
   }
   .p {
     font-family: 'Courier New', Courier, monospace;

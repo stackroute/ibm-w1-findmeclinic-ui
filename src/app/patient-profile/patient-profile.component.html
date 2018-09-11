@@ -4,36 +4,39 @@
       <mat-icon>menu</mat-icon>
     </button>
     <h1 class="example-app-name">FindMeClinic</h1>
-
+ 
     <div class="button-group">
       <button mat-button type="submit" class="btn btn-success">Book</button>
     </div>
-
-
+ 
+ 
     <div  class="badge-style">
       <button [matMenuTriggerFor]="menu" mat-mini-fab color="warn">AA</button>
       <mat-menu #menu="matMenu">
-        <button mat-menu-item (click)="logout()">Logout</button>
+ 
+          <button mat-menu-item ><mat-icon>supervised_user_circle</mat-icon>Profile</button>
+          <button mat-menu-item ><mat-icon>settings</mat-icon>Settings</button>
+        <button mat-menu-item  (click)="logout()"><mat-icon>directions_walk</mat-icon>Logout</button>
       </mat-menu>
     </div>
-
+ 
   </mat-toolbar>
-
+ 
   <mat-sidenav-container class="example-sidenav-container">
     <mat-sidenav #snav fixedTopGap="5">
       <mat-nav-list>
-        <mat-list-item>Records</mat-list-item>
-        <mat-list-item>Lab Reports</mat-list-item>
-        <mat-list-item>Family Tree</mat-list-item>
+        <mat-list-item><mat-icon>list_alt</mat-icon>My Appointments</mat-list-item>
+        <mat-list-item><mat-icon>library_books</mat-icon>Reports</mat-list-item>
+        <mat-list-item><mat-icon>group_add</mat-icon>Family Tree</mat-list-item>
       </mat-nav-list>
-
-
+ 
+ 
     </mat-sidenav>
-
+ 
     <mat-sidenav-content>
-
+ 
     </mat-sidenav-content>
   </mat-sidenav-container>
-
-
-</div>
+ 
+ 
+ </div>

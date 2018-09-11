@@ -3,14 +3,15 @@
   <mat-toolbar color="primary" class="example-toolbar">
     <button mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
     <h1 class="example-app-name">FindMeClinic</h1>
-    <button mat-button color="Warning">Download The App</button>
   
    
 
     <div  class="badge-style">
       <button [matMenuTriggerFor]="menu" mat-mini-fab color="warn">AA</button>
       <mat-menu #menu="matMenu">
-        <button mat-menu-item (click)="logout()">Logout</button>
+          <button mat-menu-item ><mat-icon>supervised_user_circle</mat-icon>Profile</button>
+          <button mat-menu-item ><mat-icon>settings</mat-icon>Settings</button>
+        <button mat-menu-item (click)="logout()"><mat-icon>directions_walk</mat-icon>Logout</button>
       </mat-menu>
     </div>
   </mat-toolbar>
@@ -21,8 +22,9 @@
   <mat-sidenav-container class="example-sidenav-container">
     <mat-sidenav #snav fixedTopGap="5">
       <mat-nav-list>
-         <mat-list-item (click)="show()" (click)="snav.toggle()">Appointments</mat-list-item>
-         <mat-list-item>Reports</mat-list-item>
+          <mat-list-item><mat-icon>list_alt</mat-icon>My Appointments</mat-list-item>
+          <mat-list-item><mat-icon>library_books</mat-icon>Reports</mat-list-item>
+         <mat-list-item (click)="show()" (click)="snav.toggle()"><mat-icon>access_time</mat-icon>Scheduling</mat-list-item>
         
         </mat-nav-list>
 
