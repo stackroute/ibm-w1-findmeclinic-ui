@@ -1,1 +1,2 @@
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/c348cca9371146408490739818400581)](https://app.codacy.com/app/diwakardd/ibm-w1-findmeclinic-ui?utm_source=github.com&utm_medium=referral&utm_content=stackroute/ibm-w1-findmeclinic-ui&utm_campaign=Badge_Grade_Dashboard)
 [![CircleCI](https://circleci.com/gh/stackroute/ibm-w1-findmeclinic-ui/tree/v1.0.0.svg?style=svg)](https://circleci.com/gh/stackroute/ibm-w1-findmeclinic-ui/tree/v1.0.0)
