@@ -33,9 +33,7 @@ export class PatientLoginComponent implements OnInit {
 
   ngOnInit() {
   }
-
-
-
+  
   open() {
     this.dialog.open(PatientLoginComponent);
 

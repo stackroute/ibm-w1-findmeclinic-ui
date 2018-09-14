@@ -19,13 +19,13 @@ import { FailRegisterComponent } from './fail-register.component';
 export class DoctorLoginComponent implements OnInit {
 
   doctor;
-  doctor1;
+  loginDoctor;
   id;
   isRegistered = false;
 
   constructor(private doctorService: DoctorService,private snackBar:MatSnackBar,private token:DoctorTokenStorage, private dialogRef: MatDialogRef<DoctorLoginComponent>, public dialog: MatDialog, private router: Router,private alert:AlertsService)
    { this.doctor = new Doctor();
-    this.doctor1 = new Doctor();
+    this.loginDoctor = new Doctor();
    }
 
   ngOnInit() {
@@ -45,13 +45,11 @@ export class DoctorLoginComponent implements OnInit {
           this.snackBar.openFromComponent(FailRegisterComponent, {
             duration: 1000,
         });
-       // this.alert.setMessage("email or phoneNumber is already taken",'error');
-        //this.alert.setDefaults("timeout",0);
+       
       }})
     
   }
   move(doctorData){
-    //this.dialogRef.close();
     return this.doctorService.login(doctorData).subscribe(data=>
       {
         this.token.saveToken(data);

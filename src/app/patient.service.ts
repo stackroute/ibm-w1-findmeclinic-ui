@@ -9,7 +9,7 @@ import {Patient} from './patient';
 export class PatientService {
 
 
-  private baseurl="http://localhost:8080/api/v1/patient";
+  private baseurl="http://172.23.239.244:8080/api/v1/patient";
 
   constructor(private http: HttpClient) { }
 
