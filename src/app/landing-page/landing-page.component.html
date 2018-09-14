@@ -1,0 +1,193 @@
+<div class="main">
+    
+    <nav class="navbar navbar-expand-lg navbar-light ">
+        <img src="../../assets/logo.png" class="style">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" >
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="nav navbar-nav">
+                <li class="nav-item active">
+                    <button mat-button type="submit" class="btn btn-success">Book </button>
+                </li>
+                <li class="nav-item">
+                    <button mat-button (click)="openPatient()" matTooltip="Login As Patient">Patient</button>
+                </li>
+                <li class="nav-item">
+                    <button mat-button (click)="openDialog()" matTooltip="Login As a Doctor">Doctor</button>
+                </li>
+
+            </ul>
+        </div>
+    </nav>
+
+
+    <div class="container">
+
+        <div class="search">
+            <form action="" method="">
+                <input type="search" matInput placeholder="Search by Location" matTooltip="Click to detect your Location">
+                <button>Detect</button>
+                <input type="search" placeholder="Searching for Doctors?">
+
+            </form>
+        </div>
+
+    </div>
+
+
+    <!-- <div class="row "> -->
+    <div class="mainCard">
+        <div class="col-sm-3 display">
+            <mat-card class="example-card">
+                <mat-card-header>
+                    <mat-card-title><h3>Family tree</h3></mat-card-title>
+
+                </mat-card-header>
+                <img mat-card-image src="../../src/assets/family.jpg">
+                <mat-card-content>
+                    <p>
+                        FindMeClinic connects our clients with everything they need to take good care of themselves and their FAMILY - assessing
+                        health issues, finding the right doctor, booking diagnostic tests, obtaining medicines, storing health
+                        records or learning new ways to live healthier.
+                    </p>
+                </mat-card-content>
+            </mat-card>
+
+        </div>
+
+        <div class="col-sm-3 display">
+            <mat-card class="example-card">
+                <mat-card-header>
+                    <mat-card-title><h3>Zero Cancellations</h3></mat-card-title>
+
+                </mat-card-header>
+                <img mat-card-image src="../../assets/zero.jpg">
+                <mat-card-content>
+                    <p>
+                        There may be circumstances when short notice cancellations may be unavoidable for unforeseen reasons such as sudden debilitating
+                        contagious illness or similar matter preventing you keeping your booking commitment. There is no
+                        cancellation charges here.
+                    </p>
+                </mat-card-content>
+            </mat-card>
+
+        </div>
+        <div class="col-sm-3 display">
+            <mat-card class="example-card">
+                <mat-card-header>
+                    <mat-card-title><h3>Lab Tests</h3></mat-card-title>
+
+                </mat-card-header>
+                <img mat-card-image src="../../assets/lab.jpg">
+                <mat-card-content>
+                    <p>
+                        All laboratories are not the same for the simple reason that not all tests are the same. Just as tests vary in complexity,
+                        and the technology needed to perform them, so too laboratories vary in their complexity. AND So we
+                        can help you find laboratories!!!
+                    </p>
+                </mat-card-content>
+            </mat-card>
+
+        </div>
+
+        <div class="col-sm-3 display">
+            <mat-card class="example-card">
+                <mat-card-header>
+                    <mat-card-title><h3>Book From Home</h3></mat-card-title>
+                </mat-card-header>
+                <img mat-card-image src="../../assets/booking.jpg">
+                <mat-card-content>
+                    <p>
+                        Health and time is directly proprtional. Why to wait in line and search for doctors? FindMeCLinic is the right platform that
+                        provides you the solution to search for doctors,book appointments for you and family,and store your
+                        medical records and lab test results on our site.
+                    </p>
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </div>
+    <!-- </div> -->
+
+
+    <!--Footer-->
+    <footer class="page-footer" id="myFooter">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3 myCols">
+                    <h5>Get started</h5>
+                    <ul>
+                        <li>
+                            <a href="#">Home</a>
+                        </li>
+                        <li>
+                            <a href="#">Sign up</a>
+                        </li>
+                        <li>
+                            <a href="#">Downloads</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-sm-3 myCols">
+                    <h5>About us</h5>
+                    <ul>
+                        <li>
+                            <a href="#">Company Information</a>
+                        </li>
+                        <li>
+                            <a href="#">Contact us</a>
+                        </li>
+                        <li>
+                            <a href="#">Reviews</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-sm-3 myCols">
+                    <h5>Support</h5>
+                    <ul>
+                        <li>
+                            <a href="#">FAQ</a>
+                        </li>
+                        <li>
+                            <a href="#">Help desk</a>
+                        </li>
+                        <li>
+                            <a href="#">Forums</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-sm-3 myCols">
+                    <h5>Legal</h5>
+                    <ul>
+                        <li>
+                            <a href="#">Terms of Service</a>
+                        </li>
+                        <li>
+                            <a href="#">Terms of Use</a>
+                        </li>
+                        <li>
+                            <a href="#">Privacy Policy</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="social-networks">
+            <a href="#" class="twitter">
+                <i class="fa fa-twitter"></i>
+            </a>
+            <a href="#" class="facebook">
+                <i class="fa fa-facebook-official"></i>
+            </a>
+            <a href="#" class="google">
+                <i class="fa fa-google-plus"></i>
+            </a>
+        </div>
+        <div class="footer-copyright">
+            <p>© 2018 FindMeClinic </p>
+        </div>
+    </footer>
+
+
+
+</div>

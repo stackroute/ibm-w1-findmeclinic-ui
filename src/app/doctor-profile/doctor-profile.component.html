@@ -1,0 +1,135 @@
+<div class="example-container">
+  <mat-toolbar color="primary" class="example-toolbar">
+    <button mat-icon-button (click)="snav.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <h1 class="example-app-name">FindMeClinic</h1>
+
+
+
+    <div class="badge-style">
+      <button [matMenuTriggerFor]="menu" mat-mini-fab color="warn">AA</button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item>
+          <mat-icon>supervised_user_circle</mat-icon>Profile</button>
+        <button mat-menu-item>
+          <mat-icon>settings</mat-icon>Settings</button>
+        <button mat-menu-item (click)="logout()">
+          <mat-icon>directions_walk</mat-icon>Logout</button>
+      </mat-menu>
+    </div>
+  </mat-toolbar>
+
+
+
+
+  <mat-sidenav-container class="example-sidenav-container">
+    <mat-sidenav #snav fixedTopGap="5">
+      <mat-nav-list>
+        <mat-list-item>
+          <mat-icon>list_alt</mat-icon>My Appointments</mat-list-item>
+        <mat-list-item>
+          <mat-icon>library_books</mat-icon>Reports</mat-list-item>
+        <mat-list-item (click)="show()" (click)="snav.toggle()">
+          <mat-icon>access_time</mat-icon>Scheduling</mat-list-item>
+
+      </mat-nav-list>
+
+    </mat-sidenav>
+
+
+    <mat-sidenav-content>
+      <div *ngIf="showFiller" style="margin-top: 5%">
+        <app-calendar></app-calendar>
+      </div>
+      <br>
+      <br>
+
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+
+
+
+
+   <!--Footer-->
+ <footer class="page-footer" id="myFooter">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-3 myCols">
+                <h5>Get started</h5>
+                <ul>
+                    <li>
+                        <a href="#">Home</a>
+                    </li>
+                    <li>
+                        <a href="#">Sign up</a>
+                    </li>
+                    <li>
+                        <a href="#">Downloads</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-sm-3 myCols">
+                <h5>About us</h5>
+                <ul>
+                    <li>
+                        <a href="#">Company Information</a>
+                    </li>
+                    <li>
+                        <a href="#">Contact us</a>
+                    </li>
+                    <li>
+                        <a href="#">Reviews</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-sm-3 myCols">
+                <h5>Support</h5>
+                <ul>
+                    <li>
+                        <a href="#">FAQ</a>
+                    </li>
+                    <li>
+                        <a href="#">Help desk</a>
+                    </li>
+                    <li>
+                        <a href="#">Forums</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-sm-3 myCols">
+                <h5>Legal</h5>
+                <ul>
+                    <li>
+                        <a href="#">Terms of Service</a>
+                    </li>
+                    <li>
+                        <a href="#">Terms of Use</a>
+                    </li>
+                    <li>
+                        <a href="#">Privacy Policy</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="social-networks">
+        <a href="#" class="twitter">
+            <i class="fa fa-twitter"></i>
+        </a>
+        <a href="#" class="facebook">
+            <i class="fa fa-facebook-official"></i>
+        </a>
+        <a href="#" class="google">
+            <i class="fa fa-google-plus"></i>
+        </a>
+    </div>
+    <div class="footer-copyright">
+        <p>© 2018 FindMeClinic </p>
+    </div>
+</footer>
+
+
+</div>
+
+
