@@ -37,6 +37,7 @@ import { InvalidDoctorComponent } from './doctor-login/invalid-doctor.component'
 import { FailRegisterComponent} from './doctor-login/fail-register.component';
 import { AppointmentComponent } from './appointment/appointment.component';
 import { PrescriptionsComponent } from './prescriptions/prescriptions.component';
+import { DoctorbasicdetailsComponent } from './doctorbasicdetails/doctorbasicdetails.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -53,7 +54,9 @@ import { PrescriptionsComponent } from './prescriptions/prescriptions.component'
 
     AppointmentComponent,
 
-    PrescriptionsComponent
+    PrescriptionsComponent,
+
+    DoctorbasicdetailsComponent
   ],
   imports: [
     MatCardModule,

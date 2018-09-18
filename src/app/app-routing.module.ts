@@ -10,6 +10,7 @@ import { AppointmentComponent } from './appointment/appointment.component';
 import { PrescriptionsComponent } from './prescriptions/prescriptions.component';
 
 
+
 const routes: Routes = [
   { path:'', redirectTo:'/landing-page', pathMatch:'full'},
   { path:'landing-page', component: LandingPageComponent},
@@ -18,6 +19,7 @@ const routes: Routes = [
   { path:'doctor-appointment', component: CalendarComponent},
   { path:'view-appointment', component: AppointmentComponent},
   { path: 'add-prescription', component: PrescriptionsComponent}
+  
 ];
 
 @NgModule({

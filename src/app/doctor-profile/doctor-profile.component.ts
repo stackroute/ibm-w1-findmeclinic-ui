@@ -19,7 +19,7 @@ export class DoctorProfileComponent implements OnInit {
     return this.showFiller
   }
   
-
+ 
  display(): boolean{
    this.showFiller=false;
 
