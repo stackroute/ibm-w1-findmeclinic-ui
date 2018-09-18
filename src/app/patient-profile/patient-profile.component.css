@@ -3,11 +3,12 @@
 .example-container {
     display: flex;
     flex-direction: column;
-    position: absolute;
+    position: relative;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
+    
   }
   
   .example-is-mobile .example-toolbar {
@@ -48,6 +49,7 @@
     background-color:  rgba(128, 128, 133, 0.7);
     color: white;
     padding-top: 30px;
+    
    }
   
   #myFooter .footer-copyright {
@@ -147,3 +149,107 @@
       text-align: center;
     }
    }
+
+
+
+
+.example-card
+{
+  height: 500px;
+}
+.content
+{
+  font-size: 30px;
+}
+
+.numberCard
+{
+ /* margin-left: 10%;
+  margin-top: 5%;
+  width: 15%;
+  height: 40%;*/
+  border-radius: 5px 5px 5px 5px;
+  background-color:#3f51b5;
+  height: 400px;
+
+
+}
+.cardTitle
+{
+
+  font-family: 'Cabin', helvetica, arial, sans-serif;
+  text-align: center;
+  font-size: 20px;
+  border-radius: 5px 5px 5px 5px;
+  background-color: lightgray;
+  height: 180px;
+  padding-top: 12%;
+
+}
+.cardContent
+{
+  font-family: 'Cabin', helvetica, arial, sans-serif;
+  text-align: center;
+  font-size: 38px;
+  border-radius: 5px 5px 5px 5px;
+  background-color: white;
+  height: 130px;
+  padding-top: 12%;
+
+
+
+}
+
+.cardContent1
+{
+  font-family: sans-serif;
+  text-align: center;
+  font-size: 19px;
+  border-radius: 5px 5px 5px 5px;
+  background-color: white;
+  height: 130px;
+  padding-top: 12%;
+
+
+
+}
+.mainCard{
+ margin-left: 20%;
+
+ padding-top: 80px;
+ padding-bottom: 80px;  
+ display: inline-flex;
+ flex-flow: row wrap;
+ }
+ 
+ #subcard
+ {
+   margin-left: 10%;
+ }
+ .cardTitle1
+ {
+   margin-left: 100%;
+   font-family: 'Cabin', helvetica, arial, sans-serif;
+
+ }
+ .alertCard
+ {
+   width: 600px;
+ }
+ .btn{
+  margin-left: 50px;
+  font-size: 20px;
+  border-radius: 5px 5px 5px 5px;
+
+ }
+ .btn1 {
+  margin-left: 15%;
+  font-size: 25px;
+  border-radius: 5px 5px 5px 5px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  padding-right: 5px;
+  padding-left: 5px;
+
+ }
+
