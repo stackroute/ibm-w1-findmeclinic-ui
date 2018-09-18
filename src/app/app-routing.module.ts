@@ -8,6 +8,7 @@ import { CalendarComponent} from './calendar/calendar.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { AppointmentComponent } from './appointment/appointment.component';
 import { PrescriptionsComponent } from './prescriptions/prescriptions.component';
+import { DoctorBasicsComponent } from './doctor-basics/doctor-basics.component';
 
 
 
@@ -18,7 +19,8 @@ const routes: Routes = [
   { path:'doctor-profile', component: DoctorProfileComponent},
   { path:'doctor-appointment', component: CalendarComponent},
   { path:'view-appointment', component: AppointmentComponent},
-  { path: 'add-prescription', component: PrescriptionsComponent}
+  { path: 'add-prescription', component: PrescriptionsComponent},
+  {path:'doctor-basic',component:DoctorBasicsComponent}
   
 ];
 

@@ -28,6 +28,10 @@ import { DoctorProfileComponent } from './doctor-profile/doctor-profile.componen
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { FailPatientComponent } from './patient-login/fail-patient.component';
 
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import{ MatNativeDateModule } from '@angular/material';
+
+
 import { RouterModule } from '@angular/router';
 import { PatientProfileComponent } from './patient-profile/patient-profile.component';
 import { AppRoutingModule } from './/app-routing.module';
@@ -35,9 +39,10 @@ import { CalendarComponent } from './calendar/calendar.component';
 import { InvalidPatientComponent } from './patient-login/invalid-patient.component';
 import { InvalidDoctorComponent } from './doctor-login/invalid-doctor.component';
 import { FailRegisterComponent} from './doctor-login/fail-register.component';
+import { DoctorBasicsComponent } from './doctor-basics/doctor-basics.component';
 import { AppointmentComponent } from './appointment/appointment.component';
 import { PrescriptionsComponent } from './prescriptions/prescriptions.component';
-import { DoctorbasicdetailsComponent } from './doctorbasicdetails/doctorbasicdetails.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -49,21 +54,20 @@ import { DoctorbasicdetailsComponent } from './doctorbasicdetails/doctorbasicdet
     CalendarComponent,InvalidPatientComponent,
     InvalidDoctorComponent,
     FailRegisterComponent,
-
     FailPatientComponent,
-
+    DoctorBasicsComponent,
     AppointmentComponent,
-
-    PrescriptionsComponent,
-
-    DoctorbasicdetailsComponent
+    PrescriptionsComponent
+ 
   ],
   imports: [
     MatCardModule,
     MatGridListModule,
     MatMenuModule,
+    MatNativeDateModule,
     MatListModule,
     BrowserModule,
+    MatDatepickerModule,
     MatIconModule,
     MatToolbarModule,
     MatSnackBarModule,
