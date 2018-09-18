@@ -35,6 +35,8 @@ import { CalendarComponent } from './calendar/calendar.component';
 import { InvalidPatientComponent } from './patient-login/invalid-patient.component';
 import { InvalidDoctorComponent } from './doctor-login/invalid-doctor.component';
 import { FailRegisterComponent} from './doctor-login/fail-register.component';
+import { AppointmentComponent } from './appointment/appointment.component';
+import { PrescriptionsComponent } from './prescriptions/prescriptions.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -47,7 +49,11 @@ import { FailRegisterComponent} from './doctor-login/fail-register.component';
     InvalidDoctorComponent,
     FailRegisterComponent,
 
-    FailPatientComponent
+    FailPatientComponent,
+
+    AppointmentComponent,
+
+    PrescriptionsComponent
   ],
   imports: [
     MatCardModule,

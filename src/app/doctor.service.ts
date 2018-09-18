@@ -8,7 +8,9 @@ import { Observable} from 'rxjs';
 })
 export class DoctorService {
 
-  private addUrl = "http://172.23.239.228:8080/doctor/auth";
+  // private addUrl = "http://172.23.239.228:8080/doctor/auth";
+  private addUrl = "http://localhost:8080/doctor/auth";
+
 
   constructor(private http: HttpClient) { }
 

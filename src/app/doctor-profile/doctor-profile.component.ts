@@ -9,6 +9,7 @@ import { DoctorTokenStorage } from '../doctorTokenStorage';
 })
 export class DoctorProfileComponent implements OnInit {
   showFiller = false;
+  showContent = false;
   show(): boolean{
     if(this.showFiller===false){
       this.showFiller=true;
@@ -17,6 +18,18 @@ export class DoctorProfileComponent implements OnInit {
     }
     return this.showFiller
   }
+  
+
+ display(): boolean{
+   this.showFiller=false;
+
+  if(this.showContent===false){
+    this.showContent=true;
+  }else{
+    this.showContent=true;
+  }
+  return this.showContent
+ }
   constructor(private router: Router, private token: DoctorTokenStorage) { }
 
   ngOnInit() {
