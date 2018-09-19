@@ -10,7 +10,7 @@
     <div class="badge-style">
       <button [matMenuTriggerFor]="menu" mat-mini-fab color="warn">AA</button>
       <mat-menu #menu="matMenu">
-        <button mat-menu-item>
+        <button mat-menu-item (click)="click()"> 
           <mat-icon>supervised_user_circle</mat-icon>Profile</button>
         <button mat-menu-item>
           <mat-icon>settings</mat-icon>Settings</button>
@@ -35,9 +35,69 @@
 
       </mat-nav-list>
     </mat-sidenav>
-
+    
 
      <mat-sidenav-content>
+         <div   *ngIf="create">
+               <mat-card class="card">
+                    <h2> Basic Doctor Details</h2>
+                    <mat-form-field class="formheight">
+                            <input matInput  placeholder="Enter the Email ">
+                            
+                           </mat-form-field><mat-icon>account_circle</mat-icon>
+              <br>
+              <br>
+               <mat-form-field class="formheight">
+                    <input matInput  placeholder="Enter the FirstName ">
+                    
+                   </mat-form-field><mat-icon>mood</mat-icon>
+      <br>
+      <br>
+
+       <mat-form-field class="formheight">
+            <input matInput  placeholder="Enter the LastName ">
+            
+           </mat-form-field><mat-icon>mood</mat-icon>
+<br>
+<br>
+<mat-form-field class="formheight">
+        <input matInput  placeholder="Enter the PhoneNumber ">
+        
+       </mat-form-field><mat-icon>mood</mat-icon>
+<br>
+<br>
+
+<mat-form-field class="formheight">
+        <input matInput  placeholder="Enter the Gender ">
+        
+       </mat-form-field><mat-icon>mood</mat-icon>
+<br>
+<br>
+<mat-form-field class="formheight">
+        <input matInput  placeholder="Enter the Qualification ">
+        
+       </mat-form-field><mat-icon>mood</mat-icon>
+<br>
+<br>
+
+<mat-form-field class="formheight">
+        <input matInput  placeholder="Enter the Speciality ">
+        
+       </mat-form-field><mat-icon>mood</mat-icon>
+<br>
+<br>
+<mat-form-field class="formheight">
+        <input matInput  placeholder="Enter the Experience ">
+        
+       </mat-form-field><mat-icon>mood</mat-icon>
+       <h5 class="address">Address</h5>
+       <mat-form-field class="formheight">
+        <input matInput  placeholder="Enter the HospitalName ">
+        
+       </mat-form-field><mat-icon>location_city</mat-icon>
+</mat-card>
+         </div>
+         
       <div *ngIf="showFiller" style="margin-top: 5%">
         <app-calendar></app-calendar>
       </div>

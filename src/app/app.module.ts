@@ -55,7 +55,7 @@ import { PatientUpdateComponent} from './patient-profile/patientupdate.component
     InvalidDoctorComponent,
     FailRegisterComponent,
     FailPatientComponent,
-   
+    PatientUpdateComponent,
     AppointmentComponent,
     PrescriptionsComponent
  
