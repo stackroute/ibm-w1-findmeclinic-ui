@@ -52,6 +52,7 @@ import { AddScheduleComponent } from './add-schedule/add-schedule.component';
     PatientLoginComponent,
     DoctorLoginComponent,
     PatientProfileComponent,
+    PatientUpdateComponent,
     DoctorProfileComponent,
     CalendarComponent,InvalidPatientComponent,
     InvalidDoctorComponent,
