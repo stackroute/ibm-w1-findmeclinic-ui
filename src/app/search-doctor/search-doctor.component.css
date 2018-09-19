@@ -1,0 +1,27 @@
+.detail{
+    margin-top: 20%;
+}
+ 
+ .doctor-pic{
+    float: left;
+    height: 100%;
+
+}
+.phone{
+    float: right;
+}
+.specialization{
+    float: right;
+}
+.move{
+    float: right;
+    margin-top: 0%;
+    margin-left: 70%;
+}
+mat-card{
+}
+
+.doctor-details button{
+    margin-left: 95%;
+}
+

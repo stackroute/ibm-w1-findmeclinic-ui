@@ -3,6 +3,10 @@ import { PatientLoginComponent } from '../patient-login/patient-login.component'
 import {MatDialog} from '@angular/material';
 import {DoctorLoginComponent} from '../doctor-login/doctor-login.component';
 import * as $ from 'jquery';
+import { Doctor } from '../Doctor';
+import  {DoctorService} from '../doctor.service';
+import{ Router,NavigationExtras} from '@angular/router';
+
 
 
 @Component({
@@ -12,10 +16,28 @@ import * as $ from 'jquery';
 })
 export class LandingPageComponent implements OnInit {
   
-
-  constructor(public dialog : MatDialog) { }
+  doctor:Doctor;
+  doctor1:Doctor;
+  docName;
+  constructor(public dialog : MatDialog,private doctorService:DoctorService,private router: Router) { 
+    this.doctor=new Doctor();
+    this.doctor1=new Doctor();
+  }
 
   ngOnInit() {
+  }
+  searchDoctors(name:string)
+  {
+    //this.docName=name;
+    return this.doctorService.getDoctorByDoctorName(name).subscribe(data => {
+      this.doctor1=data;
+      console.log(name);
+
+    console.log(data);
+    this.router.navigate(['search-doctor'])
+  });
+
+
   }
 
 

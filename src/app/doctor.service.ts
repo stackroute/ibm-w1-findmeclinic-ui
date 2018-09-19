@@ -11,10 +11,11 @@ export class DoctorService {
   // private addUrl = "http://172.23.239.228:8080/doctor/auth";
   private addUrl = "http://localhost:8080/doctor/auth";
 
-  private secUrl="http://localHost:8081/api/v2/doctor";
+  private secUrl="http://localHost:8080/api/v2/doctor";
 
 
   constructor(private http: HttpClient) { }
+  doctor;
 
   registerDoctor(doctor): Observable<Doctor> {
     return this.http.post<Doctor>(this.addUrl,doctor);
@@ -28,6 +29,12 @@ export class DoctorService {
 getByEmail(doctorEmail:string) :Observable<Doctor>
 {
 return this.http.get<Doctor>(this.secUrl+"/"+doctorEmail);
+}
+getDoctorByDoctorName(doctorName:string):Observable<Doctor>
+{
+  this.doctor = new BehaviorSubject(doctorName).asObservable();
+
+  return this.http.get<Doctor>(this.secUrl+"/get/"+doctorName);
 }
 
 addDoctorDetails(doctor:Doctor):Observable<Doctor>{
