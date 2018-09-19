@@ -16,6 +16,7 @@ export class DoctorProfileComponent implements OnInit {
   showFiller = false;
   showContent = false;
   show(): boolean{
+    this.showContent=false;
     if(this.showFiller===false){
       this.showFiller=true;
     }else{
