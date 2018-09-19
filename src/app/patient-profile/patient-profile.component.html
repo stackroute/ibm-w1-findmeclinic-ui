@@ -26,7 +26,12 @@
       <mat-sidenav #snav fixedTopGap="5">
         <mat-nav-list>
           <mat-list-item><mat-icon>list_alt</mat-icon>My Appointments</mat-list-item>
-          <mat-list-item><mat-icon>library_books</mat-icon>Reports</mat-list-item>
+             
+          <mat-list-item (click)="reports()">
+            <mat-icon>library_books</mat-icon>
+            Reports
+        </mat-list-item>
+
           <mat-list-item><mat-icon>group_add</mat-icon>Family Tree</mat-list-item>
         </mat-nav-list>
    

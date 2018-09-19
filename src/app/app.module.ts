@@ -42,6 +42,7 @@ import { FailRegisterComponent} from './doctor-login/fail-register.component';
 import { AppointmentComponent } from './appointment/appointment.component';
 import { PrescriptionsComponent } from './prescriptions/prescriptions.component';
 import { PatientUpdateComponent} from './patient-profile/patientupdate.component';
+import { MedicalRecordsComponent } from './medical-records/medical-records.component';
 
 @NgModule({
   declarations: [
@@ -55,9 +56,10 @@ import { PatientUpdateComponent} from './patient-profile/patientupdate.component
     InvalidDoctorComponent,
     FailRegisterComponent,
     FailPatientComponent,
-   
+   PatientUpdateComponent,
     AppointmentComponent,
-    PrescriptionsComponent
+    PrescriptionsComponent,
+    MedicalRecordsComponent
  
   ],
   imports: [
@@ -96,7 +98,7 @@ import { PatientUpdateComponent} from './patient-profile/patientupdate.component
    })
   ],
   entryComponents:[PatientLoginComponent,InvalidPatientComponent,FailPatientComponent,PatientUpdateComponent,InvalidDoctorComponent,FailRegisterComponent,
-  DoctorLoginComponent,DoctorProfileComponent],
+  DoctorLoginComponent,DoctorProfileComponent,MedicalRecordsComponent,PatientUpdateComponent],
   providers: [],
   bootstrap: [AppComponent]
 })
