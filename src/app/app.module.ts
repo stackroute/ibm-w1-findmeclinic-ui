@@ -43,6 +43,7 @@ import { AppointmentComponent } from './appointment/appointment.component';
 import { PrescriptionsComponent } from './prescriptions/prescriptions.component';
 import { PatientUpdateComponent} from './patient-profile/patientupdate.component';
 import { MedicalRecordsComponent } from './medical-records/medical-records.component';
+import { AddScheduleComponent } from './add-schedule/add-schedule.component';
 
 @NgModule({
   declarations: [
@@ -56,11 +57,11 @@ import { MedicalRecordsComponent } from './medical-records/medical-records.compo
     InvalidDoctorComponent,
     FailRegisterComponent,
     FailPatientComponent,
-   PatientUpdateComponent,
+    PatientUpdateComponent,
     AppointmentComponent,
     PrescriptionsComponent,
-    MedicalRecordsComponent
- 
+    MedicalRecordsComponent,
+    AddScheduleComponent
   ],
   imports: [
     MatCardModule,
@@ -98,7 +99,7 @@ import { MedicalRecordsComponent } from './medical-records/medical-records.compo
    })
   ],
   entryComponents:[PatientLoginComponent,InvalidPatientComponent,FailPatientComponent,PatientUpdateComponent,InvalidDoctorComponent,FailRegisterComponent,
-  DoctorLoginComponent,DoctorProfileComponent,MedicalRecordsComponent,PatientUpdateComponent],
+  DoctorLoginComponent,DoctorProfileComponent,MedicalRecordsComponent,PatientUpdateComponent, AddScheduleComponent],
   providers: [],
   bootstrap: [AppComponent]
 })

@@ -22,6 +22,8 @@ import {
   CalendarEventTimesChangedEvent,
   CalendarView
 } from 'angular-calendar';
+import {AddScheduleComponent} from '../add-schedule/add-schedule.component'
+import { MatDialog, MatDialogRef } from '@angular/material';
 
 const colors: any = {
   red: {
@@ -68,7 +70,7 @@ export class CalendarComponent implements OnInit {
 
   activeDayIsOpen: boolean = true;
 
-  constructor(private modal: NgbModal) {}
+  constructor(private modal: NgbModal,private dialog:MatDialog) {}
 
   dayClicked({ date, events }: { date: Date; events: CalendarEvent[] }): void {
     if (isSameMonth(date, this.viewDate)) {
@@ -108,6 +110,11 @@ export class CalendarComponent implements OnInit {
       color: colors.red,
     });
     this.refresh.next();
+  }
+
+  openDialog() {
+    const dialogRef = this.dialog.open(AddScheduleComponent);
+ 
   }
 
 }
