@@ -16,6 +16,17 @@ import { PatientUpdateComponent } from './patientupdate.component';
 })
 export class PatientProfileComponent implements OnInit {
   
+  showFiller = false;
+  reports(): boolean{
+    if(this.showFiller===false){
+      this.showFiller=true;
+    }else{
+      this.showFiller=true;
+    }
+    return this.showFiller
+  }
+
+
   patientMail:string;
   patientData:Patient;
   registerForm: FormGroup;

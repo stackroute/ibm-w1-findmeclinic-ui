@@ -15,8 +15,15 @@
     z-index: 2;
   }
   
-
-  
+ .card{
+  text-align: center;
+   align-items: center;
+   width: 600px;
+   margin-left:35%;
+ }
+ .address{
+   margin-right: 30%;
+ }
   .example-sidenav-container {
     /* When the sidenav is not fixed, stretch the sidenav container to fill the available space. This
        causes `<mat-sidenav-content>` to act as our scrolling element for desktop layouts. */
@@ -47,6 +54,7 @@
     background-color:  rgba(128, 128, 133, 0.7);
     color: white;
     padding-top: 30px;
+   
    }
   
   #myFooter .footer-copyright {

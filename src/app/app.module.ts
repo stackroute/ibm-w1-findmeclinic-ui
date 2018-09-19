@@ -39,11 +39,12 @@ import { CalendarComponent } from './calendar/calendar.component';
 import { InvalidPatientComponent } from './patient-login/invalid-patient.component';
 import { InvalidDoctorComponent } from './doctor-login/invalid-doctor.component';
 import { FailRegisterComponent} from './doctor-login/fail-register.component';
-import { DoctorBasicsComponent } from './doctor-basics/doctor-basics.component';
 import { AppointmentComponent } from './appointment/appointment.component';
 import { PrescriptionsComponent } from './prescriptions/prescriptions.component';
 import { PatientUpdateComponent} from './patient-profile/patientupdate.component';
-import { SearchDoctorComponent } from './search-doctor/search-doctor.component';
+import { MedicalRecordsComponent } from './medical-records/medical-records.component';
+import { AddScheduleComponent } from './add-schedule/add-schedule.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -57,11 +58,11 @@ import { SearchDoctorComponent } from './search-doctor/search-doctor.component';
     InvalidDoctorComponent,
     FailRegisterComponent,
     FailPatientComponent,
-    DoctorBasicsComponent,
+    PatientUpdateComponent,
     AppointmentComponent,
     PrescriptionsComponent,
-    SearchDoctorComponent
- 
+    MedicalRecordsComponent,
+    AddScheduleComponent
   ],
   imports: [
     MatCardModule,
@@ -99,7 +100,7 @@ import { SearchDoctorComponent } from './search-doctor/search-doctor.component';
    })
   ],
   entryComponents:[PatientLoginComponent,InvalidPatientComponent,FailPatientComponent,PatientUpdateComponent,InvalidDoctorComponent,FailRegisterComponent,
-  DoctorLoginComponent,DoctorProfileComponent],
+  DoctorLoginComponent,DoctorProfileComponent,MedicalRecordsComponent,PatientUpdateComponent, AddScheduleComponent],
   providers: [],
   bootstrap: [AppComponent]
 })
