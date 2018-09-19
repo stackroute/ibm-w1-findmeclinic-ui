@@ -1,3 +1,7 @@
+<script
+  src="http://code.jquery.com/jquery-2.2.4.min.js"
+  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+  crossorigin="anonymous"></script>
 <div class="main">
     
     <nav class="navbar navbar-expand-lg navbar-light ">
@@ -26,9 +30,18 @@
 
         <div class="search">
             <form action="" method="">
-                <input type="search" matInput placeholder="Search by Location" matTooltip="Click to detect your Location">
-                <button>Detect</button>
+                    
+                        
+                <input type="search"  matInput placeholder="Search by Location" matTooltip="Click to detect your Location">
+                <button (click)="getLocation()"> Get Location</button>
+                <div id="output">
+                    
+                  
+                </div>
+                  
                 <input type="search" placeholder="Searching for Doctors?">
+                <button (click)="searchDoctors()">Go</button>
+
 
             </form>
         </div>

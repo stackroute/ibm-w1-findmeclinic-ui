@@ -43,6 +43,7 @@ import { DoctorBasicsComponent } from './doctor-basics/doctor-basics.component';
 import { AppointmentComponent } from './appointment/appointment.component';
 import { PrescriptionsComponent } from './prescriptions/prescriptions.component';
 import { PatientUpdateComponent} from './patient-profile/patientupdate.component';
+import { SearchDoctorComponent } from './search-doctor/search-doctor.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -50,6 +51,7 @@ import { PatientUpdateComponent} from './patient-profile/patientupdate.component
     PatientLoginComponent,
     DoctorLoginComponent,
     PatientProfileComponent,
+    PatientUpdateComponent,
     DoctorProfileComponent,
     CalendarComponent,InvalidPatientComponent,
     InvalidDoctorComponent,
@@ -57,7 +59,8 @@ import { PatientUpdateComponent} from './patient-profile/patientupdate.component
     FailPatientComponent,
     DoctorBasicsComponent,
     AppointmentComponent,
-    PrescriptionsComponent
+    PrescriptionsComponent,
+    SearchDoctorComponent
  
   ],
   imports: [
