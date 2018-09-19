@@ -43,6 +43,7 @@ import { DoctorBasicsComponent } from './doctor-basics/doctor-basics.component';
 import { AppointmentComponent } from './appointment/appointment.component';
 import { PrescriptionsComponent } from './prescriptions/prescriptions.component';
 import { PatientUpdateComponent} from './patient-profile/patientupdate.component';
+import { AddCalendarComponent } from './add-calendar/add-calendar.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -57,7 +58,8 @@ import { PatientUpdateComponent} from './patient-profile/patientupdate.component
     FailPatientComponent,
     DoctorBasicsComponent,
     AppointmentComponent,
-    PrescriptionsComponent
+    PrescriptionsComponent,
+    AddCalendarComponent
  
   ],
   imports: [
