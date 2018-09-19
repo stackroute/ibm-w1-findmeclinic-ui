@@ -25,7 +25,7 @@ export class DoctorService {
     return this.http.post(this.addUrl+"/login",doctor,{responseType: 'text'});
 }
 
-getByEmail(doctorEmail:string) :Observable<Doctor>
+getByEmail(doctorEmail) :Observable<Doctor>
 {
 return this.http.get<Doctor>(this.secUrl+"/"+doctorEmail);
 }
@@ -40,6 +40,6 @@ return this.http.post<Doctor>(this.secUrl+"/"+doctor.doctorEmail,doctor);
 
 updateDetails(doctor:Doctor):Observable<Doctor>
 {
-  return this.http.put<Doctor>(this.secUrl+"/"+doctor.doctorEmail,doctor);
+  return this.http.put<Doctor>(this.secUrl+"/"+this.doctorMail,doctor);
 }
 }

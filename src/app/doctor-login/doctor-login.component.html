@@ -28,7 +28,20 @@
             <button mat-raised-button color="primary" (click)="close()" (click)="move(loginDoctor)">Login</button>
         </mat-tab>
         <mat-tab label="Register">
-
+                <mat-form-field class="fullwidth">
+                        <input matInput [(ngModel)]="doctor.doctorFirstName" placeholder="Enter FirstName " [formControl]="passFormControl">
+                        <mat-error *ngIf="passFormControl.hasError('required')">
+                          First Name is <strong>required</strong>
+                            </mat-error>
+                      </mat-form-field> 
+                      <br>   
+                      <mat-form-field class="fullwidth">
+                        <input matInput [(ngModel)]="doctor.doctorLastName" placeholder="Enter LastName " [formControl]="passFormControl">
+                        <mat-error *ngIf="passFormControl.hasError('required')">
+                          Last Name is <strong>required</strong>
+                            </mat-error>
+                      </mat-form-field>
+                      <br>   
             <mat-form-field class="fullwidth">
                 <input matInput [(ngModel)]="doctor.doctorEmail" name="doctorEmail" placeholder="Enter Email"
                     [formControl]="emailFormControl">
