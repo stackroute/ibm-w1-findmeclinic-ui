@@ -19,8 +19,7 @@ const routes: Routes = [
   { path:'doctor-profile', component: DoctorProfileComponent},
   { path:'doctor-appointment', component: CalendarComponent},
   { path:'view-appointment', component: AppointmentComponent},
-  { path: 'add-prescription', component: PrescriptionsComponent},
-  {path:'doctor-basic',component:DoctorBasicsComponent}
+  { path: 'add-prescription', component: PrescriptionsComponent}
   
 ];
 

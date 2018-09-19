@@ -35,9 +35,7 @@ export class DoctorProfileComponent implements OnInit {
   ngOnInit() {
   }
 
-  open(){
-    this.router.navigate(['doctor-basic']);
-  }
+  
   logout() {
 
     this.token.removeToken();
