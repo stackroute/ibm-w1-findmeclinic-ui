@@ -27,8 +27,11 @@ export class PatientProfileComponent implements OnInit {
     {value: 'Male', viewValue: 'Male'},
     {value: 'Others', viewValue: 'Others'}
   ];
+
+
   showFiller = false;
   reports(): boolean{
+    this.check2=false;
     if(this.showFiller===false){
       this.showFiller=true;
     }else{
@@ -128,6 +131,7 @@ onChange()
         // alert('successfully updated!')
      }
 
+ 
   openProfile()
   {
     this.setting=false;
