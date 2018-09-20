@@ -31,8 +31,8 @@ import { FailPatientComponent } from './patient-login/fail-patient.component';
 
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import{ MatNativeDateModule } from '@angular/material';
-
-
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import { MatPaginatorModule} from '@angular/material';
 import { RouterModule } from '@angular/router';
 import { PatientProfileComponent } from './patient-profile/patient-profile.component';
 import { AppRoutingModule } from './/app-routing.module';
@@ -84,6 +84,7 @@ import { UploadFileComponent } from './upload-file/upload-file.component';
     MatGridListModule,
     MatMenuModule,
     MatNativeDateModule,
+    MatCheckboxModule,
     MatListModule,
     BrowserModule,
     MatDatepickerModule,
@@ -94,7 +95,7 @@ import { UploadFileComponent } from './upload-file/upload-file.component';
     MatGridListModule,
     MatMenuModule,
     MatListModule,
-
+    MatPaginatorModule,
     BrowserAnimationsModule,
     MaterialModule,
     HttpClientModule,
@@ -115,7 +116,7 @@ import { UploadFileComponent } from './upload-file/upload-file.component';
    })
   ],
   entryComponents:[PatientLoginComponent,InvalidPatientComponent,FailPatientComponent,PatientUpdateComponent,InvalidDoctorComponent,FailRegisterComponent,
-  DoctorLoginComponent,DoctorProfileComponent,MedicalRecordsComponent,PatientUpdateComponent, AddScheduleComponent,BookConfirmComponent],
+  DoctorLoginComponent,DoctorProfileComponent,MedicalRecordsComponent,PatientUpdateComponent, AddScheduleComponent,PrescriptionsComponent],
   providers: [],
   bootstrap: [AppComponent]
 })

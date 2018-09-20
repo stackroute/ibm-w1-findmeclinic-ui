@@ -1,6 +1,31 @@
-<a routerLink="/add-prescription"><mat-card>Appointment1</mat-card></a>
-<mat-card>Appointment2</mat-card>
-<mat-card>Appointment3</mat-card>
-<mat-card>Appointment4</mat-card>
 
-   
+<h1>LIST OF APPOINTMENTS</h1>
+<br>
+
+<div>
+  <mat-paginator #paginator [pageSizeOptions]="[5, 10, 25, 100]">
+  </mat-paginator>
+  
+  <mat-table [dataSource]="dataSource">
+
+        <ng-container matColumnDef="bookingId">
+          <mat-header-cell class="head" *matHeaderCellDef> </mat-header-cell> 
+          <mat-cell class="cell" *matCellDef="let row"><button (click)="open()" mat-button color="primary">
+              APPOINTMENT {{row.bookingId}}
+            </button>
+          </mat-cell>
+        </ng-container>
+
+
+        <ng-container matColumnDef="bookingStatus">
+          <mat-header-cell class="head" *matHeaderCellDef> </mat-header-cell>
+          <mat-cell *matCellDef="let row" class="name"> {{row.bookingStatus}}
+          </mat-cell>
+        </ng-container>
+      
+
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"> </mat-row>
+
+  </mat-table>
+</div>

@@ -156,7 +156,7 @@
 
 
 
-.example-card
+/* .example-card
 {
   height: 500px;
 }
@@ -170,7 +170,7 @@
  /* margin-left: 10%;
   margin-top: 5%;
   width: 15%;
-  height: 40%;*/
+  height: 40%;
   border-radius: 5px 5px 5px 5px;
   background-color:#3f51b5;
   height: 400px;
@@ -238,7 +238,7 @@
  .alertCard
  {
    width: 600px;
- }
+ } */
  .btn{
   margin-left: 50px;
   font-size: 20px;
@@ -383,3 +383,38 @@ width:1300px;
   margin-top: 3.5%;
     margin-left: 5%;
 }
+
+.display
+{
+  margin-left: 25%;
+    margin-top: 6%;
+}
+.dashboard
+{
+  height: 250px;
+  background-color:  #3f51b5;
+  border-radius: 5px 5px 5px 5px;
+
+}
+/* .mcon{
+  margin-left: 8%;
+
+} */
+.mcon{
+  text-align: center;
+background-color: #3f51b5;
+font-family: sans-serif;
+font-size: 20px;
+height: 200px;
+}
+.dc{
+  margin-left: 6%;
+  background-color: lightgrey;
+  border-radius: 5px 5px 5px 5px;
+  height: 200px;
+  padding-top: 50px;
+
+
+}
+
+
