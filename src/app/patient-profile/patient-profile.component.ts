@@ -179,6 +179,7 @@ onChange()
   {
     this.setting=false;
     this.check2=true;
+    this.password=false;
 
   }
     
