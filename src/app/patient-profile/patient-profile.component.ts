@@ -29,6 +29,7 @@ export class PatientProfileComponent implements OnInit {
   ];
   showFiller = false;
   reports(): boolean{
+    this.check2=false;
     if(this.showFiller===false){
       this.showFiller=true;
     }else{
@@ -74,7 +75,8 @@ sub=false;
               });
 
       this.settingForm = this.formBuilder.group(
-        { password: ['',[Validators.required,Validators.minLength(4)]]
+        { password: ['',[Validators.required,Validators.minLength(4)]],
+          confirmPassword: ['',[Validators.required,Validators.minLength(4)]]
       });
 
       
@@ -84,7 +86,8 @@ sub=false;
       }
 
 this.check2=true;
-  this.patientService.patientMailId.subscribe(mailId =>{ console.log(mailId);this.patientMail = mailId})
+this.patientMail = this.token.getUserId();
+  //this.patientService.patientMailId.subscribe(mailId =>{ console.log(mailId);this.patientMail = mailId})
     this.patientService.getBadgeName(this.patientMail).subscribe(data=>
       {console.log(data);this.badgeName=data});
   }
@@ -154,6 +157,7 @@ onChange()
   logout() {
 
       this.token.removeToken();
+      this.token.removeUserId();
       this.router.navigate(['landing-page']);
      
     }
