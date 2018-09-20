@@ -96,7 +96,7 @@ this.check2=true;
 onChange()
 {
    this.sub = true;
-  
+  this.password=false;
           // stop here if form is invalid
           if (this.settingForm.invalid) {
               return;
@@ -173,6 +173,13 @@ onChange()
   changePwd()
   {
     this.password=true;
+  }
+  
+  onClose()
+  {
+    this.setting=false;
+    this.check2=true;
+
   }
     
     
