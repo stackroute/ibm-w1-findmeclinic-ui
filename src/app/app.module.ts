@@ -46,6 +46,8 @@ import { PatientUpdateComponent} from './patient-profile/patientupdate.component
 import { MedicalRecordsComponent } from './medical-records/medical-records.component';
 import { AddScheduleComponent } from './add-schedule/add-schedule.component';
 import { SearchDoctorComponent } from './search-doctor/search-doctor.component';
+import { BookComponentComponent } from './book-component/book-component.component';
+import { BookConfirmComponent } from './book-confirm/book-confirm.component';
 
 @NgModule({
   declarations: [
@@ -65,7 +67,9 @@ import { SearchDoctorComponent } from './search-doctor/search-doctor.component';
     PrescriptionsComponent,
     MedicalRecordsComponent,
     AddScheduleComponent,
-    SearchDoctorComponent
+    SearchDoctorComponent,
+    BookComponentComponent,
+    BookConfirmComponent
   ],
   imports: [
     MatCardModule,
@@ -103,7 +107,7 @@ import { SearchDoctorComponent } from './search-doctor/search-doctor.component';
    })
   ],
   entryComponents:[PatientLoginComponent,InvalidPatientComponent,FailPatientComponent,PatientUpdateComponent,InvalidDoctorComponent,FailRegisterComponent,
-  DoctorLoginComponent,DoctorProfileComponent,MedicalRecordsComponent,PatientUpdateComponent, AddScheduleComponent],
+  DoctorLoginComponent,DoctorProfileComponent,MedicalRecordsComponent,PatientUpdateComponent, AddScheduleComponent,BookConfirmComponent],
   providers: [],
   bootstrap: [AppComponent]
 })
