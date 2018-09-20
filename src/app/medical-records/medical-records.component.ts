@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {MatDialog} from '@angular/material';
+import { UploadFileComponent } from '../upload-file/upload-file.component';
 
 @Component({
   selector: 'app-medical-records',
@@ -16,9 +18,13 @@ export class MedicalRecordsComponent implements OnInit {
   //   }
   //   return this.showFiller
   // }
-  constructor() { }
+  constructor(public dialog : MatDialog) { }
 
   ngOnInit() {
+  }
+
+  openRecords() {
+    const dialogRef = this.dialog.open(UploadFileComponent);
   }
 
 }
