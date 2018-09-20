@@ -31,7 +31,7 @@ import { FailPatientComponent } from './patient-login/fail-patient.component';
 
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import{ MatNativeDateModule } from '@angular/material';
-
+import {MatCheckboxModule} from '@angular/material/checkbox';
 import { MatPaginatorModule} from '@angular/material';
 import { RouterModule } from '@angular/router';
 import { PatientProfileComponent } from './patient-profile/patient-profile.component';
@@ -72,6 +72,7 @@ import { SearchDoctorComponent } from './search-doctor/search-doctor.component';
     MatGridListModule,
     MatMenuModule,
     MatNativeDateModule,
+    MatCheckboxModule,
     MatListModule,
     BrowserModule,
     MatDatepickerModule,
@@ -103,7 +104,7 @@ import { SearchDoctorComponent } from './search-doctor/search-doctor.component';
    })
   ],
   entryComponents:[PatientLoginComponent,InvalidPatientComponent,FailPatientComponent,PatientUpdateComponent,InvalidDoctorComponent,FailRegisterComponent,
-  DoctorLoginComponent,DoctorProfileComponent,MedicalRecordsComponent,PatientUpdateComponent, AddScheduleComponent],
+  DoctorLoginComponent,DoctorProfileComponent,MedicalRecordsComponent,PatientUpdateComponent, AddScheduleComponent,PrescriptionsComponent],
   providers: [],
   bootstrap: [AppComponent]
 })

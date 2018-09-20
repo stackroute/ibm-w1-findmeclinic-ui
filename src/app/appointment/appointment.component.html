@@ -10,7 +10,7 @@
 
         <ng-container matColumnDef="bookingId">
           <mat-header-cell class="head" *matHeaderCellDef> </mat-header-cell> 
-          <mat-cell class="cell" *matCellDef="let row"><button mat-button color="primary">
+          <mat-cell class="cell" *matCellDef="let row"><button (click)="open()" mat-button color="primary">
               APPOINTMENT {{row.bookingId}}
             </button>
           </mat-cell>
