@@ -95,9 +95,9 @@ import { SearchDoctorComponent } from './search-doctor/search-doctor.component';
     MatGridListModule,
 //For calendar
     NgbModalModule,
-   FlatpickrModule.forRoot(),
-   AlertsModule.forRoot(),
-   CalendarModule.forRoot({
+    FlatpickrModule.forRoot(),
+    AlertsModule.forRoot(),
+    CalendarModule.forRoot({
      provide: DateAdapter,
      useFactory: adapterFactory
    })

@@ -6,7 +6,8 @@ import * as $ from 'jquery';
 import { Doctor } from '../Doctor';
 import  {DoctorService} from '../doctor.service';
 import{ Router,NavigationExtras} from '@angular/router';
-
+import * as SockJS from 'sockjs-client';
+import * as Stomp from '@stomp/stompjs';
 
 
 @Component({
@@ -18,27 +19,28 @@ export class LandingPageComponent implements OnInit {
   
   doctor:Doctor;
   doctor1:Doctor;
-  docName;
+  docName: string ='';
   constructor(public dialog : MatDialog,private doctorService:DoctorService,private router: Router) { 
     this.doctor=new Doctor();
     this.doctor1=new Doctor();
   }
 
   ngOnInit() {
+    this.setUpConnection()
   }
-  searchDoctors(name:string)
-  {
-    //this.docName=name;
-    return this.doctorService.getDoctorByDoctorName(name).subscribe(data => {
-      this.doctor1=data;
-      console.log(name);
+  // searchDoctors(name:string)
+  // {
+  //   this.docName=name;
+  //   return this.doctorService.getDoctorByDoctorName(name).subscribe(data => {
+  //     this.doctor1=data;
+  //     console.log(name);
 
-    console.log(data);
-    this.router.navigate(['search-doctor'])
-  });
+  //   console.log(data);
+  //   this.router.navigate(['search-doctor'])
+  // });
 
 
-  }
+  // }
 
 
   openPatient():void{
@@ -70,6 +72,33 @@ export class LandingPageComponent implements OnInit {
     });
   }
   
+
+  private stompClient;
+  name: string;
+  
+   public setUpConnection() {
+      console.log('hii')
+      let socket = new SockJS('http://localhost:8080/socket');
+      this.stompClient = Stomp.over(socket);
+      let that = this;
+      that.stompClient.connect({}, function (frame) {
+          console.log('Connected: ' + frame);
+          that.stompClient.subscribe('/topic/getList', function (data) {
+              console.log(data);
+              JSON.parse(data.body).content;
+          });
+      });
+  }
+
+  sendName(name: any){
+    console.log(name);
+    this.stompClient.send("/app/doc-name", {}, JSON.stringify(name));
+  }
+
+  sendData(){
+    console.log(this.docName)
+    this.doctorService.getDoctorByDoctorName(this.docName).subscribe(data => console.log(data))
+  }
   
   
 

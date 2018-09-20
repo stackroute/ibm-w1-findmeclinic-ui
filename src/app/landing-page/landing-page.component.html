@@ -3,6 +3,7 @@
   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
   crossorigin="anonymous"></script>
 <div class="main">
+        <!-- <h1>testing........</h1> -->
     
     <nav class="navbar navbar-expand-lg navbar-light ">
         <img src="../../assets/logo.png" class="style">
@@ -25,19 +26,20 @@
         </div>
     </nav>
 
-
     <div class="container">
 
         <div class="search">
             <form action="" method="">
                     
                         
-                <input type="text" id="output"  matInput placeholder="Search by Location" matTooltip="Click to detect your Location">
-                <button (click)="getLocation()"> Get Location</button>
+                <!-- <input type="text" id="output"  matInput placeholder="Search by Location" matTooltip="Click to detect your Location">
+                <button (click)="getLocation()"> Get Location</button> -->
                 
                   
-                <input  type="text" name="form" [(ngModel)]="doctor.doctorName" placeholder="Searching for Doctors?">
-                <button (click)="searchDoctors(doctor.doctorName)">Go</button>
+                <!-- <input  type="text" name="form" [(ngModel)]="docName" (keypress)=sendName($event.target.value) placeholder="Searching for Doctors?"> -->
+                <input  type="text" name="form" [(ngModel)]="docName"  placeholder="Searching for Doctors?">
+
+                <button (click)="sendData()">Go</button>
 
 
             </form>
