@@ -1,3 +1,4 @@
+import {DoctorAddress} from './doctorAddress';
 export class Doctor{
     doctorFirstName:string;
     doctorLastName:string;
@@ -9,10 +10,6 @@ export class Doctor{
     doctorDateOfBirth:Date;
     doctorQualification:string;
     doctorExperience:number;
-    doctorAddressNo:number;
-    streetNo:string;
-    locality:string;
-    state:string;
-    hospitalName:string;
+    doctorAddressNo:DoctorAddress;
 
 }

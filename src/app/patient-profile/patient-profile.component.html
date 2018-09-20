@@ -9,9 +9,11 @@
         <button mat-button type="submit" class="btn btn-success">Book</button>
       </div>
    
-   
+      
       <div  class="badge-style">
+            <app-notification></app-notification>
         <button [matMenuTriggerFor]="menu" mat-mini-fab color="warn">{{badgeName}}</button>
+       
         <mat-menu #menu="matMenu">
    
             <button mat-menu-item (click)="openProfile()"><mat-icon>supervised_user_circle</mat-icon>Profile</button>
@@ -42,7 +44,7 @@
    
       <mat-sidenav-content>
           
-          <div *ngIf="check" class="pForm">
+          <div *ngIf="check" class="DForm">
         <br>
             <mat-card>
                 
@@ -125,14 +127,7 @@
 
                                 <div class="form-group">
                                     <label class="lbl">Gender</label>
-                                    
-                                    
-                                   <!-- <input mat-select type="text" formControlName="firstName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" [(ngModel)]="patientData.patientFirstName" />  
-                                          <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
-                                        <div *ngIf="f.firstName.errors.required">First Name is required</div>
-                                    </div> -->
-                                    
-
+                                   
                                     <mat-form-field>
                                             <mat-select class="select" placeholder="select you gender" [(value)]="patientData.patientGender">
                                               <mat-option *ngFor="let patientGender of genders" [value]="patientGender.value">

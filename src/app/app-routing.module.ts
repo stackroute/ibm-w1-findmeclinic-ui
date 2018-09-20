@@ -13,6 +13,7 @@ import { SearchDoctorComponent } from './search-doctor/search-doctor.component';
 import { UploadFileComponent } from './upload-file/upload-file.component';
 
 
+
 const routes: Routes = [
   { path:'', redirectTo:'/landing-page', pathMatch:'full'},
   { path:'landing-page', component: LandingPageComponent},
@@ -22,9 +23,13 @@ const routes: Routes = [
   { path:'view-appointment', component: AppointmentComponent},
   { path: 'add-prescription', component: PrescriptionsComponent},
   { path:'medical-records', component: MedicalRecordsComponent},
+<<<<<<< HEAD
   { path:'search-doctor',component:SearchDoctorComponent},
   {path:'upload-records',component:UploadFileComponent}
   
+=======
+  { path:'search-doctor',component:SearchDoctorComponent}
+>>>>>>> 7dc3f38c41b678a0b287659e0159f04bd86b4976
 ];
 
 @NgModule({
