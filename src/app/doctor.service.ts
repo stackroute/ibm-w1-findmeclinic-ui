@@ -10,7 +10,6 @@ export class DoctorService {
  doctorMail;
   // private addUrl = "http://172.23.239.228:8080/doctor/auth";
   private addUrl = "http://localhost:8080/doctor/auth";
-
   private secUrl="http://localHost:8081/api/v2/doctor";
 
 

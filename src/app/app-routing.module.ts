@@ -10,9 +10,8 @@ import { AppointmentComponent } from './appointment/appointment.component';
 import { PrescriptionsComponent } from './prescriptions/prescriptions.component';
 import {MedicalRecordsComponent} from './medical-records/medical-records.component'
 import { SearchDoctorComponent } from './search-doctor/search-doctor.component';
+import { BookComponentComponent } from './book-component/book-component.component';
 import { UploadFileComponent } from './upload-file/upload-file.component';
-
-
 
 const routes: Routes = [
   { path:'', redirectTo:'/landing-page', pathMatch:'full'},
@@ -24,6 +23,7 @@ const routes: Routes = [
   { path: 'add-prescription', component: PrescriptionsComponent},
   { path:'medical-records', component: MedicalRecordsComponent},
   { path:'search-doctor',component:SearchDoctorComponent},
+  { path:'book', component: BookComponentComponent},
   {path:'upload-file', component:UploadFileComponent}
 ];
 
