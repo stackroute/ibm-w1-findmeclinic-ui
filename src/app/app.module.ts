@@ -4,12 +4,12 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LandingPageComponent } from './landing-page/landing-page.component';
-import {MatCardModule} from '@angular/material/card';
-import {MatGridListModule} from '@angular/material/grid-list';
-import {MatIconModule,MatListModule} from '@angular/material';
-import {MatMenuModule} from '@angular/material/menu';
-import {MatToolbarModule} from '@angular/material/toolbar';
-import {MatSelectModule} from '@angular/material/select';
+import { MatCardModule} from '@angular/material/card';
+import { MatGridListModule} from '@angular/material/grid-list';
+import { MatIconModule,MatListModule} from '@angular/material';
+import { MatMenuModule} from '@angular/material/menu';
+import { MatToolbarModule} from '@angular/material/toolbar';
+import { MatSelectModule} from '@angular/material/select';
 
 
 //Calendar Modules for Calendar Component
@@ -26,12 +26,12 @@ import { PatientLoginComponent } from './patient-login/patient-login.component';
 import { DoctorLoginComponent } from './doctor-login/doctor-login.component';
 import { HttpClientModule } from '@angular/common/http';
 import { DoctorProfileComponent } from './doctor-profile/doctor-profile.component';
-import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { MatSnackBarModule} from '@angular/material/snack-bar';
 import { FailPatientComponent } from './patient-login/fail-patient.component';
 
-import {MatDatepickerModule} from '@angular/material/datepicker';
-import{ MatNativeDateModule } from '@angular/material';
-import {MatCheckboxModule} from '@angular/material/checkbox';
+import { MatDatepickerModule} from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material';
+import { MatCheckboxModule} from '@angular/material/checkbox';
 import { MatPaginatorModule} from '@angular/material';
 import { RouterModule } from '@angular/router';
 import { PatientProfileComponent } from './patient-profile/patient-profile.component';
@@ -48,9 +48,7 @@ import { AddScheduleComponent } from './add-schedule/add-schedule.component';
 import { SearchDoctorComponent } from './search-doctor/search-doctor.component';
 import { BookComponentComponent } from './book-component/book-component.component';
 import { BookConfirmComponent } from './book-confirm/book-confirm.component';
-
 import { NotificationComponent } from './notification/notification.component';
-
 import { UploadFileComponent } from './upload-file/upload-file.component';
 
 
@@ -76,8 +74,7 @@ import { UploadFileComponent } from './upload-file/upload-file.component';
     BookComponentComponent,
     BookConfirmComponent,
     NotificationComponent,
-
-    UploadFileComponent
+     UploadFileComponent
   ],
   imports: [
     MatCardModule,
@@ -100,13 +97,11 @@ import { UploadFileComponent } from './upload-file/upload-file.component';
     MaterialModule,
     HttpClientModule,
     AppRoutingModule,
-
     RouterModule,
     MatGridListModule,
-
     RouterModule,
     MatGridListModule,
-//For calendar
+    //For calendar
     NgbModalModule,
    FlatpickrModule.forRoot(),
    AlertsModule.forRoot(),
@@ -116,7 +111,7 @@ import { UploadFileComponent } from './upload-file/upload-file.component';
    })
   ],
   entryComponents:[PatientLoginComponent,InvalidPatientComponent,FailPatientComponent,PatientUpdateComponent,InvalidDoctorComponent,FailRegisterComponent,
-  DoctorLoginComponent,DoctorProfileComponent,MedicalRecordsComponent,PatientUpdateComponent, AddScheduleComponent,PrescriptionsComponent,BookConfirmComponent],
+  DoctorLoginComponent,DoctorProfileComponent,MedicalRecordsComponent,PatientUpdateComponent, AddScheduleComponent,PrescriptionsComponent,BookConfirmComponent,MedicalRecordsComponent,UploadFileComponent],
   providers: [],
   bootstrap: [AppComponent]
 })

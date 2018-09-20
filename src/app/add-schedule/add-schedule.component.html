@@ -1,11 +1,34 @@
 <mat-form-field class="fullwidth">
-  <input matInput placeholder="Description">
+  <input matInput type = "text" placeholder="ScheduleId">
 </mat-form-field>
-
+<br>
 <mat-form-field class="fullwidth">
-  <input matInput placeholder="Status">
+  <input matInput type = "text" placeholder="Description">
+</mat-form-field>
+<br>
+<mat-form-field class="fullwidth">
+  <input matInput type = "text" placeholder="Work Place">
+</mat-form-field>
+<br>
+<mat-form-field class="fullwidth">
+  <input matInput type = "text" placeholder="Work Place">
+</mat-form-field>
+<br>
+<mat-form-field class="fullwidth">
+  <input matInput type ="datetime-local">
+</mat-form-field>
+<br>
+<mat-form-field class="fullwidth">
+  <input matInput type ="datetime-local">
+</mat-form-field>
+<br>
+<mat-form-field class="fullwidth">
+  <input matInput type="number">
+  <mat-hint align="start"><strong>Insert Number Only</strong> </mat-hint>
 </mat-form-field>
 
+
+<!-- -->
 <div mat-dialog-actions>
   <button mat-button (click)="onNoClick()">No Thanks</button>
   <button mat-button mat-dialog-close cdkFocusInitial>Ok</button>

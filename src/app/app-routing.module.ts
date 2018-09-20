@@ -24,7 +24,7 @@ const routes: Routes = [
   { path:'medical-records', component: MedicalRecordsComponent},
   { path:'search-doctor',component:SearchDoctorComponent},
   { path:'book', component: BookComponentComponent},
-  {path:'upload-file', component:UploadFileComponent}
+  { path:'upload-file', component:UploadFileComponent}
 ];
 
 @NgModule({

@@ -1,3 +1,4 @@
+
 import { Component, OnInit } from '@angular/core';
 import { PatientLoginComponent } from '../patient-login/patient-login.component';
 import {MatDialog} from '@angular/material';
@@ -6,6 +7,7 @@ import * as $ from 'jquery';
 import { Doctor } from '../Doctor';
 import  {DoctorService} from '../doctor.service';
 import{ Router,NavigationExtras} from '@angular/router';
+import { DoctorTokenStorage } from '../doctorTokenStorage';
 
 
 
@@ -19,26 +21,42 @@ export class LandingPageComponent implements OnInit {
   doctor:Doctor;
   doctor1:Doctor;
   docName;
-  constructor(public dialog : MatDialog,private doctorService:DoctorService,private router: Router) { 
+  doctorName;
+  constructor(public dialog : MatDialog,private doctorService:DoctorService,private router: Router,private docNameObj:DoctorTokenStorage) { 
     this.doctor=new Doctor();
     this.doctor1=new Doctor();
   }
 
   ngOnInit() {
+      this.docNameObj.removedoctorName();
+
   }
+
   searchDoctors(name:string)
   {
-    //this.docName=name;
-    return this.doctorService.getDoctorByDoctorName(name).subscribe(data => {
-      this.doctor1=data;
-      console.log(name);
 
-    console.log(data);
-    this.router.navigate(['search-doctor'])
-  });
+    console.log(name);
+
+    this.docNameObj.saveDoctorName(name);
+    console.log(this.doctorName);
+    console.log(this.docNameObj.getDoctorName());
+    //     return this.doctorService.getDoctorByDoctorName(name).subscribe(data => {
+    //   this.doctor1=data;
+    //   console.log(name);
+
+    // console.log(data);
+    // console.log(this.doctor.doctorName)
+    //       console.log(name);
+    
+    this.router.navigate(['search-doctor']);
+
+    // return this.doctorService.getDoctorByDoctorName(name).subscribe((data1:Doctor[]) => { this.doctorList=data1; console.log(data1)});
+  
 
 
   }
+
+    //this.docName=name;
 
 
   openPatient():void{
