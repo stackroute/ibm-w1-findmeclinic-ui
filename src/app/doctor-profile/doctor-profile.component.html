@@ -1,5 +1,5 @@
 <div class="example-container">
-<<<<<<< HEAD
+
   <mat-toolbar color="primary" class="example-toolbar">
     <button mat-icon-button (click)="snav.toggle()">
       <mat-icon>menu</mat-icon>
@@ -10,7 +10,7 @@
   
     <div class="badge-style">
             <app-notification></app-notification>
-      <button [matMenuTriggerFor]="menu" mat-mini-fab color="warn">AA</button>
+      <button [matMenuTriggerFor]="menu" mat-mini-fab color="warn">{{badgeName}}</button>
       
       <mat-menu #menu="matMenu">
         <button mat-menu-item (click)="click()"> 
@@ -38,140 +38,6 @@
 
       </mat-nav-list>
     </mat-sidenav>
-    
-
-     <mat-sidenav-content>
-         <div   *ngIf="create">
-               <mat-card class="card">
-                    <h2> Basic Doctor Details</h2>
-                    <mat-form-field class="formheight">
-                            <input matInput  placeholder="Enter the Email ">
-                            
-                           </mat-form-field><mat-icon>account_circle</mat-icon>
-              <br>
-              <br>
-               <mat-form-field class="formheight">
-                    <input matInput  placeholder="Enter the FirstName ">
-                    
-                   </mat-form-field><mat-icon>mood</mat-icon>
-      <br>
-      <br>
-
-       <mat-form-field class="formheight">
-            <input matInput  placeholder="Enter the LastName ">
-            
-           </mat-form-field><mat-icon>mood</mat-icon>
-<br>
-<br>
-<mat-form-field class="formheight">
-        <input matInput  placeholder="Enter the PhoneNumber ">
-        
-       </mat-form-field><mat-icon>mood</mat-icon>
-<br>
-<br>
-
-<mat-form-field class="formheight">
-        <input matInput  placeholder="Enter the Gender ">
-        
-       </mat-form-field><mat-icon>mood</mat-icon>
-<br>
-<br>
-<mat-form-field class="formheight">
-        <input matInput  placeholder="Enter the Qualification ">
-        
-       </mat-form-field><mat-icon>mood</mat-icon>
-<br>
-<br>
-
-<mat-form-field class="formheight">
-        <input matInput  placeholder="Enter the Speciality ">
-        
-       </mat-form-field><mat-icon>mood</mat-icon>
-<br>
-<br>
-<mat-form-field class="formheight">
-        <input matInput  placeholder="Enter the Experience ">
-        
-       </mat-form-field><mat-icon>mood</mat-icon>
-       <h5 class="address">Address</h5>
-       <mat-form-field class="formheight">
-        <input matInput  placeholder="Enter the HospitalName ">
-        
-       </mat-form-field><mat-icon>location_city</mat-icon>
-</mat-card>
-         </div>
-         
-      <div *ngIf="showFiller" style="margin-top: 5%">
-        <app-calendar></app-calendar>
-      </div>
-      <br>
-      <br>
-      <div *ngIf="showContent" style="margin-top: 5%">
-        <app-appointment></app-appointment>
-      </div>
-     
-    </mat-sidenav-content> 
-
-  </mat-sidenav-container>
-
-
-
-   <!--Footer-->
- <!-- <footer class="page-footer" id="myFooter">
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-3 myCols">
-                <h5>Get started</h5>
-                <ul>
-                    <li>
-                        <a href="#">Home</a>
-                    </li>
-                    <li>
-                        <a href="#">Sign up</a>
-                    </li>
-                    <li>
-                        <a href="#">Downloads</a>
-                    </li>
-                </ul>
-=======
-    <mat-toolbar color="primary" class="example-toolbar">
-        <button mat-icon-button (click)="snav.toggle()">
-            <mat-icon>menu</mat-icon>
-        </button>
-        <h1 class="example-app-name">FindMeClinic</h1>
-
-
-
-        <div class="badge-style">
-            <button [matMenuTriggerFor]="menu" mat-mini-fab color="warn">{{badgeName}}</button>
-            <mat-menu #menu="matMenu">
-                <button mat-menu-item (click)="click()">
-                    <mat-icon>supervised_user_circle</mat-icon>Profile</button>
-                <button mat-menu-item>
-                    <mat-icon>settings</mat-icon>Settings</button>
-                <button mat-menu-item (click)="logout()">
-                    <mat-icon>directions_walk</mat-icon>Logout</button>
-            </mat-menu>
-        </div>
-    </mat-toolbar>
-
-
-
-
-    <mat-sidenav-container class="example-sidenav-container">
-        <mat-sidenav #snav fixedTopGap="5">
-            <mat-nav-list>
-                <mat-list-item (click)="display()" (click)="snav.toggle()">
-                    <mat-icon>list_alt</mat-icon>My Appointments</mat-list-item>
-                <mat-list-item>
-                    <mat-icon>library_books</mat-icon>Reports</mat-list-item>
-                <mat-list-item (click)="show()" (click)="snav.toggle()">
-                    <mat-icon>access_time</mat-icon>Scheduling</mat-list-item>
-
-            </mat-nav-list>
-        </mat-sidenav>
-
-
         <mat-sidenav-content>
 
             <div *ngIf="create1" class="card1">
@@ -318,7 +184,7 @@
                 </form>
 
 
->>>>>>> d9c00c6bce07a02a557c984e36cdfa276e9ae6cd
+
             </div>
 
             <div *ngIf="showFiller" style="margin-top: 5%">
@@ -337,7 +203,7 @@
 
 
     <!--Footer-->
-    <!-- <footer class="page-footer" id="myFooter">
+     <footer class="page-footer" id="myFooter">
         <div class="container">
             <div class="row">
                 <div class="col-sm-3 myCols">
@@ -398,8 +264,7 @@
                 </div>
             </div>
         </div>
-<<<<<<< HEAD
-    </div>
+
     <div class="social-networks">
         <a href="#" class="twitter">
             <i class="fa fa-twitter"></i>
@@ -415,31 +280,10 @@
         <p>© 2018 FindMeClinic </p>
     </div>
 </footer>
- -->
 
-</div>
-=======
-        <div class="social-networks">
-            <a href="#" class="twitter">
-                <i class="fa fa-twitter"></i>
-            </a>
-            <a href="#" class="facebook">
-                <i class="fa fa-facebook-official"></i>
-            </a>
-            <a href="#" class="google">
-                <i class="fa fa-google-plus"></i>
-            </a>
-        </div>
-        <div class="footer-copyright">
-            <p>© 2018 FindMeClinic </p>
-        </div>
-<<<<<<< HEAD
-    </footer> 
- -->
-=======
-    </footer> -->
->>>>>>> d9c00c6bce07a02a557c984e36cdfa276e9ae6cd
 
->>>>>>> f5627f19df12b0e4c75a015354b9f5c9715f9c03
+
+
+
 
 </div>
