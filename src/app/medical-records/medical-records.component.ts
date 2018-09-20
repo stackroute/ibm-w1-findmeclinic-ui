@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {MatDialog} from '@angular/material';
+import { UploadFileComponent } from '../upload-file/upload-file.component';
+import { PatientProfileComponent } from '../patient-profile/patient-profile.component';
 
 @Component({
   selector: 'app-medical-records',
@@ -7,18 +10,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MedicalRecordsComponent implements OnInit {
  
-  // showFiller = false;
-  // show(): boolean{
-  //   if(this.showFiller===false){
-  //     this.showFiller=true;
-  //   }else{
-  //     this.showFiller=true;
-  //   }
-  //   return this.showFiller
-  // }
-  constructor() { }
+
+  constructor(public dialog : MatDialog) { }
 
   ngOnInit() {
+  }
+
+  closeRecords() :void {
+    const dialogRef = this.dialog.open(PatientProfileComponent);
+  }
+
+  openRecords() :void {
+    const dialogRef = this.dialog.open(UploadFileComponent);
   }
 
 }

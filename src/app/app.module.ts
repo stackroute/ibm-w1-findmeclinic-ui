@@ -49,6 +49,11 @@ import { SearchDoctorComponent } from './search-doctor/search-doctor.component';
 import { BookComponentComponent } from './book-component/book-component.component';
 import { BookConfirmComponent } from './book-confirm/book-confirm.component';
 
+import { NotificationComponent } from './notification/notification.component';
+
+import { UploadFileComponent } from './upload-file/upload-file.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -69,7 +74,10 @@ import { BookConfirmComponent } from './book-confirm/book-confirm.component';
     AddScheduleComponent,
     SearchDoctorComponent,
     BookComponentComponent,
-    BookConfirmComponent
+    BookConfirmComponent,
+    NotificationComponent,
+
+    UploadFileComponent
   ],
   imports: [
     MatCardModule,
