@@ -6,6 +6,11 @@ import{Medicines}from '../Medicine';
   styleUrls: ['./prescriptions.component.css']
 })
 export class PrescriptionsComponent implements OnInit {
+  appId="4050";
+ doctorName= "Dr.Senthil";
+ patientName="Keerthana";
+ patientAge="22";
+ bloodGroup="O+";
   medicine: Medicines;
   medicine1: Medicines;
   list;
