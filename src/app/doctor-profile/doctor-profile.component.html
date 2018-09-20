@@ -6,9 +6,11 @@
     <h1 class="example-app-name">FindMeClinic</h1>
 
 
-
+  
     <div class="badge-style">
+            <app-notification></app-notification>
       <button [matMenuTriggerFor]="menu" mat-mini-fab color="warn">AA</button>
+      
       <mat-menu #menu="matMenu">
         <button mat-menu-item (click)="click()"> 
           <mat-icon>supervised_user_circle</mat-icon>Profile</button>
@@ -114,7 +116,7 @@
 
 
    <!--Footer-->
- <footer class="page-footer" id="myFooter">
+ <!-- <footer class="page-footer" id="myFooter">
     <div class="container">
         <div class="row">
             <div class="col-sm-3 myCols">
@@ -190,7 +192,7 @@
         <p>© 2018 FindMeClinic </p>
     </div>
 </footer>
-
+ -->
 
 </div>
 

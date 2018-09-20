@@ -9,9 +9,10 @@
         <button mat-button type="submit" class="btn btn-success">Book</button>
       </div>
    
-   
+      <app-notification></app-notification>
       <div  class="badge-style">
         <button [matMenuTriggerFor]="menu" mat-mini-fab color="warn">{{badgeName}}</button>
+     
         <mat-menu #menu="matMenu">
    
             <button mat-menu-item (click)="openProfile()"><mat-icon>supervised_user_circle</mat-icon>Profile</button>
