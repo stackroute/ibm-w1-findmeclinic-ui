@@ -36,15 +36,15 @@
       <mat-tab  label="Register">    
           <br>   
           <mat-form-field class="formheight2">
-            <input matInput [(ngModel)]="patient.patientFirstName" placeholder="Enter FirstName " [formControl]="emailPhoneNumberFormControl">
-            <mat-error *ngIf="emailPhoneNumberFormControl.hasError('required')">
+            <input matInput [(ngModel)]="patient.patientFirstName" placeholder="Enter FirstName " [formControl]="firstNameFormControl">
+            <mat-error *ngIf="firstNameFormControl.hasError('required')">
               First Name is <strong>required</strong>
                 </mat-error>
           </mat-form-field> 
           <br>   
           <mat-form-field class="formheight2">
-            <input matInput [(ngModel)]="patient.patientLastName" placeholder="Enter LastName " [formControl]="emailPhoneNumberFormControl">
-            <mat-error *ngIf="emailPhoneNumberFormControl.hasError('required')">
+            <input matInput [(ngModel)]="patient.patientLastName" placeholder="Enter LastName " [formControl]="lastNameFormControl">
+            <mat-error *ngIf="lastNameFormControl.hasError('required')">
               Last Name is <strong>required</strong>
                 </mat-error>
           </mat-form-field>

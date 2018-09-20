@@ -9,6 +9,7 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import {MatIconModule,MatListModule} from '@angular/material';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatSelectModule} from '@angular/material/select';
 
 
 //Calendar Modules for Calendar Component
@@ -57,7 +58,8 @@ import { PatientUpdateComponent} from './patient-profile/patientupdate.component
     FailPatientComponent,
     DoctorBasicsComponent,
     AppointmentComponent,
-    PrescriptionsComponent
+    PrescriptionsComponent,
+    PatientUpdateComponent
  
   ],
   imports: [
@@ -71,7 +73,7 @@ import { PatientUpdateComponent} from './patient-profile/patientupdate.component
     MatIconModule,
     MatToolbarModule,
     MatSnackBarModule,
-
+    MatSelectModule,
     MatGridListModule,
     MatMenuModule,
     MatListModule,
