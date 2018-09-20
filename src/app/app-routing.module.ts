@@ -12,6 +12,7 @@ import {MedicalRecordsComponent} from './medical-records/medical-records.compone
 import { SearchDoctorComponent } from './search-doctor/search-doctor.component';
 
 
+
 const routes: Routes = [
   { path:'', redirectTo:'/landing-page', pathMatch:'full'},
   { path:'landing-page', component: LandingPageComponent},
@@ -22,7 +23,6 @@ const routes: Routes = [
   { path: 'add-prescription', component: PrescriptionsComponent},
   { path:'medical-records', component: MedicalRecordsComponent},
   { path:'search-doctor',component:SearchDoctorComponent}
-  
 ];
 
 @NgModule({
