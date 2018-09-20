@@ -58,4 +58,16 @@
       margin-top: 100px;
   }
 
+  .aside{
+    height: 150px;
+    width: 850px;
+}
+.inline
+{
+    display: inline;
+}
+.aside1{
+    margin-left: 250px;
+    
+}
   
