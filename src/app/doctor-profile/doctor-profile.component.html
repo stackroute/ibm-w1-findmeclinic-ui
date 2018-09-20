@@ -1,197 +1,260 @@
 <div class="example-container">
-  <mat-toolbar color="primary" class="example-toolbar">
-    <button mat-icon-button (click)="snav.toggle()">
-      <mat-icon>menu</mat-icon>
-    </button>
-    <h1 class="example-app-name">FindMeClinic</h1>
+    <mat-toolbar color="primary" class="example-toolbar">
+        <button mat-icon-button (click)="snav.toggle()">
+            <mat-icon>menu</mat-icon>
+        </button>
+        <h1 class="example-app-name">FindMeClinic</h1>
 
 
 
-    <div class="badge-style">
-      <button [matMenuTriggerFor]="menu" mat-mini-fab color="warn">AA</button>
-      <mat-menu #menu="matMenu">
-        <button mat-menu-item (click)="click()"> 
-          <mat-icon>supervised_user_circle</mat-icon>Profile</button>
-        <button mat-menu-item>
-          <mat-icon>settings</mat-icon>Settings</button>
-        <button mat-menu-item (click)="logout()">
-          <mat-icon>directions_walk</mat-icon>Logout</button>
-      </mat-menu>
-    </div>
-  </mat-toolbar>
+        <div class="badge-style">
+            <button [matMenuTriggerFor]="menu" mat-mini-fab color="warn">{{badgeName}}</button>
+            <mat-menu #menu="matMenu">
+                <button mat-menu-item (click)="click()">
+                    <mat-icon>supervised_user_circle</mat-icon>Profile</button>
+                <button mat-menu-item>
+                    <mat-icon>settings</mat-icon>Settings</button>
+                <button mat-menu-item (click)="logout()">
+                    <mat-icon>directions_walk</mat-icon>Logout</button>
+            </mat-menu>
+        </div>
+    </mat-toolbar>
 
 
 
 
-  <mat-sidenav-container class="example-sidenav-container">
-    <mat-sidenav #snav fixedTopGap="5">
-      <mat-nav-list>
-        <mat-list-item  (click)="display()" (click)="snav.toggle()">
-          <mat-icon>list_alt</mat-icon>My Appointments</mat-list-item>
-        <mat-list-item>
-          <mat-icon>library_books</mat-icon>Reports</mat-list-item>
-        <mat-list-item (click)="show()" (click)="snav.toggle()">
-          <mat-icon>access_time</mat-icon>Scheduling</mat-list-item>
+    <mat-sidenav-container class="example-sidenav-container">
+        <mat-sidenav #snav fixedTopGap="5">
+            <mat-nav-list>
+                <mat-list-item (click)="display()" (click)="snav.toggle()">
+                    <mat-icon>list_alt</mat-icon>My Appointments</mat-list-item>
+                <mat-list-item>
+                    <mat-icon>library_books</mat-icon>Reports</mat-list-item>
+                <mat-list-item (click)="show()" (click)="snav.toggle()">
+                    <mat-icon>access_time</mat-icon>Scheduling</mat-list-item>
 
-      </mat-nav-list>
-    </mat-sidenav>
-    
-
-     <mat-sidenav-content>
-         <div   *ngIf="create">
-               <mat-card class="card">
-                    <h2> Basic Doctor Details</h2>
-                    <mat-form-field class="formheight">
-                            <input matInput  placeholder="Enter the Email ">
-                            
-                           </mat-form-field><mat-icon>account_circle</mat-icon>
-              <br>
-              <br>
-               <mat-form-field class="formheight">
-                    <input matInput  placeholder="Enter the FirstName ">
-                    
-                   </mat-form-field><mat-icon>mood</mat-icon>
-      <br>
-      <br>
-
-       <mat-form-field class="formheight">
-            <input matInput  placeholder="Enter the LastName ">
-            
-           </mat-form-field><mat-icon>mood</mat-icon>
-<br>
-<br>
-<mat-form-field class="formheight">
-        <input matInput  placeholder="Enter the PhoneNumber ">
-        
-       </mat-form-field><mat-icon>mood</mat-icon>
-<br>
-<br>
-
-<mat-form-field class="formheight">
-        <input matInput  placeholder="Enter the Gender ">
-        
-       </mat-form-field><mat-icon>mood</mat-icon>
-<br>
-<br>
-<mat-form-field class="formheight">
-        <input matInput  placeholder="Enter the Qualification ">
-        
-       </mat-form-field><mat-icon>mood</mat-icon>
-<br>
-<br>
-
-<mat-form-field class="formheight">
-        <input matInput  placeholder="Enter the Speciality ">
-        
-       </mat-form-field><mat-icon>mood</mat-icon>
-<br>
-<br>
-<mat-form-field class="formheight">
-        <input matInput  placeholder="Enter the Experience ">
-        
-       </mat-form-field><mat-icon>mood</mat-icon>
-       <h5 class="address">Address</h5>
-       <mat-form-field class="formheight">
-        <input matInput  placeholder="Enter the HospitalName ">
-        
-       </mat-form-field><mat-icon>location_city</mat-icon>
-</mat-card>
-         </div>
-         
-      <div *ngIf="showFiller" style="margin-top: 5%">
-        <app-calendar></app-calendar>
-      </div>
-      <br>
-      <br>
-      <div *ngIf="showContent" style="margin-top: 5%">
-        <app-appointment></app-appointment>
-      </div>
-     
-    </mat-sidenav-content> 
-
-  </mat-sidenav-container>
+            </mat-nav-list>
+        </mat-sidenav>
 
 
+        <mat-sidenav-content>
 
-   <!--Footer-->
- <footer class="page-footer" id="myFooter">
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-3 myCols">
-                <h5>Get started</h5>
-                <ul>
-                    <li>
-                        <a href="#">Home</a>
-                    </li>
-                    <li>
-                        <a href="#">Sign up</a>
-                    </li>
-                    <li>
-                        <a href="#">Downloads</a>
-                    </li>
-                </ul>
+            <div *ngIf="create1" class="card1">
+                    <mat-card>
+                
+                            <mat-card-header>
+                                    <div>
+                                            <img class="image"src="/assets/profile.jpeg">
+                                    </div>
+                               <h2 class="hname"> Hello Doctor {{doctordata.doctorFirstName}} {{doctordata.doctorLastName}} !</h2> 
+                            </mat-card-header>
+                        </mat-card>
+                        <br>
+                        <mat-card>
+                            <mat-list>
+                                    <mat-list-item >FirstName<h4 id="l1">{{doctordata.doctorFirstName}}</h4></mat-list-item>
+                                    <mat-divider></mat-divider>
+                                    <mat-list-item >LastName<h4 id="l1">{{doctordata.doctorLastName}}</h4></mat-list-item>
+                                    <mat-divider></mat-divider>
+                                    <mat-list-item >Email<h4 id="l1">{{doctordata.doctorEmail}}</h4></mat-list-item>
+                                    <mat-divider></mat-divider>
+                                    <mat-list-item >phoneNumber<h4 id="l1">{{doctordata.doctorPhoneNumber}}</h4></mat-list-item>
+                                    <mat-divider></mat-divider>
+                                    <mat-list-item >Speciality<h4 id="l1">{{doctordata.doctorSpeciality}}</h4></mat-list-item>
+                                    <mat-divider></mat-divider>
+                                    <mat-list-item >Qualification<h4 id="l1">{{doctordata.doctorQualification}}</h4></mat-list-item>
+                                    <mat-divider></mat-divider>
+                                    <mat-list-item >Experience<h4 id="l1">{{doctordata.doctorExperience}}</h4></mat-list-item>
+                                    <mat-divider></mat-divider>
+                            </mat-list>
+                            <br>
+                            <br>
+                            <button mat-raised-button color="primary" class="pButon"(click)="editProfile()">Edit</button>
+                            <button mat-raised-button color="primary" class="pButon1" (click)="closeCard()">close</button>
+                        </mat-card>
             </div>
-            <div class="col-sm-3 myCols">
-                <h5>About us</h5>
-                <ul>
-                    <li>
-                        <a href="#">Company Information</a>
-                    </li>
-                    <li>
-                        <a href="#">Contact us</a>
-                    </li>
-                    <li>
-                        <a href="#">Reviews</a>
-                    </li>
-                </ul>
+            <div *ngIf="create">
+                <h2>Doctor Basic Details</h2>
+                <form [formGroup]="registerForm">
+                        <div class="form-group">
+                                <label>Email</label>
+                                <input type="text" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }"
+                                    [(ngModel)]="doctordata.doctorEmail" />
+                                <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                                    <div *ngIf="f.email.errors.required">First Name is required</div>
+                                </div>
+                            </div>
+                    <div class="form-group">
+                        <label>First Name</label>
+                        <input type="text" formControlName="firstName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }"
+                            [(ngModel)]="doctordata.doctorFirstName" />
+                        <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
+                            <div *ngIf="f.firstName.errors.required">First Name is required</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Last Name</label>
+                        <input type="text" formControlName="lastName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }"
+                            [(ngModel)]="doctordata.doctorLastName" />
+                        <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
+                            <div *ngIf="f.lastName.errors.required">Last Name is required</div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Phone Number</label>
+                        <input type="text" formControlName="phoneNumber" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.phoneNumber.errors }"
+                            [(ngModel)]="doctordata.doctorPhoneNumber" />
+
+                        <div *ngIf="submitted && f.phoneNumber.errors" class="invalid-feedback">
+                            <div *ngIf="f.phoneNumber.errors.required">Phone Number is required</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Gender</label>
+                        <!-- <input type="text" formControlName="gender" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.gender.errors }"
+                            [(ngModel)]="doctordata.doctorGender" />
+                        <div *ngIf="submitted && f.gender.errors" class="invalid-feedback">
+                            <div *ngIf="f.gender.errors.required">Gender is required</div> -->
+                            <mat-form-field>
+                                    <mat-select class="select" placeholder="select you gender" [(value)]="doctordata.doctorGender">
+                                      <mat-option *ngFor="let doctorGender of genders" [value]="doctorGender.value">
+                                        {{doctorGender.viewValue}}
+                                      </mat-option>
+                                    </mat-select>
+                                  </mat-form-field>
+                                  <h5>{{doctordata.doctorGender}}</h5>
+                        </div>
+                     
+      
+                    <div class="form-group">
+                        <label>Qualification</label>
+                        <input type="text" formControlName="qualification" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.qualification.errors }"
+                            [(ngModel)]="doctordata.doctorQualification" />
+                        <div *ngIf="submitted && f.qualification.errors" class="invalid-feedback">
+                            <div *ngIf="f.qualification.errors.required">qualification is required</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Speciality</label>
+                        <input type="text" formControlName="speciality" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.speciality.errors }"
+                            [(ngModel)]="doctordata.doctorSpeciality" />
+                        <div *ngIf="submitted && f.speciality.errors" class="invalid-feedback">
+                            <div *ngIf="f.speciality.errors.required">Doctor Speciality is required</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Experience</label>
+                        <input type="text" formControlName="experience" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.experience.errors }"
+                            [(ngModel)]="doctordata.doctorExperience" />
+                        <div *ngIf="submitted && f.experience.errors" class="invalid-feedback">
+                            <div *ngIf="f.experience.errors.required">Doctor Experience is required</div>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        <button [disabled]="loading" mat-raised-button class="pButon2" color="primary"  (click)="open(doctordata)" >Submit</button>
+                        <!-- <button (click)="closeCard()" class="btn1 btn-primary">close </button> -->
+
+                    </div>
+                </form>
+
+
             </div>
-            <div class="col-sm-3 myCols">
-                <h5>Support</h5>
-                <ul>
-                    <li>
-                        <a href="#">FAQ</a>
-                    </li>
-                    <li>
-                        <a href="#">Help desk</a>
-                    </li>
-                    <li>
-                        <a href="#">Forums</a>
-                    </li>
-                </ul>
+
+            <div *ngIf="showFiller" style="margin-top: 5%">
+                <app-calendar></app-calendar>
             </div>
-            <div class="col-sm-3 myCols">
-                <h5>Legal</h5>
-                <ul>
-                    <li>
-                        <a href="#">Terms of Service</a>
-                    </li>
-                    <li>
-                        <a href="#">Terms of Use</a>
-                    </li>
-                    <li>
-                        <a href="#">Privacy Policy</a>
-                    </li>
-                </ul>
+            <br>
+            <br>
+            <div *ngIf="showContent" style="margin-top: 5%">
+                <app-appointment></app-appointment>
+            </div>
+
+        </mat-sidenav-content>
+
+    </mat-sidenav-container>
+
+
+
+    <!--Footer-->
+    <!-- <footer class="page-footer" id="myFooter">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3 myCols">
+                    <h5>Get started</h5>
+                    <ul>
+                        <li>
+                            <a href="#">Home</a>
+                        </li>
+                        <li>
+                            <a href="#">Sign up</a>
+                        </li>
+                        <li>
+                            <a href="#">Downloads</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-sm-3 myCols">
+                    <h5>About us</h5>
+                    <ul>
+                        <li>
+                            <a href="#">Company Information</a>
+                        </li>
+                        <li>
+                            <a href="#">Contact us</a>
+                        </li>
+                        <li>
+                            <a href="#">Reviews</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-sm-3 myCols">
+                    <h5>Support</h5>
+                    <ul>
+                        <li>
+                            <a href="#">FAQ</a>
+                        </li>
+                        <li>
+                            <a href="#">Help desk</a>
+                        </li>
+                        <li>
+                            <a href="#">Forums</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-sm-3 myCols">
+                    <h5>Legal</h5>
+                    <ul>
+                        <li>
+                            <a href="#">Terms of Service</a>
+                        </li>
+                        <li>
+                            <a href="#">Terms of Use</a>
+                        </li>
+                        <li>
+                            <a href="#">Privacy Policy</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="social-networks">
-        <a href="#" class="twitter">
-            <i class="fa fa-twitter"></i>
-        </a>
-        <a href="#" class="facebook">
-            <i class="fa fa-facebook-official"></i>
-        </a>
-        <a href="#" class="google">
-            <i class="fa fa-google-plus"></i>
-        </a>
-    </div>
-    <div class="footer-copyright">
-        <p>© 2018 FindMeClinic </p>
-    </div>
-</footer>
+        <div class="social-networks">
+            <a href="#" class="twitter">
+                <i class="fa fa-twitter"></i>
+            </a>
+            <a href="#" class="facebook">
+                <i class="fa fa-facebook-official"></i>
+            </a>
+            <a href="#" class="google">
+                <i class="fa fa-google-plus"></i>
+            </a>
+        </div>
+        <div class="footer-copyright">
+            <p>© 2018 FindMeClinic </p>
+        </div>
+    </footer> -->
 
 
 </div>
-
-

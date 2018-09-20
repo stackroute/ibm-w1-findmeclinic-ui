@@ -42,6 +42,7 @@ export class PatientLoginComponent implements OnInit {
 
 
   addPatient(patientData) {
+  
     this.patientService.registerPatient(patientData).subscribe(data=>console.log(data));
     return this.patientService.registerPatientAuth(patientData).subscribe(data => {
      this.dialog.open(PatientLoginComponent)
