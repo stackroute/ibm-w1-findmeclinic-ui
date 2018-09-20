@@ -6,7 +6,8 @@
 					<tr>
 						<th>No</th>
 						<th>Filename</th>
-						<th>Download</th>
+						<th>View File</th>
+						<th>Download File</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -14,13 +15,17 @@
 								<td th:text="${rowStat.count}">1</td>
 						<td th:text="${file.filename}">File-Name</td>
 								<td><a th:href="${file.url}">Link</a></td>
+								<td><a th:href="${file.url}">Link</a></td>
+
 						</tr>
 				</tbody>
 			</table>
-			<div>
-				<button mat-button (click)="openRecords()" matTooltip="Upload Records">Click to upload records</button>
-				<button mat-button (click)="closeRecords()" matTooltip="Close Records">Close</button>
-
-		</div>
+			<div class= "btn">
+				<button mat-raised-button color="primary" (click)="openRecords()" matTooltip="Upload Records">Click to upload records</button>
+			</div>
+			<div class= "btn2">
+				<button mat-raised-button color="warn" (click)="closeRecords()" matTooltip="Close Records">Click here to go back</button>
+			</div>
+		
 	</div>
 </div>
