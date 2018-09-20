@@ -4,11 +4,12 @@
 .example-container {
     display: flex;
     flex-direction: column;
-    position: relative;
+    position: absolute;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
+    height: 1000px;
     
   }
   
@@ -349,21 +350,24 @@ width:1300px;
 }
 .sButon
 {
+
   padding: 80px;
 
 }
 
+
+
 .div2
 {
-  margin-top:10%;
+  margin-top:13%;
 }
 .cardHeader
 {
-  margin-top: 100px;
+  margin-top: 30px;
 }
  .cardCont
 {
-  margin-top: 18%;
+  margin-top: 10%;
 }  
 
 .setCard

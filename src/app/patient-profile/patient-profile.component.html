@@ -9,9 +9,10 @@
         <button mat-button type="submit" class="btn btn-success">Book</button>
       </div>
    
-   
+      <app-notification></app-notification>
       <div  class="badge-style">
         <button [matMenuTriggerFor]="menu" mat-mini-fab color="warn">{{badgeName}}</button>
+     
         <mat-menu #menu="matMenu">
    
             <button mat-menu-item (click)="openProfile()"><mat-icon>supervised_user_circle</mat-icon>Profile</button>
@@ -126,7 +127,6 @@
                                             </mat-select>
                                           </mat-form-field>
                                 </div>
-                          <h1>{{patientData.patientGender}}</h1>
                               <div class="form-group">
                                       <label>Date Of Birth </label>
                                       <br>
@@ -293,8 +293,9 @@
     </mat-sidenav-container>
    
    
+<<<<<<< HEAD
      <!--Footer-->
-   <footer class="page-footer" id="myFooter">
+   <!-- <footer class="page-footer" id="myFooter">
       <div class="container">
           <div class="row">
               <div class="col-sm-3 myCols">
@@ -370,6 +371,9 @@
           <p>© 2018 FindMeClinic </p>
       </div>
   
-   </footer>
+   </footer> -->
   </div> 
   
+=======
+   
+>>>>>>> 8fde33dc47d212c5112bb204372c6aedbada973e

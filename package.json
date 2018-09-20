@@ -23,6 +23,7 @@
     "@angular/platform-browser-dynamic": "^6.1.0",
     "@angular/router": "^6.1.0",
     "@ng-bootstrap/ng-bootstrap": "^3.2.0",
+    "@stomp/stompjs": "^4.0.8",
     "@types/jquery": "^3.3.9",
     "angular-alert-module": "^2.0.3",
     "angular-calendar": "^0.26.0",
