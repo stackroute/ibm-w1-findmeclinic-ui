@@ -20,13 +20,24 @@ export interface Gender {
 })
 export class PatientProfileComponent implements OnInit {
   
-  
+
 
   genders: Gender[] = [
     {value: 'Female', viewValue: 'Female'},
     {value: 'Male', viewValue: 'Male'},
     {value: 'Others', viewValue: 'Others'}
   ];
+  showFiller = false;
+  reports(): boolean{
+    if(this.showFiller===false){
+      this.showFiller=true;
+    }else{
+      this.showFiller=true;
+    }
+    return this.showFiller
+  }
+
+
   patientMail:string;
   patientData:Patient;
   registerForm: FormGroup;

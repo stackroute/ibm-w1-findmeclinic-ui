@@ -1,4 +1,7 @@
 export class Doctor{
+    doctorFirstName:string;
+    doctorLastName:string;
+    doctorName:string
     doctorEmail:string;
     doctorPhoneNumber:string;
     doctorPassword:string;

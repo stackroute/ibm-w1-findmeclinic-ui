@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { DoctorTokenStorage } from '../doctorTokenStorage';
+import { DoctorService } from '../doctor.service';
+import { Doctor } from '../Doctor';
 
 @Component({
   selector: 'app-doctor-profile',
@@ -8,9 +10,13 @@ import { DoctorTokenStorage } from '../doctorTokenStorage';
   styleUrls: ['./doctor-profile.component.css']
 })
 export class DoctorProfileComponent implements OnInit {
+  doctorData;
+  create=false;
+  doctorEmail;
   showFiller = false;
   showContent = false;
   show(): boolean{
+    this.showContent=false;
     if(this.showFiller===false){
       this.showFiller=true;
     }else{
@@ -30,14 +36,23 @@ export class DoctorProfileComponent implements OnInit {
   }
   return this.showContent
  }
-  constructor(private router: Router, private token: DoctorTokenStorage) { }
+  constructor(private router: Router, private token: DoctorTokenStorage, private doctorService: DoctorService) { 
+    this.doctorData=new Doctor();
+  }
 
   ngOnInit() {
+    //this.doctorService.doctorMail.subscribe(mailId =>{ console.log(mailId);this.doctorEmail = mailId})
   }
+  
+   click(){
+     this.create=true;
+  //    return this.doctorService.getByEmail(this.doctorEmail).subscribe(data =>{this.doctorData=data;
+  //  console.log(data)});
 
-  open(){
-    this.router.navigate(['doctor-basic']);
-  }
+   }
+
+
+  
   logout() {
 
     this.token.removeToken();

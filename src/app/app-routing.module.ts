@@ -8,8 +8,8 @@ import { CalendarComponent} from './calendar/calendar.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { AppointmentComponent } from './appointment/appointment.component';
 import { PrescriptionsComponent } from './prescriptions/prescriptions.component';
-import { DoctorBasicsComponent } from './doctor-basics/doctor-basics.component';
-
+import {MedicalRecordsComponent} from './medical-records/medical-records.component'
+import { SearchDoctorComponent } from './search-doctor/search-doctor.component';
 
 
 const routes: Routes = [
@@ -20,7 +20,8 @@ const routes: Routes = [
   { path:'doctor-appointment', component: CalendarComponent},
   { path:'view-appointment', component: AppointmentComponent},
   { path: 'add-prescription', component: PrescriptionsComponent},
-  {path:'doctor-basic',component:DoctorBasicsComponent}
+  { path:'medical-records', component: MedicalRecordsComponent},
+  { path:'search-doctor',component:SearchDoctorComponent}
   
 ];
 

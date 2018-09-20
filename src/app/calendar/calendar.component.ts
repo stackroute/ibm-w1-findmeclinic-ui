@@ -1,4 +1,10 @@
-import { Component, OnInit, ChangeDetectionStrategy, ViewChild, TemplateRef } from '@angular/core';
+import {
+  Component,
+  ChangeDetectionStrategy,
+  ViewChild,
+  OnInit,
+  TemplateRef
+} from '@angular/core';
 import {
   startOfDay,
   endOfDay,
@@ -13,10 +19,11 @@ import { Subject } from 'rxjs';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import {
   CalendarEvent,
-  CalendarEventAction,
   CalendarEventTimesChangedEvent,
   CalendarView
 } from 'angular-calendar';
+import {AddScheduleComponent} from '../add-schedule/add-schedule.component'
+import { MatDialog, MatDialogRef } from '@angular/material';
 
 const colors: any = {
   red: {
@@ -39,24 +46,61 @@ const colors: any = {
   styleUrls: ['./calendar.component.css']
 })
 export class CalendarComponent implements OnInit {
+  
   @ViewChild('modalContent')
   modalContent: TemplateRef<any>;
 
-  view: CalendarView = CalendarView.Week;
+  view: CalendarView = CalendarView.Month;
 
   CalendarView = CalendarView;
 
   viewDate: Date = new Date();
 
-  actions: CalendarEventAction[] = [];
+  modalData: {
+    event: CalendarEvent;
+  };
 
   refresh: Subject<any> = new Subject();
 
-  events: CalendarEvent[] = [];
+  events: CalendarEvent[]=[];
+
+
+  ngOnInit() {
+  }
 
   activeDayIsOpen: boolean = true;
 
-  constructor(private modal: NgbModal) { }
+  constructor(private modal: NgbModal,private dialog:MatDialog) {}
+
+  dayClicked({ date, events }: { date: Date; events: CalendarEvent[] }): void {
+    if (isSameMonth(date, this.viewDate)) {
+      this.viewDate = date;
+      if (
+        (isSameDay(this.viewDate, date) && this.activeDayIsOpen === true) ||
+        events.length === 0
+      ) {
+        this.activeDayIsOpen = false;
+      } else {
+        this.activeDayIsOpen = true;
+      }
+    }
+  }
+
+  eventTimesChanged({
+    event,
+    newStart,
+    newEnd
+  }: CalendarEventTimesChangedEvent): void {
+    event.start = newStart;
+    event.end = newEnd;
+    this.handleEvent('Dropped or resized', event);
+    this.refresh.next();
+  }
+
+  handleEvent(action: string, event: CalendarEvent): void {
+    this.modalData = { event};
+    this.modal.open(this.modalContent, { size: 'lg' });
+  }
 
   addEvent(): void {
     this.events.push({
@@ -66,12 +110,11 @@ export class CalendarComponent implements OnInit {
       color: colors.red,
     });
     this.refresh.next();
-    console.log(this.addEvent);
   }
 
-
-
-  ngOnInit() {
+  openDialog() {
+    const dialogRef = this.dialog.open(AddScheduleComponent);
+ 
   }
 
 }
