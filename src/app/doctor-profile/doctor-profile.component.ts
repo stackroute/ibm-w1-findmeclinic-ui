@@ -35,6 +35,8 @@ genders: Gender[] = [
   showFiller = false;
   showContent = false;
   show(): boolean{
+    this.create=false;
+this.create1=false;
     this.showContent=false;
     if(this.showFiller===false){
       this.showFiller=true;
@@ -47,7 +49,8 @@ genders: Gender[] = [
  
  display(): boolean{
    this.showFiller=false;
-
+this.create=false;
+this.create1=false;
   if(this.showContent===false){
     this.showContent=true;
   }else{
@@ -94,7 +97,8 @@ genders: Gender[] = [
    click(){
      this.create1=true;
     this.create=false;
-   
+   this.showContent=false;
+   this.showFiller=false;
       console.log(this.doctorMailId)
 
   
