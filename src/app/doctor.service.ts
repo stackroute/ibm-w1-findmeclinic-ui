@@ -7,7 +7,7 @@ import { Observable, BehaviorSubject} from 'rxjs';
   providedIn: 'root'
 })
 export class DoctorService {
- doctorMail;
+
   // private addUrl = "http://172.23.239.228:8080/doctor/auth";
   private addUrl = "http://localhost:8080/doctor/auth";
 
@@ -22,9 +22,12 @@ export class DoctorService {
   }
 
   login(doctor:Doctor):Observable<any> {
-    this.doctorMail = new BehaviorSubject(doctor.doctorEmail).asObservable();
+    //this.doctorMail = new BehaviorSubject(doctor.doctorEmail).asObservable();
     return this.http.post(this.addUrl+"/login",doctor,{responseType: 'text'});
 }
+  
+
+
 
 getByEmail(doctorEmail) :Observable<Doctor>
 {

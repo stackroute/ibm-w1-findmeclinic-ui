@@ -74,10 +74,13 @@ genders: Gender[] = [
       
     });
      
+
      
-       this.doctorService.doctorMail.subscribe(data => {console.log(data);
-        this.doctorMailId=data;})
-        this.doctorService.getBadge(this.doctorMailId).subscribe(data1 => {console.log(data1);
+        //   this.doctorService.doctorMail.subscribe(data => {console.log(data);
+        //  this.doctorMailId=data;})
+        this.doctorMailId = this.token.getUserId();
+
+        this.doctorService.getBadge(this.doctorMailId).subscribe(data1 => {console.log(data1); console.log(this.badgeName)
         this.badgeName=data1});
         console.log(this.doctorMailId)
 
@@ -124,6 +127,7 @@ genders: Gender[] = [
   logout() {
 
     this.token.removeToken();
+    this.token.removeUserId();
     this.router.navigate(['landing-page']);
     
   }
