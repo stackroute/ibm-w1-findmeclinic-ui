@@ -46,6 +46,7 @@ export class LandingPageComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(data => console.log("the dailog box is closed"));
   }
+  loc;
 
   openDialog() {
     const dialogRef = this.dialog.open(DoctorLoginComponent);
@@ -56,31 +57,19 @@ export class LandingPageComponent implements OnInit {
     var locApi = "http://api.ipstack.com/180.151.35.146?access_key=c0bf349832d1dacf74b5fb62feca0460";
 
 
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(this.showPosition);
-      x.innerHTML="Supporting";
-
-    }
-    else {
-      x.innerHTML = "Browser not supported";
-    }
-
-  }
-  showPosition(position) {
-    var x = document.getElementById('output');
-
-    // x.innerHTML="latitude"+position.coords.latitude+" "+"longitude"+position.coords.longitude;
-    var locApi = "http://api.ipstack.com/180.151.35.146?access_key=c0bf349832d1dacf74b5fb62feca0460";
     $.get({
       url: locApi,
       success: function (data) {
         console.log(data);
         x.innerHTML=data.city +","+data.region_name;
+        $("#output").val(data.city +","+data.region_name);
+
+        this.loc=data.city +","+data.region_name;
   
       }
     });
-   
   }
+  
   
   
 

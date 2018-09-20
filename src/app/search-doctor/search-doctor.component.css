@@ -20,6 +20,29 @@ mat-card{
 }
 
 .doctor-details button{
-    margin-left: 95%;
+    margin-left: 90%;
 }
+
+
+.navbar {
+	background-color: white;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 9;
+ }
+ .navbar-nav{
+	 color: black;
+	 float: right;
+ }
+ .navbar  button{
+	color: black;
+ }
+ .detail{
+     align-content: center;
+     width: 69%;
+     margin-left: 15%;
+
+ }
+
 
