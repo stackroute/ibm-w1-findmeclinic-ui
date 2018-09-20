@@ -35,7 +35,7 @@ export class DoctorLoginComponent implements OnInit {
 
   addDoctor(doctorData) {
     
-  
+   this.doctorService.addDoctorDetails(doctorData).subscribe(data =>{console.log(data)});
     return this.doctorService.registerDoctor(doctorData).subscribe(data =>{
               this.dialog.open(DoctorLoginComponent)
        this.dialogRef.close();

@@ -11,7 +11,7 @@ export class DoctorService {
   // private addUrl = "http://172.23.239.228:8080/doctor/auth";
   private addUrl = "http://localhost:8080/doctor/auth";
 
-  private secUrl="http://localHost:8080/api/v2/doctor";
+  private secUrl="http://localHost:8081/api/v2/doctor";
 
 
   constructor(private http: HttpClient) { }
@@ -22,11 +22,11 @@ export class DoctorService {
   }
 
   login(doctor:Doctor):Observable<any> {
-    this.doctorMail = new BehaviorSubject(doctor.doctorEmail).asObservable;
+    this.doctorMail = new BehaviorSubject(doctor.doctorEmail).asObservable();
     return this.http.post(this.addUrl+"/login",doctor,{responseType: 'text'});
 }
 
-getByEmail(doctorEmail:string) :Observable<Doctor>
+getByEmail(doctorEmail) :Observable<Doctor>
 {
 return this.http.get<Doctor>(this.secUrl+"/"+doctorEmail);
 }
@@ -45,8 +45,13 @@ addAddressDeatils(doctor:Doctor):Observable<Doctor>
 return this.http.post<Doctor>(this.secUrl+"/"+doctor.doctorEmail,doctor);
 }
 
-updateDetails(doctor:Doctor):Observable<Doctor>
+updateDetails(doctor):Observable<Doctor>
 {
-  return this.http.put<Doctor>(this.secUrl+"/"+doctor.doctorEmail,doctor);
+  return this.http.put<Doctor>(this.secUrl+"/"+doctor.doctorMail,doctor);
+}
+
+
+getBadge(doctorEmail:string):Observable<any>{
+  return this.http.get(this.secUrl+"/badge/"+doctorEmail,{responseType:'text'});
 }
 }

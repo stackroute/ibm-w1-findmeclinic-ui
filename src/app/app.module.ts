@@ -47,6 +47,11 @@ import { MedicalRecordsComponent } from './medical-records/medical-records.compo
 import { AddScheduleComponent } from './add-schedule/add-schedule.component';
 import { SearchDoctorComponent } from './search-doctor/search-doctor.component';
 
+import { NotificationComponent } from './notification/notification.component';
+
+import { UploadFileComponent } from './upload-file/upload-file.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -65,7 +70,11 @@ import { SearchDoctorComponent } from './search-doctor/search-doctor.component';
     PrescriptionsComponent,
     MedicalRecordsComponent,
     AddScheduleComponent,
-    SearchDoctorComponent
+    SearchDoctorComponent,
+    NotificationComponent,
+
+    UploadFileComponent
+
   ],
   imports: [
     MatCardModule,
