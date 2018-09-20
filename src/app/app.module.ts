@@ -74,7 +74,7 @@ import { UploadFileComponent } from './upload-file/upload-file.component';
     BookComponentComponent,
     BookConfirmComponent,
     NotificationComponent,
-    UploadFileComponent
+     UploadFileComponent
   ],
   imports: [
     MatCardModule,
@@ -99,7 +99,6 @@ import { UploadFileComponent } from './upload-file/upload-file.component';
     AppRoutingModule,
     RouterModule,
     MatGridListModule,
-    UploadFileComponent,
     RouterModule,
     MatGridListModule,
     //For calendar
