@@ -1,35 +1,29 @@
 <mat-form-field class="fullwidth">
-  <input matInput type = "text" placeholder="ScheduleId">
+  <input matInput type = "text" placeholder="ScheduleId" [(ngModel)]="schedule.scheduleId">
 </mat-form-field>
 <br>
 <mat-form-field class="fullwidth">
-  <input matInput type = "text" placeholder="Description">
+  <input matInput type = "text" placeholder="Description"[(ngModel)]="schedule.description" >
 </mat-form-field>
 <br>
 <mat-form-field class="fullwidth">
-  <input matInput type = "text" placeholder="Work Place">
+  <input matInput type = "text" placeholder="Work Place" [(ngModel)]="schedule.workPlace">
 </mat-form-field>
 <br>
 <mat-form-field class="fullwidth">
-  <input matInput type = "text" placeholder="Work Place">
+  <input matInput type ="datetime-local" [(ngModel)]="schedule.startDate">
 </mat-form-field>
 <br>
 <mat-form-field class="fullwidth">
-  <input matInput type ="datetime-local">
+  <input matInput type ="datetime-local" [(ngModel)]="schedule.endDate">
 </mat-form-field>
 <br>
 <mat-form-field class="fullwidth">
-  <input matInput type ="datetime-local">
-</mat-form-field>
-<br>
-<mat-form-field class="fullwidth">
-  <input matInput type="number">
+  <input matInput type="number" [(ngModel)]="schedule.timePerpatient">
   <mat-hint align="start"><strong>Insert Number Only</strong> </mat-hint>
 </mat-form-field>
 
-
-<!-- -->
 <div mat-dialog-actions>
-  <button mat-button (click)="onNoClick()">No Thanks</button>
-  <button mat-button mat-dialog-close cdkFocusInitial>Ok</button>
+  <button mat-button (click)="onNoClick()">Cancel</button>
+  <button mat-button mat-dialog-close cdkFocusInitial (click)="addSchedule(schedule)">Ok</button>
 </div>
