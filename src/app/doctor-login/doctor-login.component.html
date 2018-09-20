@@ -54,7 +54,7 @@
                 </mat-error>
             </mat-form-field>
             <br>
-            <br>
+        
             <mat-form-field class="fullwidth">
                 <input matInput [(ngModel)]="doctor.doctorPhoneNumber" name="doctorPhoneNumber" placeholder="Enter PhoneNumber"
                     [formControl]="phoneFormComtrol">
@@ -62,7 +62,6 @@
                     Please enter a value!
                 </mat-error>
             </mat-form-field>
-            <br>
             <br>
             <mat-form-field class="fullwidth">
                 <input matInput [(ngModel)]="doctor.doctorPassword" type="password" name="doctorPassword" placeholder="Enter password"
@@ -72,7 +71,7 @@
                 </mat-error>
             </mat-form-field>
             <br>
-            <br>
+           
 
             <button mat-raised-button (click)="addDoctor(doctor)" color="primary">Register</button>
             <app-alerts></app-alerts>

@@ -254,3 +254,127 @@
 
  }
 
+ /* .pForm
+ {
+   word-spacing: 300px;
+ } */
+
+.pButon
+ {
+  margin-left: 60%;
+
+ }
+.pButon1{
+  margin-left: 5%;
+
+}
+.pButon2
+ {
+  margin-left: 70%;
+  background-color: #3f51b5;
+  color:white;
+ }
+ /* h4{
+   margin-left: 30%;
+ }  */
+ .image
+ {
+   width: 100px;
+ }
+ .hname{
+  margin-left: 50%;
+margin-top: 20px;
+ }
+
+.dob
+ {
+width:20%;
+display: inline;
+ }
+ 
+ .upForm
+ {
+   margin-left:25%;
+ }
+ input{
+   width:60%;
+ }
+
+ .select{
+   width:300px;
+ }
+ .lbl{
+   padding-right: 8%;
+ }
+.row-1{
+  margin-right: 20%;
+  display: inline;
+}
+.list{
+width:60px;
+}
+.row-2{
+  margin-right: 5px;
+}
+
+#l1,#l2{
+margin-left: 40%;
+}
+
+#l3
+{
+  margin-left: 41.5%;
+}
+#l4
+{
+  margin-left: 37.5%;
+}
+#l5
+{
+  margin-left: 41.5%;
+}
+
+#l6,#l7
+{
+  margin-left: 39.5%;
+}
+
+#l8
+{
+  margin-left: 43.5%;
+}
+.pForm{
+  margin-left:15%;
+width:1300px;
+}
+.sButon
+{
+  padding: 80px;
+
+}
+
+.div2
+{
+  margin-top:10%;
+}
+.cardHeader
+{
+  margin-top: 100px;
+}
+ .cardCont
+{
+  margin-top: 18%;
+}  
+
+.setCard
+{
+  margin-left: 35%;
+  width:600px;
+  height: 500px;
+}
+
+.hname
+{
+  margin-top: 3.5%;
+    margin-left: 5%;
+}

@@ -39,8 +39,8 @@
                   
                 </div>
                   
-                <input type="search" placeholder="Searching for Doctors?">
-                <button (click)="searchDoctors()">Go</button>
+                <input type="text" name="form" [(ngModel)]="doctor.doctorName" placeholder="Searching for Doctors?">
+                <button (click)="searchDoctors(doctor.doctorName)">Go</button>
 
 
             </form>

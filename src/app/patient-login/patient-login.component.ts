@@ -93,6 +93,14 @@ export class PatientLoginComponent implements OnInit {
     Validators.required,
   ])
 
+  firstNameFormControl = new FormControl('', [
+    Validators.required,
+  ])
+
+  lastNameFormControl = new FormControl('', [
+    Validators.required,
+  ])
+
 
   emailFormControl = new FormControl('', [
     Validators.required,

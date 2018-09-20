@@ -9,6 +9,7 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import {MatIconModule,MatListModule} from '@angular/material';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatSelectModule} from '@angular/material/select';
 
 
 //Calendar Modules for Calendar Component
@@ -44,6 +45,7 @@ import { PrescriptionsComponent } from './prescriptions/prescriptions.component'
 import { PatientUpdateComponent} from './patient-profile/patientupdate.component';
 import { MedicalRecordsComponent } from './medical-records/medical-records.component';
 import { AddScheduleComponent } from './add-schedule/add-schedule.component';
+import { SearchDoctorComponent } from './search-doctor/search-doctor.component';
 
 @NgModule({
   declarations: [
@@ -62,7 +64,8 @@ import { AddScheduleComponent } from './add-schedule/add-schedule.component';
     AppointmentComponent,
     PrescriptionsComponent,
     MedicalRecordsComponent,
-    AddScheduleComponent
+    AddScheduleComponent,
+    SearchDoctorComponent
   ],
   imports: [
     MatCardModule,
@@ -75,7 +78,7 @@ import { AddScheduleComponent } from './add-schedule/add-schedule.component';
     MatIconModule,
     MatToolbarModule,
     MatSnackBarModule,
-
+    MatSelectModule,
     MatGridListModule,
     MatMenuModule,
     MatListModule,

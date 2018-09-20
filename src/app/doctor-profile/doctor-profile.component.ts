@@ -5,7 +5,10 @@ import { DoctorService } from '../doctor.service';
 import { Doctor } from '../Doctor';
 import {FormBuilder,FormGroup,FormControl,FormGroupDirective,NgForm, Validators } from '@angular/forms';
 
-
+export interface Gender {
+  value: string;
+  viewValue: string;
+}
 @Component({
   selector: 'app-doctor-profile',
   templateUrl: './doctor-profile.component.html',
@@ -15,8 +18,19 @@ export class DoctorProfileComponent implements OnInit {
   doctordata;
   create=false;
   registerForm: FormGroup;
-  doctorMail;
+  doctorMailId;
+create1=false;
+badgeName:string;
+submitted = false;
 
+
+
+
+genders: Gender[] = [
+  {value: 'Female', viewValue: 'Female'},
+  {value: 'Male', viewValue: 'Male'},
+  {value: 'Others', viewValue: 'Others'}
+];
 
   showFiller = false;
   showContent = false;
@@ -58,8 +72,15 @@ export class DoctorProfileComponent implements OnInit {
       address:['',Validators.required]
 
     });
-    //  return this.doctorService.doctorMail.subscribe(data => {console.log(data);
-    //    this.doctorMail=data;})
+     
+     
+       this.doctorService.doctorMail.subscribe(data => {console.log(data);
+        this.doctorMailId=data;})
+        this.doctorService.getBadge(this.doctorMailId).subscribe(data1 => {console.log(data1);
+        this.badgeName=data1});
+        console.log(this.doctorMailId)
+
+ 
    
   }
   
@@ -67,25 +88,37 @@ export class DoctorProfileComponent implements OnInit {
 
 
    click(){
-     this.create=true;
-    //  this.doctorService.getByEmail(this.doctorMail).subscribe(data =>{this.doctordata=data;
-    // console.log(data)});
-    // this.doctorService.updateDetails(this.doctorMail).subscribe(data1 => {
-    //   this.doctorMail=data1;
-    //   console.log(data1)
-    // });
+     this.create1=true;
+    this.create=false;
+   
+      console.log(this.doctorMailId)
+
+  
+      this.doctorService.getByEmail(this.doctorMailId).subscribe(data =>{this.doctordata=data;
+     console.log(data)});
+    
+     
 
    }
 
 
    open(doctor){
-    return this.doctorService.addDoctorDetails(doctor).subscribe(data1 => {
+    this.submitted = true;
+     console.log(this.doctorMailId);
+    return this.doctorService.updateDetails(doctor).subscribe(data1 => {
       this.doctordata=data1;
       console.log(data1)
     });
    }
 
-  
+  editProfile(){
+    this.create1=false;
+    this.create=true;
+  }
+
+  closeCard(){
+    this.create=false;
+  }
   logout() {
 
     this.token.removeToken();
