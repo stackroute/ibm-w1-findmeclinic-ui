@@ -31,11 +31,11 @@ import { FailPatientComponent } from './patient-login/fail-patient.component';
 
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import{ MatNativeDateModule } from '@angular/material';
-
-
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import { MatPaginatorModule} from '@angular/material';
 import { RouterModule } from '@angular/router';
 import { PatientProfileComponent } from './patient-profile/patient-profile.component';
-import { AppRoutingModule } from './/app-routing.module';
+import { AppRoutingModule } from './app-routing.module';
 import { CalendarComponent } from './calendar/calendar.component';
 import { InvalidPatientComponent } from './patient-login/invalid-patient.component';
 import { InvalidDoctorComponent } from './doctor-login/invalid-doctor.component';
@@ -46,6 +46,13 @@ import { PatientUpdateComponent} from './patient-profile/patientupdate.component
 import { MedicalRecordsComponent } from './medical-records/medical-records.component';
 import { AddScheduleComponent } from './add-schedule/add-schedule.component';
 import { SearchDoctorComponent } from './search-doctor/search-doctor.component';
+import { BookComponentComponent } from './book-component/book-component.component';
+import { BookConfirmComponent } from './book-confirm/book-confirm.component';
+
+import { NotificationComponent } from './notification/notification.component';
+
+import { UploadFileComponent } from './upload-file/upload-file.component';
+
 
 @NgModule({
   declarations: [
@@ -65,13 +72,18 @@ import { SearchDoctorComponent } from './search-doctor/search-doctor.component';
     PrescriptionsComponent,
     MedicalRecordsComponent,
     AddScheduleComponent,
-    SearchDoctorComponent
+    SearchDoctorComponent,
+    BookComponentComponent,
+    BookConfirmComponent,
+    NotificationComponent,
+    UploadFileComponent
   ],
   imports: [
     MatCardModule,
     MatGridListModule,
     MatMenuModule,
     MatNativeDateModule,
+    MatCheckboxModule,
     MatListModule,
     BrowserModule,
     MatDatepickerModule,
@@ -82,12 +94,11 @@ import { SearchDoctorComponent } from './search-doctor/search-doctor.component';
     MatGridListModule,
     MatMenuModule,
     MatListModule,
-
+    MatPaginatorModule,
     BrowserAnimationsModule,
     MaterialModule,
     HttpClientModule,
     AppRoutingModule,
-
     RouterModule,
     MatGridListModule,
 
@@ -103,8 +114,8 @@ import { SearchDoctorComponent } from './search-doctor/search-doctor.component';
    })
   ],
   entryComponents:[PatientLoginComponent,InvalidPatientComponent,FailPatientComponent,PatientUpdateComponent,InvalidDoctorComponent,FailRegisterComponent,
-  DoctorLoginComponent,DoctorProfileComponent,MedicalRecordsComponent,PatientUpdateComponent, AddScheduleComponent],
-  providers: [],
+  DoctorLoginComponent,DoctorProfileComponent,MedicalRecordsComponent,PatientUpdateComponent, AddScheduleComponent,PrescriptionsComponent,BookConfirmComponent],
+  providers: [AddScheduleComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

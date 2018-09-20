@@ -3,19 +3,40 @@ import { Router } from '@angular/router';
 import { DoctorTokenStorage } from '../doctorTokenStorage';
 import { DoctorService } from '../doctor.service';
 import { Doctor } from '../Doctor';
+import {FormBuilder,FormGroup,FormControl,FormGroupDirective,NgForm, Validators } from '@angular/forms';
 
+export interface Gender {
+  value: string;
+  viewValue: string;
+}
 @Component({
   selector: 'app-doctor-profile',
   templateUrl: './doctor-profile.component.html',
   styleUrls: ['./doctor-profile.component.css']
 })
 export class DoctorProfileComponent implements OnInit {
-  doctorData;
+  doctordata;
   create=false;
-  doctorEmail;
+  registerForm: FormGroup;
+  doctorMailId;
+create1=false;
+badgeName:string;
+submitted = false;
+
+
+
+
+genders: Gender[] = [
+  {value: 'Female', viewValue: 'Female'},
+  {value: 'Male', viewValue: 'Male'},
+  {value: 'Others', viewValue: 'Others'}
+];
+
   showFiller = false;
   showContent = false;
   show(): boolean{
+    this.create=false;
+this.create1=false;
     this.showContent=false;
     if(this.showFiller===false){
       this.showFiller=true;
@@ -25,10 +46,12 @@ export class DoctorProfileComponent implements OnInit {
     return this.showFiller
   }
   
+  
  
  display(): boolean{
    this.showFiller=false;
-
+this.create=false;
+this.create1=false;
   if(this.showContent===false){
     this.showContent=true;
   }else{
@@ -36,27 +59,85 @@ export class DoctorProfileComponent implements OnInit {
   }
   return this.showContent
  }
-  constructor(private router: Router, private token: DoctorTokenStorage, private doctorService: DoctorService) { 
-    this.doctorData=new Doctor();
+  constructor(private router: Router, private token: DoctorTokenStorage, private doctorService: DoctorService,private formBuilder: FormBuilder) { 
+    this.doctordata=new Doctor();
   }
 
   ngOnInit() {
-    //this.doctorService.doctorMail.subscribe(mailId =>{ console.log(mailId);this.doctorEmail = mailId})
+    this.registerForm=this.formBuilder.group({
+                  firstName: ['', Validators.required],
+      lastName:['',Validators.required],
+      phoneNumber:['',Validators.required],
+      email:['',Validators.required],
+      gender:['',Validators.required],
+      qualification:['',Validators.required],
+      speciality:['',Validators.required],
+      experience:['',Validators.required],
+      addressNo:['',Validators.required],
+      hospitalName:['',Validators.required]
+      
+    });
+     
+
+     
+        //   this.doctorService.doctorMail.subscribe(data => {console.log(data);
+        //  this.doctorMailId=data;})
+        this.doctorMailId = this.token.getUserId();
+
+        this.doctorService.getBadge(this.doctorMailId).subscribe(data1 => {console.log(data1); console.log(this.badgeName)
+        this.badgeName=data1});
+        console.log(this.doctorMailId)
+
+ 
+   
   }
   
+      get f() { return this.registerForm.controls; }
+
+
    click(){
-     this.create=true;
-  //    return this.doctorService.getByEmail(this.doctorEmail).subscribe(data =>{this.doctorData=data;
-  //  console.log(data)});
+     this.create1=true;
+    this.create=false;
+   this.showContent=false;
+   this.showFiller=false;
+      console.log(this.doctorMailId)
+
+  
+      this.doctorService.getByEmail(this.doctorMailId).subscribe(data =>{this.doctordata=data;
+     console.log(data)});
+    
+     
 
    }
 
 
-  
+   open(doctor){
+    this.submitted = true;
+     console.log(this.doctorMailId);
+    return this.doctorService.updateDetails(doctor).subscribe(data1 => {
+      this.doctordata=data1;
+      console.log(data1)
+    });
+   }
+
+  editProfile(){
+    this.create1=false;
+    this.create=true;
+  }
+
+  closeCard(){
+    this.create1=false;
+    this.create=false;
+  }
   logout() {
 
     this.token.removeToken();
+    this.token.removeUserId();
     this.router.navigate(['landing-page']);
     
+  }
+  closeEdit(){
+    this.create=false;
+    this.create1=true;
   }
 }

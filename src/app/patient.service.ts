@@ -21,7 +21,7 @@ export class PatientService {
 
   login(patient:Patient):Observable<any> {
 
-    this. patientMailId = new BehaviorSubject(patient.patientEmail).asObservable();
+    //this. patientMailId = new BehaviorSubject(patient.patientEmail).asObservable();
     return this.http.post(this.firstUrl+"/login",patient,{responseType:'text'});
         
 }

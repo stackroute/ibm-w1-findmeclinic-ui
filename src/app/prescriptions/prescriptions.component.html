@@ -1,3 +1,74 @@
-<p>
-  prescriptions works!
-</p>
+<mat-card class="aside">
+  <div class="inline">
+ <div class="col-sm-3">
+<h4>Appointment Id:{{appId}}</h4>
+<h4>{{doctorName}}</h4>
+</div>
+<div class="col-sm-3 aside1">
+<h4>Name : {{patientName}}</h4>
+<h4>Age: {{patientAge}}</h4>
+<h4>Blood Group: {{bloodGroup}}</h4>
+</div>
+</div>
+</mat-card>
+<br><br>
+  <div>
+
+      <form class="example-form">
+        <mat-form-field class="comment">
+          <textarea matInput placeholder="Findings"></textarea>
+        </mat-form-field>
+        <br>
+        <mat-form-field class="medicine">
+          <input matInput placeholder="Add Medicine">
+        </mat-form-field>
+        <mat-form-field class="select">
+          <mat-select placeholder="Select Timing">
+            <mat-option *ngFor="let med of list" [value]="list">
+              {{med}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-icon class="add-bot" (click)="add()">add_circle_outline</mat-icon> 
+        <br>
+        <mat-checkbox color="primary" class="time">Morning</mat-checkbox>
+ 
+        <mat-checkbox color="primary" class="time">Afternoon</mat-checkbox>
+ 
+        <mat-checkbox color="primary" class="time">Evening</mat-checkbox>
+ 
+        <mat-checkbox color="primary" class="time">Night</mat-checkbox>
+ 
+        <br>
+      </form>
+      <form class="example-form" *ngFor="let v of value">
+         <div *ngIf="mid"> 
+        <mat-form-field class="medicine">
+          <input matInput placeholder="Add Medicine">
+        </mat-form-field>
+        <mat-form-field class="select">
+          <mat-select placeholder="Select Timing">
+            <mat-option *ngFor="let med of list" [value]="list">
+              {{med}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-icon class="add-bot" (click)="add()">add_circle_outline</mat-icon>
+        <br>
+        <mat-checkbox color="primary" class="time">Morning</mat-checkbox>
+ 
+        <mat-checkbox color="primary" class="time">Afternoon</mat-checkbox>
+ 
+        <mat-checkbox color="primary" class="time">Evening</mat-checkbox>
+ 
+        <mat-checkbox color="primary" class="time">Night</mat-checkbox>
+ 
+        <br>
+ </div>
+      </form>
+
+      <button class="bot" mat-raised-button color="primary">Save</button>
+    </div>
+
+    
+ 

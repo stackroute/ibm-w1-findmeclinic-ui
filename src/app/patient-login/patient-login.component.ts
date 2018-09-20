@@ -24,10 +24,11 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
 })
 export class PatientLoginComponent implements OnInit {
   patient;
+  currentUser;
   patientEmail:String;
   registeredPatient;
   constructor(private dialogRef: MatDialogRef<PatientLoginComponent>, private snackBar: MatSnackBar,
-    private alerts: AlertsService, private router: Router, private patientService: PatientService, public dialog: MatDialog, private token: TokenStorage) {
+    private alerts: AlertsService,private tokenData:TokenStorage, private router: Router, private patientService: PatientService, public dialog: MatDialog, private token: TokenStorage) {
     this.patient = new Patient();
     this.registeredPatient = new Patient();
   }
@@ -42,6 +43,7 @@ export class PatientLoginComponent implements OnInit {
 
 
   addPatient(patientData) {
+  
     this.patientService.registerPatient(patientData).subscribe(data=>console.log(data));
     return this.patientService.registerPatientAuth(patientData).subscribe(data => {
      this.dialog.open(PatientLoginComponent)
@@ -68,6 +70,7 @@ export class PatientLoginComponent implements OnInit {
       console.log(patient.patientEmail)
       this.patientEmail=data
       this.token.saveToken(data);
+      this.token.saveUserId(patient.patientEmail);
       this.router.navigate(['patient-profile']);
     }
 

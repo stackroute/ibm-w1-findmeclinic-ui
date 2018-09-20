@@ -1,0 +1,73 @@
+.comment{
+    width: 400px;
+ }
+ .medicine{
+ width: 400px;
+ }
+ .time{
+ width: 100px;
+ margin-left: 10px;
+ }
+ .pres-form{
+    margin-left: 500px;
+    margin-top: 20px;
+ }
+ 
+ .example-is-mobile .example-toolbar {
+    position: fixed;
+    /* Make sure the toolbar will stay on top of the content as it scrolls past. */
+    z-index: 2;
+  }
+  .badge-style{
+    position: absolute;
+    right:30px;
+    margin:0;
+  }
+  .head{
+      text-align: center;
+  }
+  .info{
+      float: left;
+      display: grid;
+      text-align: center;
+      margin-left: 500px;
+  }
+  .info1{
+      float: right;
+      margin-right: 500px;
+  }
+  .info3{
+      margin-top: 100px;
+      margin-left: 500px;
+  }
+  .bot{
+      margin-bottom: 10px;
+      margin-left: 500px;
+       }
+  .add-bot{
+      margin-left: 10px;
+      cursor: pointer;
+  }
+  .select{
+      margin-left: 10px;
+  }
+  .add-btn{
+      margin-left: 800px;
+  }
+  .pres-card{
+      margin-top: 100px;
+  }
+
+  .aside{
+    height: 150px;
+    width: 850px;
+}
+.inline
+{
+    display: inline;
+}
+.aside1{
+    margin-left: 250px;
+    
+}
+  
