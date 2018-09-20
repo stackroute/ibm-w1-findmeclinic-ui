@@ -1,10 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { DoctorService } from '../doctor.service';
 import {Doctor} from '../Doctor';
-
-import { Router } from '@angular/router';
-
-
+import { Observable } from 'rxjs';
+import { DoctorTokenStorage } from '../doctorTokenStorage';
 @Component({
   selector: 'app-search-doctor',
   templateUrl: './search-doctor.component.html',
@@ -12,21 +10,26 @@ import { Router } from '@angular/router';
 })
 export class SearchDoctorComponent implements OnInit {
 docName;
-doctor:Doctor;
-  constructor(private doctorService:DoctorService,  public router: Router) { 
+doctorList:Doctor[];
+doctor$:Observable<Doctor[]>;
+  constructor(private doctorService:DoctorService,private doctorObject:DoctorTokenStorage) { 
     this.docName=new Doctor();
-    this.doctor=new Doctor();
+    //this.doctor=new Doctor();
   }
 
   ngOnInit() {
 
-this.doctorService.doctor.subscribe(data=>this.docName=data);
-this.doctorService.getDoctorByDoctorName(this.docName).subscribe(data1 => this.doctor=data1)
-;
-  }
 
-  book(){
-    this.router.navigate(['book']);
+// this.doctorService.doctor.subscribe(data=>
+//   {
+//     console.log("data is",data);
+//     this.docName=data;
+//   }
+//   );
+this.docName=this.doctorObject.getDoctorName();
+console.log("hi"+this.docName);
+  this.doctorService.getDoctorByDoctorName(this.docName).subscribe((data1:Doctor[]) => { this.doctorList=data1; console.log(data1)});
+
   }
 
 }
