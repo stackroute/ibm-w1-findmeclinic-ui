@@ -32,7 +32,7 @@ import { FailPatientComponent } from './patient-login/fail-patient.component';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import{ MatNativeDateModule } from '@angular/material';
 
-
+import { MatPaginatorModule} from '@angular/material';
 import { RouterModule } from '@angular/router';
 import { PatientProfileComponent } from './patient-profile/patient-profile.component';
 import { AppRoutingModule } from './/app-routing.module';
@@ -82,7 +82,7 @@ import { SearchDoctorComponent } from './search-doctor/search-doctor.component';
     MatGridListModule,
     MatMenuModule,
     MatListModule,
-
+    MatPaginatorModule,
     BrowserAnimationsModule,
     MaterialModule,
     HttpClientModule,
