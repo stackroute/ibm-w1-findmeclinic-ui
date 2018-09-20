@@ -45,9 +45,9 @@ addAddressDeatils(doctor:Doctor):Observable<Doctor>
 return this.http.post<Doctor>(this.secUrl+"/"+doctor.doctorEmail,doctor);
 }
 
-updateDetails(doctor:Doctor):Observable<Doctor>
+updateDetails(doctor):Observable<Doctor>
 {
-  return this.http.put<Doctor>(this.secUrl+"/"+this.doctorMail,doctor);
+  return this.http.put<Doctor>(this.secUrl+"/"+doctor.doctorMail,doctor);
 }
 
 

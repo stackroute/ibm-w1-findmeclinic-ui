@@ -1,42 +1,43 @@
 <div class="example-container">
-    <mat-toolbar color="primary" class="example-toolbar">
-        <button mat-icon-button (click)="snav.toggle()">
-            <mat-icon>menu</mat-icon>
-        </button>
-        <h1 class="example-app-name">FindMeClinic</h1>
+
+  <mat-toolbar color="primary" class="example-toolbar">
+    <button mat-icon-button (click)="snav.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <h1 class="example-app-name">FindMeClinic</h1>
+
+
+  
+    <div class="badge-style">
+            <app-notification></app-notification>
+      <button [matMenuTriggerFor]="menu" mat-mini-fab color="warn">{{badgeName}}</button>
+      
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item (click)="click()"> 
+          <mat-icon>supervised_user_circle</mat-icon>Profile</button>
+        <button mat-menu-item>
+          <mat-icon>settings</mat-icon>Settings</button>
+        <button mat-menu-item (click)="logout()">
+          <mat-icon>directions_walk</mat-icon>Logout</button>
+      </mat-menu>
+    </div>
+  </mat-toolbar>
 
 
 
-        <div class="badge-style">
-            <button [matMenuTriggerFor]="menu" mat-mini-fab color="warn">{{badgeName}}</button>
-            <mat-menu #menu="matMenu">
-                <button mat-menu-item (click)="click()">
-                    <mat-icon>supervised_user_circle</mat-icon>Profile</button>
-                <button mat-menu-item>
-                    <mat-icon>settings</mat-icon>Settings</button>
-                <button mat-menu-item (click)="logout()">
-                    <mat-icon>directions_walk</mat-icon>Logout</button>
-            </mat-menu>
-        </div>
-    </mat-toolbar>
 
+  <mat-sidenav-container class="example-sidenav-container">
+    <mat-sidenav #snav fixedTopGap="5">
+      <mat-nav-list>
+        <mat-list-item  (click)="display()" (click)="snav.toggle()">
+          <mat-icon>list_alt</mat-icon>My Appointments</mat-list-item>
+        <mat-list-item>
+          <mat-icon>library_books</mat-icon>Reports</mat-list-item>
+        <mat-list-item (click)="show()" (click)="snav.toggle()">
+          <mat-icon>access_time</mat-icon>Scheduling</mat-list-item>
 
-
-
-    <mat-sidenav-container class="example-sidenav-container">
-        <mat-sidenav #snav fixedTopGap="5">
-            <mat-nav-list>
-                <mat-list-item (click)="display()" (click)="snav.toggle()">
-                    <mat-icon>list_alt</mat-icon>My Appointments</mat-list-item>
-                <mat-list-item>
-                    <mat-icon>library_books</mat-icon>Reports</mat-list-item>
-                <mat-list-item (click)="show()" (click)="snav.toggle()">
-                    <mat-icon>access_time</mat-icon>Scheduling</mat-list-item>
-
-            </mat-nav-list>
-        </mat-sidenav>
-
-
+      </mat-nav-list>
+    </mat-sidenav>
         <mat-sidenav-content>
 
             <div *ngIf="create1" class="card1">
@@ -46,7 +47,7 @@
                                     <div>
                                             <img class="image"src="/assets/profile.jpeg">
                                     </div>
-                               <h2 class="hname"> Hello Doctor {{doctordata.doctorFirstName}} {{doctordata.doctorLastName}} !</h2> 
+                               <h2 class="hname"> Hello Dr {{doctordata.doctorFirstName}} {{doctordata.doctorLastName}} !</h2> 
                             </mat-card-header>
                         </mat-card>
                         <br>
@@ -60,6 +61,8 @@
                                     <mat-divider></mat-divider>
                                     <mat-list-item >phoneNumber<h4 id="l1">{{doctordata.doctorPhoneNumber}}</h4></mat-list-item>
                                     <mat-divider></mat-divider>
+                                    <mat-list-item >Gender<h4 id="l1">{{doctordata.doctorGender}}</h4></mat-list-item>
+                                    <mat-divider></mat-divider>
                                     <mat-list-item >Speciality<h4 id="l1">{{doctordata.doctorSpeciality}}</h4></mat-list-item>
                                     <mat-divider></mat-divider>
                                     <mat-list-item >Qualification<h4 id="l1">{{doctordata.doctorQualification}}</h4></mat-list-item>
@@ -70,10 +73,12 @@
                             <br>
                             <br>
                             <button mat-raised-button color="primary" class="pButon"(click)="editProfile()">Edit</button>
+                            
+
                             <button mat-raised-button color="primary" class="pButon1" (click)="closeCard()">close</button>
                         </mat-card>
             </div>
-            <div *ngIf="create">
+            <div *ngIf="create" class="card2">
                 <h2>Doctor Basic Details</h2>
                 <form [formGroup]="registerForm">
                         <div class="form-group">
@@ -112,10 +117,7 @@
                     </div>
                     <div class="form-group">
                         <label>Gender</label>
-                        <!-- <input type="text" formControlName="gender" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.gender.errors }"
-                            [(ngModel)]="doctordata.doctorGender" />
-                        <div *ngIf="submitted && f.gender.errors" class="invalid-feedback">
-                            <div *ngIf="f.gender.errors.required">Gender is required</div> -->
+                        
                             <mat-form-field>
                                     <mat-select class="select" placeholder="select you gender" [(value)]="doctordata.doctorGender">
                                       <mat-option *ngFor="let doctorGender of genders" [value]="doctorGender.value">
@@ -151,14 +153,36 @@
                             <div *ngIf="f.experience.errors.required">Doctor Experience is required</div>
                         </div>
                     </div>
-
-
+                   
+                    <!-- <div class="form-group">
+                            <h4>Address</h4>
+                            <label>AddressNo</label>
+                            
+                            <input type="text" formControlName="addressNo" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.addressNo.errors }"
+                                [(ngModel)]="doctorAdressNo.addressNo" />
+                                
+                            <mat-hint>Address Number Should Be 1</mat-hint>
+                            <div *ngIf="submitted && f.addressNo.errors" class="invalid-feedback">
+                                <div *ngIf="f.addressNo.errors.required">Doctor Address Number Should Be 1</div>
+                                
+                            </div>
+                            </div>
+                            <div class="form-group">
+                                    <label>hospitalName</label>
+                                    <input type="text" formControlName="hospitalName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.hospitalName.errors }"
+                                        [(ngModel)]="doctorAdressNo.hospitalName" />
+                                    <div *ngIf="submitted && f.hospitalName.errors" class="invalid-feedback">
+                                        <div *ngIf="f.hospitalName.errors.required">Doctor! HospitalName is required</div>
+                                    </div>
+                                </div>      -->
                     <div class="form-group">
-                        <button [disabled]="loading" mat-raised-button class="pButon2" color="primary"  (click)="open(doctordata)" >Submit</button>
-                        <!-- <button (click)="closeCard()" class="btn1 btn-primary">close </button> -->
+                        <button [disabled]="loading" mat-raised-button class="doctorButton" color="primary"  (click)="open(doctordata)" >Submit</button>
+                        <button mat-raised-button color="primary" class="button" (click)="closeEdit()">Exit</button>
+                        <button mat-raised-button color="primary" class="dButton" (click)="address()">Add Address</button>
 
                     </div>
                 </form>
+
 
 
             </div>
@@ -179,7 +203,7 @@
 
 
     <!--Footer-->
-    <!-- <footer class="page-footer" id="myFooter">
+     <footer class="page-footer" id="myFooter">
         <div class="container">
             <div class="row">
                 <div class="col-sm-3 myCols">
@@ -240,21 +264,26 @@
                 </div>
             </div>
         </div>
-        <div class="social-networks">
-            <a href="#" class="twitter">
-                <i class="fa fa-twitter"></i>
-            </a>
-            <a href="#" class="facebook">
-                <i class="fa fa-facebook-official"></i>
-            </a>
-            <a href="#" class="google">
-                <i class="fa fa-google-plus"></i>
-            </a>
-        </div>
-        <div class="footer-copyright">
-            <p>© 2018 FindMeClinic </p>
-        </div>
-    </footer> -->
+
+    <div class="social-networks">
+        <a href="#" class="twitter">
+            <i class="fa fa-twitter"></i>
+        </a>
+        <a href="#" class="facebook">
+            <i class="fa fa-facebook-official"></i>
+        </a>
+        <a href="#" class="google">
+            <i class="fa fa-google-plus"></i>
+        </a>
+    </div>
+    <div class="footer-copyright">
+        <p>© 2018 FindMeClinic </p>
+    </div>
+</footer>
+
+
+
+
 
 
 </div>

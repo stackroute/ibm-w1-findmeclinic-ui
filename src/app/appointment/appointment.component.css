@@ -1,5 +1,27 @@
-.mat-card{
-    width:550px;
-    margin-left: 35%;
-   
+h1{
+    text-align: center;
 }
+.mat-table{
+    width:550px;
+    margin-left: 650px;
+    text-align: center;
+}
+
+.mat-cell {
+    display:block; 
+    min-height:auto; 
+    /* padding: 0px 0px 0px 0; */
+  }
+
+  .name{
+      padding: 20px;
+      padding-right: 30px;
+  }
+  /* .bot{
+      margin:30px;
+  } */
+  .head{
+      text-align: center;
+      margin-left: 100px;
+  }
+ 

@@ -69,8 +69,9 @@ genders: Gender[] = [
       qualification:['',Validators.required],
       speciality:['',Validators.required],
       experience:['',Validators.required],
-      address:['',Validators.required]
-
+      addressNo:['',Validators.required],
+      hospitalName:['',Validators.required]
+      
     });
      
      
@@ -117,6 +118,7 @@ genders: Gender[] = [
   }
 
   closeCard(){
+    this.create1=false;
     this.create=false;
   }
   logout() {
@@ -124,5 +126,9 @@ genders: Gender[] = [
     this.token.removeToken();
     this.router.navigate(['landing-page']);
     
+  }
+  closeEdit(){
+    this.create=false;
+    this.create1=true;
   }
 }
