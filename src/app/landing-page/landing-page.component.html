@@ -33,11 +33,11 @@
                     
                         
                 <input type="text" id="output"  matInput placeholder="Search by Location" matTooltip="Click to detect your Location">
-                <button (click)="getLocation()"> Get Location</button>
+                <button (click)="getLocation()">Detect</button>
                 
                   
-                <input  type="text" name="form" [(ngModel)]="doctor.doctorName" placeholder="Searching for Doctors?">
-                <button (click)="searchDoctors(doctor.doctorName)">Go</button>
+                <input  type="text" name="form" [(ngModel)]="doctor1.doctorName" placeholder="Searching for Doctors?">
+                <button (click)="searchDoctors(doctor1.doctorName)">Go</button>
 
 
             </form>
