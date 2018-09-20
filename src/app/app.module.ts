@@ -46,6 +46,8 @@ import { PatientUpdateComponent} from './patient-profile/patientupdate.component
 import { MedicalRecordsComponent } from './medical-records/medical-records.component';
 import { AddScheduleComponent } from './add-schedule/add-schedule.component';
 import { SearchDoctorComponent } from './search-doctor/search-doctor.component';
+import { BookComponentComponent } from './book-component/book-component.component';
+import { BookConfirmComponent } from './book-confirm/book-confirm.component';
 
 import { NotificationComponent } from './notification/notification.component';
 
@@ -71,10 +73,11 @@ import { UploadFileComponent } from './upload-file/upload-file.component';
     MedicalRecordsComponent,
     AddScheduleComponent,
     SearchDoctorComponent,
+    BookComponentComponent,
+    BookConfirmComponent,
     NotificationComponent,
 
     UploadFileComponent
-
   ],
   imports: [
     MatCardModule,
@@ -113,7 +116,7 @@ import { UploadFileComponent } from './upload-file/upload-file.component';
    })
   ],
   entryComponents:[PatientLoginComponent,InvalidPatientComponent,FailPatientComponent,PatientUpdateComponent,InvalidDoctorComponent,FailRegisterComponent,
-  DoctorLoginComponent,DoctorProfileComponent,MedicalRecordsComponent,PatientUpdateComponent, AddScheduleComponent,PrescriptionsComponent],
+  DoctorLoginComponent,DoctorProfileComponent,MedicalRecordsComponent,PatientUpdateComponent, AddScheduleComponent,PrescriptionsComponent,BookConfirmComponent],
   providers: [],
   bootstrap: [AppComponent]
 })
