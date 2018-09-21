@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {MatDialog} from '@angular/material';
-import { PatientProfileComponent } from '../patient-profile/patient-profile.component';
+import { Router } from '@angular/router';
+import { FormUploadComponent } from '../upload/form-upload/form-upload.component';
+import { ListUploadComponent } from '../upload/list-upload/list-upload.component';
+
 
 @Component({
   selector: 'app-medical-records',
@@ -10,13 +13,17 @@ import { PatientProfileComponent } from '../patient-profile/patient-profile.comp
 export class MedicalRecordsComponent implements OnInit {
  
 
-  constructor(public dialog : MatDialog) { }
+  constructor(public dialog : MatDialog,private router: Router) { }
 
   ngOnInit() {
   }
 
-  closeRecords() :void {
-    const dialogRef = this.dialog.open(PatientProfileComponent);
+  openUpload() :void {
+    const dialogRef = this.dialog.open(FormUploadComponent);
+  }
+
+  openUploadList() :void {
+    const dialogRef = this.dialog.open(ListUploadComponent);
   }
 
 }
