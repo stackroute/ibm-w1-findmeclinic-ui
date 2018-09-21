@@ -55,14 +55,19 @@
     <thead>
       <tr>
         <th>Description</th>
-        <th>Starts at</th>
+        <th>Date</th>
+        <th>Starts At</th>
         <th>Ends at</th>
-        <th>Remove</th>
       </tr>
     </thead>
 
     <tbody>
-
+      <tr *ngFor = "let schedule of schedules">
+        <td>{{schedule.description}}</td>
+        <td>{{schedule.scheduleDate}}</td>
+        <td>{{schedule.startTime}}</td>
+        <td>{{schedule.endTime}}</td>
+      </tr>
     </tbody>
 
   </table>
