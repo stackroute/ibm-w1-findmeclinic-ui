@@ -1,17 +1,7 @@
-.btn{
-    margin-top: 20px;
-    padding: 5px;
-    text-align: center;
-}
-
-.btn2{
-    margin-top: 20px;
-    padding: 5px;
-}
-
-h2{
-    margin-bottom: 5%;
-    color: red;
-    text-align: center; 
-    margin-top: 0%;  
-}
+.example-card {
+    max-width: 400px;
+  }
+  button{
+      text-align: center;
+  }
+  
