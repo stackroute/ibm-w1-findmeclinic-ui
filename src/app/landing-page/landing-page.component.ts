@@ -1,4 +1,3 @@
-
 import { Component, OnInit } from '@angular/core';
 import { PatientLoginComponent } from '../patient-login/patient-login.component';
 import { MatDialog } from '@angular/material';

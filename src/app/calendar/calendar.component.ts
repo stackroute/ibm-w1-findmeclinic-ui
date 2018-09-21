@@ -24,6 +24,8 @@ import {
 } from 'angular-calendar';
 import {AddScheduleComponent} from '../add-schedule/add-schedule.component'
 import { MatDialog, MatDialogRef } from '@angular/material';
+import { CalendarService } from '../calendar.service';
+import { Schedule } from '../Schedule';
 
 const colors: any = {
   red: {
@@ -63,14 +65,15 @@ export class CalendarComponent implements OnInit {
   refresh: Subject<any> = new Subject();
 
   events: CalendarEvent[]=[];
-
+  schedules: Schedule[];
 
   ngOnInit() {
+    this.calendarService.getAllSchedule().subscribe(schedule => this.schedules = schedule);
   }
 
   activeDayIsOpen: boolean = true;
 
-  constructor(private modal: NgbModal,private dialog:MatDialog) {}
+  constructor(private modal: NgbModal,private dialog:MatDialog, private calendarService: CalendarService) {}
 
   dayClicked({ date, events }: { date: Date; events: CalendarEvent[] }): void {
     if (isSameMonth(date, this.viewDate)) {
@@ -117,4 +120,5 @@ export class CalendarComponent implements OnInit {
  
   }
 
+  
 }
