@@ -48,10 +48,11 @@ import { AddScheduleComponent } from './add-schedule/add-schedule.component';
 import { SearchDoctorComponent } from './search-doctor/search-doctor.component';
 import { BookComponentComponent } from './book-component/book-component.component';
 import { BookConfirmComponent } from './book-confirm/book-confirm.component';
-
 import { NotificationComponent } from './notification/notification.component';
+import { DetailsUploadComponent } from './upload/details-upload/details-upload.component';
+import { FormUploadComponent } from './upload/form-upload/form-upload.component';
+import { ListUploadComponent } from './upload/list-upload/list-upload.component';
 
-import { UploadFileComponent } from './upload-file/upload-file.component';
 import { SlotDetailsComponent } from './slot-details/slot-details.component';
 
 
@@ -77,7 +78,9 @@ import { SlotDetailsComponent } from './slot-details/slot-details.component';
     BookComponentComponent,
     BookConfirmComponent,
     NotificationComponent,
-    UploadFileComponent,
+    DetailsUploadComponent,
+    FormUploadComponent,
+    ListUploadComponent,
     SlotDetailsComponent
   ],
   imports: [
@@ -116,7 +119,7 @@ import { SlotDetailsComponent } from './slot-details/slot-details.component';
    })
   ],
   entryComponents:[PatientLoginComponent,InvalidPatientComponent,FailPatientComponent,PatientUpdateComponent,InvalidDoctorComponent,FailRegisterComponent,
-  DoctorLoginComponent,DoctorProfileComponent,MedicalRecordsComponent,PatientUpdateComponent, AddScheduleComponent,PrescriptionsComponent,BookConfirmComponent],
+  DoctorLoginComponent,DoctorProfileComponent,MedicalRecordsComponent,PatientUpdateComponent, AddScheduleComponent,PrescriptionsComponent,BookConfirmComponent,DetailsUploadComponent,FormUploadComponent,ListUploadComponent],
   providers: [AddScheduleComponent],
   bootstrap: [AppComponent]
 })
