@@ -22,7 +22,7 @@ export class DoctorProfileComponent implements OnInit {
 create1=false;
 badgeName:string;
 submitted = false;
-
+address1=false;
 
 
 
@@ -78,9 +78,6 @@ this.create1=false;
     });
      
 
-     
-        //   this.doctorService.doctorMail.subscribe(data => {console.log(data);
-        //  this.doctorMailId=data;})
         this.doctorMailId = this.token.getUserId();
 
         this.doctorService.getBadge(this.doctorMailId).subscribe(data1 => {console.log(data1); console.log(this.badgeName)
@@ -111,6 +108,7 @@ this.create1=false;
 
 
    open(doctor){
+    //  console.log('doctor address is::', doctor);
     this.submitted = true;
      console.log(this.doctorMailId);
     return this.doctorService.updateDetails(doctor).subscribe(data1 => {
@@ -139,4 +137,15 @@ this.create1=false;
     this.create=false;
     this.create1=true;
   }
+
+  address(){
+    this.create=false;
+    this.create1=false;
+    this.showContent=false;
+    this.showFiller=false;
+    this.address1=true;
+
+  }
+
+  
 }

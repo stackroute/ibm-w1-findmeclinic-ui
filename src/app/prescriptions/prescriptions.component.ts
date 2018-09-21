@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import{Medicines}from '../Medicine';
+import { MatDialogRef } from '@angular/material';
 @Component({
   selector: 'app-prescriptions',
   templateUrl: './prescriptions.component.html',
@@ -18,7 +19,7 @@ export class PrescriptionsComponent implements OnInit {
   m;
   i = 0;
   value = [];
-  constructor() {
+  constructor(private dialog:MatDialogRef<PrescriptionsComponent>) {
     this.medicine = new Medicines();
     this.medicine1 = new Medicines();
  
@@ -38,6 +39,10 @@ export class PrescriptionsComponent implements OnInit {
   }
   open() {
     this.m = this.medicine;
+  }
+
+  closeDialog(){
+    this.dialog.close();
   }
  
 }
