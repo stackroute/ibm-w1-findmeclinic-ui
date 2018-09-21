@@ -154,8 +154,18 @@
    }
 
 
+.appointclass{
+  
+  align-content: center;
+  width: 550px;
+  height: auto;
 
 
+}
+.matitem{
+  margin-right: 100%;
+  align-items: center;
+}
 /* .example-card
 {
   height: 500px;

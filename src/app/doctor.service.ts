@@ -13,6 +13,7 @@ export class DoctorService {
   // private secUrl="http://localHost:8082/api/v2/doctor";
 
   private secUrl="http://localhost:8080/api/v1/search/";
+  private thirdUrl="http://localhost:8081/api/v2/doctor/docserv"
   constructor(private http: HttpClient) { }
   doctor;
 
@@ -30,7 +31,7 @@ export class DoctorService {
 
 getByEmail(doctorEmail) :Observable<Doctor>
 {
-return this.http.get<Doctor>(this.secUrl+"/"+doctorEmail);
+return this.http.get<Doctor>(this.thirdUrl+"/"+doctorEmail);
 }
 // getDoctorByDoctorName(doctorName:string):Observable<Doctor[]>
 // {
@@ -43,20 +44,20 @@ getDoctorByDoctorName(doctorName:String):Observable<any>{
 }
 
 addDoctorDetails(doctor:Doctor):Observable<Doctor>{
-  return this.http.post<Doctor>(this.secUrl,doctor);
+  return this.http.post<Doctor>(this.thirdUrl,doctor);
 }
 addAddressDeatils(doctor:Doctor):Observable<Doctor>
 {
-return this.http.post<Doctor>(this.secUrl+"/"+doctor.doctorEmail,doctor);
+return this.http.post<Doctor>(this.thirdUrl+"/"+doctor.doctorEmail,doctor);
 }
 
 updateDetails(doctor):Observable<Doctor>
 {
-  return this.http.put<Doctor>(this.secUrl+"/"+doctor.doctorMail,doctor);
+  return this.http.put<Doctor>(this.thirdUrl+"/"+doctor.doctorMail,doctor);
 }
 
 
 getBadge(doctorEmail:string):Observable<any>{
-  return this.http.get(this.secUrl+"/badge/"+doctorEmail,{responseType:'text'});
+  return this.http.get(this.thirdUrl+"/badge/"+doctorEmail,{responseType:'text'});
 }
 }

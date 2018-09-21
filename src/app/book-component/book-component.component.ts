@@ -11,7 +11,7 @@ import { CalendarService } from '../calendar.service';
 })
 export class BookComponentComponent implements OnInit {
 
-  docId = "DocB";
+  docId = "xyz@xyz.com";
   slots: Slot[];
 
   constructor(public dialog : MatDialog, private calenderService: CalendarService ) { }

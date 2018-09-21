@@ -27,7 +27,7 @@
     <mat-sidenav-container class="example-sidenav-container">
       <mat-sidenav #snav fixedTopGap="5">
         <mat-nav-list>
-          <mat-list-item><mat-icon>list_alt</mat-icon>My Appointments</mat-list-item>
+          <mat-list-item (click)="apppointment()"><mat-icon>list_alt</mat-icon>My Appointments</mat-list-item>
              
           <mat-list-item (click)="reports()">
             <mat-icon>library_books</mat-icon>
@@ -204,6 +204,11 @@
   </div>
   </div>
 
+  <div *ngIf="appoint">
+  
+            <app-patientappointment></app-patientappointment>
+          
+</div>
 
   <div *ngIf="setting">
 <br>

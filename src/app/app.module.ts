@@ -54,6 +54,7 @@ import { FormUploadComponent } from './upload/form-upload/form-upload.component'
 import { ListUploadComponent } from './upload/list-upload/list-upload.component';
 
 import { SlotDetailsComponent } from './slot-details/slot-details.component';
+import { PatientappointmentComponent } from './patientappointment/patientappointment.component';
 
 
 @NgModule({
@@ -81,7 +82,8 @@ import { SlotDetailsComponent } from './slot-details/slot-details.component';
     DetailsUploadComponent,
     FormUploadComponent,
     ListUploadComponent,
-    SlotDetailsComponent
+    SlotDetailsComponent,
+    PatientappointmentComponent
   ],
   imports: [
     MatCardModule,

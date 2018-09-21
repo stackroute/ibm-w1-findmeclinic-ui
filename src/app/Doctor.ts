@@ -13,3 +13,4 @@ export class Doctor{
     doctorAddressNo:DoctorAddress;
 
 }
+
