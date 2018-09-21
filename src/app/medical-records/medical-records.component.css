@@ -1,17 +1,10 @@
-.btn{
-    margin-top: 20px;
-    padding: 5px;
-    text-align: center;
+ button{
+      text-align: center;
+      color: red;
+      font-size: 20px;
+      border-radius: 20px;
 }
-
-.btn2{
-    margin-top: 20px;
-    padding: 5px;
-}
-
-h2{
-    margin-bottom: 5%;
-    color: red;
-    text-align: center; 
-    margin-top: 0%;  
+  
+.mat-card-title{
+    color:red;
 }
