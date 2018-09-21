@@ -22,4 +22,5 @@ export class AddScheduleComponent implements OnInit {
   onNoClick(): void {
     this.dialogRef.close();
   }
+  
 }

@@ -10,16 +10,22 @@
   <input matInput type = "text" placeholder="Work Place" [(ngModel)]="schedule.workPlace">
 </mat-form-field>
 <br>
-<mat-form-field class="fullwidth">
-  <input matInput type ="datetime-local" [(ngModel)]="schedule.startDate">
+<mat-form-field>
+  <input matInput [matDatepicker]="picker" placeholder="Choose a date" [(ngModel)]="schedule.scheduleDate">
+  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+  <mat-datepicker #picker></mat-datepicker>
 </mat-form-field>
 <br>
 <mat-form-field class="fullwidth">
-  <input matInput type ="datetime-local" [(ngModel)]="schedule.endDate">
+  <input matInput type ="time" [(ngModel)]="schedule.startTime">
 </mat-form-field>
 <br>
 <mat-form-field class="fullwidth">
-  <input matInput type="number" [(ngModel)]="schedule.timePerpatient">
+  <input matInput type ="time" [(ngModel)]="schedule.endTime">
+</mat-form-field>
+<br>
+<mat-form-field class="fullwidth">
+  <input matInput type="number" [(ngModel)]="schedule.timePerPatient">
   <mat-hint align="start"><strong>Insert Number Only</strong> </mat-hint>
 </mat-form-field>
 
