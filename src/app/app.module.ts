@@ -49,7 +49,6 @@ import { SearchDoctorComponent } from './search-doctor/search-doctor.component';
 import { BookComponentComponent } from './book-component/book-component.component';
 import { BookConfirmComponent } from './book-confirm/book-confirm.component';
 import { NotificationComponent } from './notification/notification.component';
-import { UploadFileComponent } from './upload-file/upload-file.component';
 import { DetailsUploadComponent } from './upload/details-upload/details-upload.component';
 import { FormUploadComponent } from './upload/form-upload/form-upload.component';
 import { ListUploadComponent } from './upload/list-upload/list-upload.component';
@@ -78,7 +77,6 @@ import { ListUploadComponent } from './upload/list-upload/list-upload.component'
     BookComponentComponent,
     BookConfirmComponent,
     NotificationComponent,
-    UploadFileComponent,
     DetailsUploadComponent,
     FormUploadComponent,
     ListUploadComponent

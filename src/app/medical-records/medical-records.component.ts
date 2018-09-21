@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import {MatDialog} from '@angular/material';
-import { UploadFileComponent } from '../upload-file/upload-file.component';
 import { PatientProfileComponent } from '../patient-profile/patient-profile.component';
 
 @Component({
@@ -18,10 +17,6 @@ export class MedicalRecordsComponent implements OnInit {
 
   closeRecords() :void {
     const dialogRef = this.dialog.open(PatientProfileComponent);
-  }
-
-  openRecords() :void {
-    const dialogRef = this.dialog.open(UploadFileComponent);
   }
 
 }
