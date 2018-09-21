@@ -17,4 +17,7 @@ export class AppointmentService {
   createBookingAppointment(appointment: Object):Observable<Object>{
     return this.http.post(this.baseUrl+"/add", appointment)
   }
+
+
+  
 }

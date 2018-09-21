@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Input  } from '@angular/core';
+import { Slot } from '../Slot';
 
 @Component({
   selector: 'app-slot-details',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./slot-details.component.css']
 })
 export class SlotDetailsComponent implements OnInit {
+
+  @Input() slot: Slot;
 
   constructor() { }
 

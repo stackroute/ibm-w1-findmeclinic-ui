@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {MatDialog} from '@angular/material';
 import { BookConfirmComponent } from '../book-confirm/book-confirm.component';
 import { Observable } from 'rxjs';
-import { Slot } from '../slot';
+import { Slot } from '../Slot';
+import { CalendarService } from '../calendar.service';
 @Component({
   selector: 'app-book-component',
   templateUrl: './book-component.component.html',
@@ -10,12 +11,17 @@ import { Slot } from '../slot';
 })
 export class BookComponentComponent implements OnInit {
 
-  slots: Observable<Slot[]>;
+  docId = "DocB";
+  slots: Slot[];
 
-  constructor(public dialog : MatDialog, private calenderService: CalenderService ) { }
+  constructor(public dialog : MatDialog, private calenderService: CalendarService ) { }
 
   ngOnInit() {
-    this.reloadData();
+    // this.reloadData();
+    this.calenderService.getScheduleSlot(this.docId)
+    .subscribe(data => {      console.log(data);
+
+      this.slots =data});
   }
 
   openDialog() {
@@ -24,7 +30,9 @@ export class BookComponentComponent implements OnInit {
   }
 
   reloadData() {
-    this.slots = this.calenderService.getSlots();
+    
+    
   }
+  // console.log(slots)
 
 }

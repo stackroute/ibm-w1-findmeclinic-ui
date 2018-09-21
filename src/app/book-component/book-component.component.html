@@ -167,6 +167,10 @@
 
 <h1>Slots</h1>
  
-<div *ngFor="let slot of slots | async" style="width: 1400px;">
-  <app-slot-details [slot]='slot'></app-slot-details>
+<div *ngFor="let slot of slots" style="width: 1400px;">
+  <!-- <app-slot-details [slot]='slot'></app-slot-details> -->
+
+   <mat-button-toggle  class="pan"> 
+    {{slot.slotStart}}
+  </mat-button-toggle> 
 </div>
