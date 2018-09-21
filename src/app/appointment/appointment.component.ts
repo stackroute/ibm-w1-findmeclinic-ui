@@ -18,10 +18,39 @@ export class AppointmentComponent implements OnInit {
   
   @ViewChild(MatPaginator) paginator: MatPaginator;
   listOfAppointments:BookingAppointment[];
-
+  displayAppointments:BookingAppointment[];
+  numOfApp;
+  lengthlist=4;
+  bId;
+appId=[];
+appStatus=[];
+size;
+listSize;
+diff;
   dataSource= new MatTableDataSource<BookingAppointment>(this.listOfAppointments);
    constructor(private router: Router,public dialog: MatDialog,private appService: AppointmentService) {
     }
+
+
+    ngOnInit() {
+     
+         
+       
+      
+  
+     }
+     onPage()
+     {
+      this.numOfApp=this.listSize-1;
+      this.diff=this.listSize-this.paginator.pageSize;
+     if(this.diff > 0)
+       {
+      this.numOfApp=this.paginator.pageSize;
+       }
+       this.displayAppointments=this.listOfAppointments.slice(0,this.numOfApp);
+       console.log(this.displayAppointments)
+       
+     }
     open(){
      
       this.dialog.open(PrescriptionsComponent)
@@ -29,18 +58,28 @@ export class AppointmentComponent implements OnInit {
          }
    
  ngAfterViewInit(){
- this.dataSource.paginator= this.paginator;
- }
-   ngOnInit() {
-     this.appService.getAllAppointments().subscribe((data: BookingAppointment[])=>{
-       this.listOfAppointments=data;
-       console.log(data);
-       console.log(this.dataSource)
-     })
-    
 
-   }
+
+   this.appService.getAllAppointments().subscribe((data: BookingAppointment[])=>{
+    this.listOfAppointments=data;
+    this.lengthlist = this.listOfAppointments.length;
+    
+ this.listSize=this.lengthlist
+  this.numOfApp=this.listSize-1;
+ this.diff=this.listSize-this.paginator.pageSize;
+if(this.diff > 0)
+  {
+ this.numOfApp=this.paginator.pageSize;
+  }
+  this.displayAppointments=this.listOfAppointments.slice(0,this.numOfApp);
+  console.log(this.displayAppointments)
   
- 
+})
+ }
+   
+   
+  
+
+
 
 }
