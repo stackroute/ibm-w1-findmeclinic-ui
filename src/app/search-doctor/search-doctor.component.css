@@ -46,7 +46,7 @@ mat-card-subtitle{
 }
  .detail{
      align-content: center;
-     width: 50%;
+     width: 60%;
      margin-left: 20%;
 
  }
@@ -85,6 +85,7 @@ mat-card-subtitle{
 	padding-left: 0;
 	line-height: 1.7;
  }
+
  .navbar {
 	background-color: white;
 	top: 0;

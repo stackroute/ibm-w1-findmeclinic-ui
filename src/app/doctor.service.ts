@@ -40,7 +40,6 @@ return this.http.get<Doctor>(this.secUrl+"/"+doctorEmail);
 // }
 getDoctorByDoctorName(doctorName:String):Observable<any>{
   return this.http.get<any>(this.secUrl+doctorName);
-
 }
 
 addDoctorDetails(doctor:Doctor):Observable<Doctor>{
