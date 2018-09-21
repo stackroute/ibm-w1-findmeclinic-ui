@@ -6,14 +6,9 @@ import {DoctorLoginComponent} from '../doctor-login/doctor-login.component';
 import { Doctor } from '../Doctor';
 import  {DoctorService} from '../doctor.service';
 import{ Router,NavigationExtras} from '@angular/router';
-<<<<<<< HEAD
-// import * as SockJS from 'sockjs-client';
-// import * as Stomp from '@stomp/stompjs';
-=======
 import * as SockJS from 'sockjs-client';
 import * as Stomp from '@stomp/stompjs';
 import { DoctorTokenStorage } from '../doctorTokenStorage';
->>>>>>> 99c157b1e366894159b5a08c5c370fec49d8ce62
 
 
 @Component({
@@ -26,19 +21,16 @@ export class LandingPageComponent implements OnInit {
   doctor:Doctor;
   doctor1:Doctor;
   docName: string ='';
-  constructor(public dialog : MatDialog,private doctorService:DoctorService,private router: Router) { 
-<<<<<<< HEAD
-=======
-  docName;
-  doctorName;
-  constructor(public dialog : MatDialog,private doctorService:DoctorService,private router: Router,private docNameObj:DoctorTokenStorage) { 
->>>>>>> 99c157b1e366894159b5a08c5c370fec49d8ce62
+  docNam;
+  data1:any;
+  data2:any;
+  constructor(public dialog : MatDialog,private doctName: DoctorTokenStorage,private doctorService:DoctorService,private router: Router,private docNameObj:DoctorTokenStorage) { 
     this.doctor=new Doctor();
     this.doctor1=new Doctor();
   }
 
   ngOnInit() {
-    this.setUpConnection()
+    this.setUpConnection();
   }
   // searchDoctors(name:string)
   // {
@@ -50,33 +42,6 @@ export class LandingPageComponent implements OnInit {
   //   console.log(data);
   //   this.router.navigate(['search-doctor'])
   // });
-<<<<<<< HEAD
-=======
-      this.docNameObj.removedoctorName();
-
-  }
-
-  searchDoctors(name:string)
-  {
-
-    console.log(name);
-
-    this.docNameObj.saveDoctorName(name);
-    console.log(this.doctorName);
-    console.log(this.docNameObj.getDoctorName());
-    //     return this.doctorService.getDoctorByDoctorName(name).subscribe(data => {
-    //   this.doctor1=data;
-    //   console.log(name);
-
-    // console.log(data);
-    // console.log(this.doctor.doctorName)
-    //       console.log(name);
-    
-    this.router.navigate(['search-doctor']);
-
-    // return this.doctorService.getDoctorByDoctorName(name).subscribe((data1:Doctor[]) => { this.doctorList=data1; console.log(data1)});
-  
->>>>>>> 99c157b1e366894159b5a08c5c370fec49d8ce62
 
 
   // }
@@ -131,15 +96,26 @@ export class LandingPageComponent implements OnInit {
       });
   }
 
-  sendName(name: any){
-    console.log(name);
-    this.stompClient.send("/app/doc-name", {}, JSON.stringify(name));
-  }
+   sendName(name: any){
+     console.log(name);
+     this.stompClient.send("/app/doc-name", {}, JSON.stringify(name));
+   }
 
-  sendData(){
-    console.log(this.docName)
-    this.doctorService.getDoctorByDoctorName(this.docName).subscribe(data => console.log(data))
-  }
+   sendData(){
+     console.log(this.docName);
+     this.docNameObj.saveDoctorName(this.docName);
+     this.doctorService.getDoctorByDoctorName(this.docName).subscribe(data =>  { this.data1=data;
+      console.log(data);
+      // this.data2=data["Frame"];
+      // console.log("jason"+this.data2);
+      // JSON.parse(this.data2);
+  
+  
+    });
+  
+  
+     this.router.navigate(['search-doctor']);
+   }
   
   
 

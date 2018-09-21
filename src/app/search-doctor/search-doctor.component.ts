@@ -9,15 +9,17 @@ import { DoctorTokenStorage } from '../doctorTokenStorage';
   styleUrls: ['./search-doctor.component.css']
 })
 export class SearchDoctorComponent implements OnInit {
-docName;
+  docName: string ='';
 doctorList:Doctor[];
+data1:any;
+data2:any;
 doctor$:Observable<Doctor[]>;
   constructor(private doctorService:DoctorService,private doctorObject:DoctorTokenStorage) { 
-    this.docName=new Doctor();
     //this.doctor=new Doctor();
   }
 
   ngOnInit() {
+
 
 
 // this.doctorService.doctor.subscribe(data=>
@@ -27,9 +29,12 @@ doctor$:Observable<Doctor[]>;
 //   }
 //   );
 this.docName=this.doctorObject.getDoctorName();
-console.log("hi"+this.docName);
+console.log(this.docName);
+// console.log("hi"+this.docName);
+console.log("hello"+this.docName);
   this.doctorService.getDoctorByDoctorName(this.docName).subscribe((data1:Doctor[]) => { this.doctorList=data1; console.log(data1)});
+    }
 
-  }
+
 
 }
