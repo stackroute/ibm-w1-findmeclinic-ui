@@ -4,6 +4,7 @@
 
 <div [hidden]="!showFile">
   <div class="panel panel-primary">
+    <h1>List of Uploaded Recodss</h1>
     <div class="panel-heading">List of Files</div>
     <div *ngFor="let file of fileUploads | async">
       <div class="panel-body">
