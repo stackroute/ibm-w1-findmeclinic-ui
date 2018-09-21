@@ -165,12 +165,19 @@
 </div> -->
 
 
-<h1>Slots</h1>
  
-<div *ngFor="let slot of slots" style="width: 1400px;">
-  <!-- <app-slot-details [slot]='slot'></app-slot-details> -->
+<div class="main">
+  Select a time slot to book the appointment
+</div>
 
-   <mat-button-toggle  class="pan"> 
+<div *ngFor="let slot of slots" class="style">
+
+   <mat-button-toggle value="slot.slotStart"> 
     {{slot.slotStart}}
   </mat-button-toggle> 
+
 </div>
+
+   <div class="bttn">
+    <button mat-raised-button color="primary" (click)="openDialog()">Submit</button>
+    </div>
