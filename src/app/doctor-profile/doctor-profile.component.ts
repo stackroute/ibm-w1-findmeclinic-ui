@@ -46,6 +46,7 @@ this.create1=false;
     return this.showFiller
   }
   
+  
  
  display(): boolean{
    this.showFiller=false;
@@ -108,13 +109,15 @@ this.create1=false;
 
 
    open(doctor){
+
     //  console.log('doctor address is::', doctor);
     this.submitted = true;
      console.log(this.doctorMailId);
-    return this.doctorService.updateDetails(doctor).subscribe(data1 => {
-      this.doctordata=data1;
-      console.log(data1)
+    return this.doctorService.updateDetails(doctor).subscribe(data => {
+      this.doctordata=data;
+      console.log(data)
     });
+    
    }
 
   editProfile(){
@@ -133,10 +136,10 @@ this.create1=false;
     this.router.navigate(['landing-page']);
     
   }
-  closeEdit(){
-    this.create=false;
+   closeEdit(){
+     this.create=false;
     this.create1=true;
-  }
+   }
 
   address(){
     this.create=false;

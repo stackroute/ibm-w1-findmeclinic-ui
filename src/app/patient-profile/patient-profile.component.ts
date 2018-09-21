@@ -28,9 +28,10 @@ export class PatientProfileComponent implements OnInit {
     {value: 'Others', viewValue: 'Others'}
   ];
 
-
+ appoint=false;
   showFiller = false;
   reports(): boolean{
+    this.appoint=false;
     this.check2=false;
     if(this.showFiller===false){
       this.showFiller=true;
@@ -88,6 +89,7 @@ sub=false;
       }
 
 this.check2=true;
+this.appoint=false;
 this.patientMail = this.token.getUserId();
   //this.patientService.patientMailId.subscribe(mailId =>{ console.log(mailId);this.patientMail = mailId})
     this.patientService.getBadgeName(this.patientMail).subscribe(data=>
@@ -102,6 +104,7 @@ onChange()
 {
    this.sub = true;
   this.password=false;
+ this.appoint=false;
           // stop here if form is invalid
           if (this.settingForm.invalid) {
               return;
@@ -121,6 +124,7 @@ onChange()
   this.list=true;
   this.submit=true;
   this.check3=false;
+  this.appoint=false;
   this.check=true;
   this.patientService.updatePatientProfile(patient).subscribe(data1=>{this.patientData=data1;console.log(data1)})
   this.snackBar.openFromComponent(PatientUpdateComponent, {
@@ -139,11 +143,13 @@ onChange()
     this.setting=false;
     this.check2=false;
     this.check=true;
+    this.appoint=false;
     this.patientService.getPatientByMail(this.patientMail).subscribe(data=>{this.patientData=data;console.log(data)})
   }
 
   updateProfile(patient)
   {
+    this.appoint=false;
     this.submit=true;
     this.check3=false;
     this.check=true;
@@ -154,6 +160,7 @@ onChange()
   }
   closeCard()
   {
+    this.appoint=false;
     this.check=false;
     this.check2=true; 
   }
@@ -167,12 +174,14 @@ onChange()
 
   editProfile()
   {
+    this.appoint=false;
    this.check=false;
    this.check3=true;
   }
 
   openSetting()
   {
+    this.appoint=false;
    this.setting=true;
    this.check2=false;
    this.check=false;
@@ -190,7 +199,15 @@ onChange()
 
   }
     
-    
+  apppointment(){
+  
+  this.appoint=true;
+  this.check=false;
+  this.check1=false;
+  this.check3=false;
+  this.check2=false;
+  this.showFiller=false;
+  }  
 
   
 }

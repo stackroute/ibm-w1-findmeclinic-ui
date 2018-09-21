@@ -3,23 +3,38 @@
 <br>
 
 <div>
-  <mat-paginator #paginator [pageSizeOptions]="[5, 10, 25, 100]">
-  </mat-paginator>
+  <button (click)="onPage()"><mat-paginator #paginator  [pageSizeOptions]="[5, 10, 25, 100]">
+  </mat-paginator></button>
+<div *ngFor="let m of displayAppointments ">
+  <br>
+  <mat-card>
+    <div class="div1">
+    AppointmentId : {{m.appointmentId}}
+  </div>
+  <div class="div1" id="div2">
+{{m.appointmentStatus}}
+</div>
+</mat-card>
+
+</div>
   
+<!--   
   <mat-table [dataSource]="dataSource">
 
-        <ng-container matColumnDef="bookingId">
+        <ng-container matColumnDef="appointmentId">
           <mat-header-cell class="head" *matHeaderCellDef> </mat-header-cell> 
-          <mat-cell class="cell" *matCellDef="let row"><button (click)="open()" mat-button color="primary">
-              APPOINTMENT {{row.bookingId}}
+          <mat-cell class="cell" *matCellDef="let row">
+            <button (click)="open()" mat-button color="primary">
+              APPOINTMENT {{listOfAppointments.appointmentId}}
+    
             </button>
           </mat-cell>
         </ng-container>
 
 
-        <ng-container matColumnDef="bookingStatus">
+        <ng-container matColumnDef="appointmentStatus">
           <mat-header-cell class="head" *matHeaderCellDef> </mat-header-cell>
-          <mat-cell *matCellDef="let row" class="name"> {{row.bookingStatus}}
+          <mat-cell *matCellDef="let row" class="name"> {{listOfAppointments.appointmentStatus}}
           </mat-cell>
         </ng-container>
       
@@ -27,5 +42,5 @@
       <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
       <mat-row *matRowDef="let row; columns: displayedColumns;"> </mat-row>
 
-  </mat-table>
+  </mat-table> -->
 </div>

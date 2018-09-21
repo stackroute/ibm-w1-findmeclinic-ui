@@ -113,7 +113,7 @@ export class CalendarComponent implements OnInit {
   }
 
   openDialog() {
-    const dialogRef = this.dialog.open(AddScheduleComponent);
+     this.dialog.open(AddScheduleComponent);
  
   }
 

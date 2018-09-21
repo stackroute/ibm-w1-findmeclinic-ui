@@ -35,7 +35,7 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 import { MatPaginatorModule} from '@angular/material';
 import { RouterModule } from '@angular/router';
 import { PatientProfileComponent } from './patient-profile/patient-profile.component';
-import { AppRoutingModule } from './/app-routing.module';
+import { AppRoutingModule } from './app-routing.module';
 import { CalendarComponent } from './calendar/calendar.component';
 import { InvalidPatientComponent } from './patient-login/invalid-patient.component';
 import { InvalidDoctorComponent } from './doctor-login/invalid-doctor.component';
@@ -52,6 +52,7 @@ import { BookConfirmComponent } from './book-confirm/book-confirm.component';
 import { NotificationComponent } from './notification/notification.component';
 
 import { UploadFileComponent } from './upload-file/upload-file.component';
+import { PatientappointmentComponent } from './patientappointment/patientappointment.component';
 
 
 @NgModule({
@@ -76,8 +77,8 @@ import { UploadFileComponent } from './upload-file/upload-file.component';
     BookComponentComponent,
     BookConfirmComponent,
     NotificationComponent,
-
-    UploadFileComponent
+    UploadFileComponent,
+    PatientappointmentComponent
   ],
   imports: [
     MatCardModule,
@@ -100,7 +101,6 @@ import { UploadFileComponent } from './upload-file/upload-file.component';
     MaterialModule,
     HttpClientModule,
     AppRoutingModule,
-
     RouterModule,
     MatGridListModule,
 
@@ -108,16 +108,16 @@ import { UploadFileComponent } from './upload-file/upload-file.component';
     MatGridListModule,
 //For calendar
     NgbModalModule,
-   FlatpickrModule.forRoot(),
-   AlertsModule.forRoot(),
-   CalendarModule.forRoot({
+    FlatpickrModule.forRoot(),
+    AlertsModule.forRoot(),
+    CalendarModule.forRoot({
      provide: DateAdapter,
      useFactory: adapterFactory
    })
   ],
   entryComponents:[PatientLoginComponent,InvalidPatientComponent,FailPatientComponent,PatientUpdateComponent,InvalidDoctorComponent,FailRegisterComponent,
   DoctorLoginComponent,DoctorProfileComponent,MedicalRecordsComponent,PatientUpdateComponent, AddScheduleComponent,PrescriptionsComponent,BookConfirmComponent],
-  providers: [],
+  providers: [AddScheduleComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

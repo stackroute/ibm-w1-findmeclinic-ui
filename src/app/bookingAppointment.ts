@@ -1,10 +1,12 @@
 import {Patient} from './patient';
 import {Doctor} from './Doctor'
-export interface BookingAppointment{
+export class BookingAppointment{
+    appointmentId: String;
+    appointmentStatus: boolean;
    // bookedBy:Patient;
-  //  bookedFor:Doctor;
+   // bookedFor:Doctor;
    // bookedAt:Calender;
-   bookingId:String;
+  // bookingId:String;
   // bookingDate:Date;
-   bookingStatus:String;
+   //bookingStatus:String;
 }

@@ -32,8 +32,6 @@ export class DoctorLoginComponent implements OnInit {
   ngOnInit() {
   }
 
-
-
   addDoctor(doctorData) {
     
    this.doctorService.addDoctorDetails(doctorData).subscribe(data =>{console.log(data)});
