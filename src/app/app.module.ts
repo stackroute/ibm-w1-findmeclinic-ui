@@ -52,6 +52,7 @@ import { BookConfirmComponent } from './book-confirm/book-confirm.component';
 import { NotificationComponent } from './notification/notification.component';
 
 import { UploadFileComponent } from './upload-file/upload-file.component';
+import { SlotDetailsComponent } from './slot-details/slot-details.component';
 
 
 @NgModule({
@@ -76,7 +77,8 @@ import { UploadFileComponent } from './upload-file/upload-file.component';
     BookComponentComponent,
     BookConfirmComponent,
     NotificationComponent,
-    UploadFileComponent
+    UploadFileComponent,
+    SlotDetailsComponent
   ],
   imports: [
     MatCardModule,

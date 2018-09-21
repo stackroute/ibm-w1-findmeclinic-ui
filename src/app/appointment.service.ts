@@ -14,4 +14,7 @@ export class AppointmentService {
     return this.http.get<BookingAppointment[]>(this.baseUrl+"/appointments")
   }
   
+  createBookingAppointment(appointment: Object):Observable<Object>{
+    return this.http.post(this.baseUrl+"/add", appointment)
+  }
 }
