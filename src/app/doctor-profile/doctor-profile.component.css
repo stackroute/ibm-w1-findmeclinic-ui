@@ -9,6 +9,10 @@
     left: 0;
     right: 0;
   }
+
+  body{
+    background:url("../../assets/bgmain.jpg")
+  }
   
   .example-is-mobile .example-toolbar {
     position: fixed;

@@ -14,6 +14,7 @@ import { BookComponentComponent } from './book-component/book-component.componen
 import { DetailsUploadComponent } from './upload/details-upload/details-upload.component';
 import { FormUploadComponent } from './upload/form-upload/form-upload.component';
 import { ListUploadComponent } from './upload/list-upload/list-upload.component';
+import { PrescriptionListComponent } from './prescription-list/prescription-list.component';
 
 const routes: Routes = [
   { path:'', redirectTo:'/landing-page', pathMatch:'full'},
@@ -28,7 +29,8 @@ const routes: Routes = [
   { path:'book', component: BookComponentComponent},
   { path:'form-upload', component:FormUploadComponent},
   { path:'details-upload', component:DetailsUploadComponent},
-  { path:'list-upload', component:ListUploadComponent}
+  { path:'list-upload', component:ListUploadComponent},
+  { path:'prescription-list', component:PrescriptionListComponent}
 ];
 
 @NgModule({
