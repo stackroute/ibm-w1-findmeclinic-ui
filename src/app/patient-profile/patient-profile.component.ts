@@ -210,4 +210,7 @@ onChange()
   }  
 
   
+  moveTolanding(){
+    this.router.navigate(['landing-page']);
+  }
 }

@@ -170,14 +170,14 @@
   Select a time slot to book the appointment
 </div>
 
-<div *ngFor="let slot of slots" class="style">
 
-   <mat-button-toggle value="slot.slotStart"> 
+
+   <mat-button-toggle value="slot.slotStart" *ngFor="let slot of slots" class="style" (click)="slotSelected(slot)"> 
     {{slot.slotStart}}
   </mat-button-toggle> 
 
-</div>
+
 
    <div class="bttn">
-    <button mat-raised-button color="primary" (click)="openDialog()">Submit</button>
+    <button mat-raised-button color="primary" (click)="openDialog(appointment)">Submit</button>
     </div>

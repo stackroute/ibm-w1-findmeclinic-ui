@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { BookingAppointment } from './bookingAppointment';
 import {HttpClient} from '@angular/common/http';
+import { Appointment } from './appointment';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -14,8 +16,8 @@ export class AppointmentService {
     return this.http.get<BookingAppointment[]>(this.baseUrl+"/appointments")
   }
   
-  createBookingAppointment(appointment: Object):Observable<Object>{
-    return this.http.post(this.baseUrl+"/add", appointment)
+  createBookingAppointment(appointment: Appointment):Observable<Appointment>{
+    return this.http.post<Appointment>(this.baseUrl+"/add", appointment)
   }
 
 
