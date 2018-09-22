@@ -26,7 +26,8 @@ import {AddScheduleComponent} from '../add-schedule/add-schedule.component'
 import { MatDialog, MatDialogRef } from '@angular/material';
 import { CalendarService } from '../calendar.service';
 import { Schedule } from '../Schedule';
-
+import { TokenStorage } from '../tokenStorage';
+import { ScheduleEvent} from '../ScheduleEvent';
 const colors: any = {
   red: {
     primary: '#ad2121',
@@ -41,6 +42,8 @@ const colors: any = {
     secondary: '#FDF1BA'
   }
 };
+
+
 
 @Component({
   selector: 'app-calendar',
@@ -59,21 +62,21 @@ export class CalendarComponent implements OnInit {
   viewDate: Date = new Date();
 
   modalData: {
-    event: CalendarEvent;
+    event: ScheduleEvent;
   };
 
   refresh: Subject<any> = new Subject();
 
-  events: CalendarEvent[]=[];
+  scheduleEvents: ScheduleEvent[]=[];
   schedules: Schedule[];
 
   ngOnInit() {
-    this.calendarService.getAllSchedule().subscribe(schedule => this.schedules = schedule);
+    this.calendarService.getAllScheduleByDoctor(this.token.getUserId()).subscribe(schedule => this.schedules = schedule);
   }
 
   activeDayIsOpen: boolean = true;
 
-  constructor(private modal: NgbModal,private dialog:MatDialog, private calendarService: CalendarService) {}
+  constructor(private modal: NgbModal,private dialog:MatDialog, private calendarService: CalendarService, private token: TokenStorage) {}
 
   dayClicked({ date, events }: { date: Date; events: CalendarEvent[] }): void {
     if (isSameMonth(date, this.viewDate)) {
@@ -105,19 +108,9 @@ export class CalendarComponent implements OnInit {
     this.modal.open(this.modalContent, { size: 'lg' });
   }
 
-  addEvent(): void {
-    this.events.push({
-      title: '',
-      start: startOfDay(new Date()),
-      end: endOfDay(new Date()),
-      color: colors.red,
-    });
-    this.refresh.next();
-  }
 
   openDialog() {
      this.dialog.open(AddScheduleComponent);
- 
   }
 
   
