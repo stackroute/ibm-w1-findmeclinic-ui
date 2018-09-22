@@ -28,4 +28,9 @@ export class CalendarService {
   getScheduleSlot(doctorId: string): Observable<any>{
     return this.httpClient.get<any>(this.urlGetDoc+doctorId);
   }
+
+  getAllScheduleByDoctor(doctorId: string): Observable<Schedule[]>{
+    return this.httpClient.get<Schedule[]>(this.urlGet+doctorId);
+  }
 }
+
