@@ -26,7 +26,7 @@ import {AddScheduleComponent} from '../add-schedule/add-schedule.component'
 import { MatDialog, MatDialogRef } from '@angular/material';
 import { CalendarService } from '../calendar.service';
 import { Schedule } from '../Schedule';
-import { TokenStorage } from '../tokenStorage';
+import { DoctorTokenStorage } from '../doctorTokenStorage';
 
 const colors: any = {
   red: {
@@ -74,7 +74,7 @@ export class CalendarComponent implements OnInit {
 
   activeDayIsOpen: boolean = true;
 
-  constructor(private modal: NgbModal,private dialog:MatDialog, private calendarService: CalendarService, private token: TokenStorage) {}
+  constructor(private modal: NgbModal,private dialog:MatDialog, private calendarService: CalendarService, private token: DoctorTokenStorage) {}
 
 
   openDialog() {

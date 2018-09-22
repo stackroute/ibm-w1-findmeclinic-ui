@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog, MatDialogRef } from '@angular/material';
 import { Schedule } from '../Schedule';
 import { CalendarService } from '../calendar.service';
-import { TokenStorage } from '../tokenStorage';
+import { DoctorTokenStorage } from '../doctorTokenStorage';
 @Component({
   selector: 'app-add-schedule',
   templateUrl: './add-schedule.component.html',
@@ -11,7 +11,7 @@ import { TokenStorage } from '../tokenStorage';
 export class AddScheduleComponent implements OnInit {
 
   schedule: Schedule;
-  constructor(private dialogRef: MatDialogRef<AddScheduleComponent>, public dialog: MatDialog, private calendarService: CalendarService, private token: TokenStorage) { this.schedule = new Schedule }
+  constructor(private dialogRef: MatDialogRef<AddScheduleComponent>, public dialog: MatDialog, private calendarService: CalendarService, private token: DoctorTokenStorage) { this.schedule = new Schedule }
 
   ngOnInit() {
   }
