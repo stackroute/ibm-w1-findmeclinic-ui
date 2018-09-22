@@ -3,9 +3,8 @@
   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
   crossorigin="anonymous"></script>
 <div class="main">
-        <!-- <h1>testing........</h1> -->
     
-    <nav class="navbar navbar-expand-lg navbar-light ">
+    <nav class="navbar navbar-expand-sm navbar-light ">
         <img src="../../assets/logo.png" class="style">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" >
             <span class="navbar-toggler-icon"></span>
@@ -31,15 +30,9 @@
         <div class="search">
             <form action="" method="">
                     
-                        
-                <!-- <input type="text" id="output"  matInput placeholder="Search by Location" matTooltip="Click to detect your Location">
-                <button (click)="getLocation()"> Get Location</button> -->
-                
-                  
-                <!-- <input  type="text" name="form" [(ngModel)]="docName" (keypress)=sendName($event.target.value) placeholder="Searching for Doctors?"> -->
                 <input  type="text" name="form" [(ngModel)]="docName"  placeholder="Searching for Doctors?">
 
-                <button (click)="sendData()">Go</button>
+                <button (click)="sendData()">Search</button>
 
             </form>
         </div>
@@ -47,7 +40,6 @@
     </div>
 
 
-    <!-- <div class="row "> -->
     <div class="mainCard">
         <div class="col-sm-3 display">
             <mat-card class="example-card">
@@ -118,10 +110,7 @@
             </mat-card>
         </div>
     </div>
-    <!-- </div> -->
-
-
-    <!--Footer-->
+  
     <footer class="page-footer" id="myFooter">
         <div class="container">
             <div class="row">
