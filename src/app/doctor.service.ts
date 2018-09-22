@@ -9,12 +9,7 @@ import { Observable, BehaviorSubject} from 'rxjs';
 export class DoctorService {
 
   // private addUrl = "http://172.23.239.228:8080/doctor/auth";
-<<<<<<< HEAD
-  private addUrl = "http://localhost:8082/doctor/auth";
-=======
-  private addUrl = "http://localhost:8080/doctor/auth";
-  // private secUrl="http://localHost:8082/api/v2/doctor";
->>>>>>> f07db0fe7a3b5295f153530562979555aa4c7257
+  private addUrl = "http://localhost:8089/doctor";
 
   private secUrl="http://localhost:8080/api/v1/search/";
   private thirdUrl="http://localhost:8081/api/v2/doctor/docserv"
@@ -63,5 +58,10 @@ updateDetails(doctor):Observable<Doctor>
 
 getBadge(doctorEmail:string):Observable<any>{
   return this.http.get(this.thirdUrl+"/badge/"+doctorEmail,{responseType:'text'});
+}
+
+getDoctorEmail(docName:string):Observable<any>{
+  return this.http.get(this.addUrl+"/email/"+docName);
+
 }
 }
