@@ -9,11 +9,15 @@ import { Observable, BehaviorSubject} from 'rxjs';
 export class DoctorService {
 
   // private addUrl = "http://172.23.239.228:8080/doctor/auth";
+<<<<<<< HEAD
   private addUrl = "http://localhost:8082/doctor/auth";
+=======
+  private addUrl = "http://localhost:8080/doctor/auth";
+  // private secUrl="http://localHost:8082/api/v2/doctor";
+>>>>>>> f07db0fe7a3b5295f153530562979555aa4c7257
 
-  private secUrl="http://localHost:8080/api/v1/search";
-
-  private thirdUrl="http://localHost:8081/api/v2/doctor/docserv"
+  private secUrl="http://localhost:8080/api/v1/search/";
+  private thirdUrl="http://localhost:8081/api/v2/doctor/docserv"
   constructor(private http: HttpClient) { }
   doctor;
 
@@ -33,11 +37,14 @@ getByEmail(doctorEmail) :Observable<Doctor>
 {
 return this.http.get<Doctor>(this.thirdUrl+"/"+doctorEmail);
 }
-getDoctorByDoctorName(doctorName:string):Observable<any>
-{
-  // this.doctor = new BehaviorSubject(doctorName).asObservable();
+// getDoctorByDoctorName(doctorName:string):Observable<Doctor[]>
+// {
+// //  this.doctor = new BehaviorSubject(doctorName).asObservable();
 
-  return this.http.get<any>(this.thirdUrl+doctorName);
+//   return this.http.get<Doctor[]>(this.secUrl+"/get/"+doctorName);
+// }
+getDoctorByDoctorName(doctorName:String):Observable<any>{
+  return this.http.get<any>(this.secUrl+doctorName);
 }
 
 addDoctorDetails(doctor:Doctor):Observable<Doctor>{

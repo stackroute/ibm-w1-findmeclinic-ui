@@ -15,7 +15,7 @@ import { DoctorTokenStorage } from '../doctorTokenStorage';
 })
 export class BookComponentComponent implements OnInit {
 
-  docId = "DocB";
+  docId = "xyz@xyz.com";
   slots: Slot[];
   appointment:Appointment;
 
