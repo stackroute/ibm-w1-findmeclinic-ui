@@ -69,15 +69,19 @@
                                     <mat-divider></mat-divider>
                                     <mat-list-item >Experience<h4 id="l1">{{doctordata.doctorExperience}}</h4></mat-list-item>
                                     <mat-divider></mat-divider>
+                                    <mat-list-item> Hospital <h4 id="l1">{{doctordata.hospitalName}} </h4></mat-list-item>
+                                    <mat-divider></mat-divider>
+                           
+                        <br>
+                            <br>
                             </mat-list>
-                            <br>
-                            <br>
                             <button mat-raised-button color="primary" class="pButon"(click)="editProfile()">Edit</button>
-                            
+                          
 
                             <button mat-raised-button color="primary" class="pButon1" (click)="closeCard()">close</button>
                         </mat-card>
             </div>
+       
             <div *ngIf="create" class="card2">
                 <h2>Doctor Basic Details</h2>
                 <form [formGroup]="registerForm">
@@ -152,65 +156,49 @@
                         <div *ngIf="submitted && f.experience.errors" class="invalid-feedback">
                             <div *ngIf="f.experience.errors.required">Doctor Experience is required</div>
                         </div>
-                    </div>
-                   
-                     <!-- <div class="form-group">
-                            <h4>Address</h4>
-                            <label>AddressNo</label>
-                            
-                            <input type="text" formControlName="addressNo" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.addressNo.errors }"
-                                [(ngModel)]="doctordata.addressNo" />
-                                
-                            <mat-hint>Address Number Should Be 1</mat-hint>
-                            <div *ngIf="submitted && f.addressNo.errors" class="invalid-feedback">
-                                <div *ngIf="f.addressNo.errors.required">Doctor Address Number Should Be 1</div>
-                                
-                            </div>
-                            </div>
-                            <div class="form-group">
-                                    <label>hospitalName</label>
-                                    <input type="text" formControlName="hospitalName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.hospitalName.errors }"
-                                        [(ngModel)]="doctordata.hospitalName" />
-                                    <div *ngIf="submitted && f.hospitalName.errors" class="invalid-feedback">
-                                        <div *ngIf="f.hospitalName.errors.required">Doctor! HospitalName is required</div>
-                                    </div>
-                                </div>      -->
+                    </div>      
                     <div class="form-group">
                         <button [disabled]="loading" mat-raised-button class="doctorButton" color="primary"  (click)="open(doctordata)" >Submit</button>
                         <button mat-raised-button color="primary" class="button" (click)="closeEdit()">Exit</button>
-                        <!-- <button mat-raised-button color="primary" class="dButton" (click)="address()">Add Address</button> -->
+                         <button mat-raised-button color="primary" class="dButton" (click)="address()">Add Address</button> 
 
                     </div>
                 </form>
-
-
-
             </div>
+    
 <div *ngIf="address1">
     <div class="form-group">
         <h4>Address</h4>
-        <label>AddressNo</label>
-        
-        <input type="text" formControlName="addressNo" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.addressNo.errors }"
-            [(ngModel)]="doctordata.addressNo" />
-            
-        <mat-hint>Address Number Should Be 1</mat-hint>
-        <div *ngIf="submitted && f.addressNo.errors" class="invalid-feedback">
-            <div *ngIf="f.addressNo.errors.required">Doctor Address Number Should Be 1</div>
-            
-        </div>
-        </div>
         <div class="form-group">
-                <label>hospitalName</label>
-                <input type="text" formControlName="hospitalName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.hospitalName.errors }"
-                    [(ngModel)]="doctordata.hospitalName" />
-                <div *ngIf="submitted && f.hospitalName.errors" class="invalid-feedback">
-                    <div *ngIf="f.hospitalName.errors.required">Doctor! HospitalName is required</div>
-                </div>
+            <label>HospitalName</label>
+            <input type="text" [(ngModel)]="doctordata.hospitalName" />
             </div>
-            <button mat-raised-button color="primary" class="dButton" (click)="addAddress(doctorData)">Add Address</button>
+       <br>
+       <div class="form-group">
+        <label>Street</label>
+        <input type="text" [(ngModel)]="doctordata.streetName" />
+        </div>
+        <br>
+        <br>
+        <div class="form-group">
+            <label>locality</label>
+            <input type="text" [(ngModel)]="doctordata.locality" />
+            </div>
+          <br>
+          <br>
+          <div class="form-group">
+            <label>State</label>
+            <input type="text" [(ngModel)]="doctordata.state" />
+            
+   <br>
+       <br>
+      </div>
+            <button mat-raised-button color="primary" class="dButton" (click)="addAddress(doctordata)">Save</button>
+            <button mat-raised-button color="primary" class="dButton" (click)="Add()">Exit</button>
+      </div>
+    </div>
+      
 
-</div>
             <div *ngIf="showFiller" style="margin-top: 5%">
                 <app-calendar></app-calendar>
             </div>

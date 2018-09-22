@@ -10,7 +10,7 @@ export class Doctor{
     doctorDateOfBirth:Date;
     doctorQualification:string;
     doctorExperience:number;
-    doctorAddressNo:DoctorAddress;
+    doctorAddressNo:DoctorAddress[];
 
 }
 

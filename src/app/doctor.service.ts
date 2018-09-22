@@ -44,10 +44,12 @@ getDoctorByDoctorName(doctorName:String):Observable<any>{
 }
 
 addDoctorDetails(doctor:Doctor):Observable<Doctor>{
+  
   return this.http.post<Doctor>(this.thirdUrl,doctor);
 }
 addAddressDeatils(doctor:Doctor):Observable<Doctor>
 {
+
 return this.http.post<Doctor>(this.thirdUrl+"/"+doctor.doctorEmail,doctor);
 }
 

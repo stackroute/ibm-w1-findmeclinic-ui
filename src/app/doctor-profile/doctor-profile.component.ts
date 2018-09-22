@@ -23,7 +23,7 @@ create1=false;
 badgeName:string;
 submitted = false;
 address1=false;
-
+address2 = false;
 
 
 genders: Gender[] = [
@@ -73,8 +73,7 @@ this.create1=false;
       qualification:['',Validators.required],
       speciality:['',Validators.required],
       experience:['',Validators.required],
-      addressNo:['',Validators.required],
-      hospitalName:['',Validators.required]
+      hospital:['',Validators.required]
       
     });
      
@@ -139,6 +138,7 @@ this.create1=false;
    closeEdit(){
      this.create=false;
     this.create1=true;
+
    }
 
   address(){
@@ -150,5 +150,24 @@ this.create1=false;
 
   }
 
-  
+  addAddress(doctordata){
+    return this.doctorService.addAddressDeatils(doctordata).subscribe(data => {console.log(data);
+    this.doctordata=data});
+  }
+  editAddress(){
+    this.create=false;
+    this.create1=false;
+    this.showContent=false;
+    this.showFiller=false;
+    this.address1=false;
+    this.address2=true;
+  }
+  Add(){
+    this.create=false;
+    this.create1=false;
+    this.showContent=false;
+    this.showFiller=false;
+    this.address1=false;
+    this.address2=true;
+  }
 }
