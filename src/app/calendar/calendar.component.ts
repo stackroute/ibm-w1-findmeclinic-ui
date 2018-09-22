@@ -27,7 +27,7 @@ import { MatDialog, MatDialogRef } from '@angular/material';
 import { CalendarService } from '../calendar.service';
 import { Schedule } from '../Schedule';
 import { TokenStorage } from '../tokenStorage';
-import { ScheduleEvent} from '../ScheduleEvent';
+
 const colors: any = {
   red: {
     primary: '#ad2121',
@@ -42,8 +42,6 @@ const colors: any = {
     secondary: '#FDF1BA'
   }
 };
-
-
 
 @Component({
   selector: 'app-calendar',
@@ -62,12 +60,12 @@ export class CalendarComponent implements OnInit {
   viewDate: Date = new Date();
 
   modalData: {
-    event: ScheduleEvent;
+    event: CalendarEvent;
   };
 
   refresh: Subject<any> = new Subject();
 
-  scheduleEvents: ScheduleEvent[]=[];
+  events: CalendarEvent[]=[];
   schedules: Schedule[];
 
   ngOnInit() {
@@ -77,36 +75,6 @@ export class CalendarComponent implements OnInit {
   activeDayIsOpen: boolean = true;
 
   constructor(private modal: NgbModal,private dialog:MatDialog, private calendarService: CalendarService, private token: TokenStorage) {}
-
-  dayClicked({ date, events }: { date: Date; events: CalendarEvent[] }): void {
-    if (isSameMonth(date, this.viewDate)) {
-      this.viewDate = date;
-      if (
-        (isSameDay(this.viewDate, date) && this.activeDayIsOpen === true) ||
-        events.length === 0
-      ) {
-        this.activeDayIsOpen = false;
-      } else {
-        this.activeDayIsOpen = true;
-      }
-    }
-  }
-
-  eventTimesChanged({
-    event,
-    newStart,
-    newEnd
-  }: CalendarEventTimesChangedEvent): void {
-    event.start = newStart;
-    event.end = newEnd;
-    this.handleEvent('Dropped or resized', event);
-    this.refresh.next();
-  }
-
-  handleEvent(action: string, event: CalendarEvent): void {
-    this.modalData = { event};
-    this.modal.open(this.modalContent, { size: 'lg' });
-  }
 
 
   openDialog() {
