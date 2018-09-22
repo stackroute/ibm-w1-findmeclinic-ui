@@ -55,6 +55,7 @@ import { ListUploadComponent } from './upload/list-upload/list-upload.component'
 
 import { SlotDetailsComponent } from './slot-details/slot-details.component';
 import { PatientappointmentComponent } from './patientappointment/patientappointment.component';
+import { PrescriptionListComponent } from './prescription-list/prescription-list.component';
 import { AddressComponent } from './address/address.component';
 
 
@@ -84,8 +85,9 @@ import { AddressComponent } from './address/address.component';
     FormUploadComponent,
     ListUploadComponent,
     SlotDetailsComponent,
+    AddressComponent,
     PatientappointmentComponent,
-    AddressComponent
+    PrescriptionListComponent
   ],
   imports: [
     MatCardModule,

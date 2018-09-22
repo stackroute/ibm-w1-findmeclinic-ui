@@ -25,5 +25,13 @@ export class MedicalRecordsComponent implements OnInit {
   openUploadList() :void {
     const dialogRef = this.dialog.open(ListUploadComponent);
   }
+ 
+  openPrescription() {
 
+   
+    this.router.navigate(['prescription-list']);
+
+
+}
+  
 }

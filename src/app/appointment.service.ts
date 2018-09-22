@@ -1,7 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { BookingAppointment } from './bookingAppointment';
+import { Appointment } from './appointment';
 import {HttpClient} from '@angular/common/http';
+
+
 @Injectable({
   providedIn: 'root'
 })
@@ -9,13 +11,13 @@ export class AppointmentService {
  private baseUrl= "http://localhost:8081/api/v1/appointment"
   constructor(private http: HttpClient) { }
 
-  getAllAppointments():Observable<BookingAppointment[]>
+  getAllAppointments(userId):Observable<Appointment[]>
   {
-    return this.http.get<BookingAppointment[]>(this.baseUrl+"/appointments")
+    return this.http.get<Appointment[]>(this.baseUrl+"/"+userId);
   }
   
-  createBookingAppointment(appointment: Object):Observable<Object>{
-    return this.http.post(this.baseUrl+"/add", appointment)
+  createBookingAppointment(appointment: Appointment):Observable<Appointment>{
+    return this.http.post<Appointment>(this.baseUrl+"/add", appointment)
   }
 
 

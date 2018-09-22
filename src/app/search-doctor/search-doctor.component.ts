@@ -15,6 +15,8 @@ export class SearchDoctorComponent implements OnInit {
 doctorList:Doctor[];
 data1:any;
 data2:any;
+doctorName1;
+doctorEmail:string;
 doctor$:Observable<Doctor[]>;
   constructor(private doctorService:DoctorService,
     private doctorObject:DoctorTokenStorage,
@@ -44,8 +46,13 @@ console.log(this.doctorList);
 
   }
 
-  onBook()
-  {
-    this.router.navigate(['book']);
-  }
+  // onBook()
+  // {
+  
+  //   this.doctorName1=this.doctorObject.getDoctorName();
+  //   this.doctorService.getDoctorEmail(this.doctorName1).subscribe(data=>{this.doctorEmail=data;console.log(this.doctorEmail)});
+  //   this.doctorObject.saveUserId(this.doctorEmail);
+  //   this.router.navigate(['book']);
+
+  // }
 }
