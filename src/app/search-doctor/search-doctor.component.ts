@@ -16,11 +16,10 @@ doctorList:Doctor[];
 data1:any;
 data2:any;
 doctor$:Observable<Doctor[]>;
-  constructor(private doctorService:DoctorService,private doctorObject:DoctorTokenStorage, private router:Router,
-    public doctorArray: DoctorlistService) { 
-    this.docName=new Doctor();{
-
-     ) { 
+  constructor(private doctorService:DoctorService,
+    private doctorObject:DoctorTokenStorage,
+    private router:Router,
+  public doctorArray: DoctorlistService) { 
     //this.doctor=new Doctor();
   }
 
