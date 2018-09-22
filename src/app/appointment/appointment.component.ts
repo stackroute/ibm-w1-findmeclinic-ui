@@ -1,11 +1,11 @@
 import { Component, OnInit,ViewChild } from '@angular/core';
-import {BookingAppointment} from '../bookingAppointment';
-import { APPOINTMENT } from '../sampleAppointment';
+import {Appointment} from '../appointment';
 import { MatDialog } from '@angular/material';
 import { PrescriptionsComponent } from '../prescriptions/prescriptions.component';
 import {MatPaginator,MatTableDataSource} from '@angular/material'
 import { Router } from '@angular/router';
 import { AppointmentService } from '../appointment.service';
+import { DoctorTokenStorage } from '../doctorTokenStorage';
 @Component({
   selector: 'app-appointment',
   templateUrl: './appointment.component.html',
@@ -17,8 +17,8 @@ export class AppointmentComponent implements OnInit {
   displayedColumns=['appointmentId','appointmentStatus'];
   
   @ViewChild(MatPaginator) paginator: MatPaginator;
-  listOfAppointments:BookingAppointment[];
-  displayAppointments:BookingAppointment[];
+  listOfAppointments:Appointment[];
+  displayAppointments:Appointment[];
   numOfApp;
   lengthlist=4;
   bId;
@@ -27,8 +27,9 @@ appStatus=[];
 size;
 listSize;
 diff;
-  dataSource= new MatTableDataSource<BookingAppointment>(this.listOfAppointments);
-   constructor(private router: Router,public dialog: MatDialog,private appService: AppointmentService) {
+userId;
+  dataSource= new MatTableDataSource<Appointment>(this.listOfAppointments);
+   constructor(private router: Router,public dialog: MatDialog,private doctorId: DoctorTokenStorage,private appService: AppointmentService) {
     }
 
 
@@ -58,9 +59,9 @@ diff;
          }
    
  ngAfterViewInit(){
+this.userId=this.doctorId.getUserId();
 
-
-   this.appService.getAllAppointments().subscribe((data: BookingAppointment[])=>{
+   this.appService.getAllAppointments(this.userId).subscribe((data: Appointment[])=>{
     this.listOfAppointments=data;
     this.lengthlist = this.listOfAppointments.length;
     
