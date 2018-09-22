@@ -46,13 +46,13 @@ console.log(this.doctorList);
 
   }
 
-  onBook()
-  {
+  // onBook()
+  // {
   
-    this.doctorName1=this.doctorObject.getDoctorName();
-    this.doctorService.getDoctorEmail(this.doctorName1).subscribe(data=>{this.doctorEmail=data;console.log(this.doctorEmail)});
-    this.doctorObject.saveUserId(this.doctorEmail);
-    this.router.navigate(['book']);
+  //   this.doctorName1=this.doctorObject.getDoctorName();
+  //   this.doctorService.getDoctorEmail(this.doctorName1).subscribe(data=>{this.doctorEmail=data;console.log(this.doctorEmail)});
+  //   this.doctorObject.saveUserId(this.doctorEmail);
+  //   this.router.navigate(['book']);
 
-  }
+  // }
 }

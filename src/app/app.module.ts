@@ -56,6 +56,7 @@ import { ListUploadComponent } from './upload/list-upload/list-upload.component'
 import { SlotDetailsComponent } from './slot-details/slot-details.component';
 import { PatientappointmentComponent } from './patientappointment/patientappointment.component';
 import { PrescriptionListComponent } from './prescription-list/prescription-list.component';
+import { AddressComponent } from './address/address.component';
 
 
 @NgModule({
@@ -84,6 +85,7 @@ import { PrescriptionListComponent } from './prescription-list/prescription-list
     FormUploadComponent,
     ListUploadComponent,
     SlotDetailsComponent,
+    AddressComponent,
     PatientappointmentComponent,
     PrescriptionListComponent
   ],
