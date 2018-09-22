@@ -55,13 +55,13 @@
                             <mat-list>
                                     <mat-list-item >FirstName<h4 id="l1">{{doctordata.doctorFirstName}}</h4></mat-list-item>
                                     <mat-divider></mat-divider>
-                                    <mat-list-item >LastName<h4 id="l1">{{doctordata.doctorLastName}}</h4></mat-list-item>
+                                    <mat-list-item >LastName<h4 id="l2">{{doctordata.doctorLastName}}</h4></mat-list-item>
                                     <mat-divider></mat-divider>
-                                    <mat-list-item >Email<h4 id="l2">{{doctordata.doctorEmail}}</h4></mat-list-item>
+                                    <mat-list-item >Email<h4 id="l5">{{doctordata.doctorEmail}}</h4></mat-list-item>
                                     <mat-divider></mat-divider>
-                                    <mat-list-item >phoneNumber<h4 id="l1">{{doctordata.doctorPhoneNumber}}</h4></mat-list-item>
+                                    <mat-list-item >phoneNumber<h4 id="l3">{{doctordata.doctorPhoneNumber}}</h4></mat-list-item>
                                     <mat-divider></mat-divider>
-                                    <mat-list-item >Gender<h4 id="l1">{{doctordata.doctorGender}}</h4></mat-list-item>
+                                    <mat-list-item >Gender<h4 id="l4">{{doctordata.doctorGender}}</h4></mat-list-item>
                                     <mat-divider></mat-divider>
                                     <mat-list-item >Speciality<h4 id="l1">{{doctordata.doctorSpeciality}}</h4></mat-list-item>
                                     <mat-divider></mat-divider>
@@ -154,12 +154,12 @@
                         </div>
                     </div>
                    
-                    <!-- <div class="form-group">
+                     <!-- <div class="form-group">
                             <h4>Address</h4>
                             <label>AddressNo</label>
                             
                             <input type="text" formControlName="addressNo" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.addressNo.errors }"
-                                [(ngModel)]="doctorAdressNo.addressNo" />
+                                [(ngModel)]="doctordata.addressNo" />
                                 
                             <mat-hint>Address Number Should Be 1</mat-hint>
                             <div *ngIf="submitted && f.addressNo.errors" class="invalid-feedback">
@@ -170,7 +170,7 @@
                             <div class="form-group">
                                     <label>hospitalName</label>
                                     <input type="text" formControlName="hospitalName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.hospitalName.errors }"
-                                        [(ngModel)]="doctorAdressNo.hospitalName" />
+                                        [(ngModel)]="doctordata.hospitalName" />
                                     <div *ngIf="submitted && f.hospitalName.errors" class="invalid-feedback">
                                         <div *ngIf="f.hospitalName.errors.required">Doctor! HospitalName is required</div>
                                     </div>
@@ -178,7 +178,7 @@
                     <div class="form-group">
                         <button [disabled]="loading" mat-raised-button class="doctorButton" color="primary"  (click)="open(doctordata)" >Submit</button>
                         <button mat-raised-button color="primary" class="button" (click)="closeEdit()">Exit</button>
-                        <button mat-raised-button color="primary" class="dButton" (click)="address()">Add Address</button>
+                        <!-- <button mat-raised-button color="primary" class="dButton" (click)="address()">Add Address</button> -->
 
                     </div>
                 </form>
@@ -186,7 +186,31 @@
 
 
             </div>
+<div *ngIf="address1">
+    <div class="form-group">
+        <h4>Address</h4>
+        <label>AddressNo</label>
+        
+        <input type="text" formControlName="addressNo" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.addressNo.errors }"
+            [(ngModel)]="doctordata.addressNo" />
+            
+        <mat-hint>Address Number Should Be 1</mat-hint>
+        <div *ngIf="submitted && f.addressNo.errors" class="invalid-feedback">
+            <div *ngIf="f.addressNo.errors.required">Doctor Address Number Should Be 1</div>
+            
+        </div>
+        </div>
+        <div class="form-group">
+                <label>hospitalName</label>
+                <input type="text" formControlName="hospitalName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.hospitalName.errors }"
+                    [(ngModel)]="doctordata.hospitalName" />
+                <div *ngIf="submitted && f.hospitalName.errors" class="invalid-feedback">
+                    <div *ngIf="f.hospitalName.errors.required">Doctor! HospitalName is required</div>
+                </div>
+            </div>
+            <button mat-raised-button color="primary" class="dButton" (click)="addAddress(doctorData)">Add Address</button>
 
+</div>
             <div *ngIf="showFiller" style="margin-top: 5%">
                 <app-calendar></app-calendar>
             </div>

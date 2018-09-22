@@ -1,4 +1,4 @@
-
+<!-- 
 <div class="super">
 
   <div class="main">
@@ -10,7 +10,7 @@
   <mat-tab label="Wed 19 Sep" class="style"> 
 
 
-    <!-- <mat-button-toggle-group #group="matButtonToggleGroup"> -->
+    
       <label> Morning </label>
       <mat-button-toggle value="9:00-9:30" class="pan" color="primary">
           9:00-9:30
@@ -56,9 +56,6 @@
         <mat-button-toggle value="10:30-11:00" class="pan">
           10:30-11:00
         </mat-button-toggle> 
-
-  <!-- </mat-button-toggle-group> -->
-  <!-- <div class="example-selected-value">Selected value: {{group.value}}</div> -->
 
  </mat-tab>
 
@@ -165,4 +162,22 @@
 <div class="bttn">
 <button mat-raised-button color="primary" (click)="openDialog()">Submit</button>
 </div>
+</div> -->
+
+
+ 
+<div class="main">
+  Select a time slot to book the appointment
 </div>
+
+
+
+   <mat-button-toggle value="slot.slotStart" *ngFor="let slot of slots" class="style" (click)="slotSelected(slot)"> 
+    {{slot.slotStart}}
+  </mat-button-toggle> 
+
+
+
+   <div class="bttn">
+    <button mat-raised-button color="primary" (click)="openDialog(appointment)">Submit</button>
+    </div>

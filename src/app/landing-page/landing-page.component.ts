@@ -1,13 +1,14 @@
-
 import { Component, OnInit } from '@angular/core';
 import { PatientLoginComponent } from '../patient-login/patient-login.component';
-import {MatDialog} from '@angular/material';
-import {DoctorLoginComponent} from '../doctor-login/doctor-login.component';
+import { MatDialog } from '@angular/material';
+import { DoctorLoginComponent } from '../doctor-login/doctor-login.component';
 import { Doctor } from '../Doctor';
-import  {DoctorService} from '../doctor.service';
-import{ Router,NavigationExtras} from '@angular/router';
+import { DoctorService } from '../doctor.service';
+import { Router, NavigationExtras } from '@angular/router';
 import * as SockJS from 'sockjs-client';
 import * as Stomp from '@stomp/stompjs';
+import { DoctorTokenStorage } from '../doctorTokenStorage';
+import { DoctorlistService } from '../doctorlist.service';
 
 
 @Component({
@@ -16,36 +17,33 @@ import * as Stomp from '@stomp/stompjs';
   styleUrls: ['./landing-page.component.css']
 })
 export class LandingPageComponent implements OnInit {
-  
-  doctor:Doctor;
-  doctor1:Doctor;
-  docName: string ='';
-  constructor(public dialog : MatDialog,private doctorService:DoctorService,private router: Router) { 
-    this.doctor=new Doctor();
-    this.doctor1=new Doctor();
+
+  ws: any;
+  doctorData: Doctor[] = [];
+  saveDoctor: Doctor[] = [];
+  doctor: Doctor;
+  doctor1: Doctor;
+  docName: string = '';
+  docNam;
+  data1: any;
+  data2: any;
+  constructor(public dialog: MatDialog,
+    private doctName: DoctorTokenStorage,
+    private doctorService: DoctorService,
+    private router: Router,
+    private docNameObj: DoctorTokenStorage,
+    public doctorList: DoctorlistService) {
+    this.doctor = new Doctor();
+    this.doctor1 = new Doctor();
   }
 
   ngOnInit() {
-    this.setUpConnection()
+    this.setUpConnection();
   }
-  // searchDoctors(name:string)
-  // {
-  //   this.docName=name;
-  //   return this.doctorService.getDoctorByDoctorName(name).subscribe(data => {
-  //     this.doctor1=data;
-  //     console.log(name);
-
-  //   console.log(data);
-  //   this.router.navigate(['search-doctor'])
-  // });
 
 
-  // }
 
-    //this.docName=name;
-
-
-  openPatient():void{
+  openPatient(): void {
     const dialogRef = this.dialog.open(PatientLoginComponent);
 
     dialogRef.afterClosed().subscribe(data => console.log("the dailog box is closed"));
@@ -54,7 +52,7 @@ export class LandingPageComponent implements OnInit {
 
   openDialog() {
     const dialogRef = this.dialog.open(DoctorLoginComponent);
- 
+
   }
   // getLocation() {
   //   var x = document.getElementById('output');
@@ -69,39 +67,53 @@ export class LandingPageComponent implements OnInit {
   //       $("#output").val(data.city +","+data.region_name);
 
   //       this.loc=data.city +","+data.region_name;
-  
+
   //     }
   //   });
   // }
-  
+
 
   private stompClient;
   name: string;
-  
-   public setUpConnection() {
-      console.log('hii')
-      let socket = new SockJS('http://localhost:8080/socket');
-      this.stompClient = Stomp.over(socket);
-      let that = this;
-      that.stompClient.connect({}, function (frame) {
-          console.log('Connected: ' + frame);
-          that.stompClient.subscribe('/topic/getList', function (data) {
-              console.log(data);
-              JSON.parse(data.body).content;
-          });
-      });
+
+
+  setUpConnection(): any[] {
+    let socket = new SockJS("http://localhost:8080/socket/");
+
+    this.ws = Stomp.over(socket);
+    let that = this;
+
+    that.ws.connect(
+      {},
+      function (frame) {
+        that.ws.subscribe("/error", function (data) {
+          alert("Error" + data.body);
+        });
+
+        that.ws.subscribe("/topic/getList", function (data) {
+          that.doctorData = JSON.parse(data.body);
+          // console.log(that.doctorData);
+          that.doctorList.saveDoctors(that.doctorData);
+          that.router.navigate(['search-doctor']);
+          // that.saveDoctor.push(that.doctorData);
+        });
+
+
+      }
+    );
+    return that.doctorData;
+  }
+  sendData() {
+
+    this.docNameObj.saveDoctorName(this.docName);
+    this.doctorService.getDoctorByDoctorName(this.docName).subscribe(data => console.log(data));
+    // this.router.navigate(['search-doctor']);
   }
 
-  sendName(name: any){
-    console.log(name);
-    this.stompClient.send("/app/doc-name", {}, JSON.stringify(name));
-  }
+  // getDoctorData(doctor: Doctor) {
+  //   this.ws.send("/app/sendMessage", {}, JSON.stringify(doctor));
+  // }
 
-  sendData(){
-    console.log(this.docName)
-    this.doctorService.getDoctorByDoctorName(this.docName).subscribe(data => console.log(data))
-  }
-  
-  
+
 
 }
