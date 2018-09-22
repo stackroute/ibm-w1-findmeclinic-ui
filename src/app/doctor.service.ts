@@ -9,7 +9,7 @@ import { Observable, BehaviorSubject} from 'rxjs';
 export class DoctorService {
 
   // private addUrl = "http://172.23.239.228:8080/doctor/auth";
-  private addUrl = "http://localhost:8080/doctor/auth";
+  private addUrl = "http://localhost:8082/doctor/auth";
 
   private secUrl="http://localHost:8080/api/v1/search";
 
