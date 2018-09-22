@@ -38,7 +38,7 @@ export class BookComponentComponent implements OnInit {
     
     this.appointmentService.createBookingAppointment(this.appointment)
     .subscribe(data => { console.log(data);
-    this.appointment=data});
+ this.appointment=data});
 
 
   }
