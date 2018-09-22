@@ -26,6 +26,7 @@ import {AddScheduleComponent} from '../add-schedule/add-schedule.component'
 import { MatDialog, MatDialogRef } from '@angular/material';
 import { CalendarService } from '../calendar.service';
 import { Schedule } from '../Schedule';
+import { TokenStorage } from '../tokenStorage';
 
 const colors: any = {
   red: {
@@ -68,56 +69,16 @@ export class CalendarComponent implements OnInit {
   schedules: Schedule[];
 
   ngOnInit() {
-    this.calendarService.getAllSchedule().subscribe(schedule => this.schedules = schedule);
+    this.calendarService.getAllScheduleByDoctor(this.token.getUserId()).subscribe(schedule => this.schedules = schedule);
   }
 
   activeDayIsOpen: boolean = true;
 
-  constructor(private modal: NgbModal,private dialog:MatDialog, private calendarService: CalendarService) {}
+  constructor(private modal: NgbModal,private dialog:MatDialog, private calendarService: CalendarService, private token: TokenStorage) {}
 
-  dayClicked({ date, events }: { date: Date; events: CalendarEvent[] }): void {
-    if (isSameMonth(date, this.viewDate)) {
-      this.viewDate = date;
-      if (
-        (isSameDay(this.viewDate, date) && this.activeDayIsOpen === true) ||
-        events.length === 0
-      ) {
-        this.activeDayIsOpen = false;
-      } else {
-        this.activeDayIsOpen = true;
-      }
-    }
-  }
-
-  eventTimesChanged({
-    event,
-    newStart,
-    newEnd
-  }: CalendarEventTimesChangedEvent): void {
-    event.start = newStart;
-    event.end = newEnd;
-    this.handleEvent('Dropped or resized', event);
-    this.refresh.next();
-  }
-
-  handleEvent(action: string, event: CalendarEvent): void {
-    this.modalData = { event};
-    this.modal.open(this.modalContent, { size: 'lg' });
-  }
-
-  addEvent(): void {
-    this.events.push({
-      title: '',
-      start: startOfDay(new Date()),
-      end: endOfDay(new Date()),
-      color: colors.red,
-    });
-    this.refresh.next();
-  }
 
   openDialog() {
      this.dialog.open(AddScheduleComponent);
- 
   }
 
   

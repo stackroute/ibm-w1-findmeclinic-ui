@@ -55,6 +55,7 @@ import { ListUploadComponent } from './upload/list-upload/list-upload.component'
 
 import { SlotDetailsComponent } from './slot-details/slot-details.component';
 import { PatientappointmentComponent } from './patientappointment/patientappointment.component';
+import { PrescriptionListComponent } from './prescription-list/prescription-list.component';
 
 
 @NgModule({
@@ -83,7 +84,8 @@ import { PatientappointmentComponent } from './patientappointment/patientappoint
     FormUploadComponent,
     ListUploadComponent,
     SlotDetailsComponent,
-    PatientappointmentComponent
+    PatientappointmentComponent,
+    PrescriptionListComponent
   ],
   imports: [
     MatCardModule,
