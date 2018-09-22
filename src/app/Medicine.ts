@@ -1,4 +1,4 @@
-export class Medicines {
-    name: string;
-    timing = [];
- }
+export class Medicines{
+    name:string;
+    timing=[];
+}
