@@ -17,6 +17,10 @@ import { DoctorlistService } from '../doctorlist.service';
   styleUrls: ['./landing-page.component.css']
 })
 export class LandingPageComponent implements OnInit {
+  userSettings = {}
+	autoCompleteCallback1(selectedData:any) {
+		//do any necessery stuff.
+	}
 
   ws: any;
   doctorData: Doctor[] = [];

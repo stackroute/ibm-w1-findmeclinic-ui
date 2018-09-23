@@ -37,5 +37,7 @@ export class CalendarService {
   deleteSchedule(scheduleId: any):Observable<Schedule>{
     return this.httpClient.delete<Schedule>(this.urlDelete+scheduleId, httpOptions);
   }
+
+  
 }
 

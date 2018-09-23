@@ -167,7 +167,7 @@
 
  
 <div class="main">
-  Select a time slot to book the appointment
+  <h2>Select a time slot to book the appointment</h2>
 </div>
 
 
@@ -188,7 +188,8 @@
   </mat-tab-group>   -->
 
   <div class="btn-group" *ngFor="let schedule of schedules" >
-    <button style="width:100%"> {{schedule.scheduleDate}}  </button>
+    <button style="width:100%"> {{schedule.scheduleDate}} 
+      </button>
         <mat-button-toggle value="slot.slotStart" *ngFor="let slot of slots" class="style" (click)="slotSelected(slot)"> 
             {{slot.slotStart}}
           </mat-button-toggle>
