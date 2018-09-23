@@ -80,5 +80,9 @@ export class CalendarComponent implements OnInit {
   openDialog() {
      this.dialog.open(AddScheduleComponent);
   }
+
+  deleteSchedule(scheduleId):void{
+    this.calendarService.deleteSchedule(scheduleId).subscribe();
+  }
   
 }
