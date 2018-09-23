@@ -29,6 +29,7 @@
 
         <div class="search">
             <form action="" method="">
+                    <ng4geo-autocomplete (componentCallback)="autoCompleteCallback1($event)"></ng4geo-autocomplete>
                     
                 <input  type="text" name="form" [(ngModel)]="docName"  placeholder="Searching for Doctors?">
 
