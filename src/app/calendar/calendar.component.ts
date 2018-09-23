@@ -80,6 +80,5 @@ export class CalendarComponent implements OnInit {
   openDialog() {
      this.dialog.open(AddScheduleComponent);
   }
-
   
 }

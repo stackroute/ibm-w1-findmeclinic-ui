@@ -9,21 +9,21 @@
 </mat-form-field>
 <br>
 <mat-form-field>
-  <input matInput [matDatepicker]="picker" placeholder="Choose a date" [(ngModel)]="schedule.scheduleDate">
+  <input matInput [matDatepicker]="picker" placeholder="Choose a Schedule date" [(ngModel)]="schedule.scheduleDate">
   <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
   <mat-datepicker #picker></mat-datepicker>
 </mat-form-field>
 <br>
 <mat-form-field class="fullwidth">
-  <input matInput type ="time" [(ngModel)]="schedule.startTime">
+  <input matInput type ="time" [(ngModel)]="schedule.startTime" placeholder="Start Time">
 </mat-form-field>
 <br>
 <mat-form-field class="fullwidth">
-  <input matInput type ="time" [(ngModel)]="schedule.endTime">
+  <input matInput type ="time" [(ngModel)]="schedule.endTime" placeholder="End Time">
 </mat-form-field>
 <br>
 <mat-form-field class="fullwidth">
-  <input matInput type="number" [(ngModel)]="schedule.timePerPatient">
+  <input matInput type="number" [(ngModel)]="schedule.timePerPatient" placeholder="Time Per Patient">
   <mat-hint align="start"><strong>Insert Number Only</strong> </mat-hint>
 </mat-form-field>
 
