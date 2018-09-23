@@ -201,7 +201,29 @@
                     </div>
                 </form>
             </div>
-    
+            <div *ngIf="create3" class="card1"> 
+                
+            
+                    <mat-card>
+                        <mat-list>
+                                <mat-list-item >HospitalName<h4 id="l1">{{doctordata.hospitalName}}</h4></mat-list-item>
+                                <mat-divider></mat-divider>
+                                <mat-list-item >Street Name<h4 id="l2">{{doctordata.streetName}}</h4></mat-list-item>
+                                <mat-divider></mat-divider>
+                                <mat-list-item >Locality<h4 id="l3">{{doctordata.locality}}</h4></mat-list-item>
+                                <mat-divider></mat-divider>
+                                <mat-list-item >State<h4 id="l4">{{doctordata.state}}</h4></mat-list-item>
+                                <mat-divider></mat-divider>
+                                
+                             
+                    <br>
+                        <br>
+                        </mat-list>
+                        <button mat-raised-button color="primary" class="pButon"(click)="editAddress1()">Edit</button>
+                    
+                        <button mat-raised-button color="primary" class="pButon1" (click)="closeAddress()">close</button>
+                    </mat-card>
+        </div>
 <div *ngIf="address1">
     <div class="form-group">
         <h4>Address</h4>
@@ -266,7 +288,7 @@
       </div> -->
       </form>
             <button mat-raised-button color="primary" class="dButton1" (click)="addAddress(doctordata)">Save</button>
-            <button mat-raised-button color="primary" class="dButton" (click)="Add()">Exit</button>
+            <button mat-raised-button color="primary" class="dButton" (click)="closeAdd()">Exit</button>
       </div>
 
     
