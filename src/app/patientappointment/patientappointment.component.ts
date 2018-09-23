@@ -41,19 +41,14 @@ export class PatientappointmentComponent implements OnInit {
     console.log(this.displayAppointments)
 
   }
-  open() {
-
-    this.dialog.open(PrescriptionsComponent)
-
-  }
-
   
+
 
 
 
   ngAfterViewInit() {
     this.userId = this.patientId.getUserId();
-    this.appService.getAllAppointments(this.userId).subscribe((data: Appointment[]) => {
+    this.appService.getAllAppointmentOfPatient(this.userId).subscribe((data: Appointment[]) => {
       this.listOfAppointments = data;
       this.lengthlist = this.listOfAppointments.length;
 
