@@ -50,8 +50,8 @@ export class BookComponentComponent implements OnInit {
     //  this.slotLists =data.getSlots()
     });
 
-      this.slotLists=this.schedule.slots;
-      console.log(this.slotLists);
+      // this.slotLists=this.schedule.slots;
+      // console.log(this.slotLists);
   }
 
   openDialog() {
