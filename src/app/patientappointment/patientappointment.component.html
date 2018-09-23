@@ -1,27 +1,23 @@
- <div class="col-sm-6 display">
-<mat-card class="appointclass">
-    <mat-card-header>
-        <div mat-card-avatar class="example-header-image"></div>
-        <mat-card-title>Appointments</mat-card-title>
-        <mat-card-subtitle>List Of Appointments Attended</mat-card-subtitle>
+<h1>LIST OF APPOINTMENTS</h1>
+<br>
+
+
+
+<div>
+    <button (click)="onPage()"><mat-paginator #paginator  [pageSizeOptions]="[5, 10, 25, 100]">
+    </mat-paginator></button>
+  <div *ngFor="let m of displayAppointments ">
+    <br>
+    <mat-card>
+      <div class="div1">
+        <a (click)="open()">
+      AppointmentId : {{m.appointmentId}}
+    </a>
+    </div>
+    
+    <div class="div1" id="div2">
        
-      </mat-card-header>
-<mat-divider></mat-divider>
-      <mat-list class="matitem">
-      <mat-list-item >Appointment1</mat-list-item>
-                    <mat-divider></mat-divider>
-                    <mat-list-item >Appointment2</mat-list-item>
-                    <mat-divider></mat-divider>
-                    <mat-list-item >Appointment3</mat-list-item>
-                    <mat-divider></mat-divider>
-                    <mat-list-item >Appointment4</mat-list-item>
-                    <mat-divider></mat-divider>
-                    <mat-list-item >Appointment5</mat-list-item>
-                    <mat-divider></mat-divider>
-                    <mat-list-item >Appointment6</mat-list-item>
-                    <mat-divider></mat-divider>
-                </mat-list>
-                
-                <button mat-raised-button color="primary" (click)="onView()">View</button>
-</mat-card>
-</div>
+        {{doctorName}}
+  </div>
+  </mat-card>
+  </div>

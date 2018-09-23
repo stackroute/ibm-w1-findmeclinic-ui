@@ -2,14 +2,53 @@
 <h1>LIST OF APPOINTMENTS</h1>
 <br>
 
+
+
 <div>
+    <button (click)="onPage()"><mat-paginator #paginator  [pageSizeOptions]="[5, 10, 25, 100]">
+    </mat-paginator></button>
+  <div *ngFor="let m of displayAppointments ">
+    <br>
+    <mat-card>
+      <div class="div1">
+        <a (click)="open()">
+      AppointmentId : {{m.appointmentId}}
+    </a>
+    </div>
+    
+    <div class="div1" id="div2">
+        <!-- {{m.bookingBy}} -->
+        {{patientName}}
+  </div>
+  </mat-card>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div>
   <button (click)="onPage()"><mat-paginator #paginator  [pageSizeOptions]="[5, 10, 25, 100]">
   </mat-paginator></button>
 <div *ngFor="let m of displayAppointments ">
   <br>
   <mat-card>
     <div class="div1">
-      <a (click)="open()">
+      <a (click)="open(m)">
     AppointmentId : {{m.appointmentId}}
   </a>
   </div>
@@ -17,32 +56,48 @@
 {{m.appointmentStatus}}
 </div>
 </mat-card>
-
-</div>
-  
-<!--   
-  <mat-table [dataSource]="dataSource">
-
-        <ng-container matColumnDef="appointmentId">
-          <mat-header-cell class="head" *matHeaderCellDef> </mat-header-cell> 
-          <mat-cell class="cell" *matCellDef="let row">
-            <button (click)="open()" mat-button color="primary">
-              APPOINTMENT {{listOfAppointments.appointmentId}}
-    
-            </button>
-          </mat-cell>
-        </ng-container>
+</div> -->
 
 
-        <ng-container matColumnDef="appointmentStatus">
-          <mat-header-cell class="head" *matHeaderCellDef> </mat-header-cell>
-          <mat-cell *matCellDef="let row" class="name"> {{listOfAppointments.appointmentStatus}}
-          </mat-cell>
-        </ng-container>
-      
 
-      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-      <mat-row *matRowDef="let row; columns: displayedColumns;"> </mat-row>
 
-  </mat-table> -->
-</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+  <div *ngIf="show">
+    <div *ngFor="let l of displayAppointments ">
+      <mat-card class="aside">
+          <div class="inline">
+         <div class="col-sm-3">
+        <h4>Appointment Id:{{l.appointmentId}}</h4>
+        <h4>{{l.bookedFor}}</h4>
+        </div>
+        <div class="col-sm-3 aside1">
+        <h4>Name : {{l.bookingBy}}</h4>
+         <h4>Age: {{patientAge}}</h4>
+        <h4>Blood Group: {{bloodGroup}}</h4> 
+        </div>
+        </div>
+        </mat-card>
+      </div>
+  </div>
+</div> 
+  -->
