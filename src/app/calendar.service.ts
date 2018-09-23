@@ -32,5 +32,7 @@ export class CalendarService {
   getAllScheduleByDoctor(doctorId: string): Observable<Schedule[]>{
     return this.httpClient.get<Schedule[]>(this.urlGetSched+doctorId);
   }
+
+  
 }
 
