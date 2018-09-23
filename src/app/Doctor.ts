@@ -9,6 +9,8 @@ export class Doctor{
     doctorGender:string;
     doctorQualification:string;
     doctorExperience:any;
+    address:string;
+    doctorLocality:string;
     doctorAddressNo:DoctorAddress;
 
 }
