@@ -13,7 +13,7 @@ export class AppointmentService {
 
   getAllAppointments(userId):Observable<Appointment[]>
   {
-    return this.http.get<Appointment[]>(this.baseUrl+"/"+userId);
+    return this.http.get<Appointment[]>(this.baseUrl+"/doctor/"+userId);
   }
   
   createBookingAppointment(appointment: Appointment):Observable<Appointment>{

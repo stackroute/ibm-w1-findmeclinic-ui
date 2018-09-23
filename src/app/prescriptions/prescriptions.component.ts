@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialogRef } from '@angular/material';
 import { Prescription } from '../Prescription';
 import { Medicines } from '../Medicine';
+import { DoctorService } from '../doctor.service';
 @Component({
   selector: 'app-prescriptions',
   templateUrl: './prescriptions.component.html',
@@ -20,48 +21,31 @@ export class PrescriptionsComponent implements OnInit {
   m;
   i = 0;
   value = [];
-  constructor(private dialog: MatDialogRef<PrescriptionsComponent>) {
+  constructor(private dialog: MatDialogRef<PrescriptionsComponent>, private service: DoctorService) {
     this.medicine = new Medicines();
     this.medicine1 = new Medicines();
 
     this.list = this.medicine1.timing = ["Beforefood", "AfterFood"]
   }
 
+  savePres(prescription: Prescription) {
+    this.service.savePrescription(prescription).subscribe(data => console.log(data));
+  }
+
   prescriptions: Prescription = {
-    findings: '', prescription: '',
+    findings: '', medicine: '',
     patient: {
       patientEmail: '',
-      patientPhoneNumber: '',
-      patientPassword: '',
       patientFirstName: '',
-      patientLastName: '',
-      patientAddress: '',
-      patientGender: '',
-      patientDobDate: '',
-      patientDobMonth: '',
-      patientDobYear: '',
-      patientBloodGroup: '',
       patientAge: ''
     }
     , doctor: {
-      doctorFirstName: '',
-      doctorLastName: '',
       doctorName: '',
       doctorEmail: '',
-      doctorPhoneNumber: '',
-      doctorPassword: '',
-      doctorGender: '',
-      doctorQualification: '',
-      doctorExperience: '',
-      doctorAddressNo: {
-        addressNo: '',
-        hospitalName: '',
-        streetName: '',
-        locality: '',
-        state: ''
-      }
+      doctorSpeciality: ''
     }
   }
+
 
 
   ngOnInit() {

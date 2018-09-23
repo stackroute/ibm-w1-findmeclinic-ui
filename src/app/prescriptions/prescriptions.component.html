@@ -16,11 +16,11 @@
 
       <form class="example-form">
         <mat-form-field class="comment">
-          <textarea matInput placeholder="Findings"></textarea>
+          <textarea matInput placeholder="Findings" class="form-control" id="findings"  [(ngModel)]="prescriptions.findings" name="findings" required></textarea>
         </mat-form-field>
         <br>
         <mat-form-field class="medicine">
-          <input matInput placeholder="Add Medicine" class="form-control" id="medicineName" placeholder="enter name" [(ngModel)]="prescription.medicineName" name="name" required>
+          <input  matInput placeholder="Add Medicine" class="form-control" id="medicine"  [(ngModel)]="prescriptions.medicine" name="medicine" required>
         </mat-form-field>
         <mat-form-field class="select">
           <mat-select placeholder="Select Timing">
@@ -44,7 +44,7 @@
       <form class="example-form" *ngFor="let v of value">
          <div *ngIf="mid"> 
         <mat-form-field class="medicine">
-          <input matInput placeholder="Add Medicine">
+          <input matInput placeholder="Add Medicine" class="form-control" id="medicine" placeholder="enter name" [(ngModel)]="prescriptions.medicine">
         </mat-form-field>
         <mat-form-field class="select">
           <mat-select placeholder="Select Timing">
@@ -67,7 +67,7 @@
  </div>
       </form>
 
-      <button class="bot" mat-raised-button color="primary" (click)="closeDialog()">Save</button>
+      <button class="bot" mat-raised-button color="primary" (click)="closeDialog()" (click)="savePres(prescriptions)">Save</button>
     </div>
 
     

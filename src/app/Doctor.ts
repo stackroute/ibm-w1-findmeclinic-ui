@@ -8,13 +8,8 @@ export class Doctor{
     doctorPassword:string;
     doctorGender:string;
     doctorQualification:string;
-<<<<<<< HEAD
     doctorExperience:any;
     doctorAddressNo:DoctorAddress;
-=======
-    doctorExperience:number;
-    doctorAddressNo:DoctorAddress[];
->>>>>>> 325a20e619a5e2e4b73be521f3f05099ae0f4453
 
 }
 
