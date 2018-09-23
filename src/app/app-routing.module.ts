@@ -26,7 +26,7 @@ const routes: Routes = [
   { path: 'add-prescription', component: PrescriptionsComponent},
   { path:'medical-records', component: MedicalRecordsComponent},
   { path:'search-doctor',component:SearchDoctorComponent},
-  { path:'book', component: BookComponentComponent},
+  { path:'search-doctor/book/:doctorEmail', component: BookComponentComponent},
   { path:'form-upload', component:FormUploadComponent},
   { path:'details-upload', component:DetailsUploadComponent},
   { path:'list-upload', component:ListUploadComponent},
