@@ -46,7 +46,7 @@
     <button class="btn btn-primary pull-right" (click)="openDialog()">
       Add Slots
     </button>
-    <!-- <div class="clearfix"></div> -->
+  
   <br>
   <br>
 
@@ -60,7 +60,7 @@
         <br>Schedule Beginning: {{schedule.startTime}}
         <br>Schedule Ending: {{schedule.endTime}}
         <br>Time Per Patient: {{schedule.timePerPatient}}
-        <br><button btn-primary (click)="deleteSchedule(schedule.scheduleId)">Delete</button>
+        <br><button mat-raised-button color="warn" (click)="deleteSchedule(schedule.scheduleId)">Delete</button>
       </mat-card>
       </li>
     
