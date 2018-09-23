@@ -42,33 +42,28 @@
   <br>
   <br>
 
-  <h3>
-    Edit events
+  
     <button class="btn btn-primary pull-right" (click)="openDialog()">
-      Add new
+      Add Slots
     </button>
-    <div class="clearfix"></div>
-  </h3>
+    <!-- <div class="clearfix"></div> -->
+  <br>
+  <br>
 
-  <table class="table table-bordered">
+ 
 
-    <thead>
-      <tr>
-        <th>Description</th>
-        <th>Date</th>
-        <th>Starts At</th>
-        <th>Ends at</th>
-      </tr>
-    </thead>
-
-    <tbody>
-      <tr *ngFor = "let schedule of schedules">
-        <td>{{schedule.description}}</td>
-        <td>{{schedule.scheduleDate}}</td>
-        <td>{{schedule.startTime}}</td>
-        <td>{{schedule.endTime}}</td>
-      </tr>
-    </tbody>
-
-  </table>
+    
+      <li *ngFor = "let schedule of schedules">
+        <mat-card class="sched">
+        <br>Description: {{schedule.description}}
+        <br>Date: {{schedule.scheduleDate}}
+        <br>Schedule Beginning: {{schedule.startTime}}
+        <br>Schedule Ending: {{schedule.endTime}}
+        <br>Time Per Patient: {{schedule.timePerPatient}}
+        <br><button btn-primary (click)="deleteSchedule(schedule.scheduleId)">Delete</button>
+      </mat-card>
+      </li>
+    
+    <br>
+  
 </div>
