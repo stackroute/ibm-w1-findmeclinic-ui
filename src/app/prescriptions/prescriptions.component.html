@@ -20,7 +20,7 @@
         </mat-form-field>
         <br>
         <mat-form-field class="medicine">
-          <input matInput placeholder="Add Medicine">
+          <input matInput placeholder="Add Medicine" class="form-control" id="medicineName" placeholder="enter name" [(ngModel)]="prescription.medicineName" name="name" required>
         </mat-form-field>
         <mat-form-field class="select">
           <mat-select placeholder="Select Timing">

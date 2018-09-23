@@ -7,9 +7,8 @@ export class Doctor{
     doctorPhoneNumber:string;
     doctorPassword:string;
     doctorGender:string;
-    doctorDateOfBirth:Date;
     doctorQualification:string;
-    doctorExperience:number;
+    doctorExperience:any;
     doctorAddressNo:DoctorAddress;
 
 }

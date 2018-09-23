@@ -1,9 +1,12 @@
+ <div class="col-sm-6 display">
 <mat-card class="appointclass">
     <mat-card-header>
         <div mat-card-avatar class="example-header-image"></div>
         <mat-card-title>Appointments</mat-card-title>
         <mat-card-subtitle>List Of Appointments Attended</mat-card-subtitle>
+       
       </mat-card-header>
+<mat-divider></mat-divider>
       <mat-list class="matitem">
       <mat-list-item >Appointment1</mat-list-item>
                     <mat-divider></mat-divider>
@@ -16,6 +19,9 @@
                     <mat-list-item >Appointment5</mat-list-item>
                     <mat-divider></mat-divider>
                     <mat-list-item >Appointment6</mat-list-item>
-                    
+                    <mat-divider></mat-divider>
                 </mat-list>
+                
+                <button mat-raised-button color="primary" (click)="onView()">View</button>
 </mat-card>
+</div>

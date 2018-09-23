@@ -1,5 +1,5 @@
 export class DoctorAddress {
-    addressNo:number;
+    addressNo:any;
     hospitalName:string;
     streetName:string;
     locality:string;

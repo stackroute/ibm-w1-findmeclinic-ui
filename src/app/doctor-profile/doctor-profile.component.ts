@@ -23,8 +23,9 @@ create1=false;
 badgeName:string;
 submitted = false;
 address1=false;
-
-
+address2 = false;
+profile=false;
+profile1=false;
 
 genders: Gender[] = [
   {value: 'Female', viewValue: 'Female'},
@@ -36,7 +37,9 @@ genders: Gender[] = [
   showContent = false;
   show(): boolean{
     this.create=false;
-this.create1=false;
+    this.profile=false;
+    this.create1=false;
+    this.profile1=false;
     this.showContent=false;
     if(this.showFiller===false){
       this.showFiller=true;
@@ -52,6 +55,7 @@ this.create1=false;
  this.showFiller=false;
 this.create=false;
 this.create1=false;
+this.profile=false;
   if(this.showContent===false){
     this.showContent=true;
   }else{
@@ -73,12 +77,15 @@ this.create1=false;
       qualification:['',Validators.required],
       speciality:['',Validators.required],
       experience:['',Validators.required],
-      addressNo:['',Validators.required],
-      hospitalName:['',Validators.required]
+      hospiatalName:['',Validators.required],
+      locality:['',Validators.required],
+      street:['',Validators.required],
+      area:['',Validators.required],
+      state:['',Validators.required]
       
     });
-     
-
+ this.profile1=true;    
+this.profile=true;
         this.doctorMailId = this.token.getUserId();
 
         this.doctorService.getBadge(this.doctorMailId).subscribe(data1 => {console.log(data1); console.log(this.badgeName)
@@ -97,6 +104,7 @@ this.create1=false;
     this.create=false;
    this.showContent=false;
    this.showFiller=false;
+   this.profile=false;
       console.log(this.doctorMailId)
 
   
@@ -126,6 +134,7 @@ this.create1=false;
   }
 
   closeCard(){
+    this.profile=true;
     this.create1=false;
     this.create=false;
   }
@@ -139,6 +148,7 @@ this.create1=false;
    closeEdit(){
      this.create=false;
     this.create1=true;
+     
    }
 
   address(){
@@ -147,8 +157,30 @@ this.create1=false;
     this.showContent=false;
     this.showFiller=false;
     this.address1=true;
-
+    this.profile=false;
   }
 
-  
+  addAddress(doctordata){
+    return this.doctorService.addAddressDeatils(doctordata).subscribe(data => {console.log(data);
+    this.doctordata=data});
+  }
+  editAddress(){
+    this.create=false;
+    this.create1=false;
+    this.showContent=false;
+    this.showFiller=false;
+    this.address1=false;
+    this.address2=true;
+    this.profile=false;
+  }
+  Add(){
+    this.create=true;
+    this.create1=false;
+    this.showContent=false;
+    this.showFiller=false;
+    this.address1=false;
+    this.address2=true;
+    this.profile=false;
+  }
+
 }

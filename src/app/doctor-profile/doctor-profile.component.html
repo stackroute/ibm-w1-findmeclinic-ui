@@ -1,10 +1,11 @@
+
 <div class="example-container">
 
   <mat-toolbar color="primary" class="example-toolbar">
     <button mat-icon-button (click)="snav.toggle()">
       <mat-icon>menu</mat-icon>
     </button>
-    <h1 class="example-app-name">FindMeClinic</h1>
+    <h1 class="example-app-name" >FindMeClinic</h1>
 
 
   
@@ -23,7 +24,7 @@
     </div>
   </mat-toolbar>
 
-
+  
 
 
   <mat-sidenav-container class="example-sidenav-container">
@@ -38,9 +39,46 @@
 
       </mat-nav-list>
     </mat-sidenav>
+    
         <mat-sidenav-content>
+<div *ngIf="profile">
+    <div class="mainCard">
+          
+    
+        <div class=" col-md-6 display" >
+            
+            <mat-card class="dashboard">
+                  
+                      <mat-card-content class="mcon">
+                          <div class="col-sm-3 dc">
+                             You have completed <strong>40</strong> Appointments
+                          </div>
+                       <div class="col-sm-3 dc">
+                       
+                              </div> 
+                              <div class="col-sm-3 dc">
+                                  Your upcoming appointment is on <strong>25th september 2018 </strong>at <strong>09:00 am</strong>
+                                  </div>
+                      </mat-card-content>
+            </mat-card>
+            <br>
+            
+                       
+             </div>
+        </div>
+        <br>
+        <br>
 
-            <div *ngIf="create1" class="card1">
+        <!-- <img class="image"src="/assets/doctorHie.gif"> -->
+ 
+</div>
+
+ <!-- <div *ngIf="profile1">
+    <div>
+        <img class="image"src="/assets/doctorHie.gif">
+    </div> 
+</div>-->
+            <div *ngIf="create1" class="card1"> 
                     <mat-card>
                 
                             <mat-card-header>
@@ -57,27 +95,29 @@
                                     <mat-divider></mat-divider>
                                     <mat-list-item >LastName<h4 id="l2">{{doctordata.doctorLastName}}</h4></mat-list-item>
                                     <mat-divider></mat-divider>
-                                    <mat-list-item >Email<h4 id="l5">{{doctordata.doctorEmail}}</h4></mat-list-item>
+                                    <mat-list-item >Email<h4 id="l3">{{doctordata.doctorEmail}}</h4></mat-list-item>
                                     <mat-divider></mat-divider>
-                                    <mat-list-item >phoneNumber<h4 id="l3">{{doctordata.doctorPhoneNumber}}</h4></mat-list-item>
+                                    <mat-list-item >phoneNumber<h4 id="l4">{{doctordata.doctorPhoneNumber}}</h4></mat-list-item>
                                     <mat-divider></mat-divider>
-                                    <mat-list-item >Gender<h4 id="l4">{{doctordata.doctorGender}}</h4></mat-list-item>
+                                    <mat-list-item >Gender<h4 id="l5">{{doctordata.doctorGender}}</h4></mat-list-item>
                                     <mat-divider></mat-divider>
-                                    <mat-list-item >Speciality<h4 id="l1">{{doctordata.doctorSpeciality}}</h4></mat-list-item>
+                                    <mat-list-item >Speciality<h4 id="l6">{{doctordata.doctorSpeciality}}</h4></mat-list-item>
                                     <mat-divider></mat-divider>
-                                    <mat-list-item >Qualification<h4 id="l1">{{doctordata.doctorQualification}}</h4></mat-list-item>
+                                    <mat-list-item >Qualification<h4 id="l7">{{doctordata.doctorQualification}}</h4></mat-list-item>
                                     <mat-divider></mat-divider>
-                                    <mat-list-item >Experience<h4 id="l1">{{doctordata.doctorExperience}}</h4></mat-list-item>
+                                    <mat-list-item >Experience<h4 id="l8">{{doctordata.doctorExperience}}</h4></mat-list-item>
                                     <mat-divider></mat-divider>
+                                 
+                           
+                        <br>
+                            <br>
                             </mat-list>
-                            <br>
-                            <br>
                             <button mat-raised-button color="primary" class="pButon"(click)="editProfile()">Edit</button>
-                            
-
+                            <button mat-raised-button color="primary" class="dButton" (click)="address()">Add Address</button> 
                             <button mat-raised-button color="primary" class="pButon1" (click)="closeCard()">close</button>
                         </mat-card>
             </div>
+       
             <div *ngIf="create" class="card2">
                 <h2>Doctor Basic Details</h2>
                 <form [formGroup]="registerForm">
@@ -125,7 +165,7 @@
                                       </mat-option>
                                     </mat-select>
                                   </mat-form-field>
-                                  <h5>{{doctordata.doctorGender}}</h5>
+                                  <!-- <h5>{{doctordata.doctorGender}}</h5> -->
                         </div>
                      
       
@@ -152,65 +192,87 @@
                         <div *ngIf="submitted && f.experience.errors" class="invalid-feedback">
                             <div *ngIf="f.experience.errors.required">Doctor Experience is required</div>
                         </div>
-                    </div>
-                   
-                     <!-- <div class="form-group">
-                            <h4>Address</h4>
-                            <label>AddressNo</label>
-                            
-                            <input type="text" formControlName="addressNo" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.addressNo.errors }"
-                                [(ngModel)]="doctordata.addressNo" />
-                                
-                            <mat-hint>Address Number Should Be 1</mat-hint>
-                            <div *ngIf="submitted && f.addressNo.errors" class="invalid-feedback">
-                                <div *ngIf="f.addressNo.errors.required">Doctor Address Number Should Be 1</div>
-                                
-                            </div>
-                            </div>
-                            <div class="form-group">
-                                    <label>hospitalName</label>
-                                    <input type="text" formControlName="hospitalName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.hospitalName.errors }"
-                                        [(ngModel)]="doctordata.hospitalName" />
-                                    <div *ngIf="submitted && f.hospitalName.errors" class="invalid-feedback">
-                                        <div *ngIf="f.hospitalName.errors.required">Doctor! HospitalName is required</div>
-                                    </div>
-                                </div>      -->
+                    </div>      
                     <div class="form-group">
                         <button [disabled]="loading" mat-raised-button class="doctorButton" color="primary"  (click)="open(doctordata)" >Submit</button>
                         <button mat-raised-button color="primary" class="button" (click)="closeEdit()">Exit</button>
-                        <!-- <button mat-raised-button color="primary" class="dButton" (click)="address()">Add Address</button> -->
+                   
 
                     </div>
                 </form>
-
-
-
             </div>
+    
 <div *ngIf="address1">
     <div class="form-group">
         <h4>Address</h4>
-        <label>AddressNo</label>
-        
-        <input type="text" formControlName="addressNo" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.addressNo.errors }"
-            [(ngModel)]="doctordata.addressNo" />
-            
-        <mat-hint>Address Number Should Be 1</mat-hint>
-        <div *ngIf="submitted && f.addressNo.errors" class="invalid-feedback">
-            <div *ngIf="f.addressNo.errors.required">Doctor Address Number Should Be 1</div>
-            
-        </div>
-        </div>
-        <div class="form-group">
-                <label>hospitalName</label>
-                <input type="text" formControlName="hospitalName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.hospitalName.errors }"
-                    [(ngModel)]="doctordata.hospitalName" />
-                <div *ngIf="submitted && f.hospitalName.errors" class="invalid-feedback">
-                    <div *ngIf="f.hospitalName.errors.required">Doctor! HospitalName is required</div>
-                </div>
-            </div>
-            <button mat-raised-button color="primary" class="dButton" (click)="addAddress(doctorData)">Add Address</button>
+        <form [formGroup]="registerForm">
 
-</div>
+                <div class="form-group">
+                        <label>Hospital Name</label>
+                        <input type="text" formControlName="hospiatalName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.hospiatalName.errors }"
+                            [(ngModel)]="doctordata.hospitalName" />
+                        <div *ngIf="submitted && f.hospiatalName.errors" class="invalid-feedback">
+                            <div *ngIf="f.hospital.errors.required">Hospital Name is required</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                            <label>Street</label>
+                            <input type="text" formControlName="street" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.street.errors }"
+                                [(ngModel)]="doctordata.streetName" />
+                            <div *ngIf="submitted && f.street.errors" class="invalid-feedback">
+                                <div *ngIf="f.street.errors.required">Street Name is required</div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                                <label>locality</label>
+                                <input type="text" formControlName="locality" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.locality.errors }"
+                                    [(ngModel)]="doctordata.locality" />
+                                <div *ngIf="submitted && f.locality.errors" class="invalid-feedback">
+                                    <div *ngIf="f.locality.errors.required">Locality is required</div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                    <label>Area</label>
+                                    <input type="text" formControlName="area" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.area.errors }"
+                                        [(ngModel)]="doctordata.state" />
+                                    <div *ngIf="submitted && f.area.errors" class="invalid-feedback">
+                                        <div *ngIf="f.area.errors.required">Area  is required</div>
+                                    </div>
+                                </div>
+                                
+        <!-- <div class="form-group">
+            <label>HospitalName</label>
+            <input type="text" [(ngModel)]="doctordata.hospitalName" />
+            </div>
+       <br>
+       <div class="form-group">
+        <label>Street</label>
+        <input type="text" [(ngModel)]="doctordata.streetName" />
+        </div>
+        <br>
+        <br>
+        <div class="form-group">
+            <label>locality</label>
+            <input type="text" [(ngModel)]="doctordata.locality" />
+            </div>
+          <br>
+          <br>
+          <div class="form-group">
+            <label>State</label>
+            <input type="text" [(ngModel)]="doctordata.state" />
+            
+   <br>
+       <br>
+      </div> -->
+      </form>
+            <button mat-raised-button color="primary" class="dButton1" (click)="addAddress(doctordata)">Save</button>
+            <button mat-raised-button color="primary" class="dButton" (click)="Add()">Exit</button>
+      </div>
+
+    
+    </div>
+      
+
             <div *ngIf="showFiller" style="margin-top: 5%">
                 <app-calendar></app-calendar>
             </div>

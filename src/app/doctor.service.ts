@@ -11,7 +11,7 @@ export class DoctorService {
   // private addUrl = "http://172.23.239.228:8080/doctor/auth";
   private addUrl = "http://localhost:8082/doctor/auth";
 
-  private secUrl="http://localhost:8080/api/v1/search/";
+  private secUrl="http://localhost:8084/api/v1/search/";
   private thirdUrl="http://localhost:8081/api/v2/doctor/docserv"
   constructor(private http: HttpClient) { }
   doctor;
@@ -43,10 +43,12 @@ getDoctorByDoctorName(doctorName:String):Observable<any>{
 }
 
 addDoctorDetails(doctor:Doctor):Observable<Doctor>{
+  
   return this.http.post<Doctor>(this.thirdUrl,doctor);
 }
 addAddressDeatils(doctor:Doctor):Observable<Doctor>
 {
+
 return this.http.post<Doctor>(this.thirdUrl+"/"+doctor.doctorEmail,doctor);
 }
 
