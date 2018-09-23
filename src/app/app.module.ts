@@ -10,6 +10,8 @@ import {MatIconModule,MatListModule} from '@angular/material';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatSelectModule} from '@angular/material/select';
+import { Ng4GeoautocompleteModule } from 'ng4-geoautocomplete';
+
 
 
 //Calendar Modules for Calendar Component
@@ -59,6 +61,7 @@ import { PrescriptionListComponent } from './prescription-list/prescription-list
 import { AddressComponent } from './address/address.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -105,6 +108,7 @@ import { AddressComponent } from './address/address.component';
     MatGridListModule,
     MatMenuModule,
     MatListModule,
+    Ng4GeoautocompleteModule.forRoot(),
     MatPaginatorModule,
     BrowserAnimationsModule,
     MaterialModule,

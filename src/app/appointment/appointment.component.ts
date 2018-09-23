@@ -15,7 +15,6 @@ export class AppointmentComponent implements OnInit {
 
 
   displayedColumns = ['appointmentId', 'appointmentStatus'];
-
   @ViewChild(MatPaginator) paginator: MatPaginator;
   listOfAppointments: Appointment[];
   displayAppointments: Appointment[];
@@ -56,6 +55,10 @@ export class AppointmentComponent implements OnInit {
 
   }
 
+  
+
+
+
   ngAfterViewInit() {
     this.userId = this.doctorId.getUserId();
 
@@ -70,9 +73,13 @@ export class AppointmentComponent implements OnInit {
         this.numOfApp = this.paginator.pageSize;
       }
       this.displayAppointments = this.listOfAppointments.slice(0, this.numOfApp);
-      console.log(this.displayAppointments)
-
-    })
+      console.log(this.displayAppointments);
+       })
+      //  this.appService.getPatientByPatientId(this.userId).subscribe(( dataName: Appointment[])=>{
+      //   this.patientName=dataName;
+      //     console.log(dataName)
+      // })
+        
   }
 
 

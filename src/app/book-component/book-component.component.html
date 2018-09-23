@@ -164,20 +164,44 @@
 </div>
 </div> -->
 
-
+<div class="super">
  
 <div class="main">
-  Select a time slot to book the appointment
+  <h2>Select a time slot to book the appointment</h2>
 </div>
 
 
 
-   <mat-button-toggle value="slot.slotStart" *ngFor="let slot of slots" class="style" (click)="slotSelected(slot)"> 
+   <!-- <mat-button-toggle value="slot.slotStart" *ngFor="let slot of slots" class="style" (click)="slotSelected(slot)"> 
     {{slot.slotStart}}
-  </mat-button-toggle> 
+  </mat-button-toggle>  -->
 
+   <!-- <mat-tab-group class="style" >
+    <div *ngFor="let schedule of schedules" value="schedule.scheduleDate">
+        {{schedule.scheduleDate}}
+    <mat-tab  value="schedule.scheduleDate" class="style"> 
+        <mat-button-toggle value="slot.slotStart"  class="pan" color="primary">
+           
+        </mat-button-toggle>
+    </mat-tab>
+    </div>
+  </mat-tab-group>   -->
 
+  <div class="btn-group" *ngFor="let schedule of schedules" >
+    <button style="width:100%"> {{schedule.scheduleDate}} 
+      </button>
+        <mat-button-toggle value="slot.slotStart" *ngFor="let slot of slots" class="style" (click)="slotSelected(slot)"> 
+            {{slot.slotStart}}
+          </mat-button-toggle>
+        
+   
+  </div>
 
    <div class="bttn">
     <button mat-raised-button color="primary" (click)="openDialog(appointment)">Submit</button>
     </div>
+
+
+  </div>
+    <!-- schedule.getSlots()
+    *ngFor="let slotList of schedule.getSlots()" -->

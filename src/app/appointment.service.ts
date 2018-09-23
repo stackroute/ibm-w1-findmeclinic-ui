@@ -8,6 +8,8 @@ import {HttpClient} from '@angular/common/http';
   providedIn: 'root'
 })
 export class AppointmentService {
+
+  
  private baseUrl= "http://localhost:8081/api/v1/appointment"
   constructor(private http: HttpClient) { }
 
@@ -19,7 +21,11 @@ export class AppointmentService {
   createBookingAppointment(appointment: Appointment):Observable<Appointment>{
     return this.http.post<Appointment>(this.baseUrl+"/add", appointment)
   }
-
+  getAllAppointmentOfPatient(patientId):Observable<Appointment[]>
+  {
+    return this.http.get<Appointment[]>(this.baseUrl+"/patient/"+patientId);
+  }
+  
 
   
 }

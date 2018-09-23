@@ -32,7 +32,8 @@ h1{
 
   #div3
   {
-      padding-right: 100px;
+      padding-left: 30px;
+      /* margin-left: 30px; */
   }
   .div1
   {
@@ -44,4 +45,15 @@ h1{
       margin-left: 400px
   }
  
-  
+  .aside{
+    height: 150px;
+    width: 850px;
+}
+.inline
+{
+    display: inline;
+}
+.aside1{
+    margin-left: 250px;
+    
+}

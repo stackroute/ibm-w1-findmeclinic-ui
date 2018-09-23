@@ -9,6 +9,7 @@ import { Appointment } from '../appointment';
 import { TokenStorage } from '../tokenStorage';
 import { DoctorTokenStorage } from '../doctorTokenStorage';
 import { ActivatedRoute } from '@angular/router';
+import { Schedule } from '../Schedule';
 @Component({
   selector: 'app-book-component',
   templateUrl: './book-component.component.html',
@@ -18,7 +19,12 @@ export class BookComponentComponent implements OnInit {
 
   docId;
   slots: Slot[];
+  schedules: Schedule[];
+  slotLists:Slot[];
   appointment:Appointment;
+  schedule:Schedule;
+
+  s2:Slot;
 
   constructor(public dialog : MatDialog, private calenderService: CalendarService 
     , private appointmentService: AppointmentService, private tokenStorage: TokenStorage, 
@@ -26,12 +32,26 @@ export class BookComponentComponent implements OnInit {
 
   ngOnInit() {
 
-    this.docId = this.activatedroute.snapshot.params['doctorEmail'];
+    // this.docId = this.activatedroute.snapshot.params['doctorEmail'];
 
+    this.docId="a@gmail.com";
     this.calenderService.getScheduleSlot(this.docId)
     .subscribe(data => {      
       console.log(data);
-      this.slots =data});
+      this.slots =data
+     });
+
+      
+    this.calenderService.getAllScheduleByDoctor(this.docId)
+    .subscribe(data=>{
+      console.log(data);
+      this.schedules =data
+    //   ;
+    //  this.slotLists =data.getSlots()
+    });
+
+      // this.slotLists=this.schedule.slots;
+      // console.log(this.slotLists);
   }
 
   openDialog() {
@@ -41,7 +61,8 @@ export class BookComponentComponent implements OnInit {
     this.appointment.appointmentStatus=true;
     this.appointment.bookedBy=this.tokenStorage.getUserId();
     this.appointment.bookedFor=this.docId;
-    
+    this.appointment.slot=this.s2;
+
     this.appointmentService.createBookingAppointment(this.appointment)
     .subscribe(data => { console.log(data);
  this.appointment=data});
@@ -52,6 +73,7 @@ export class BookComponentComponent implements OnInit {
   slotSelected(s1: Slot){
     console.log(s1);
 
+    this.s2=s1;
   }
 
 

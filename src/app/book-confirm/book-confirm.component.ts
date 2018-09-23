@@ -15,8 +15,10 @@ export class BookConfirmComponent implements OnInit {
   }
 
   close(){
-    this.router.navigate(['landing-page']);
+    this.router.navigate(['patient-profile']);
     this.dialogRef.close();
   }
+
+
 
 }

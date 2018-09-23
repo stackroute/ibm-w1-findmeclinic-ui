@@ -29,8 +29,9 @@
 
         <div class="search">
             <form action="" method="">
+                    <ng4geo-autocomplete (componentCallback)="autoCompleteCallback1($event)"></ng4geo-autocomplete>
                     
-                <input  type="text" name="form" [(ngModel)]="docName"  placeholder="Searching for Doctors?">
+                <input  type="text" name="form" [(ngModel)]="docName"  placeholder="  Searching for Doctors?">
 
                 <button (click)="sendData()">Search</button>
 
@@ -99,7 +100,7 @@
                 <mat-card-header>
                     <mat-card-title><h3>Book From Home</h3></mat-card-title>
                 </mat-card-header>
-                <img mat-card-image src="../../assets/booking.jpg">
+                <img mat-card-image src="../../assets/b.jpg">
                 <mat-card-content>
                     <p>
                         Health and time is directly proprtional. Why to wait in line and search for doctors? FindMeCLinic is the right platform that
