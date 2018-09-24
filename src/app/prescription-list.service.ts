@@ -9,7 +9,7 @@ import {Prescription} from './Prescription';
 })
 export class PrescriptionListService {
 
-  private listUrl="http://localhost:8085/api/v1/record/patient/";
+  private listUrl="http://localhost:8095/api/v1/record/patient/";
 
   constructor(private http: HttpClient) { }
 

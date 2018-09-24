@@ -89,8 +89,8 @@ sub=false;
       }
 
 this.check2=true;
+this.patientMail = this.patientService.patientMailId;
 this.appoint=false;
-this.patientMail = this.token.getUserId();
   //this.patientService.patientMailId.subscribe(mailId =>{ console.log(mailId);this.patientMail = mailId})
     this.patientService.getBadgeName(this.patientMail).subscribe(data=>
       {console.log(data);this.badgeName=data});

@@ -36,7 +36,6 @@ console.log(this.doctorList);
 //     this.docName=data;
 //   }
 //   );
- this.docName=this.doctorObject.getDoctorName();
 // console.log(this.docName);
 // // console.log("hi"+this.docName);
 // console.log("hello"+this.docName);

@@ -39,13 +39,7 @@ public getUserId(){
  public removeUserId(){
    window.localStorage.removeItem(USERID);
  }
- public getDoctorName()
- {
-   return window.localStorage.getItem(DOCTORNAME);
- }
- public saveDoctorName(doctorName){
-   window.localStorage.setItem(DOCTORNAME,doctorName);
- }
+ 
  
  public removedoctorName() {
    window.localStorage.removeItem(DOCTORNAME);
