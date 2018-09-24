@@ -15,6 +15,7 @@ import { DetailsUploadComponent } from './upload/details-upload/details-upload.c
 import { FormUploadComponent } from './upload/form-upload/form-upload.component';
 import { ListUploadComponent } from './upload/list-upload/list-upload.component';
 import { PrescriptionListComponent } from './prescription-list/prescription-list.component';
+import { PatientLoginComponent } from './patient-login/patient-login.component';
 
 const routes: Routes = [
   { path:'', redirectTo:'/landing-page', pathMatch:'full'},
@@ -30,7 +31,9 @@ const routes: Routes = [
   { path:'form-upload', component:FormUploadComponent},
   { path:'details-upload', component:DetailsUploadComponent},
   { path:'list-upload', component:ListUploadComponent},
-  { path:'prescription-list', component:PrescriptionListComponent}
+  { path:'prescription-list', component:PrescriptionListComponent},
+  { path:'landing-page/login', component:PatientLoginComponent}
+
 ];
 
 @NgModule({

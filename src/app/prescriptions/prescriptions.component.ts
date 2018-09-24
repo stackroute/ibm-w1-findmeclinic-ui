@@ -77,8 +77,6 @@ this.patientService.getPatientByMail(this.patientName).subscribe(data=>{console.
       doctorPhoneNumber:'',
       doctorPassword:'',
       doctorGender:'',
-      address:'',
-      doctorLocality:'',
       doctorQualification:'',
       doctorExperience:'',
       doctorAddressNo:{
