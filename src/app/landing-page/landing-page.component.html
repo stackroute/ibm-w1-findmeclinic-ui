@@ -28,14 +28,18 @@
     <div class="hero-image">
         <div class="hero-text">
         <div class="search">
-            <form action="" method="">
-                    <ng4geo-autocomplete (componentCallback)="autoCompleteCallback1($event)"></ng4geo-autocomplete>
+
+            <form name="form" action="" method=""  >
                     
                 <input  type="text" name="form" [(ngModel)]="docName"  placeholder="  Searching for Doctors?">
 
                 <button (click)="sendData()">Search</button>
 
             </form>
+
+            <!-- <ng4geo-autocomplete (componentCallback)="autoCompleteCallback1($event)"></ng4geo-autocomplete>  -->
+
+
         </div>
 </div>
     </div>
@@ -122,7 +126,8 @@
                             <a href="#">Home</a>
                         </li>
                         <li>
-                            <a href="#">Sign up</a>
+                          <a (click)="onSign()" >Sign up</a>
+
                         </li>
                         <li>
                             <a href="#">Downloads</a>

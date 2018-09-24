@@ -14,7 +14,7 @@ export class CalendarService {
 
   constructor(private httpClient: HttpClient) { }
 
-  private urlAdd = "http://localhost:8091/api/calendar/add";
+  private urlAdd = "http://localhost:8089/api/calendar/add";
   addSchedule(schedule: Schedule): Observable<Schedule>{
     return this.httpClient.post<Schedule>(this.urlAdd, schedule, httpOptions);
   }
