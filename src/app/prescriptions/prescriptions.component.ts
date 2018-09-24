@@ -75,6 +75,8 @@ export class PrescriptionsComponent implements OnInit {
       doctorPhoneNumber:'',
       doctorPassword:'',
       doctorGender:'',
+      address:'',
+      doctorLocality:'',
       doctorQualification:'',
       doctorExperience:'',
       doctorAddressNo:{
