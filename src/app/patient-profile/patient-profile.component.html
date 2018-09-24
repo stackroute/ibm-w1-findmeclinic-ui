@@ -1,255 +1,289 @@
 <div class="example-container">
     <mat-toolbar color="primary" class="example-toolbar">
-      <button mat-icon-button (click)="snav.toggle()">
-        <mat-icon>menu</mat-icon>
-      </button>
-      <h1 class="example-app-name">FindMeClinic</h1>
-   
-      <div class="button-group">
-        <button mat-button type="submit" class="btn btn-success" (click)="moveTolanding()">Book</button>
-      </div>
-   
-      
-      <div  class="badge-style">
-            <app-notification></app-notification>
-        <button [matMenuTriggerFor]="menu" mat-mini-fab color="warn">{{badgeName}}</button>
-       
-        <mat-menu #menu="matMenu">
-   
-            <button mat-menu-item (click)="openProfile()"><mat-icon>supervised_user_circle</mat-icon>Profile</button>
-            <button mat-menu-item (click)="openSetting()" ><mat-icon>settings</mat-icon>Settings</button>
-          <button mat-menu-item  (click)="logout()"><mat-icon>directions_walk</mat-icon>Logout</button>
-        </mat-menu>
-      </div>
-   
-    </mat-toolbar>
-   
-    <mat-sidenav-container class="example-sidenav-container">
-      <mat-sidenav #snav fixedTopGap="5">
-        <mat-nav-list>
-          <mat-list-item (click)="apppointment()"><mat-icon>list_alt</mat-icon>My Appointments</mat-list-item>
-             
-          <mat-list-item (click)="reports()">
-            <mat-icon>library_books</mat-icon>
-            Reports
-        </mat-list-item>
+        <button mat-icon-button (click)="snav.toggle()">
+            <mat-icon>menu</mat-icon>
+        </button>
+        <h1 class="example-app-name">FindMeClinic</h1>
 
-          <mat-list-item><mat-icon>group_add</mat-icon>Family Tree</mat-list-item>
-        </mat-nav-list>
-   
-   
-      </mat-sidenav>
-  
-  
-   
-      <mat-sidenav-content>
-          
-          <div *ngIf="check" class="DForm">
-        <br>
-            <mat-card>
-                
-                <mat-card-header>
+        <div class="button-group">
+            <button mat-button type="submit" class="btn btn-success" (click)="moveTolanding()">Book</button>
+        </div>
+
+
+        <div class="badge-style">
+            <app-notification></app-notification>
+            <button [matMenuTriggerFor]="menu" mat-mini-fab color="warn">{{badgeName}}</button>
+
+            <mat-menu #menu="matMenu">
+
+                <button mat-menu-item (click)="openProfile()">
+                    <mat-icon>supervised_user_circle</mat-icon>Profile</button>
+                <button mat-menu-item (click)="openSetting()">
+                    <mat-icon>settings</mat-icon>Settings</button>
+                <button mat-menu-item (click)="logout()">
+                    <mat-icon>directions_walk</mat-icon>Logout</button>
+            </mat-menu>
+        </div>
+
+    </mat-toolbar>
+
+    <mat-sidenav-container class="example-sidenav-container">
+        <mat-sidenav #snav fixedTopGap="5">
+            <mat-nav-list>
+                <mat-list-item (click)="apppointment()">
+                    <mat-icon>list_alt</mat-icon>My Appointments</mat-list-item>
+
+                <mat-list-item (click)="reports()">
+                    <mat-icon>library_books</mat-icon>
+                    Reports
+                </mat-list-item>
+
+                <mat-list-item>
+                    <mat-icon>group_add</mat-icon>Family Tree</mat-list-item>
+            </mat-nav-list>
+
+
+        </mat-sidenav>
+
+
+
+        <mat-sidenav-content class="super">
+
+            <div *ngIf="check" class="DForm">
+                <br>
+                <mat-card>
+
+                    <mat-card-header>
                         <div>
-                                <img class="image"src="/assets/profile.jpeg">
+                            <img class="image" src="/assets/profile.jpeg">
                         </div>
-                   <h2 class="hname"> Hi {{patientData.patientFirstName}} {{patientData.patientLastName}} !</h2>
-                </mat-card-header>
-            </mat-card>
-            <br>
-            <mat-card>
-                <mat-list>
-                        <mat-list-item >FirstName<h4 id="l1">{{patientData.patientFirstName}}</h4></mat-list-item>
+                        <h2 class="hname"> Hi {{patientData.patientFirstName}} {{patientData.patientLastName}} !</h2>
+                    </mat-card-header>
+                </mat-card>
+                <br>
+                <mat-card>
+                    <mat-list>
+                        <mat-list-item>FirstName
+                            <h4 id="l1">{{patientData.patientFirstName}}</h4>
+                        </mat-list-item>
                         <mat-divider></mat-divider>
-                        
-                        <mat-list-item>LastName <h4 id="l2">{{patientData.patientLastName}}</h4></mat-list-item>
+
+                        <mat-list-item>LastName
+                            <h4 id="l2">{{patientData.patientLastName}}</h4>
+                        </mat-list-item>
                         <mat-divider></mat-divider>
-                        <mat-list-item>EmailID <h4 id="l3">{{patientData.patientEmail}}</h4></mat-list-item>
+                        <mat-list-item>EmailID
+                            <h4 id="l3">{{patientData.patientEmail}}</h4>
+                        </mat-list-item>
                         <mat-divider></mat-divider>
-                        <mat-list-item>PhoneNumber <h4 id="l4">{{patientData.patientPhoneNumber}}</h4></mat-list-item>
+                        <mat-list-item>PhoneNumber
+                            <h4 id="l4">{{patientData.patientPhoneNumber}}</h4>
+                        </mat-list-item>
                         <mat-divider></mat-divider>
-                        <mat-list-item>Gender <h4 id="l5">{{patientData.patientGender}}</h4></mat-list-item>
+                        <mat-list-item>Gender
+                            <h4 id="l5">{{patientData.patientGender}}</h4>
+                        </mat-list-item>
                         <mat-divider></mat-divider>
-                        <mat-list-item>BloodGroup <h4 id="l6">{{patientData.patientBloodGroup}}</h4></mat-list-item>
+                        <mat-list-item>BloodGroup
+                            <h4 id="l6">{{patientData.patientBloodGroup}}</h4>
+                        </mat-list-item>
                         <mat-divider></mat-divider>
                         <div *ngIf="list">
-                        <mat-list-item>DateOfBirth <h4 id="l7">{{patientData.patientDobDate}}/{{patientData.patientDobMonth}}/{{patientData.patientDobYear}}</h4></mat-list-item>
-                        <mat-divider></mat-divider>
-                        <mat-list-item>Age <h4 id="l8">{{patientData.patientAge}}</h4></mat-list-item>
-                        <mat-divider></mat-divider>
-                         </div>
-                      </mat-list>
-                      <br>
-                      <br>
-                      <br>
-                      <button mat-raised-button color="primary" class="pButon"(click)="editProfile()">Edit</button>
-                      <button mat-raised-button color="primary" class="pButon1" (click)="closeCard()">close</button>
-                    </mat-card>
-
-                    <br>
-                    <br>
-                    </div>
-
-                    <div *ngIf="showFiller" style="margin-top: 5%">
-                        <app-medical-records></app-medical-records>
-                    </div>
-                    <br>
-                    <br>
-                    <div *ngIf="showContent" style="margin-top: 5%">
-                    </div>
-                    
-              
-          <div class="upForm" *ngIf="check3">
-                      <h2>Edit Your Details..</h2>
-                      <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
-                          <div class="form-group">
-                              <label>First Name</label>
-                              <input type="text" formControlName="firstName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" [(ngModel)]="patientData.patientFirstName" />
-                              <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
-                                  <div *ngIf="f.firstName.errors.required">First Name is required</div>
-                              </div>
-                          </div>
-                          <div class="form-group">
-                              <label>Last Name</label>
-                              <input type="text" formControlName="lastName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" [(ngModel)]="patientData.patientLastName" />
-                              <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
-                                  <div *ngIf="f.lastName.errors.required">Last Name is required</div>
-                              </div>
-                          </div>
-                          
-                          <div class="form-group">
-                              <label>Mobile Number</label>
-                              <input type="text" formControlName="phone" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.phone.errors }" [(ngModel)]="patientData.patientPhoneNumber" />
-                              <div *ngIf="submitted && f.phone.errors" class="invalid-feedback">
-                                  <div *ngIf="f.phone.errors.required">Phone Number is required</div>
-                                  <div *ngIf="f.phone.errors.minlength">Phone Number must be at least 10 characters</div>
-                              </div>
-                          </div>
-
-                                <div class="form-group">
-                                    <label class="lbl">Gender</label>
-                                   
-                                    <mat-form-field>
-                                            <mat-select class="select" placeholder="select you gender" [(value)]="patientData.patientGender">
-                                              <mat-option *ngFor="let patientGender of genders" [value]="patientGender.value">
-                                                {{patientGender.viewValue}}
-                                              </mat-option>
-                                            </mat-select>
-                                          </mat-form-field>
-                                </div>
-                              <div class="form-group">
-                                      <label>Date Of Birth </label>
-                                      <br>
-                                     <input type="text"  formControlName="day" placeholder="enter date (dd)" class="dob form-control" [ngClass]="{ 'is-invalid': submitted && f.day.errors }"  [(ngModel)]="patientData.patientDobDate" />
-                                      
-                                      <div *ngIf="submitted && f.day.errors" class="invalid-feedback">
-                                          <div *ngIf="f.day.errors.required">Date Of Birth is required</div>
-                                          <div *ngIf="f.phone.errors.minlength">Date must be at least 2 digits</div>
-                                          <div *ngIf="f.phone.errors.maxlength">Date must be at most 2 digits</div>
-
-
-                                      </div> 
-                                      <input type="text"  formControlName="month" placeholder="enter month (mm)" class="dob form-control" [ngClass]="{ 'is-invalid': submitted && f.month.errors }"  [(ngModel)]="patientData.patientDobMonth" />
-                                      
-                                      <div *ngIf="submitted && f.month.errors" class="invalid-feedback">
-                                          <div *ngIf="f.month.errors.required">Date Of Birth is required</div>
-                                          <div *ngIf="f.month.errors.minlength">Month must be at least 2 digits</div>
-                                          <div *ngIf="f.month.errors.maxlength">Month must be at most 2 digits</div>
-
-                                      </div> 
-                                      <input type="text"   formControlName="year" placeholder="enter year (yyyy)" class="dob form-control" [ngClass]="{ 'is-invalid': submitted && f.year.errors }"  [(ngModel)]="patientData.patientDobYear" />
-                                    
-                                      <div *ngIf="submitted && f.year.errors" class="invalid-feedback">
-                                          <div *ngIf="f.year.errors.required">Year is required</div>
-                                          <div *ngIf="f.year.errors.minlength">Year must be at least 4 digits</div>
-                                          <div *ngIf="f.year.errors.maxlength">Year must be at most 4 digits</div>
-
-                                      </div>
-                                  </div>
-  
-                                  <div class="form-group">
-                                          <label>Blood Group </label>
-                                          <input type="text" formControlName="bloodGroup" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.bloodGroup.errors }" [(ngModel)]="patientData.patientBloodGroup" />
-                                          <div *ngIf="submitted && f.bloodGroup.errors" class="invalid-feedback">
-                                              <div *ngIf="f.bloodGroup.errors.required">Blood Group is required</div>
-                                          </div>
-                                      </div> 
-                          <div class="form-group">
-                              <button [disabled]="loading" mat-raised-button class="pButon2" color="primary"  (click)="onSubmit(patientData)" color="primary">Submit</button>
-                             
-                          </div>
-                      </form>
-              
-          </div>
-  
-          <div *ngIf="check2">
-  
-          <div class="mainCard">
-  <div class=" col-sm-6 display" >
-      <mat-card class="dashboard">
-            
-                <mat-card-content class="mcon">
-                    <div class="col-sm-3 dc">
-                       You have completed <strong>5</strong> Appointments
-                    </div>
-                    <div class="col-sm-3 dc">
-                            you have uploaded <strong>2</strong> records
+                            <mat-list-item>DateOfBirth
+                                <h4 id="l7">{{patientData.patientDobDate}}/{{patientData.patientDobMonth}}/{{patientData.patientDobYear}}</h4>
+                            </mat-list-item>
+                            <mat-divider></mat-divider>
+                            <mat-list-item>Age
+                                <h4 id="l8">{{patientData.patientAge}}</h4>
+                            </mat-list-item>
+                            <mat-divider></mat-divider>
                         </div>
-                        <div class="col-sm-3 dc">
-                            Your upcoming appointment is on <strong>23rd september 2018 </strong>at <strong>11:00 am</strong>
-                            </div>
-                </mat-card-content>
-      </mat-card>
-                 
-       </div>
-  </div>
-  </div>
-
-  <div *ngIf="appoint">
-  
-            <app-patientappointment></app-patientappointment>
-          
-</div>
-
-  <div *ngIf="setting">
-<br>
-<br>
-    <mat-card class="setCard">
-        <mat-card-header class="cardHeader">
-            <mat-card-title>
-                    <h3>Settings</h3>
-            </mat-card-title>
-        </mat-card-header>
-        <mat-card-content class="cardCont">
-            <div class="div11">
-         <button class="sbuton" (click)="changePwd()"mat-raised-button>Change PassWord</button>
-         <div *ngIf="password">
-                <form [formGroup]="settingForm" (ngSubmit)="onChange()">
-                       
+                    </mat-list>
                     <br>
-                    <div class="form-group">
-                                <label>Password</label>
-                                <input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && g.password.errors }" />
-                                <div *ngIf="sub && g.password.errors" class="invalid-feedback">
-                                    <div *ngIf="g.password.errors.required">Password is required</div>
-                                    <div *ngIf="g.password.errors.minlength">Password must be at least 6 characters</div>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                    <label>Confirm Password</label>
-                                    <input type="password" formControlName="confirmPassword" class="form-control" [ngClass]="{ 'is-invalid': submitted && g.password.errors }" />
-                                    <div *ngIf="sub && g.confirmPassword.errors" class="invalid-feedback">
-                                        <div *ngIf="g.confirmPassword.errors.required">Password is required</div>
-                                        <div *ngIf="g.confirmPassword.errors.minlength">Password must be at least 6 characters</div>
-                                    </div>
-                                </div>
+                    <br>
+                    <br>
+                    <button mat-raised-button color="primary" class="pButon" (click)="editProfile()">Edit</button>
+                    <button mat-raised-button color="primary" class="pButon1" (click)="closeCard()">close</button>
+                </mat-card>
 
-                            <div class="form-group">
-                                    <button mat-raised-button (click)="onChange()" color="primary">Change Password</button>
+                <br>
+                <br>
+            </div>
+
+            <div *ngIf="showFiller" style="margin-top: 5%">
+                <app-medical-records></app-medical-records>
+            </div>
+            <br>
+            <br>
+            <div *ngIf="showContent" style="margin-top: 5%">
+            </div>
+
+
+            <div class="upForm" *ngIf="check3">
+                <h2>Edit Your Details..</h2>
+                <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+                    <div class="form-group">
+                        <label>First Name</label>
+                        <input type="text" formControlName="firstName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }"
+                            [(ngModel)]="patientData.patientFirstName" />
+                        <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
+                            <div *ngIf="f.firstName.errors.required">First Name is required</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Last Name</label>
+                        <input type="text" formControlName="lastName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }"
+                            [(ngModel)]="patientData.patientLastName" />
+                        <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
+                            <div *ngIf="f.lastName.errors.required">Last Name is required</div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Mobile Number</label>
+                        <input type="text" formControlName="phone" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.phone.errors }"
+                            [(ngModel)]="patientData.patientPhoneNumber" />
+                        <div *ngIf="submitted && f.phone.errors" class="invalid-feedback">
+                            <div *ngIf="f.phone.errors.required">Phone Number is required</div>
+                            <div *ngIf="f.phone.errors.minlength">Phone Number must be at least 10 characters</div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="lbl">Gender</label>
+
+                        <mat-form-field>
+                            <mat-select class="select" placeholder="select you gender" [(value)]="patientData.patientGender">
+                                <mat-option *ngFor="let patientGender of genders" [value]="patientGender.value">
+                                    {{patientGender.viewValue}}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+                    <div class="form-group">
+                        <label>Date Of Birth </label>
+                        <br>
+                        <input type="text" formControlName="day" placeholder="enter date (dd)" class="dob form-control" [ngClass]="{ 'is-invalid': submitted && f.day.errors }"
+                            [(ngModel)]="patientData.patientDobDate" />
+
+                        <div *ngIf="submitted && f.day.errors" class="invalid-feedback">
+                            <div *ngIf="f.day.errors.required">Date Of Birth is required</div>
+                            <div *ngIf="f.phone.errors.minlength">Date must be at least 2 digits</div>
+                            <div *ngIf="f.phone.errors.maxlength">Date must be at most 2 digits</div>
+
+
+                        </div>
+                        <input type="text" formControlName="month" placeholder="enter month (mm)" class="dob form-control" [ngClass]="{ 'is-invalid': submitted && f.month.errors }"
+                            [(ngModel)]="patientData.patientDobMonth" />
+
+                        <div *ngIf="submitted && f.month.errors" class="invalid-feedback">
+                            <div *ngIf="f.month.errors.required">Date Of Birth is required</div>
+                            <div *ngIf="f.month.errors.minlength">Month must be at least 2 digits</div>
+                            <div *ngIf="f.month.errors.maxlength">Month must be at most 2 digits</div>
+
+                        </div>
+                        <input type="text" formControlName="year" placeholder="enter year (yyyy)" class="dob form-control" [ngClass]="{ 'is-invalid': submitted && f.year.errors }"
+                            [(ngModel)]="patientData.patientDobYear" />
+
+                        <div *ngIf="submitted && f.year.errors" class="invalid-feedback">
+                            <div *ngIf="f.year.errors.required">Year is required</div>
+                            <div *ngIf="f.year.errors.minlength">Year must be at least 4 digits</div>
+                            <div *ngIf="f.year.errors.maxlength">Year must be at most 4 digits</div>
+
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Blood Group </label>
+                        <input type="text" formControlName="bloodGroup" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.bloodGroup.errors }"
+                            [(ngModel)]="patientData.patientBloodGroup" />
+                        <div *ngIf="submitted && f.bloodGroup.errors" class="invalid-feedback">
+                            <div *ngIf="f.bloodGroup.errors.required">Blood Group is required</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <button [disabled]="loading" mat-raised-button class="pButon2" color="primary" (click)="onSubmit(patientData)" color="primary">Submit</button>
+
+                    </div>
+                </form>
+
+            </div>
+
+            <div *ngIf="check2">
+
+                <div class="mainCard">
+                    <div class=" col-sm-6 display">
+                        <mat-card class="dashboard">
+
+                            <mat-card-content class="mcon">
+                                <div class="col-sm-3 dc">
+                                    You have completed
+                                    <strong>5</strong> Appointments
                                 </div>
+                                <div class="col-sm-3 dc">
+                                    you have uploaded
+                                    <strong>2</strong> records
+                                </div>
+                                <div class="col-sm-3 dc">
+                                    Your upcoming appointment is on
+                                    <strong>23rd september 2018 </strong>at
+                                    <strong>11:00 am</strong>
+                                </div>
+                            </mat-card-content>
+                        </mat-card>
+
+                    </div>
+                </div>
+            </div>
+
+            <div *ngIf="appoint">
+
+                <app-patientappointment></app-patientappointment>
+
+            </div>
+
+            <div *ngIf="setting">
+                <br>
+                <br>
+                <mat-card class="setCard">
+                    <mat-card-header class="cardHeader">
+                        <mat-card-title>
+                            <h3>Settings</h3>
+                        </mat-card-title>
+                    </mat-card-header>
+                    <mat-card-content class="cardCont">
+                        <div class="div11">
+                            <button class="sbuton" (click)="changePwd()" mat-raised-button>Change PassWord</button>
+                            <div *ngIf="password">
+                                <form [formGroup]="settingForm" (ngSubmit)="onChange()">
+
+                                    <br>
+                                    <div class="form-group">
+                                        <label>Password</label>
+                                        <input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && g.password.errors }"
+                                        />
+                                        <div *ngIf="sub && g.password.errors" class="invalid-feedback">
+                                            <div *ngIf="g.password.errors.required">Password is required</div>
+                                            <div *ngIf="g.password.errors.minlength">Password must be at least 6 characters</div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Confirm Password</label>
+                                        <input type="password" formControlName="confirmPassword" class="form-control" [ngClass]="{ 'is-invalid': submitted && g.password.errors }"
+                                        />
+                                        <div *ngIf="sub && g.confirmPassword.errors" class="invalid-feedback">
+                                            <div *ngIf="g.confirmPassword.errors.required">Password is required</div>
+                                            <div *ngIf="g.confirmPassword.errors.minlength">Password must be at least 6 characters</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <button mat-raised-button (click)="onChange()" color="primary">Change Password</button>
+                                    </div>
                                 </form>
-                    
-                    
-                    <!-- <label for="password">New Password</label>
+
+
+                                <!-- <label for="password">New Password</label>
                         <input type="password" id="password" class="form-control"  formControlName="password" [ngClass]="{ 'is-invalid': submitted && g.password.errors }"
                           [formGroup]="form">    
                       </div>
@@ -258,27 +292,25 @@
                         <input type="password" class="form-control" id="confirmPassword" formControlName="confirmPassword" 
                           [formGroup]="form">
                       </div> -->
-                      
-         </div>
-        </div>
-        <div class="div2">
-         <button class="sbuton" mat-raised-button>Notification Settings</button>
-</div>
 
-<div class="div2">
-        <button mat-raised-button (click)="onClose()" color="primary">close</button>
-</div>
-        </mat-card-content>
-    
-   </mat-card>
-   <br><br>
+                            </div>
+                        </div>
+                        <div class="div2">
+                            <button class="sbuton" mat-raised-button>Notification Settings</button>
+                        </div>
 
-  </div>
-  
-  
-             
-    </mat-sidenav-content>
+                        <div class="div2">
+                            <button mat-raised-button (click)="onClose()" color="primary">close</button>
+                        </div>
+                    </mat-card-content>
+
+                </mat-card>
+                <br>
+                <br>
+
+            </div>
+
+
+
+        </mat-sidenav-content>
     </mat-sidenav-container>
-   
-   
-   

@@ -11,6 +11,7 @@
     right: 0;
     height: 1000px;
     
+    
   }
   
   .example-is-mobile .example-toolbar {
@@ -428,3 +429,6 @@ height: 200px;
 }
 
 
+.super{
+  background: url("../../assets/bgmain.jpg");
+}

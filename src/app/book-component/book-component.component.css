@@ -50,7 +50,7 @@
     background-color: rgb(8, 138, 245); 
     border: 1px solid rgb(29, 29, 236);
     color: white; /* White text */
-    padding: 10px 24px; /* Some padding */
+    padding: 10px 24px; 
     cursor: pointer; /* Pointer/hand icon */
     float: left; /* Float the buttons side by side */
 }
@@ -70,3 +70,7 @@
 .btn-group button:hover {
     background-color: #3e8e41;
 }
+
+.super{
+    background: url("../../assets/bgmain.jpg");
+  }

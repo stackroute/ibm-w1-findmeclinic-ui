@@ -151,3 +151,7 @@ height: 200px;
 .button{
   margin-left: 20%;
 }
+
+.super{
+  background: url("../../assets/bgmain.jpg");
+}
