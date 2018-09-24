@@ -18,26 +18,26 @@ import { DoctorlistService } from '../doctorlist.service';
 })
 export class LandingPageComponent implements OnInit {
   userSettings = {}
-locationArray=[];
-mylocation;
-	autoCompleteCallback1(selectedData:any) {
-this.mylocation = JSON.stringify(selectedData);
-console.log("loc "+this.mylocation);
-console.log("array  ");
+  locationArray = [];
+  mylocation;
+  autoCompleteCallback1(selectedData: any) {
+    this.mylocation = JSON.stringify(selectedData);
+    console.log("loc " + this.mylocation);
+    console.log("array  ");
 
-console.log("bcshj  "+JSON.stringify(selectedData).split("\"").slice(9,10));
-this.locationArray = JSON.stringify(selectedData).split("\"").slice(9,10);
+    console.log("bcshj  " + JSON.stringify(selectedData).split("\"").slice(9, 10));
+    this.locationArray = JSON.stringify(selectedData).split("\"").slice(9, 10);
 
-console.log("gggggggggggggggggggggggggggggg"+this.locationArray[0])
+    console.log("gggggggggggggggggggggggggggggg" + this.locationArray[0])
 
-// this.doctorService.getDoctorLocality(this.locationArray[0]).subscribe((data)=>{
-//   this.requiredDoctor=data;
-//   console.log("hiiiiii")
-//   console.log(data)
-//   console.log(this.requiredDoctor);
-// })
-		//do any necessery stuff.
-	}
+    // this.doctorService.getDoctorLocality(this.locationArray[0]).subscribe((data)=>{
+    //   this.requiredDoctor=data;
+    //   console.log("hiiiiii")
+    //   console.log(data)
+    //   console.log(this.requiredDoctor);
+    // })
+    //do any necessery stuff.
+  }
 
   ws: any;
   doctorData: Doctor[] = [];
@@ -49,8 +49,8 @@ console.log("gggggggggggggggggggggggggggggg"+this.locationArray[0])
   doctorLoc;
   data1: any;
   data2: any;
-  requiredDoctor:Doctor;
-  location:string;
+  requiredDoctor: Doctor;
+  location: string;
   constructor(public dialog: MatDialog,
     private doctName: DoctorTokenStorage,
     private doctorService: DoctorService,
@@ -74,12 +74,11 @@ console.log("gggggggggggggggggggggggggggggg"+this.locationArray[0])
   }
   loc;
 
-  onSign()
-  {
+  onSign() {
     const dialogRef = this.dialog.open(PatientLoginComponent);
 
     dialogRef.afterClosed().subscribe(data => console.log("the dailog box is closed"));
-  
+
   }
 
   openDialog() {
@@ -107,10 +106,10 @@ console.log("gggggggggggggggggggggggggggggg"+this.locationArray[0])
 
   private stompClient;
   name: string;
-
+  private serverurl = 'http://localhost:8080/socket/'
 
   setUpConnection(): any[] {
-    let socket = new SockJS("http://localhost:8080/socket/");
+    let socket = new SockJS(this.serverurl);
 
     this.ws = Stomp.over(socket);
     let that = this;
@@ -137,15 +136,13 @@ console.log("gggggggggggggggggggggggggggggg"+this.locationArray[0])
   }
   sendData() {
 
-    this.docNameObj.saveDoctorName(this.docName);
     this.doctorService.getDoctorByDoctorName(this.docName).subscribe(data => console.log(data));
     // this.router.navigate(['search-doctor']);
   }
 
-  onSearch(loc:string)
-  {
+  onSearch(loc: string) {
     console.log(loc);
-    
+
   }
 
   // getDoctorData(doctor: Doctor) {
