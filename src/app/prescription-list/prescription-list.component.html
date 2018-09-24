@@ -24,9 +24,8 @@
     </mat-toolbar>
   
   
-  
-  
-    <mat-sidenav-container class="example-sidenav-container">
+
+    <!-- <mat-sidenav-container class="example-sidenav-container">
       <mat-sidenav #snav fixedTopGap="5">
         <mat-nav-list>
           <mat-list-item (click)="show()">
@@ -34,9 +33,9 @@
   
         </mat-nav-list>
       </mat-sidenav>
-<<<<<<< HEAD
-    
-      <div *ngFor="let m of prescriptions">
+    </mat-sidenav-container> -->
+
+      <div  class="card1" *ngFor="let m of prescriptions">
           <mat-card>
       {{m.doctor.doctorEmail}}
       <br>
@@ -47,6 +46,3 @@
     <mat-divider></mat-divider>
     </div>
  
-=======
-
->>>>>>> eca66c527411457a395f840a6731876d9a0460fd

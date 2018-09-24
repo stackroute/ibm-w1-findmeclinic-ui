@@ -1,10 +1,25 @@
 
 <div class="example-container">
   <mat-toolbar color="primary" class="example-toolbar">
+    <button mat-icon-button (click)="snav.toggle()">
+    <mat-icon>menu</mat-icon>
+    </button>
     <h1 class="example-app-name">FindMeClinic</h1>
   </mat-toolbar>
+
+
+  <mat-sidenav-container class="example-sidenav-container">
+      <mat-sidenav #snav fixedTopGap="5">
+        <mat-nav-list>
+          <mat-list-item (click)="show()">
+            <mat-icon>access_time</mat-icon>Go to Dashboard</mat-list-item>
+ 
+        </mat-nav-list>
+      </mat-sidenav>
+      </mat-sidenav-container>
 </div>
 
+<h1 class="head">ADD PRESCRIPTIONS</h1>
 
 <br>
 <div class="div7">
@@ -12,12 +27,12 @@
 <mat-card class="aside">
   <div class="inline">
     <div class="col-sm-3">
-   <h4>{{myDoctor.doctorName}}</h4>
+   <h4>{{prescriptions.doctor.doctorName}}</h4>
     </div>
     <div class="col-sm-3 aside1">
-      <h4>Email : {{patientName}}</h4>
-      <h4>Age: {{myPatient.patientAge}}</h4>
-      <h4>Blood Group: {{myPatient.bloodGroup}}</h4>
+      <h4>Name : {{prescriptions.patient.patientFirstName}}</h4>
+      <h4>Age: {{prescriptions.patient.patientAge}}</h4>
+      <h4>Blood Group: {{prescriptions.patient.patientBloodGroup}}</h4>
     </div>
   </div>
 </mat-card>
