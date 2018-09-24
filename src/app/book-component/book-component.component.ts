@@ -32,9 +32,9 @@ export class BookComponentComponent implements OnInit {
 
   ngOnInit() {
 
-    // this.docId = this.activatedroute.snapshot.params['doctorEmail'];
+   this.docId = this.activatedroute.snapshot.params['doctorEmail'];
 
-    this.docId="a@gmail.com";
+    // this.docId="a@gmail.com";
     this.calenderService.getScheduleSlot(this.docId)
     .subscribe(data => {      
       console.log(data);
