@@ -50,19 +50,17 @@
 	background: aliceblue;	
     border: 0px solid #ffffff; 
 	border-radius: 0px 0px 0px 0px;
-	box-shadow: 0 0px 0 rgba(255, 255, 255, 0.219);
+	box-shadow: 0 0px 0 rgba(122, 117, 117, 0.219);
 	color: #888;
 	display: block;
 	float: left;
-    box-shadow: inset 0 0 0 1px #ebe3e3;
-
+    box-shadow: inset 0 0 0 1px #272727;
 	font-family: 'Cabin', helvetica, arial, sans-serif;
-	font-size: 13px;
+	font-size: 18px;
 	font-weight: 400;
 	height: 40px;
 	margin: .5px;
-	/* padding: 0 10px; */
-	text-shadow: 0 0px 0 rgb(231, 223, 223);
+    text-shadow: 0 0px 0 rgb(231, 223, 223);
 	width: 90%;
 	margin-right: 2px;
 }
@@ -81,21 +79,21 @@
 
  .search input:focus {
 	animation: glow 800ms ease-out infinite alternate;
-	background: #000000;
-	background: linear-gradient(#b6b2b2, #ffffff);
+	background: #222922;
+	background: linear-gradient(#333933, #222922);
 	border-color: rgb(51, 83, 153);
-	/* box-shadow: 0 0 5px rgba(0,255,0,.2), inset 0 0 5px rgba(0,255,0,.1), 0 2px 0 #000; */
-	color: rgb(0, 0, 0);
+	box-shadow: 0 0 5px rgba(0,255,0,.2), inset 0 0 5px rgba(0,255,0,.1), 0 2px 0 #000;
+	color: #efe;
 	outline: none;
 }
 
 
 .search input:focus::-webkit-input-placeholder { 
-	color: rgb(0, 0, 0);
+	color: #efe;
 }
 
 .search input:focus:-moz-placeholder {
-	color: rgb(5, 5, 5);
+	color: #efe;
 }
 
 .search button {
