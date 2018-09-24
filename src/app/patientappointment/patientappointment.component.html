@@ -1,8 +1,5 @@
 <h1>LIST OF APPOINTMENTS</h1>
 <br>
-
-
-
 <div>
     <button (click)="onPage()"><mat-paginator #paginator  [pageSizeOptions]="[5, 10, 25, 100]">
     </mat-paginator></button>
@@ -17,7 +14,7 @@
     
     <div class="div1" id="div2">
        
-        {{doctorName}}
+        {{m.bookedFor}}
   </div>
   </mat-card>
   </div>
