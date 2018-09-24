@@ -1,5 +1,5 @@
 .main{
-	background: url("../../assets/bgmain.jpg");
+	 /* background: url("../../assets/e.png"); */
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;
@@ -298,10 +298,10 @@ nav {
 }
 
 .hero-image {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../../assets/1122.jpg");
+    background-image:url("../../assets/1122.jpg");
     height: 500px;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    position: relative;
+	position: relative;
  }
