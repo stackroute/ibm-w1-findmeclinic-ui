@@ -29,7 +29,7 @@ export class BookComponentComponent implements OnInit {
   constructor(public dialog : MatDialog, private calenderService: CalendarService 
     , private appointmentService: AppointmentService, private tokenStorage: TokenStorage, 
     private doctorTokenStorage: DoctorTokenStorage,private activatedroute: ActivatedRoute,
-    private router:Router) { }
+    private router:Router) { this.appointment= new Appointment() }
 
   ngOnInit() {
 
@@ -58,16 +58,18 @@ export class BookComponentComponent implements OnInit {
   openDialog() {
 
     const dialogRef = this.dialog.open(BookConfirmComponent);
+// console.log(this.appointment)
+      this.appointment.appointmentStatus=true;
+    // console.log( this.appointment.appointmentStatus)
+    // console.log(this.tokenStorage.getUserId())
+   this.appointment.bookingBy=this.tokenStorage.getUserId();
+console.log("iddddd"+this.appointment.bookingBy)
+    // if(this.appointment.bookingBy==null){
+    //   this.router.navigate(['patient-login'])
+    // }
 
-    this.appointment.appointmentStatus=true;
-    this.appointment.bookingBy=this.tokenStorage.getUserId();
-
-    if(this.appointment.bookingBy==null){
-      this.router.navigate(['patient-login'])
-    }
-
-    this.appointment.bookedFor=this.docId;
-    this.appointment.slot=this.s2;
+     this.appointment.bookedFor=this.docId;
+     this.appointment.slot=this.s2;
 
     this.appointmentService.createBookingAppointment(this.appointment)
     .subscribe(data => { console.log(data);
