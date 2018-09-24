@@ -35,7 +35,7 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import{ MatNativeDateModule } from '@angular/material';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import { MatPaginatorModule} from '@angular/material';
-import { RouterModule } from '@angular/router';
+import { RouterModule,ActivatedRoute } from '@angular/router';
 import { PatientProfileComponent } from './patient-profile/patient-profile.component';
 import { AppRoutingModule } from './app-routing.module';
 import { CalendarComponent } from './calendar/calendar.component';
@@ -116,7 +116,6 @@ import { AddressComponent } from './address/address.component';
     AppRoutingModule,
     RouterModule,
     MatGridListModule,
-
     RouterModule,
     MatGridListModule,
 //For calendar

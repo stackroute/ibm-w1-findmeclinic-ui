@@ -11,14 +11,15 @@
     <br>
     <mat-card>
       <div class="div1">
-        <a (click)="open()">
+        <a [routerLink]="['add-prescription',m.bookingBy]">
+          bookedby :{{m.bookingBy}}
       AppointmentId : {{m.appointmentId}}
     </a>
     </div>
     
     <div class="div1" id="div2">
         <!-- {{m.bookingBy}} -->
-        {{patientName}}
+        {{m.bookedBy}}
   </div>
   </mat-card>
   </div>
@@ -101,3 +102,5 @@
   </div>
 </div> 
   -->
+
+  <router-outlet></router-outlet>

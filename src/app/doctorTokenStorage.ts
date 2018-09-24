@@ -4,6 +4,7 @@ import { Injectable } from '@angular/core';
 const TOKEN_KEY = 'AuthToken';
 const USERID = 'userId';
 const DOCTORNAME='doctorName';
+const APPOINTMENT = 'appointment';
 
 @Injectable(
  {
@@ -23,6 +24,7 @@ export class DoctorTokenStorage {
 
  public removeToken() {
   window.localStorage.removeItem(TOKEN_KEY);
+  window.localStorage.removeItem(APPOINTMENT);
  
 }
    
@@ -48,6 +50,14 @@ public getUserId(){
  public removedoctorName() {
    window.localStorage.removeItem(DOCTORNAME);
   
+ }
+
+ public saveAppointDetails(appointment){
+   window.localStorage.setItem(APPOINTMENT,appointment);
+ }
+
+ public getAppDetail(){
+   return window.localStorage.getItem(APPOINTMENT);
  }
  
 //  public getToken(): string {
