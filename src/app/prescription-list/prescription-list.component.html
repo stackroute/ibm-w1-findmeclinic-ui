@@ -34,39 +34,15 @@
   
         </mat-nav-list>
       </mat-sidenav>
-
-      <div *ngIf="profile">
-        <div class="mainCard">
-              
-        
-            <div class=" col-md-6 display" >
-                
-                <mat-card class="dashboard">
-                      
-                          <mat-card-content class="mcon">
-                              <div class="col-sm-3 dc">
-                                 You have completed <strong>40</strong> Appointments
-                              </div>
-                           <div class="col-sm-3 dc">
-                           
-                                  </div> 
-                                  <div class="col-sm-3 dc">
-                                      Your upcoming appointment is on <strong>25th september 2018 </strong>at <strong>09:00 am</strong>
-                                      </div>
-                          </mat-card-content>
-                </mat-card>
-                <br>
-                
-                           
-                 </div>
-            </div>
-            <br>
-            <br>
     
-            <!-- <img class="image"src="/assets/doctorHie.gif"> -->
-     
+      <div *ngFor="let m of prescriptions">
+          <mat-card>
+      {{m.doctor.doctorEmail}}
+      <br>
+      {{m.findings}}
+      <br>
+      {{m.medicine}}
+    </mat-card>
+    <mat-divider></mat-divider>
     </div>
-    </mat-sidenav-container>
-    </div>
-  
-    
+ 

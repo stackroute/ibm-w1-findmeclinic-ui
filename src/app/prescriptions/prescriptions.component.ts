@@ -5,6 +5,8 @@ import { DoctorService } from '../doctor.service';
 import { DoctorTokenStorage } from '../doctorTokenStorage';
 import { Doctor} from '../Doctor';
 import { ActivatedRoute } from '@angular/router';
+import { PatientService } from '../patient.service';
+import { Patient } from '../patient';
 
 @Component({
   selector: 'app-prescriptions',
@@ -15,40 +17,40 @@ export class PrescriptionsComponent implements OnInit {
   appId : number;
  doctorName : string;
  patientName : string;
-  // appId = "4050";
-  // patientName = "Keerthana";
-  // patientAge = "22";
-  // bloodGroup = "O+";
   docId;
+  myPatient:Patient;
   myDoctor:Doctor;
-  medicine: Medicines;
-  medicine1: Medicines;
   list;
   mid;
   m;
   i = 0;
   myPrescription:Prescription;
   value = [];
-  constructor( private service: DoctorService,private token:DoctorTokenStorage,private route:ActivatedRoute) {
-    this.medicine = new Medicines();
-    this.medicine1 = new Medicines();
-
-    // this.route.queryParams.subscribe(params =>{
-    //   // console.log(params);
-    //   this.appId= params["appointmentId"];
-    //   this.doctorName=params["bookedFor"];
-    //   this.patientName=params["bookedBy"];
-    // });
-    this.list = this.medicine1.timing = ["Beforefood", "AfterFood"]
-
-
-
+  constructor( private service: DoctorService,private token:DoctorTokenStorage,private route:ActivatedRoute,private patientService:PatientService) {
   }
 
   savePres(prescription: Prescription) {
     console.log("pres"+prescription)
     this.service.savePrescription(prescription).subscribe(data => console.log(data));
 
+  }
+
+  ngOnInit() {
+
+    this.patientName = this.route.snapshot.params['bookingBy'];
+   this.docId= this.token.getUserId();
+   this.service.getByEmail(this.docId).subscribe(data=>{console.log(data),
+  this.myDoctor=data;
+  this.prescriptions.patient.patientEmail=this.patientName;
+  this.prescriptions.doctor.doctorEmail=this.docId;
+
+})
+this.patientService.getPatientByMail(this.patientName).subscribe(data=>{console.log(data),
+  this.myPatient=data;
+  this.prescriptions.patient.patientFirstName=this.myPatient.patientFirstName;
+  this.prescriptions.patient.patientAge=this.myPatient.patientAge;
+  this.prescriptions.patient.patientBloodGroup=this.myPatient.patientBloodGroup;
+})
   }
 
   prescriptions: Prescription = {
@@ -77,6 +79,8 @@ export class PrescriptionsComponent implements OnInit {
       doctorGender:'',
       doctorQualification:'',
       doctorExperience:'',
+      doctorLocality:'',
+      address:'',
       doctorAddressNo:{
         addressNo:'',
         hospitalName:'',
@@ -85,32 +89,6 @@ export class PrescriptionsComponent implements OnInit {
         state:''
       }
     }
-  }
-
-
-
-  ngOnInit() {
-
-    this.patientName = this.route.snapshot.params['bookingBy'];
-   this.docId= this.token.getUserId();
-   this.service.getByEmail(this.docId).subscribe(data=>{console.log(data),
-  this.myDoctor=data;
-  this.prescriptions.patient.patientEmail=this.patientName;
-  this.prescriptions.doctor.doctorEmail=this.docId;
-
-})
-
-
-
-  }
-
-  add() {
-    this.value[this.i] = this.i;
-    this.i++;
-    this.mid = this.medicine;
-  }
-  open() {
-    this.m = this.medicine;
   }
 
 
