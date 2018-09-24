@@ -1,5 +1,5 @@
 .main{
-	background: url("../../assets/doc.jpg");
+	background: url("../../assets/mainbg.jpg");
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;
@@ -303,7 +303,7 @@ nav {
 }
 
 .hero-image {
-    background-image:url("../../assets/1122.jpg");
+    background-image:linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),url("../../assets/searchbg.jpg");
     height: 500px;
     background-position: center;
     background-repeat: no-repeat;
