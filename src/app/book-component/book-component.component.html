@@ -165,18 +165,18 @@
 </div> -->
 
 <div class="super">
- 
-<div class="main">
-  <h2>Select a time slot to book the appointment</h2>
-</div>
+
+  <div class="main">
+    <h2>Select a time slot to book the appointment</h2>
+  </div>
 
 
 
-   <!-- <mat-button-toggle value="slot.slotStart" *ngFor="let slot of slots" class="style" (click)="slotSelected(slot)"> 
+  <!-- <mat-button-toggle value="slot.slotStart" *ngFor="let slot of slots" class="style" (click)="slotSelected(slot)"> 
     {{slot.slotStart}}
   </mat-button-toggle>  -->
 
-   <!-- <mat-tab-group class="style" >
+  <!-- <mat-tab-group class="style" >
     <div *ngFor="let schedule of schedules" value="schedule.scheduleDate">
         {{schedule.scheduleDate}}
     <mat-tab  value="schedule.scheduleDate" class="style"> 
@@ -187,21 +187,21 @@
     </div>
   </mat-tab-group>   -->
 
-  <div class="btn-group" *ngFor="let schedule of schedules" >
-    <button style="width:100%"> {{schedule.scheduleDate}} 
-      </button>
-        <mat-button-toggle value="slot.slotStart" *ngFor="let slot of slots" class="style" (click)="slotSelected(slot)"> 
-            {{slot.slotStart}}
-          </mat-button-toggle>
-        
-   
+  <div class="btn-group" *ngFor="let schedule of schedules">
+    <button style="width:100%"> {{schedule.scheduleDate}}
+    </button>
+    <mat-button-toggle value="slot.slotStart" *ngFor="let slot of slots" class="style" (click)="slotSelected(slot)">
+      {{slot.slotStart}}
+    </mat-button-toggle>
+
+
   </div>
 
-   <div class="bttn">
+  <div class="bttn">
     <button mat-raised-button color="primary" (click)="openDialog(appointment)">Submit</button>
-    </div>
-
-
   </div>
-    <!-- schedule.getSlots()
+
+
+</div>
+<!-- schedule.getSlots()
     *ngFor="let slotList of schedule.getSlots()" -->

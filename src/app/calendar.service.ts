@@ -30,7 +30,7 @@ export class CalendarService {
   }
   private urlGetSched = "http://localhost:8091/api/calendar/get/"
   getAllScheduleByDoctor(doctorId: string): Observable<Schedule[]>{
-    return this.httpClient.get<Schedule[]>(this.urlGetSched+"DocC");
+    return this.httpClient.get<Schedule[]>(this.urlGetSched+doctorId);
   }
 
   private urlDelete= "http://localhost:8091/api/calendar/delete/"
