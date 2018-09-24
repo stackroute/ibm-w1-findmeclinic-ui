@@ -30,12 +30,12 @@ this.locationArray = JSON.stringify(selectedData).split("\"").slice(9,10);
 
 console.log("gggggggggggggggggggggggggggggg"+this.locationArray[0])
 
-this.doctorService.getDoctorLocality(this.locationArray[0]).subscribe((data)=>{
-  this.requiredDoctor=data;
-  console.log("hiiiiii")
-  console.log(data)
-  console.log(this.requiredDoctor);
-})
+// this.doctorService.getDoctorLocality(this.locationArray[0]).subscribe((data)=>{
+//   this.requiredDoctor=data;
+//   console.log("hiiiiii")
+//   console.log(data)
+//   console.log(this.requiredDoctor);
+// })
 		//do any necessery stuff.
 	}
 
@@ -73,6 +73,14 @@ this.doctorService.getDoctorLocality(this.locationArray[0]).subscribe((data)=>{
     dialogRef.afterClosed().subscribe(data => console.log("the dailog box is closed"));
   }
   loc;
+
+  onSign()
+  {
+    const dialogRef = this.dialog.open(PatientLoginComponent);
+
+    dialogRef.afterClosed().subscribe(data => console.log("the dailog box is closed"));
+  
+  }
 
   openDialog() {
     const dialogRef = this.dialog.open(DoctorLoginComponent);

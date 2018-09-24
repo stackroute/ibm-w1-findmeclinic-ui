@@ -32,9 +32,9 @@ export class BookComponentComponent implements OnInit {
 
   ngOnInit() {
 
-    // this.docId = this.activatedroute.snapshot.params['doctorEmail'];
+   this.docId = this.activatedroute.snapshot.params['doctorEmail'];
 
-    this.docId="a@gmail.com";
+    // this.docId="a@gmail.com";
     this.calenderService.getScheduleSlot(this.docId)
     .subscribe(data => {      
       console.log(data);
@@ -59,7 +59,7 @@ export class BookComponentComponent implements OnInit {
     const dialogRef = this.dialog.open(BookConfirmComponent);
 
     this.appointment.appointmentStatus=true;
-    this.appointment.bookedBy=this.tokenStorage.getUserId();
+    this.appointment.bookingBy=this.tokenStorage.getUserId();
     this.appointment.bookedFor=this.docId;
     this.appointment.slot=this.s2;
 

@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient} from '@angular/common/http';
 import { Doctor } from './Doctor';
 import { Observable, BehaviorSubject} from 'rxjs';
+import { Prescription } from './Prescription';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +13,8 @@ export class DoctorService {
   private addUrl = "http://localhost:8082/doctor/auth";
 
   private secUrl="http://localhost:8080/api/v1/search/";
-  private thirdUrl="http://localhost:8091/api/v2/doctor/docserv"
+  private thirdUrl="http://localhost:8091/api/v2/doctor/docserv";
+  private prescUrl="http://localhost:8083/api/v1/send";
   constructor(private http: HttpClient) { }
   doctor;
   doctorLoc:Doctor;
@@ -68,10 +70,7 @@ getDoctorEmail(docName:string):Observable<any>{
 
 }
 
-getDoctorLocality(location:string):Observable<Doctor>
-{
-  return this.http.get<Doctor>(this.secUrl+"/place/"+location);
-
-}
-
-}
+savePrescription(prescription): Observable<Prescription> {
+      return this.http.post<Prescription>(this.prescUrl,prescription);
+    } 
+  }

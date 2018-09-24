@@ -1,134 +1,158 @@
-
 <div class="example-container">
 
-  <mat-toolbar color="primary" class="example-toolbar">
-    <button mat-icon-button (click)="snav.toggle()">
-      <mat-icon>menu</mat-icon>
-    </button>
-    <h1 class="example-app-name" >FindMeClinic</h1>
+    <mat-toolbar color="primary" class="example-toolbar">
+        <button mat-icon-button (click)="snav.toggle()">
+            <mat-icon>menu</mat-icon>
+        </button>
+        <h1 class="example-app-name">FindMeClinic</h1>
 
 
-  
-    <div class="badge-style">
+
+        <div class="badge-style">
             <app-notification></app-notification>
-      <button [matMenuTriggerFor]="menu" mat-mini-fab color="warn">{{badgeName}}</button>
-      
-      <mat-menu #menu="matMenu">
-        <button mat-menu-item (click)="click()"> 
-          <mat-icon>supervised_user_circle</mat-icon>Profile</button>
-        <button mat-menu-item>
-          <mat-icon>settings</mat-icon>Settings</button>
-        <button mat-menu-item (click)="logout()">
-          <mat-icon>directions_walk</mat-icon>Logout</button>
-      </mat-menu>
-    </div>
-  </mat-toolbar>
+            <button [matMenuTriggerFor]="menu" mat-mini-fab color="warn">{{badgeName}}</button>
 
-  
-
-
-  <mat-sidenav-container class="example-sidenav-container">
-    <mat-sidenav #snav fixedTopGap="5">
-      <mat-nav-list>
-        <mat-list-item  (click)="display()" (click)="snav.toggle()">
-          <mat-icon>list_alt</mat-icon>My Appointments</mat-list-item>
-        <mat-list-item>
-          <mat-icon>library_books</mat-icon>Reports</mat-list-item>
-        <mat-list-item (click)="show()" (click)="snav.toggle()">
-          <mat-icon>access_time</mat-icon>Scheduling</mat-list-item>
-
-      </mat-nav-list>
-    </mat-sidenav>
-    
-        <mat-sidenav-content>
-<div *ngIf="profile">
-    <div class="mainCard">
-          
-    
-        <div class=" col-md-6 display" >
-            
-            <mat-card class="dashboard">
-                  
-                      <mat-card-content class="mcon">
-                          <div class="col-sm-3 dc">
-                             You have completed <strong>40</strong> Appointments
-                          </div>
-                       <div class="col-sm-3 dc">
-                       
-                              </div> 
-                              <div class="col-sm-3 dc">
-                                  Your upcoming appointment is on <strong>25th september 2018 </strong>at <strong>09:00 am</strong>
-                                  </div>
-                      </mat-card-content>
-            </mat-card>
-            <br>
-            
-                       
-             </div>
+            <mat-menu #menu="matMenu">
+                <button mat-menu-item (click)="click()">
+                    <mat-icon>supervised_user_circle</mat-icon>Profile</button>
+                <button mat-menu-item>
+                    <mat-icon>settings</mat-icon>Settings</button>
+                <button mat-menu-item (click)="logout()">
+                    <mat-icon>directions_walk</mat-icon>Logout</button>
+            </mat-menu>
         </div>
-        <br>
-        <br>
+    </mat-toolbar>
 
-        <!-- <img class="image"src="/assets/doctorHie.gif"> -->
- 
-</div>
 
- <!-- <div *ngIf="profile1">
+
+
+    <mat-sidenav-container class="example-sidenav-container">
+        <mat-sidenav #snav fixedTopGap="5">
+            <mat-nav-list>
+                <mat-list-item (click)="display()" (click)="snav.toggle()">
+                    <mat-icon>list_alt</mat-icon>My Appointments</mat-list-item>
+                <mat-list-item>
+                    <mat-icon>library_books</mat-icon>Reports</mat-list-item>
+                <mat-list-item (click)="show()" (click)="snav.toggle()">
+                    <mat-icon>access_time</mat-icon>Scheduling</mat-list-item>
+
+            </mat-nav-list>
+        </mat-sidenav>
+
+        <mat-sidenav-content class="super">
+            <div *ngIf="profile">
+                <div class="mainCard">
+
+
+                    <div class=" col-md-6 display">
+
+                        <mat-card class="dashboard">
+
+                            <mat-card-content class="mcon">
+                                <div class="col-sm-3 dc">
+                                    You have completed
+                                    <strong>40</strong> Appointments
+                                </div>
+                                <div class="col-sm-3 dc">
+
+                                </div>
+                                <div class="col-sm-3 dc">
+                                    Your upcoming appointment is on
+                                    <strong>25th september 2018 </strong>at
+                                    <strong>09:00 am</strong>
+                                </div>
+                            </mat-card-content>
+                        </mat-card>
+                        <br>
+
+
+                    </div>
+                </div>
+                <br>
+                <br>
+
+                <!-- <img class="image"src="/assets/doctorHie.gif"> -->
+
+            </div>
+
+            <!-- <div *ngIf="profile1">
     <div>
         <img class="image"src="/assets/doctorHie.gif">
     </div> 
 </div>-->
-            <div *ngIf="create1" class="card1"> 
-                    <mat-card>
-                
-                            <mat-card-header>
-                                    <div>
-                                            <img class="image"src="/assets/profile.jpeg">
-                                    </div>
-                               <h2 class="hname"> Dr {{doctordata.doctorFirstName}} {{doctordata.doctorLastName}} </h2> 
-                            </mat-card-header>
-                        </mat-card>
+            <div *ngIf="create1" class="card1">
+                <mat-card>
+
+                    <mat-card-header>
+                        <div>
+                            <img class="image" src="/assets/profile.jpeg">
+                        </div>
+                        <h2 class="hname"> Dr {{doctordata.doctorFirstName}} {{doctordata.doctorLastName}} </h2>
+                    </mat-card-header>
+                </mat-card>
+                <br>
+                <mat-card>
+                    <mat-list>
+                        <mat-list-item>FirstName
+                            <h4 id="l1">{{doctordata.doctorFirstName}}</h4>
+                        </mat-list-item>
+                        <mat-divider></mat-divider>
+                        <mat-list-item>LastName
+                            <h4 id="l2">{{doctordata.doctorLastName}}</h4>
+                        </mat-list-item>
+                        <mat-divider></mat-divider>
+                        <mat-list-item>Email
+                            <h4 id="l3">{{doctordata.doctorEmail}}</h4>
+                        </mat-list-item>
+                        <mat-divider></mat-divider>
+                        <mat-list-item>phoneNumber
+                            <h4 id="l4">{{doctordata.doctorPhoneNumber}}</h4>
+                        </mat-list-item>
+                        <mat-divider></mat-divider>
+                        <mat-list-item>Gender
+                            <h4 id="l5">{{doctordata.doctorGender}}</h4>
+                        </mat-list-item>
+                        <mat-divider></mat-divider>
+                        <mat-list-item>Speciality
+                            <h4 id="l6">{{doctordata.doctorSpeciality}}</h4>
+                        </mat-list-item>
+                        <mat-divider></mat-divider>
+                        <mat-list-item>Qualification
+                            <h4 id="l7">{{doctordata.doctorQualification}}</h4>
+                        </mat-list-item>
+                        <mat-divider></mat-divider>
+                        <mat-list-item>Experience
+                            <h4 id="l8">{{doctordata.doctorExperience}}</h4>
+                        </mat-list-item>
+                        <mat-divider></mat-divider>
+                        <mat-list-item>Address
+                            <h4 id="l8">{{doctordata.address}}</h4>
+                        </mat-list-item>
+                        <mat-divider></mat-divider>
+                        <mat-list-item>Locality
+                            <h4 id="l8">{{doctordata.doctorLocality}}</h4>
+                        </mat-list-item>
+                        <mat-divider></mat-divider>
                         <br>
-                        <mat-card>
-                            <mat-list>
-                                    <mat-list-item >FirstName<h4 id="l1">{{doctordata.doctorFirstName}}</h4></mat-list-item>
-                                    <mat-divider></mat-divider>
-                                    <mat-list-item >LastName<h4 id="l2">{{doctordata.doctorLastName}}</h4></mat-list-item>
-                                    <mat-divider></mat-divider>
-                                    <mat-list-item >Email<h4 id="l3">{{doctordata.doctorEmail}}</h4></mat-list-item>
-                                    <mat-divider></mat-divider>
-                                    <mat-list-item >phoneNumber<h4 id="l4">{{doctordata.doctorPhoneNumber}}</h4></mat-list-item>
-                                    <mat-divider></mat-divider>
-                                    <mat-list-item >Gender<h4 id="l5">{{doctordata.doctorGender}}</h4></mat-list-item>
-                                    <mat-divider></mat-divider>
-                                    <mat-list-item >Speciality<h4 id="l6">{{doctordata.doctorSpeciality}}</h4></mat-list-item>
-                                    <mat-divider></mat-divider>
-                                    <mat-list-item >Qualification<h4 id="l7">{{doctordata.doctorQualification}}</h4></mat-list-item>
-                                    <mat-divider></mat-divider>
-                                    <mat-list-item >Experience<h4 id="l8">{{doctordata.doctorExperience}}</h4></mat-list-item>
-                                    <mat-divider></mat-divider>
-                                 
-                           
                         <br>
-                            <br>
-                            </mat-list>
-                            <button mat-raised-button color="primary" class="pButon"(click)="editProfile()">Edit</button>
-                            <button mat-raised-button color="primary" class="dButton" (click)="address()">Add Address</button> 
-                            <button mat-raised-button color="primary" class="pButon1" (click)="closeCard()">close</button>
-                        </mat-card>
+                    </mat-list>
+                    <button mat-raised-button color="primary" class="pButon" (click)="editProfile()">Edit</button>
+                    <!-- <button mat-raised-button color="primary" class="dButton" (click)="address()">Add Address</button>  -->
+                    <button mat-raised-button color="primary" class="pButon1" (click)="closeCard()">close</button>
+                </mat-card>
             </div>
-       
+
             <div *ngIf="create" class="card2">
                 <h2>Doctor Basic Details</h2>
                 <form [formGroup]="registerForm">
-                        <div class="form-group">
-                                <label>Email</label>
-                                <input type="text" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }"
-                                    [(ngModel)]="doctordata.doctorEmail" />
-                                <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
-                                    <div *ngIf="f.email.errors.required">First Name is required</div>
-                                </div>
-                            </div>
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="text" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }"
+                            [(ngModel)]="doctordata.doctorEmail" />
+                        <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                            <div *ngIf="f.email.errors.required">First Name is required</div>
+                        </div>
+                    </div>
                     <div class="form-group">
                         <label>First Name</label>
                         <input type="text" formControlName="firstName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }"
@@ -157,18 +181,18 @@
                     </div>
                     <div class="form-group">
                         <label>Gender</label>
-                        
-                            <mat-form-field>
-                                    <mat-select class="select" placeholder="select you gender" [(value)]="doctordata.doctorGender">
-                                      <mat-option *ngFor="let doctorGender of genders" [value]="doctorGender.value">
-                                        {{doctorGender.viewValue}}
-                                      </mat-option>
-                                    </mat-select>
-                                  </mat-form-field>
-                                  <!-- <h5>{{doctordata.doctorGender}}</h5> -->
-                        </div>
-                     
-      
+
+                        <mat-form-field>
+                            <mat-select class="select" placeholder="select you gender" [(value)]="doctordata.doctorGender">
+                                <mat-option *ngFor="let doctorGender of genders" [value]="doctorGender.value">
+                                    {{doctorGender.viewValue}}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                        <!-- <h5>{{doctordata.doctorGender}}</h5> -->
+                    </div>
+
+
                     <div class="form-group">
                         <label>Qualification</label>
                         <input type="text" formControlName="qualification" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.qualification.errors }"
@@ -192,17 +216,58 @@
                         <div *ngIf="submitted && f.experience.errors" class="invalid-feedback">
                             <div *ngIf="f.experience.errors.required">Doctor Experience is required</div>
                         </div>
-                    </div>      
+                    </div>
+
+
                     <div class="form-group">
-                        <button [disabled]="loading" mat-raised-button class="doctorButton" color="primary"  (click)="open(doctordata)" >Submit</button>
+                        <label>Address</label>
+                        <input type="text" formControlName="address" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.address.errors }"
+                            [(ngModel)]="doctordata.address" />
+                        <div *ngIf="submitted && f.address.errors" class="invalid-feedback">
+                            <div *ngIf="f.address.errors.required">Address is required</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Locality</label>
+                        <input type="text" formControlName="locality" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.locality.errors }"
+                            [(ngModel)]="doctordata.doctorLocality" />
+                        <div *ngIf="submitted && f.locality.errors" class="invalid-feedback">
+                            <div *ngIf="f.locality.errors.required">Locality is required</div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <button [disabled]="loading" mat-raised-button class="doctorButton" color="primary" (click)="open(doctordata)">Submit</button>
                         <button mat-raised-button color="primary" class="button" (click)="closeEdit()">Exit</button>
-                   
+
 
                     </div>
                 </form>
             </div>
-    
-<div *ngIf="address1">
+            <!-- <div *ngIf="create3" class="card1"> 
+                
+            
+                    <mat-card>
+                        <mat-list>
+                                <mat-list-item >HospitalName<h4 id="l1">{{doctordata.hospitalName}}</h4></mat-list-item>
+                                <mat-divider></mat-divider>
+                                <mat-list-item >Street Name<h4 id="l2">{{doctordata.streetName}}</h4></mat-list-item>
+                                <mat-divider></mat-divider>
+                                <mat-list-item >Locality<h4 id="l3">{{doctordata.locality}}</h4></mat-list-item>
+                                <mat-divider></mat-divider>
+                                <mat-list-item >State<h4 id="l4">{{doctordata.state}}</h4></mat-list-item>
+                                <mat-divider></mat-divider>
+                                
+                             
+                    <br>
+                        <br>
+                        </mat-list>
+                        <button mat-raised-button color="primary" class="pButon"(click)="editAddress1()">Edit</button>
+                    
+                        <button mat-raised-button color="primary" class="pButon1" (click)="closeAddress()">close</button>
+                    </mat-card>
+        </div> -->
+            <!-- <div *ngIf="address1">
     <div class="form-group">
         <h4>Address</h4>
         <form [formGroup]="registerForm">
@@ -238,9 +303,9 @@
                                     <div *ngIf="submitted && f.area.errors" class="invalid-feedback">
                                         <div *ngIf="f.area.errors.required">Area  is required</div>
                                     </div>
-                                </div>
-                                
-        <!-- <div class="form-group">
+                                </div> -->
+
+            <!-- <div class="form-group">
             <label>HospitalName</label>
             <input type="text" [(ngModel)]="doctordata.hospitalName" />
             </div>
@@ -264,14 +329,14 @@
    <br>
        <br>
       </div> -->
-      </form>
+            <!-- </form>
             <button mat-raised-button color="primary" class="dButton1" (click)="addAddress(doctordata)">Save</button>
-            <button mat-raised-button color="primary" class="dButton" (click)="Add()">Exit</button>
+            <button mat-raised-button color="primary" class="dButton" (click)="closeAdd()">Exit</button>
       </div>
 
     
     </div>
-      
+       -->
 
             <div *ngIf="showFiller" style="margin-top: 5%">
                 <app-calendar></app-calendar>
@@ -283,7 +348,7 @@
             </div>
 
         </mat-sidenav-content>
-    
+
     </mat-sidenav-container>
 
 

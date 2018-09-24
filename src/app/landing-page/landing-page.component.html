@@ -25,13 +25,13 @@
         </div>
     </nav>
 
-    <div class="container">
-
+    <div class="hero-image">
+        <div class="hero-text">
         <div class="search">
 
             <form name="form" action="" method=""  >
                     
-                <input  type="text" name="form" [(ngModel)]="docName"  placeholder="Searching for Doctors?">
+                <input  type="text" name="form" [(ngModel)]="docName"  placeholder="  Searching for Doctors?">
 
                 <button (click)="sendData()">Search</button>
 
@@ -41,8 +41,7 @@
 
 
         </div>
-
-
+</div>
     </div>
 
 
@@ -105,7 +104,7 @@
                 <mat-card-header>
                     <mat-card-title><h3>Book From Home</h3></mat-card-title>
                 </mat-card-header>
-                <img mat-card-image src="../../assets/booking.jpg">
+                <img mat-card-image src="../../assets/b.jpg">
                 <mat-card-content>
                     <p>
                         Health and time is directly proprtional. Why to wait in line and search for doctors? FindMeCLinic is the right platform that
@@ -127,7 +126,8 @@
                             <a href="#">Home</a>
                         </li>
                         <li>
-                            <a href="#">Sign up</a>
+                          <a (click)="onSign()" >Sign up</a>
+
                         </li>
                         <li>
                             <a href="#">Downloads</a>

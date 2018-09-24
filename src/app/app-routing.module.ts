@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DoctorProfileComponent } from './doctor-profile/doctor-profile.component';
 
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule, Routes} from '@angular/router';
 import { PatientProfileComponent } from './patient-profile/patient-profile.component';
 import { CalendarComponent} from './calendar/calendar.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
@@ -15,6 +15,7 @@ import { DetailsUploadComponent } from './upload/details-upload/details-upload.c
 import { FormUploadComponent } from './upload/form-upload/form-upload.component';
 import { ListUploadComponent } from './upload/list-upload/list-upload.component';
 import { PrescriptionListComponent } from './prescription-list/prescription-list.component';
+import { PatientLoginComponent } from './patient-login/patient-login.component';
 
 const routes: Routes = [
   { path:'', redirectTo:'/landing-page', pathMatch:'full'},
@@ -23,14 +24,16 @@ const routes: Routes = [
   { path:'doctor-profile', component: DoctorProfileComponent},
   { path:'doctor-appointment', component: CalendarComponent},
   { path:'view-appointment', component: AppointmentComponent},
-  { path: 'add-prescription', component: PrescriptionsComponent},
+  { path: 'doctor-profile/add-prescription/:bookingBy', component: PrescriptionsComponent},
   { path:'medical-records', component: MedicalRecordsComponent},
   { path:'search-doctor',component:SearchDoctorComponent},
   { path:'search-doctor/book/:doctorEmail', component: BookComponentComponent},
   { path:'form-upload', component:FormUploadComponent},
   { path:'details-upload', component:DetailsUploadComponent},
   { path:'list-upload', component:ListUploadComponent},
-  { path:'prescription-list', component:PrescriptionListComponent}
+  { path:'prescription-list', component:PrescriptionListComponent},
+  { path:'landing-page/login', component:PatientLoginComponent}
+
 ];
 
 @NgModule({

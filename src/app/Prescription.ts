@@ -5,17 +5,18 @@ export class Prescription {
      patient: Patient;
      doctor: Doctor;
     findings: string;
-    prescription:string;
+    medicine:string[];
 }
 
 
-// export class PatientPrescription {
-//     patientName: string;
+// export class Patient {
+//     patientFirstName: string;
 //     patientAge: string;
 //     patientEmail: string;
 // }
 
-// export class DoctorPrescription {
+// export class Doctor {
+//     doctorEmail:string;
 //     doctorName: string;
 //     doctorSpeciality: string;
 // }

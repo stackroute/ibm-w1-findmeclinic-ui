@@ -49,11 +49,11 @@ export class AppointmentComponent implements OnInit {
     console.log(this.displayAppointments)
 
   }
-  open() {
-
-    this.dialog.open(PrescriptionsComponent)
-
-  }
+//   open(m) {
+// console.log(m);
+  
+//    this.router.navigate(['add-prescription'],m);
+//   }
 
   
 

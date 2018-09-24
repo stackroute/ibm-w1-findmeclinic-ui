@@ -33,6 +33,11 @@ export class CalendarService {
     return this.httpClient.get<Schedule[]>(this.urlGetSched+doctorId);
   }
 
+  private urlDelete= "http://localhost:8091/api/calendar/delete/"
+  deleteSchedule(scheduleId: any):Observable<Schedule>{
+    return this.httpClient.delete<Schedule>(this.urlDelete+scheduleId, httpOptions);
+  }
+
   
 }
 

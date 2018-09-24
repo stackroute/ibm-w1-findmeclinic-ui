@@ -17,9 +17,9 @@
       <h3>{{ viewDate | calendarDate:(view + 'ViewTitle'):'en' }}</h3>
     </div>
     <div class="col-md-4">
-        <div class="btn btn-primary" (click)="view = CalendarView.Month" [class.active]="view === CalendarView.Month">
-            Month
-          </div>
+      <div class="btn btn-primary" (click)="view = CalendarView.Month" [class.active]="view === CalendarView.Month">
+        Month
+      </div>
       <div class="btn btn-primary" (click)="view = CalendarView.Week" [class.active]="view === CalendarView.Week">
         Week
       </div>
@@ -42,33 +42,28 @@
   <br>
   <br>
 
-  <h3>
-    Edit events
-    <button class="btn btn-primary pull-right" (click)="openDialog()">
-      Add new
-    </button>
-    <div class="clearfix"></div>
-  </h3>
 
-  <table class="table table-bordered">
+  <button class="btn btn-primary pull-right" (click)="openDialog()">
+    Add Slots
+  </button>
 
-    <thead>
-      <tr>
-        <th>Description</th>
-        <th>Date</th>
-        <th>Starts At</th>
-        <th>Ends at</th>
-      </tr>
-    </thead>
+  <h3>My Schedules</h3>
+  <br>
+  <br>
+  <ul type="none">
+    <li *ngFor="let schedule of schedules">
+      <mat-card class="sched">
+        <br>Description: {{schedule.description}}
+        <br>Location: {{schedule.workPlace}}
+        <br>Date: {{schedule.scheduleDate}}
+        <br>Schedule Beginning: {{schedule.startTime}}
+        <br>Schedule Ending: {{schedule.endTime}}
+        <br>Time Per Patient: {{schedule.timePerPatient}}
+        <button class="delete" mat-raised-button color="warn" (click)="deleteSchedule(schedule.scheduleId)">Delete</button>
+      </mat-card>
+    </li>
+  </ul>
 
-    <tbody>
-      <tr *ngFor = "let schedule of schedules">
-        <td>{{schedule.description}}</td>
-        <td>{{schedule.scheduleDate}}</td>
-        <td>{{schedule.startTime}}</td>
-        <td>{{schedule.endTime}}</td>
-      </tr>
-    </tbody>
+  <br>
 
-  </table>
 </div>

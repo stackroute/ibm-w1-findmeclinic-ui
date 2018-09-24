@@ -1,6 +1,5 @@
 import {
   Component,
-  ChangeDetectionStrategy,
   ViewChild,
   OnInit,
   TemplateRef
@@ -59,13 +58,6 @@ export class CalendarComponent implements OnInit {
 
   viewDate: Date = new Date();
 
-  modalData: {
-    event: CalendarEvent;
-  };
-
-  refresh: Subject<any> = new Subject();
-
-  events: CalendarEvent[]=[];
   schedules: Schedule[];
 
   ngOnInit() {
@@ -74,12 +66,15 @@ export class CalendarComponent implements OnInit {
 
   activeDayIsOpen: boolean = true;
 
-  constructor(private modal: NgbModal,private dialog:MatDialog, private calendarService: CalendarService, private token: DoctorTokenStorage) {}
+  constructor(private dialog:MatDialog, private calendarService: CalendarService, private token: DoctorTokenStorage) {}
 
 
   openDialog() {
      this.dialog.open(AddScheduleComponent);
   }
 
+  deleteSchedule(scheduleId):void{
+    this.calendarService.deleteSchedule(scheduleId).subscribe();
+  }
   
 }
