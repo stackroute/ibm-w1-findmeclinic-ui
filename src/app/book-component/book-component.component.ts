@@ -8,7 +8,7 @@ import { AppointmentService } from '../appointment.service';
 import { Appointment } from '../appointment';
 import { TokenStorage } from '../tokenStorage';
 import { DoctorTokenStorage } from '../doctorTokenStorage';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Schedule } from '../Schedule';
 @Component({
   selector: 'app-book-component',
@@ -28,7 +28,8 @@ export class BookComponentComponent implements OnInit {
 
   constructor(public dialog : MatDialog, private calenderService: CalendarService 
     , private appointmentService: AppointmentService, private tokenStorage: TokenStorage, 
-    private doctorTokenStorage: DoctorTokenStorage,private activatedroute: ActivatedRoute) { }
+    private doctorTokenStorage: DoctorTokenStorage,private activatedroute: ActivatedRoute,
+    private router:Router) { }
 
   ngOnInit() {
 
@@ -60,6 +61,11 @@ export class BookComponentComponent implements OnInit {
 
     this.appointment.appointmentStatus=true;
     this.appointment.bookingBy=this.tokenStorage.getUserId();
+
+    if(this.appointment.bookingBy==null){
+      this.router.navigate(['patient-login'])
+    }
+
     this.appointment.bookedFor=this.docId;
     this.appointment.slot=this.s2;
 
