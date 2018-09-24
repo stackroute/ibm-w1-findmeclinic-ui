@@ -27,4 +27,6 @@ export class AddScheduleComponent implements OnInit {
     this.dialogRef.close();
   }
 
+  minDate = new Date();
+
 }
