@@ -1,4 +1,3 @@
-
 <div class="example-container">
   <mat-toolbar color="primary" class="example-toolbar">
     <button mat-icon-button (click)="snav.toggle()">
@@ -6,8 +5,6 @@
     </button>
     <h1 class="example-app-name">FindMeClinic</h1>
   </mat-toolbar>
-
-
   <mat-sidenav-container class="example-sidenav-container">
       <mat-sidenav #snav fixedTopGap="5">
         <mat-nav-list>
@@ -18,9 +15,7 @@
       </mat-sidenav>
       </mat-sidenav-container>
 </div>
-
 <h1 class="head">ADD PRESCRIPTIONS</h1>
-
 <br>
 <div class="div7">
 <mat-card >
@@ -36,14 +31,9 @@
     </div>
   </div>
 </mat-card>
-
-
-
-
 <br>
 <br>
 <div>
-
   <form class="example-form">
     <mat-form-field class="comment">
       <textarea matInput placeholder="Findings" class="form-control" id="findings" [(ngModel)]="prescriptions.findings" name="findings"
