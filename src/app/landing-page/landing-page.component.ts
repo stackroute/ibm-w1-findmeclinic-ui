@@ -18,7 +18,24 @@ import { DoctorlistService } from '../doctorlist.service';
 })
 export class LandingPageComponent implements OnInit {
   userSettings = {}
+locationArray=[];
+mylocation;
 	autoCompleteCallback1(selectedData:any) {
+this.mylocation = JSON.stringify(selectedData);
+console.log("loc "+this.mylocation);
+console.log("array  ");
+
+console.log("bcshj  "+JSON.stringify(selectedData).split("\"").slice(9,10));
+this.locationArray = JSON.stringify(selectedData).split("\"").slice(9,10);
+
+console.log("gggggggggggggggggggggggggggggg"+this.locationArray[0])
+
+this.doctorService.getDoctorLocality(this.locationArray[0]).subscribe((data)=>{
+  this.requiredDoctor=data;
+  console.log("hiiiiii")
+  console.log(data)
+  console.log(this.requiredDoctor);
+})
 		//do any necessery stuff.
 	}
 
@@ -29,8 +46,11 @@ export class LandingPageComponent implements OnInit {
   doctor1: Doctor;
   docName: string = '';
   docNam;
+  doctorLoc;
   data1: any;
   data2: any;
+  requiredDoctor:Doctor;
+  location:string;
   constructor(public dialog: MatDialog,
     private doctName: DoctorTokenStorage,
     private doctorService: DoctorService,
@@ -112,6 +132,12 @@ export class LandingPageComponent implements OnInit {
     this.docNameObj.saveDoctorName(this.docName);
     this.doctorService.getDoctorByDoctorName(this.docName).subscribe(data => console.log(data));
     // this.router.navigate(['search-doctor']);
+  }
+
+  onSearch(loc:string)
+  {
+    console.log(loc);
+    
   }
 
   // getDoctorData(doctor: Doctor) {

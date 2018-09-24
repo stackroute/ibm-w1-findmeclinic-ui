@@ -53,13 +53,14 @@ export class PrescriptionsComponent implements OnInit {
       doctorGender: '',
       doctorQualification: '',
       doctorExperience: '',
-      doctorAddressNo: {
-        addressNo: '',
-        hospitalName: '',
-        streetName: '',
-        locality: '',
-        state: ''
-      }
+      doctorLocality:''
+      // doctorAddressNo: {
+      //   addressNo: '',
+      //   hospitalName: '',
+      //   streetName: '',
+      //   locality: '',
+      //   state: ''
+      // }
     }
   }
 

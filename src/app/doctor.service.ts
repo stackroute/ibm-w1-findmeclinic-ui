@@ -12,9 +12,10 @@ export class DoctorService {
   private addUrl = "http://localhost:8082/doctor/auth";
 
   private secUrl="http://localhost:8080/api/v1/search/";
-  private thirdUrl="http://localhost:8081/api/v2/doctor/docserv"
+  private thirdUrl="http://localhost:8091/api/v2/doctor/docserv"
   constructor(private http: HttpClient) { }
   doctor;
+  doctorLoc:Doctor;
 
   registerDoctor(doctor): Observable<Doctor> {
     return this.http.post<Doctor>(this.addUrl,doctor);
@@ -66,4 +67,11 @@ getDoctorEmail(docName:string):Observable<any>{
   return this.http.get(this.addUrl+"/email/"+docName);
 
 }
+
+getDoctorLocality(location:string):Observable<Doctor>
+{
+  return this.http.get<Doctor>(this.secUrl+"/place/"+location);
+
+}
+
 }
