@@ -16,7 +16,7 @@ export class PrescriptionListComponent implements OnInit {
 
   prescriptions: Prescription[];
   ngOnInit() {
-    this.prescrition.getPrescription(this.token.getUserId()).subscribe(pres=> this.prescriptions = pres);
+    this.prescrition.getPrescription(this.token.getUserId()).subscribe(pres=> {console.log(pres),this.prescriptions = pres});
   }
 
 
