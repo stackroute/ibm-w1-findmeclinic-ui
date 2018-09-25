@@ -190,7 +190,7 @@
   <div class="btn-group" *ngFor="let schedule of schedules">
     <button style="width:100%"> {{schedule.scheduleDate}}
     </button>
-    <mat-button-toggle value="slot.slotStart" *ngFor="let slot of slots" class="style" (click)="slotSelected(slot)">
+    <mat-button-toggle value="slot.slotStart" *ngFor="let slot of schedule.slots" class="style" (click)="slotSelected(slot)">
       {{slot.slotStart}}
     </mat-button-toggle>
 

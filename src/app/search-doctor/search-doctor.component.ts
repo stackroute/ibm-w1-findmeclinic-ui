@@ -5,6 +5,9 @@ import { Observable } from 'rxjs';
 import { DoctorTokenStorage } from '../doctorTokenStorage';
 import { Router } from '@angular/router';
 import { DoctorlistService } from '../doctorlist.service';
+import { AppointmentService } from '../appointment.service';
+import { TokenStorage } from '../tokenStorage';
+import { CalendarService } from '../calendar.service';
 @Component({
   selector: 'app-search-doctor',
   templateUrl: './search-doctor.component.html',
@@ -16,12 +19,15 @@ doctorList:Doctor[];
 data1:any;
 data2:any;
 doctorName1;
-doctorEmail:string;
+docEmail:string;
 doctor$:Observable<Doctor[]>;
   constructor(private doctorService:DoctorService,
     private doctorObject:DoctorTokenStorage,
     private router:Router,
-  public doctorArray: DoctorlistService) { 
+  public doctorArray: DoctorlistService,
+private appointmentService: AppointmentService,
+private tokenStorage: TokenStorage,
+private calendarService: CalendarService) { 
     //this.doctor=new Doctor();
   }
 
@@ -46,13 +52,27 @@ console.log(this.doctorList);
 
   }
 
-  // onBook()
-  // {
+  book(doctorEmail)
+  {
+    // this.appointmentService.docId = doctorEmail;
   
   //   this.doctorName1=this.doctorObject.getDoctorName();
   //   this.doctorService.getDoctorEmail(this.doctorName1).subscribe(data=>{this.doctorEmail=data;console.log(this.doctorEmail)});
   //   this.doctorObject.saveUserId(this.doctorEmail);
-  //   this.router.navigate(['book']);
+ 
+   this.docEmail=doctorEmail;
+   
+   this.calendarService.getAllScheduleByDoctor(this.docEmail);
+  
 
-  // }
+
+  if(this.tokenStorage.getUserId()==null){
+    this.router.navigate(['landing-page']);
+  }
+    else{
+      this.router.navigate(['book']);
+    } 
+  
+
+   }
 }

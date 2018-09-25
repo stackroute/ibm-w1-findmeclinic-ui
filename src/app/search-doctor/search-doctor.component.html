@@ -58,7 +58,9 @@
                       <mat-card-content>
 
                        
-                          <button mat-flat-button color="primary" [routerLink]="['book',doc.doctorEmail]" >Book</button>
+                          <!-- <button mat-flat-button color="primary" [routerLink]="['book',doc.doctorEmail]" >Book</button> -->
+
+                          <button mat-flat-button color="primary" (click)="book(doc.doctorEmail)" >Book</button>
 
                       </mat-card-content>
                   </div>
