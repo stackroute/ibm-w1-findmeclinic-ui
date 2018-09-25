@@ -49,7 +49,8 @@ export class DoctorLoginComponent implements OnInit {
     
   }
   move(doctorData){
-    this.token.saveUserId(doctorData.doctorEmail);
+
+     this.token.saveUserId(doctorData.doctorEmail);
 
     return this.doctorService.login(doctorData).subscribe(data=>
       {
@@ -97,8 +98,6 @@ export class DoctorLoginComponent implements OnInit {
   logFormControl = new FormControl('', [
     Validators.required,
     Validators.email,
-  ])
-
-  ;
+  ]) ;
 
 }

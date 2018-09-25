@@ -64,12 +64,23 @@
 
 
 .card1{
-  margin-left:15%;
-width:1300px;
+  display: flex;
+  flex-direction: column;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
 }
 .card2{
-  margin-left:15%;
-width:1300px;
+ 
+display: flex;
+flex-direction: column;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
 }
 .dButton{
   margin-left: 30%;
@@ -154,4 +165,16 @@ height: 200px;
 
 .super{
   background: url("../../assets/doc.jpg");
+}
+.docform{
+ margin-right:flex;
+}
+.appoint{
+  display: flex;
+flex-direction: column;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
 }

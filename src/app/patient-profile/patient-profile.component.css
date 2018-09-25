@@ -299,19 +299,26 @@
 margin-top: 20px;
  }
 
-.dob
+/* .dob
  {
 width:20%;
-display: inline;
- }
+
+ } */
  
  .upForm
  {
-   margin-left:25%;
+    
+  display: flex;
+  flex-direction: column;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
  }
- input{
+ /* input{
    width:60%;
- }
+ } */
 
  .select{
    width:300px;
@@ -431,4 +438,12 @@ height: 200px;
 
 .super{
   background: url("../../assets/bgmain.jpg");
+}
+
+.form{
+ 
+    padding-left: 40px;
+  padding-right: 40px;
+  padding-bottom: 40px;
+ 
 }
