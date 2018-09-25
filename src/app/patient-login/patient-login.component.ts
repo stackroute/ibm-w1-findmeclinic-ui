@@ -70,6 +70,7 @@ export class PatientLoginComponent implements OnInit {
       console.log(patient.patientEmail)
       this.patientEmail=data
       this.token.saveToken(data);
+      this.token.saveUserId(patient.patientEmail);
       this.router.navigate(['patient-profile']);
     }
 
