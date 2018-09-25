@@ -59,9 +59,6 @@ this.patientService.getPatientByMail(this.patientNam).subscribe(data=>{console.l
       patientLastName:'',
       patientAddress:'',
       patientGender:'',
-      patientDobDate:'',
-      patientDobMonth:'',
-      patientDobYear:'',
       patientBloodGroup:'',
       patientAge:''
     }

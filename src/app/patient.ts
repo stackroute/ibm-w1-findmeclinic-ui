@@ -6,9 +6,6 @@ export class Patient {
     patientLastName:string;
     patientAddress:string;
     patientGender:string;
-    patientDobDate:any;
-    patientDobMonth:any;
-    patientDobYear:any;
     patientBloodGroup:string;
     patientAge:any;
 }
