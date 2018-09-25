@@ -38,6 +38,10 @@ export class CalendarService {
     return this.httpClient.delete<Schedule>(this.urlDelete+scheduleId, httpOptions);
   }
 
+  // storeDocId(doctorEmail):Observable<any>
+  // {
+  //   return this.http.get<string>(this.baseUrl+"store", doctorEmail);
+  // }
   
 }
 

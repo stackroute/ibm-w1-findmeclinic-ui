@@ -2,7 +2,7 @@
     <h1>Welcome To FindMeClinic</h1>
 </title>
 <div>
-    <mat-tab-group  class="modelform">
+    <mat-tab-group class="modelform">
         <mat-tab label="Login">
             <br>
             <br>
@@ -28,20 +28,20 @@
             <button mat-raised-button color="primary" (click)="close()" (click)="move(loginDoctor)">Login</button>
         </mat-tab>
         <mat-tab label="Register">
-                <mat-form-field class="fullwidth">
-                        <input matInput [(ngModel)]="doctor.doctorFirstName" placeholder="Enter FirstName " [formControl]="passFormControl">
-                        <mat-error *ngIf="passFormControl.hasError('required')">
-                          First Name is <strong>required</strong>
-                            </mat-error>
-                      </mat-form-field> 
-                      <br>   
-                      <mat-form-field class="fullwidth">
-                        <input matInput [(ngModel)]="doctor.doctorLastName" placeholder="Enter LastName " [formControl]="passFormControl">
-                        <mat-error *ngIf="passFormControl.hasError('required')">
-                          Last Name is <strong>required</strong>
-                            </mat-error>
-                      </mat-form-field>
-                      <br>   
+            <mat-form-field class="fullwidth">
+                <input matInput [(ngModel)]="doctor.doctorFirstName" placeholder="Enter FirstName " [formControl]="passFormControl">
+                <mat-error *ngIf="passFormControl.hasError('required')">
+                    First Name is <strong>required</strong>
+                </mat-error>
+            </mat-form-field>
+            <br>
+            <mat-form-field class="fullwidth">
+                <input matInput [(ngModel)]="doctor.doctorLastName" placeholder="Enter LastName " [formControl]="passFormControl">
+                <mat-error *ngIf="passFormControl.hasError('required')">
+                    Last Name is <strong>required</strong>
+                </mat-error>
+            </mat-form-field>
+            <br>
             <mat-form-field class="fullwidth">
                 <input matInput [(ngModel)]="doctor.doctorEmail" name="doctorEmail" placeholder="Enter Email"
                     [formControl]="emailFormControl">
@@ -54,7 +54,7 @@
                 </mat-error>
             </mat-form-field>
             <br>
-        
+
             <mat-form-field class="fullwidth">
                 <input matInput [(ngModel)]="doctor.doctorPhoneNumber" name="doctorPhoneNumber" placeholder="Enter PhoneNumber"
                     [formControl]="phoneFormComtrol">
@@ -71,7 +71,7 @@
                 </mat-error>
             </mat-form-field>
             <br>
-           
+
 
             <button mat-raised-button (click)="addDoctor(doctor)" color="primary">Register</button>
             <app-alerts></app-alerts>

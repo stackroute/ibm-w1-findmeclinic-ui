@@ -1,19 +1,17 @@
-
-<!-- <button id="send" class="btn btn-default" type="submit" (click)="setUpConnection()">NOTIFICATIONS</button> -->
 <button mat-icon-button [matMenuTriggerFor]="menu">
-    <mat-icon>notifications_active</mat-icon>
+  <mat-icon>notifications_active</mat-icon>
+</button>
+<mat-menu #menu="matMenu">
+  <button mat-menu-item>
+
+    <span>notification 1</span>
   </button>
-  <mat-menu #menu="matMenu">
-    <button mat-menu-item>
-   
-      <span>notification 1</span>
-    </button>
-    <button mat-menu-item disabled>
-  
-      <span>notification 2</span>
-    </button>
-    <button mat-menu-item>
-    
-      <span>notification 3</span>
-    </button>
-  </mat-menu>
+  <button mat-menu-item disabled>
+
+    <span>notification 2</span>
+  </button>
+  <button mat-menu-item>
+
+    <span>notification 3</span>
+  </button>
+</mat-menu>

@@ -17,11 +17,14 @@
             <mat-menu #menu="matMenu">
 
                 <button mat-menu-item (click)="openProfile()">
-                    <mat-icon>supervised_user_circle</mat-icon>Profile</button>
+                    <mat-icon>supervised_user_circle</mat-icon>Profile
+                </button>
                 <button mat-menu-item (click)="openSetting()">
-                    <mat-icon>settings</mat-icon>Settings</button>
+                    <mat-icon>settings</mat-icon>Settings
+                </button>
                 <button mat-menu-item (click)="logout()">
-                    <mat-icon>directions_walk</mat-icon>Logout</button>
+                    <mat-icon>directions_walk</mat-icon>Logout
+                </button>
             </mat-menu>
         </div>
 
@@ -31,15 +34,17 @@
         <mat-sidenav #snav fixedTopGap="5">
             <mat-nav-list>
                 <mat-list-item (click)="apppointment()">
-                    <mat-icon>list_alt</mat-icon>My Appointments</mat-list-item>
+                    <mat-icon>list_alt</mat-icon>My Appointments
+                </mat-list-item>
 
                 <mat-list-item (click)="reports()">
                     <mat-icon>library_books</mat-icon>
                     Reports
                 </mat-list-item>
 
-                <mat-list-item>
-                    <mat-icon>group_add</mat-icon>Family Tree</mat-list-item>
+                <!-- <mat-list-item>
+                    <mat-icon>group_add</mat-icon>Family Tree
+                </mat-list-item> -->
             </mat-nav-list>
 
 
@@ -163,8 +168,8 @@
                     <div class="col-md-4 form">
                         <label>Date Of Birth </label>
                         <br>
-                        <input type="text" formControlName="day" placeholder="enter date (dd)" class="dob form-control" [ngClass]="{ 'is-invalid': submitted && f.day.errors }"
-                            [(ngModel)]="patientData.patientDobDate" />
+                        <input type="text" formControlName="day" placeholder="enter date (dd)" class="dob form-control"
+                            [ngClass]="{ 'is-invalid': submitted && f.day.errors }" [(ngModel)]="patientData.patientDobDate" />
 
                         <div *ngIf="submitted && f.day.errors" class="invalid-feedback">
                             <div *ngIf="f.day.errors.required">Date Of Birth is required</div>
@@ -207,7 +212,8 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <button [disabled]="loading" mat-raised-button class="pButon2" color="primary" (click)="onSubmit(patientData)" color="primary">Submit</button>
+                        <button [disabled]="loading" mat-raised-button class="pButon2" color="primary" (click)="onSubmit(patientData)"
+                            color="primary">Submit</button>
 
                     </div>
                 </form>
@@ -265,20 +271,22 @@
                                     <br>
                                     <div class="form-group">
                                         <label>Password</label>
-                                        <input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && g.password.errors }"
-                                        />
+                                        <input type="password" formControlName="password" class="form-control"
+                                            [ngClass]="{ 'is-invalid': submitted && g.password.errors }" />
                                         <div *ngIf="sub && g.password.errors" class="invalid-feedback">
                                             <div *ngIf="g.password.errors.required">Password is required</div>
-                                            <div *ngIf="g.password.errors.minlength">Password must be at least 6 characters</div>
+                                            <div *ngIf="g.password.errors.minlength">Password must be at least 6
+                                                characters</div>
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label>Confirm Password</label>
-                                        <input type="password" formControlName="confirmPassword" class="form-control" [ngClass]="{ 'is-invalid': submitted && g.password.errors }"
-                                        />
+                                        <input type="password" formControlName="confirmPassword" class="form-control"
+                                            [ngClass]="{ 'is-invalid': submitted && g.password.errors }" />
                                         <div *ngIf="sub && g.confirmPassword.errors" class="invalid-feedback">
                                             <div *ngIf="g.confirmPassword.errors.required">Password is required</div>
-                                            <div *ngIf="g.confirmPassword.errors.minlength">Password must be at least 6 characters</div>
+                                            <div *ngIf="g.confirmPassword.errors.minlength">Password must be at least 6
+                                                characters</div>
                                         </div>
                                     </div>
 

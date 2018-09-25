@@ -85,25 +85,7 @@ export class LandingPageComponent implements OnInit {
     const dialogRef = this.dialog.open(DoctorLoginComponent);
 
   }
-  // getLocation() {
-  //   var x = document.getElementById('output');
-  //   var locApi = "http://api.ipstack.com/180.151.35.146?access_key=c0bf349832d1dacf74b5fb62feca0460";
-
-
-  //   $.get({
-  //     url: locApi,
-  //     success: function (data) {
-  //       console.log(data);
-  //       x.innerHTML=data.city +","+data.region_name;
-  //       $("#output").val(data.city +","+data.region_name);
-
-  //       this.loc=data.city +","+data.region_name;
-
-  //     }
-  //   });
-  // }
-
-
+  
   private stompClient;
   name: string;
   private serverurl = 'http://localhost:8080/socket/'
@@ -123,10 +105,8 @@ export class LandingPageComponent implements OnInit {
 
         that.ws.subscribe("/topic/getList", function (data) {
           that.doctorData = JSON.parse(data.body);
-          // console.log(that.doctorData);
           that.doctorList.saveDoctors(that.doctorData);
           that.router.navigate(['search-doctor']);
-          // that.saveDoctor.push(that.doctorData);
         });
 
 
@@ -143,9 +123,4 @@ export class LandingPageComponent implements OnInit {
     console.log(loc);
 
   }
-
-  
-
-
-
 }

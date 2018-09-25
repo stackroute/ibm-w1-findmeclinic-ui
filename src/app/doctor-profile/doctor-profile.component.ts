@@ -80,9 +80,6 @@ this.profile=false;
       experience:['',Validators.required],
       address:['',Validators.required],
       locality:['',Validators.required]
-      // street:['',Validators.required],
-      // area:['',Validators.required],
-      // state:['',Validators.required]
       
     });
  this.profile1=true;    
