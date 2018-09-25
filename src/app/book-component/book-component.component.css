@@ -9,6 +9,12 @@
       margin-bottom: 60px;
   }
 
+  .styles{
+	height: auto;
+	width: auto;
+	max-width: 200px;
+	float: left;
+}
   .pan{
     margin-left: 20px;
     margin-right: 20px;
@@ -74,3 +80,5 @@
 /* .super{
     background: url("../../assets/bgmain.jpg");
   } */
+
+ 
