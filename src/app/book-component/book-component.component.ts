@@ -149,7 +149,10 @@ export class BookComponentComponent implements OnInit {
 
   openDialog() {
 
-
+    if(this.tokenStorage.getToken==null){
+      this.router.navigate(['landing-page']);
+    }
+      else{
 
     this.appointment.appointmentStatus = true;
 
@@ -166,7 +169,7 @@ export class BookComponentComponent implements OnInit {
       });
 
     const dialogRef = this.dialog.open(BookConfirmComponent);
-
+    }
   }
 
   slotSelected(s1: Slot) {

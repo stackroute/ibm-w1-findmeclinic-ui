@@ -17,6 +17,29 @@ import { DoctorlistService } from '../doctorlist.service';
   styleUrls: ['./landing-page.component.css']
 })
 export class LandingPageComponent implements OnInit {
+<<<<<<< HEAD
+  userSettings = {}
+  locationArray = [];
+  mylocation;
+  autoCompleteCallback1(selectedData: any) {
+    this.mylocation = JSON.stringify(selectedData);
+    console.log("loc " + this.mylocation);
+    console.log("array  ");
+
+    console.log("bcshj  " + JSON.stringify(selectedData).split("\"").slice(9, 10));
+    this.locationArray = JSON.stringify(selectedData).split("\"").slice(9, 10);
+
+    console.log("gggggggggggggggggggggggggggggg" + this.locationArray[0])
+
+    // this.doctorService.getDoctorLocality(this.locationArray[0]).subscribe((data)=>{
+    //   this.requiredDoctor=data;
+    //   console.log("hiiiiii")
+    //   console.log(data)
+    //   console.log(this.requiredDoctor);
+    // })
+    //do any necessery stuff.
+  }
+=======
 //   userSettings = {}
 // locationArray=[];
 // mylocation;
@@ -38,6 +61,7 @@ export class LandingPageComponent implements OnInit {
 // })
 // 		do any necessery stuff.
 // 	}
+>>>>>>> 3c4ed8da4a019804e3c17bb6f812d079ff3c4bad
 
   ws: any;
   doctorData: Doctor[] = [];

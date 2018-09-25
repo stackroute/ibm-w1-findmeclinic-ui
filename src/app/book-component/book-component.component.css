@@ -34,6 +34,7 @@
     margin-right: auto;
     text-align: center;
     margin-top: 40px;
+    background-color:aliceblue;
   }
 
 
@@ -79,6 +80,8 @@
 
 /* .super{
     background: url("../../assets/bgmain.jpg");
+    height: auto;
+    width:auto;
   } */
 
  

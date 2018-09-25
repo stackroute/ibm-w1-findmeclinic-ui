@@ -1,39 +1,18 @@
 <div class="example-container">
 
     <mat-toolbar color="primary" class="example-toolbar">
-      <button mat-icon-button (click)="snav.toggle()">
+      <button mat-icon-button (click)="back()">
         <mat-icon>menu</mat-icon>
       </button>
-      <h1 class="example-app-name">FindMeClinic</h1>
-  
-  
-    
+      <h1 class="example-app-name">Go to dashboard</h1>
+
       <div class="badge-style">
-              <app-notification></app-notification>
-        <button [matMenuTriggerFor]="menu" mat-mini-fab color="warn">{{badgeName}}</button>
         
         <mat-menu #menu="matMenu">
-          <button mat-menu-item (click)="click()"> 
-            <mat-icon>supervised_user_circle</mat-icon>Profile</button>
-          <button mat-menu-item>
-            <mat-icon>settings</mat-icon>Settings</button>
-          <button mat-menu-item (click)="logout()">
-            <mat-icon>directions_walk</mat-icon>Logout</button>
+          
         </mat-menu>
       </div>
     </mat-toolbar>
-  
-  
-
-    <!-- <mat-sidenav-container class="example-sidenav-container">
-      <mat-sidenav #snav fixedTopGap="5">
-        <mat-nav-list>
-          <mat-list-item (click)="show()">
-            <mat-icon>access_time</mat-icon>Go to Dashboard</mat-list-item>
-  
-        </mat-nav-list>
-      </mat-sidenav>
-    </mat-sidenav-container> -->
 
       <div  class="card1" *ngFor="let m of prescriptions">
           <mat-card>
