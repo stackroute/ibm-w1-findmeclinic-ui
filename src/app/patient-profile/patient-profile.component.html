@@ -160,7 +160,7 @@
                             </mat-select>
                         </mat-form-field>
                     </div>
-                    <div class="form-group">
+                    <div class="col-md-4 form">
                         <label>Date Of Birth </label>
                         <br>
                         <input type="text" formControlName="day" placeholder="enter date (dd)" class="dob form-control" [ngClass]="{ 'is-invalid': submitted && f.day.errors }"
@@ -173,6 +173,8 @@
 
 
                         </div>
+                        </div>
+                        <div class="col-md-4 form">
                         <input type="text" formControlName="month" placeholder="enter month (mm)" class="dob form-control" [ngClass]="{ 'is-invalid': submitted && f.month.errors }"
                             [(ngModel)]="patientData.patientDobMonth" />
 
@@ -182,6 +184,8 @@
                             <div *ngIf="f.month.errors.maxlength">Month must be at most 2 digits</div>
 
                         </div>
+                        </div>
+                        <div class="col-md-4 form">
                         <input type="text" formControlName="year" placeholder="enter year (yyyy)" class="dob form-control" [ngClass]="{ 'is-invalid': submitted && f.year.errors }"
                             [(ngModel)]="patientData.patientDobYear" />
 
@@ -191,6 +195,7 @@
                             <div *ngIf="f.year.errors.maxlength">Year must be at most 4 digits</div>
 
                         </div>
+            
                     </div>
 
                     <div class="form-group">

@@ -1,6 +1,7 @@
-<h1>LIST OF APPOINTMENTS</h1>
-<br>
-<div>
+
+<div class="appoint">
+    <h1 style="align-items: center">LIST OF APPOINTMENTS</h1>
+    <br>
     <button (click)="onPage()"><mat-paginator #paginator  [pageSizeOptions]="[5, 10, 25, 100]">
     </mat-paginator></button>
   <div *ngFor="let m of displayAppointments ">

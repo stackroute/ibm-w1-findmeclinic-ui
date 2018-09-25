@@ -87,8 +87,7 @@ this.profile=false;
     });
  this.profile1=true;    
 this.profile=true;
-        this.doctorMailId = this.token.getUserId();
-
+this.doctorMailId = this.token.getUserId();
         this.doctorService.getBadge(this.doctorMailId).subscribe(data1 => {console.log(data1); console.log(this.badgeName)
         this.badgeName=data1});
         console.log(this.doctorMailId)
@@ -121,12 +120,16 @@ this.profile=true;
 
     //  console.log('doctor address is::', doctor);
     this.submitted = true;
+    this.create=false;
+    this.create1=true;
      console.log(this.doctorMailId);
     return this.doctorService.updateDetails(doctor).subscribe(data => {
       this.doctordata=data;
       console.log(data)
     });
+
     
+   
    }
 
   editProfile(){
@@ -142,7 +145,7 @@ this.profile=true;
   logout() {
 
     this.token.removeToken();
-    this.token.removeUserId();
+    
     this.router.navigate(['landing-page']);
     
   }
