@@ -131,10 +131,11 @@
                     <button mat-raised-button color="primary" class="pButon1" (click)="closeCard()">close</button>
                 </mat-card>
             </div>
-
+            
+          
             <div *ngIf="create" class="card2">
                 <h2>Doctor Basic Details</h2>
-                <form [formGroup]="registerForm">
+                <form [formGroup]="registerForm" >
                     <div class="form-group">
                         <label>Email</label>
                         <input type="text" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }"
@@ -206,24 +207,27 @@
                             <div *ngIf="f.experience.errors.required">Doctor Experience is required</div>
                         </div>
                     </div>
+                    
 
 
 
                     <div class="form-group">
                         <button [disabled]="loading" mat-raised-button class="doctorButton" color="primary" (click)="open(doctordata)">Submit</button>
-                        <button mat-raised-button color="primary" class="button" (click)="closeEdit()">Exit</button>
+                        <!-- <button mat-raised-button color="primary" class="button" (click)="closeEdit()">Exit</button> -->
 
 
                     </div>
                 </form>
             </div>
+        
+
 
             <div *ngIf="showFiller" style="margin-top: 5%">
                 <app-calendar></app-calendar>
             </div>
             <br>
             <br>
-            <div *ngIf="showContent" style="margin-top: 5%">
+            <div *ngIf="showContent" class="appoint" style="margin-top: 5%">
                 <app-appointment></app-appointment>
             </div>
 

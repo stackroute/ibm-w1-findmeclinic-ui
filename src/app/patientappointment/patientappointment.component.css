@@ -2,7 +2,7 @@
     margin-left: 600px;
     max-width: 700px;
 } */
-
+/* 
 h1{
     text-align: center;
     color: white;
@@ -15,16 +15,16 @@ h1{
 .mat-cell {
     display:block; 
     min-height:auto; 
-    /* padding: 0px 0px 0px 0; */
+     padding: 0px 0px 0px 0; 
   }
 
   .name{
       padding: 20px;
       padding-right: 30px;
   }
-  /* .bot{
+   .bot{
       margin:30px;
-  } */
+  } 
   .head{
       text-align: center;
       margin-left: 100px;
@@ -39,7 +39,7 @@ h1{
   #div3
   {
       padding-left: 30px;
-      /* margin-left: 30px; */
+      margin-left: 30px;
   }
   .div1
   {
@@ -66,4 +66,14 @@ h1{
 
 .card1{
     max-width:  300px;
+} */
+.appoint{
+    display: flex;
+    flex-direction: column;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
 }
+

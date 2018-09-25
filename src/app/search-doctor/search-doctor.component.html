@@ -1,5 +1,4 @@
 <div class="main">
-
     <nav class="navbar navbar-expand-lg navbar-light ">
         <img src="../../assets/logo.png" class="style">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown">
@@ -16,59 +15,49 @@
                 <li class="nav-item">
                     <button mat-button (click)="openDialog()" matTooltip="Login As a Doctor">Doctor</button>
                 </li>
-
             </ul>
         </div>
     </nav>
     <div class="doctor-cards">
-        <div class="detail">
-            <div *ngFor="let doc of doctorList">
-                <br>
-                <mat-card class="example-card">
-                    <div class="doctor-pic">
-                        <img src="/assets/profile.png">
-                    </div>
-                    <div class="doctor-details">
-
-                        <h2>{{doc.doctorName}}</h2>
-
-                        <div class="doctor-basic-details">
-                            <div class="doctor-basic">
-
-
-                                <p><strong>{{doc.doctorSpeciality}} </strong></p>
-                                <p>{{doc.doctorExperience}}</p>
-                                <p>{{doc.doctorQualification}}</p>
-                            </div>
-                            <div class="doctor-basic1">
-                                <p>
-                                    <mat-icon>location_on</mat-icon>
-                                    <strong>{{doc.doctorGender}}</strong>
-                                </p>
-                                <p>{{doc.doctorPhoneNumber}}</p>
-                                <p>{{doc.doctorEmail}}</p>
-
-
-                            </div>
-
-                        </div>
-
-
-
-                        <mat-card-content>
-
-
-                            <button mat-flat-button color="primary" [routerLink]="['book',doc.doctorEmail]">Book</button>
-
-                        </mat-card-content>
-                    </div>
-
-
-                </mat-card>
-                <br>
+      <div class="detail">
+          <div *ngFor="let doc of doctorList">
+              <br>
+              <mat-card class="example-card">
+                  <div class="doctor-pic">
+                      <img class="image" src="/assets/profile.png">
+                  </div>
+                  <div class="doctor-details">
+                      <h3>{{doc.doctorName}}</h3>
+                      <div class="doctor-basic-details">
+                          <div class="doctor-basic">
+                             
+                              <p><strong>{{doc.doctorSpeciality}} </strong></p>
+                              <p>{{doc.doctorExperience}}</p>
+                              <p>{{doc.doctorQualification}}</p>
+                          </div>
+                          <div class="doctor-basic1">
+                              <p>
+                                      <mat-icon>location_on</mat-icon>
+                                  <strong>{{doc.doctorGender}}</strong>
+                              </p>
+                              <p>{{doc.doctorPhoneNumber}}</p>
+                              <p>{{doc.doctorEmail}}</p>
+                          </div>
+                          <br><br><br><br>
+                      </div><br>
+                      <br>
+                      
+                      <button mat-flat-button color="primary" class="books" (click)="book(doc.doctorEmail)" >Book</button>
+   
+                              
+                          </div>
+        
+        
+                      </mat-card>
+                      <br>
+                  </div>
+              </div>
             </div>
-        </div>
-
         <!--Footer-->
         <footer class="page-footer" id="myFooter">
             <div class="container">
@@ -146,5 +135,3 @@
                 <p>© 2018 FindMeClinic </p>
             </div>
         </footer>
-
-    </div>
