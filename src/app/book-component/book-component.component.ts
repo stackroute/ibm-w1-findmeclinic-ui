@@ -136,35 +136,20 @@ export class BookComponentComponent implements OnInit {
 
 
     this.calenderService.getAllScheduleByDoctor(this.docId)
-<<<<<<< HEAD
-      .subscribe(data => {
-        console.log(data);
-        this.schedules = data;
-        this.docId=this.schedules[0].createdBy;
-      });
-
-
-    // this.slotLists=this.schedule.slots;
-    // console.log(this.slotLists);
-=======
     .subscribe(data=>{
       console.log(data);
       this.schedules =data
 
     });
->>>>>>> 8f635f336968a23f0b9b287db97ad7e6b8bd9f10
   }
 
   openDialog() {
 
-<<<<<<< HEAD
-=======
     const dialogRef = this.dialog.open(BookConfirmComponent);
       this.appointment.appointmentStatus=true;
 
    this.appointment.bookingBy=this.tokenStorage.getUserId();
 console.log("iddddd"+this.appointment.bookingBy)
->>>>>>> 8f635f336968a23f0b9b287db97ad7e6b8bd9f10
 
 
     this.appointment.appointmentStatus = true;
