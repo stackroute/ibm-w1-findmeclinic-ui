@@ -1,12 +1,10 @@
-<script
-  src="http://code.jquery.com/jquery-2.2.4.min.js"
-  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
-  crossorigin="anonymous"></script>
+<script src="http://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+    crossorigin="anonymous"></script>
 <div class="main">
-    
+
     <nav class="navbar navbar-expand-sm navbar-light ">
         <img src="../../assets/logo.png" class="style">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" >
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
@@ -27,18 +25,18 @@
 
     <div class="hero-image">
         <div class="hero-text">
-        <div class="search">
+            <div class="search">
 
-            <form name="form" action="" method=""  >
-                    
-                <input  type="text" name="form" [(ngModel)]="docName"  placeholder="  Searching for Doctors?">
+                <form name="form" action="" method="">
 
-                <button (click)="sendData()">Search</button>
+                    <input type="text" name="form" [(ngModel)]="docName" placeholder="  Searching for Doctors?">
 
-            </form>
+                    <button (click)="sendData()">Search</button>
 
+                </form>
+
+            </div>
         </div>
-</div>
     </div>
 
 
@@ -46,14 +44,18 @@
         <div class="col-sm-3 display">
             <mat-card class="example-card">
                 <mat-card-header>
-                    <mat-card-title><h3>Family tree</h3></mat-card-title>
+                    <mat-card-title>
+                        <h3>Family tree</h3>
+                    </mat-card-title>
 
                 </mat-card-header>
                 <img mat-card-image src="../../src/assets/family.jpg">
                 <mat-card-content>
                     <p>
-                        FindMeClinic connects our clients with everything they need to take good care of themselves and their FAMILY - assessing
-                        health issues, finding the right doctor, booking diagnostic tests, obtaining medicines, storing health
+                        FindMeClinic connects our clients with everything they need to take good care of themselves and
+                        their FAMILY - assessing
+                        health issues, finding the right doctor, booking diagnostic tests, obtaining medicines, storing
+                        health
                         records or learning new ways to live healthier.
                     </p>
                 </mat-card-content>
@@ -64,14 +66,18 @@
         <div class="col-sm-3 display">
             <mat-card class="example-card">
                 <mat-card-header>
-                    <mat-card-title><h3>Zero Cancellations</h3></mat-card-title>
+                    <mat-card-title>
+                        <h3>Zero Cancellations</h3>
+                    </mat-card-title>
 
                 </mat-card-header>
                 <img mat-card-image src="../../assets/zero.jpg">
                 <mat-card-content>
                     <p>
-                        There may be circumstances when short notice cancellations may be unavoidable for unforeseen reasons such as sudden debilitating
-                        contagious illness or similar matter preventing you keeping your booking commitment. There is no
+                        There may be circumstances when short notice cancellations may be unavoidable for unforeseen
+                        reasons such as sudden debilitating
+                        contagious illness or similar matter preventing you keeping your booking commitment. There is
+                        no
                         cancellation charges here.
                     </p>
                 </mat-card-content>
@@ -81,14 +87,18 @@
         <div class="col-sm-3 display">
             <mat-card class="example-card">
                 <mat-card-header>
-                    <mat-card-title><h3>Lab Tests</h3></mat-card-title>
+                    <mat-card-title>
+                        <h3>Lab Tests</h3>
+                    </mat-card-title>
 
                 </mat-card-header>
                 <img mat-card-image src="../../assets/lab.jpg">
                 <mat-card-content>
                     <p>
-                        All laboratories are not the same for the simple reason that not all tests are the same. Just as tests vary in complexity,
-                        and the technology needed to perform them, so too laboratories vary in their complexity. AND So we
+                        All laboratories are not the same for the simple reason that not all tests are the same. Just
+                        as tests vary in complexity,
+                        and the technology needed to perform them, so too laboratories vary in their complexity. AND So
+                        we
                         can help you find laboratories!!!
                     </p>
                 </mat-card-content>
@@ -99,20 +109,24 @@
         <div class="col-sm-3 display">
             <mat-card class="example-card">
                 <mat-card-header>
-                    <mat-card-title><h3>Book From Home</h3></mat-card-title>
+                    <mat-card-title>
+                        <h3>Book From Home</h3>
+                    </mat-card-title>
                 </mat-card-header>
                 <img mat-card-image src="../../assets/b.jpg">
                 <mat-card-content>
                     <p>
-                        Health and time is directly proprtional. Why to wait in line and search for doctors? FindMeCLinic is the right platform that
-                        provides you the solution to search for doctors,book appointments for you and family,and store your
+                        Health and time is directly proprtional. Why to wait in line and search for doctors?
+                        FindMeCLinic is the right platform that
+                        provides you the solution to search for doctors,book appointments for you and family,and store
+                        your
                         medical records and lab test results on our site.
                     </p>
                 </mat-card-content>
             </mat-card>
         </div>
     </div>
-  
+
     <footer class="page-footer" id="myFooter">
         <div class="container">
             <div class="row">
@@ -123,7 +137,7 @@
                             <a href="#">Home</a>
                         </li>
                         <li>
-                          <a (click)="onSign()" >Sign up</a>
+                            <a (click)="onSign()">Sign up</a>
 
                         </li>
                         <li>

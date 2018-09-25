@@ -49,12 +49,6 @@ export class AppointmentComponent implements OnInit {
     console.log(this.displayAppointments)
 
   }
-//   open(m) {
-// console.log(m);
-  
-//    this.router.navigate(['add-prescription'],m);
-//   }
-
   
 
 
@@ -75,10 +69,6 @@ export class AppointmentComponent implements OnInit {
       this.displayAppointments = this.listOfAppointments.slice(0, this.numOfApp);
       console.log(this.displayAppointments);
        })
-      //  this.appService.getPatientByPatientId(this.userId).subscribe(( dataName: Appointment[])=>{
-      //   this.patientName=dataName;
-      //     console.log(dataName)
-      // })
         
   }
 

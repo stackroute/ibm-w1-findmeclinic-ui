@@ -24,34 +24,24 @@ doctor$:Observable<Doctor[]>;
   constructor(private doctorService:DoctorService,
     private doctorObject:DoctorTokenStorage,
     private router:Router,
+<<<<<<< HEAD
   public doctorArray: DoctorlistService,
 private appointmentService: AppointmentService,
 private tokenStorage: TokenStorage,
 private calendarService: CalendarService) { 
     //this.doctor=new Doctor();
+=======
+  public doctorArray: DoctorlistService) { 
+>>>>>>> 8f635f336968a23f0b9b287db97ad7e6b8bd9f10
   }
 
   ngOnInit() {
 
 this.doctorList = this.doctorArray.getDoctorList();
 console.log(this.doctorList);
-
-// this.doctorService.doctor.subscribe(data=>
-//   {
-//     console.log("data is",data);
-//     this.docName=data;
-//   }
-//   );
- this.docName=this.doctorObject.getDoctorName();
-// console.log(this.docName);
-// // console.log("hi"+this.docName);
-// console.log("hello"+this.docName);
-  // this.doctorService.getDoctorByDoctorName(this.docName).subscribe((data1:Doctor[]) => { this.doctorList=data1; console.log(data1)});
-//     }
-
-
   }
 
+<<<<<<< HEAD
   book(doctorEmail)
   {
     // this.appointmentService.docId = doctorEmail;
@@ -75,4 +65,6 @@ console.log(this.doctorList);
   
 
    }
+=======
+>>>>>>> 8f635f336968a23f0b9b287db97ad7e6b8bd9f10
 }

@@ -17,27 +17,6 @@ import { DoctorlistService } from '../doctorlist.service';
   styleUrls: ['./landing-page.component.css']
 })
 export class LandingPageComponent implements OnInit {
-  userSettings = {}
-locationArray=[];
-mylocation;
-	autoCompleteCallback1(selectedData:any) {
-this.mylocation = JSON.stringify(selectedData);
-console.log("loc "+this.mylocation);
-console.log("array  ");
-
-console.log("bcshj  "+JSON.stringify(selectedData).split("\"").slice(9,10));
-this.locationArray = JSON.stringify(selectedData).split("\"").slice(9,10);
-
-console.log("gggggggggggggggggggggggggggggg"+this.locationArray[0])
-
-// this.doctorService.getDoctorLocality(this.locationArray[0]).subscribe((data)=>{
-//   this.requiredDoctor=data;
-//   console.log("hiiiiii")
-//   console.log(data)
-//   console.log(this.requiredDoctor);
-// })
-		//do any necessery stuff.
-	}
 
   ws: any;
   doctorData: Doctor[] = [];
@@ -49,8 +28,8 @@ console.log("gggggggggggggggggggggggggggggg"+this.locationArray[0])
   doctorLoc;
   data1: any;
   data2: any;
-  requiredDoctor:Doctor;
-  location:string;
+  requiredDoctor: Doctor;
+  location: string;
   constructor(public dialog: MatDialog,
     private doctName: DoctorTokenStorage,
     private doctorService: DoctorService,
@@ -74,43 +53,24 @@ console.log("gggggggggggggggggggggggggggggg"+this.locationArray[0])
   }
   loc;
 
-  onSign()
-  {
+  onSign() {
     const dialogRef = this.dialog.open(PatientLoginComponent);
 
     dialogRef.afterClosed().subscribe(data => console.log("the dailog box is closed"));
-  
+
   }
 
   openDialog() {
     const dialogRef = this.dialog.open(DoctorLoginComponent);
 
   }
-  // getLocation() {
-  //   var x = document.getElementById('output');
-  //   var locApi = "http://api.ipstack.com/180.151.35.146?access_key=c0bf349832d1dacf74b5fb62feca0460";
-
-
-  //   $.get({
-  //     url: locApi,
-  //     success: function (data) {
-  //       console.log(data);
-  //       x.innerHTML=data.city +","+data.region_name;
-  //       $("#output").val(data.city +","+data.region_name);
-
-  //       this.loc=data.city +","+data.region_name;
-
-  //     }
-  //   });
-  // }
-
-
+  
   private stompClient;
   name: string;
-
+  private serverurl = 'http://localhost:8080/socket/'
 
   setUpConnection(): any[] {
-    let socket = new SockJS("http://localhost:8080/socket/");
+    let socket = new SockJS(this.serverurl);
 
     this.ws = Stomp.over(socket);
     let that = this;
@@ -124,10 +84,8 @@ console.log("gggggggggggggggggggggggggggggg"+this.locationArray[0])
 
         that.ws.subscribe("/topic/getList", function (data) {
           that.doctorData = JSON.parse(data.body);
-          // console.log(that.doctorData);
           that.doctorList.saveDoctors(that.doctorData);
           that.router.navigate(['search-doctor']);
-          // that.saveDoctor.push(that.doctorData);
         });
 
 
@@ -137,20 +95,15 @@ console.log("gggggggggggggggggggggggggggggg"+this.locationArray[0])
   }
   sendData() {
 
-    this.docNameObj.saveDoctorName(this.docName);
     this.doctorService.getDoctorByDoctorName(this.docName).subscribe(data => console.log(data));
-    // this.router.navigate(['search-doctor']);
   }
 
-  onSearch(loc:string)
-  {
+  onSearch(loc: string) {
     console.log(loc);
-    
+
   }
 
-  // getDoctorData(doctor: Doctor) {
-  //   this.ws.send("/app/sendMessage", {}, JSON.stringify(doctor));
-  // }
+
 
 
 

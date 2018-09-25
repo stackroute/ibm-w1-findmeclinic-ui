@@ -28,23 +28,18 @@ export class PrescriptionsComponent implements OnInit {
   value = [];
   constructor( private router:Router,private service: DoctorService,private token:DoctorTokenStorage,private route:ActivatedRoute,private patientService:PatientService) {
   }
-
   savePres(prescription: Prescription) {
     console.log("pres"+prescription)
     this.service.savePrescription(prescription).subscribe(data => console.log(data));
-
   }
-
   ngOnInit() {
-
     this.patientNam = this.route.snapshot.params['bookingBy'];
-   this.docId= this.token.getUserId();
+  this.docId = this.service.doctorId;
    this.service.getByEmail(this.docId).subscribe(data=>{console.log(data),
   this.myDoctor=data;
   this.prescriptions.patient.patientEmail=this.patientNam;
   this.prescriptions.doctor.doctorEmail=this.docId;
   this.prescriptions.doctor.doctorName=this.myDoctor.doctorName;
-
 })
 this.patientService.getPatientByMail(this.patientNam).subscribe(data=>{console.log(data),
   this.myPatient=data;
@@ -54,7 +49,6 @@ this.patientService.getPatientByMail(this.patientNam).subscribe(data=>{console.l
   this.prescriptions.patient.patientBloodGroup=this.myPatient.patientBloodGroup;
 })
   }
-
   prescriptions: Prescription = {
     findings: '', medicine: [''],
     patient: {
@@ -90,9 +84,6 @@ this.patientService.getPatientByMail(this.patientNam).subscribe(data=>{console.l
       }
     }
   }
-
-
-
   show(){
     this.router.navigate(['doctor-profile']);
   }

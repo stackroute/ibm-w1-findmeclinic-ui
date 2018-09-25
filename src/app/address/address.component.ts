@@ -17,8 +17,6 @@ doctor;
 
   ngOnInit() {
     this.doctormail = this.token.getUserId();
-    // this.doctorService.addDoctorDetails(this.doctormail).subscribe(data => {console.log(data);
-    // this.doctormail= data});
   }
   addAddress(doctorAddress){
     
