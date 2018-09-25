@@ -122,9 +122,9 @@ export class BookComponentComponent implements OnInit {
 
   ngOnInit() {
 
-    // if (this.appointmentService.docId) {
-    //   this.docId = this.appointmentService.docId;
-    // }
+    if (this.appointmentService.docId) {
+      this.docId = this.appointmentService.docId;
+    }
 
     // this.docId="a@gmail.com";
 

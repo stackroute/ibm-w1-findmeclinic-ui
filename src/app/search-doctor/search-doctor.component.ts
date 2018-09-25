@@ -39,15 +39,15 @@ console.log(this.doctorList);
 
   book(doctorEmail)
   {
-    // this.appointmentService.docId = doctorEmail;
+     this.appointmentService.docId = doctorEmail;
   
   //   this.doctorName1=this.doctorObject.getDoctorName();
   //   this.doctorService.getDoctorEmail(this.doctorName1).subscribe(data=>{this.doctorEmail=data;console.log(this.doctorEmail)});
   //   this.doctorObject.saveUserId(this.doctorEmail);
  
-   this.docEmail=doctorEmail;
+  //  this.docEmail=doctorEmail;
   //  this.docEmail="a@gmail.com";
-   this.calendarService.getAllScheduleByDoctor(this.docEmail);
+  //  this.calendarService.getAllScheduleByDoctor(this.docEmail);
   
 
 
