@@ -14,17 +14,17 @@ export class DoctorService {
 
   private secUrl="http://localhost:8080/api/v1/search/";
   private thirdUrl="http://localhost:8091/api/v2/doctor/docserv";
-  private prescUrl="http://localhost:8088/api/v1/send";
+  private prescUrl="http://localhost:8083/api/v1/send";
   constructor(private http: HttpClient) { }
   doctor;
   doctorLoc:Doctor;
- doctorId;
+  doctoName;
+
   registerDoctor(doctor): Observable<Doctor> {
     return this.http.post<Doctor>(this.addUrl,doctor);
   }
 
   login(doctor:Doctor):Observable<any> {
-    this.doctorId=doctor.doctorEmail;
     //this.doctorMail = new BehaviorSubject(doctor.doctorEmail).asObservable();
     return this.http.post(this.addUrl+"/login",doctor,{responseType: 'text'});
 }
@@ -43,6 +43,7 @@ return this.http.get<Doctor>(this.thirdUrl+"/"+doctorEmail);
 //   return this.http.get<Doctor[]>(this.secUrl+"/get/"+doctorName);
 // }
 getDoctorByDoctorName(doctorName:String):Observable<any>{
+  this.doctoName=this.doctor.doctorName;
   return this.http.get<any>(this.secUrl+doctorName);
 }
 
