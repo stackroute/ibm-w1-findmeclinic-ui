@@ -102,9 +102,4 @@ export class LandingPageComponent implements OnInit {
     console.log(loc);
 
   }
-
-
-
-
-
 }
