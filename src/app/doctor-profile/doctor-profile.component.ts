@@ -142,7 +142,7 @@ this.doctorMailId = this.token.getUserId();
   logout() {
 
     this.token.removeToken();
-    
+    this.token.removeUserId();
     this.router.navigate(['landing-page']);
     
   }

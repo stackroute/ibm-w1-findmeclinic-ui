@@ -43,7 +43,7 @@ h1{
   }
   #div2
   {
-      margin-left: 400px
+      margin-left: 500px
   }
  
   .aside{
@@ -57,13 +57,11 @@ h1{
 .aside1{
     margin-left: 250px;
     
-<<<<<<< HEAD
-} */
-.appoint{
-=======
+}
+.size{
+    width: 150px;
 }
 /* .appoint{
->>>>>>> 00d94117390d2bf557a5e7094eb2c4b5734c768d
     display: flex;
     flex-direction: column;
         position: absolute;
@@ -71,8 +69,4 @@ h1{
         bottom: 0;
         left: 0;
         right: 0;
-<<<<<<< HEAD
-}
-=======
 } */
->>>>>>> 00d94117390d2bf557a5e7094eb2c4b5734c768d

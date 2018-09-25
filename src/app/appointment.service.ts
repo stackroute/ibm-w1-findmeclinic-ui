@@ -15,7 +15,7 @@ export class AppointmentService {
   currentMessage = this.messageSource.asObservable();
 
   
- private baseUrl= "http://localhost:8081/api/v1/appointment"
+ private baseUrl= "http://localhost:8085/api/v1/appointment"
   constructor(private http: HttpClient) { }
 
   getAllAppointments(userId):Observable<Appointment[]>
