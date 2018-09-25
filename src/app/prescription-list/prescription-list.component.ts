@@ -23,12 +23,13 @@ export class PrescriptionListComponent implements OnInit {
 
 
 
-  show(){
+  back(){
   this.router.navigate(['patient-profile']);
 }
   logout() {
+    this.token.removeToken();
+   this.token.removeUserId();
     this.router.navigate(['landing-page']);
-
-  }
+}
 
 }
