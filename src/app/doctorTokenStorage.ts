@@ -44,9 +44,7 @@ public getUserId(){
    window.localStorage.setItem(APPOINTMENT,appointment);
  }
 
- public getAppDetail(){
-   return window.localStorage.getItem(APPOINTMENT);
- }
+
  
 //  public getToken(): string {
 //    return localStorage.getItem(TOKEN_KEY);
