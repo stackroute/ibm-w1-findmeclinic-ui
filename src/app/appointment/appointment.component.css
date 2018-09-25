@@ -57,6 +57,12 @@
 .aside1{
     margin-left: 250px;
     
+<<<<<<< HEAD
+}
+
+.size{
+    width: 150px;
+=======
 } */
 .appoint{
     display: flex;
@@ -66,4 +72,5 @@
         bottom: 0;
         left: 0;
         right: 0;
+>>>>>>> 3c4ed8da4a019804e3c17bb6f812d079ff3c4bad
 }
