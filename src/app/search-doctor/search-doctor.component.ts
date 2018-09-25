@@ -21,6 +21,8 @@ data2:any;
 doctorName1;
 docEmail:string;
 doctor$:Observable<Doctor[]>;
+message:string;
+
   constructor(private doctorService:DoctorService,
     private doctorObject:DoctorTokenStorage,
     private router:Router,
@@ -35,21 +37,26 @@ private calendarService: CalendarService) {
 
 this.doctorList = this.doctorArray.getDoctorList();
 console.log(this.doctorList);
+
+this.appointmentService.currentMessage
+.subscribe(message => this.message = message)
   }
 
   book(doctorEmail)
   {
-     this.appointmentService.docId = doctorEmail;
+    //  this.appointmentService.docId = doctorEmail;
   
   //   this.doctorName1=this.doctorObject.getDoctorName();
   //   this.doctorService.getDoctorEmail(this.doctorName1).subscribe(data=>{this.doctorEmail=data;console.log(this.doctorEmail)});
   //   this.doctorObject.saveUserId(this.doctorEmail);
  
-  //  this.docEmail=doctorEmail;
+    
   //  this.docEmail="a@gmail.com";
   //  this.calendarService.getAllScheduleByDoctor(this.docEmail);
-  
-    this.router.navigate(['book']);
+
+  this.docEmail=doctorEmail;
+  this.appointmentService.changeMessage(this.docEmail);
+  this.router.navigate(['book']);
 
   
   

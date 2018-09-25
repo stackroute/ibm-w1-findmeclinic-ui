@@ -122,11 +122,15 @@ export class BookComponentComponent implements OnInit {
 
   ngOnInit() {
 
-    if (this.appointmentService.docId) {
-      this.docId = this.appointmentService.docId;
-    }
+    // if (this.appointmentService.docId) {
+    //   this.docId = this.appointmentService.docId;
+    // }
 
     // this.docId="a@gmail.com";
+
+    this.appointmentService.currentMessage
+    .subscribe(message => this.docId = message);
+
 
     this.calenderService.getScheduleSlot(this.docId)
       .subscribe(data => {
