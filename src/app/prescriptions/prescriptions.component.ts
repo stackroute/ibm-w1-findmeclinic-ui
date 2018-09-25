@@ -37,23 +37,6 @@ export class PrescriptionsComponent implements OnInit {
     this.dialog.closeAll();
   }
   ngOnInit() {
-<<<<<<< HEAD
-    this.patientNam = this.route.snapshot.params['bookingBy'];
-  this.docId = this.token.getUserId;
-   this.service.getByEmail(this.docId).subscribe(data=>{console.log(data),
-  this.myDoctor=data;
-  this.prescriptions.patient.patientEmail=this.patientNam;
-  this.prescriptions.doctor.doctorEmail=this.docId;
-  this.prescriptions.doctor.doctorName=this.myDoctor.doctorName;
-})
-this.patientService.getPatientByMail(this.patientNam).subscribe(data=>{console.log(data),
-  this.myPatient=data;
-  this.prescriptions.patient.patientFirstName=this.myPatient.patientFirstName;
-  console.log(this.myPatient.patientFirstName);
-  this.prescriptions.patient.patientAge=this.myPatient.patientAge;
-  this.prescriptions.patient.patientBloodGroup=this.myPatient.patientBloodGroup;
-})
-=======
     this.docId = this.token.getUserId();
     this.patientId= this.data.name;
     console.log(this.data.patientName);
@@ -72,7 +55,6 @@ this.patientService.getPatientByMail(this.patientNam).subscribe(data=>{console.l
       this.prescriptions.patient.patientAge = this.myPatient.patientAge;
       this.prescriptions.patient.patientBloodGroup = this.myPatient.patientBloodGroup;
     })
->>>>>>> d0485cbb43ba1a89a559d9a394f55e0d01dc55c6
   }
   prescriptions: Prescription = {
     findings: '', medicine: [''],
@@ -86,20 +68,6 @@ this.patientService.getPatientByMail(this.patientNam).subscribe(data=>{console.l
       patientGender:'',
       patientBloodGroup:'',
       patientAge:''
-<<<<<<< HEAD
-=======
-=======
-      patientEmail: '',
-      patientPhoneNumber: '',
-      patientPassword: '',
-      patientFirstName: '',
-      patientLastName: '',
-      patientAddress: '',
-      patientGender: '',
-      patientBloodGroup: '',
-      patientAge: ''
->>>>>>> 00d94117390d2bf557a5e7094eb2c4b5734c768d
->>>>>>> 4e122bd2537b6d3669827cc43dece0c6879a18fa
     }
     , doctor: {
       doctorFirstName: '',
