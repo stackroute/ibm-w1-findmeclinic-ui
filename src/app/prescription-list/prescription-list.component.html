@@ -1,27 +1,32 @@
 <div class="example-container">
 
-    <mat-toolbar color="primary" class="example-toolbar">
-      <button mat-icon-button (click)="back()">
-        <mat-icon>menu</mat-icon>
-      </button>
-      <h1 class="example-app-name">Go to dashboard</h1>
+  <mat-toolbar color="primary" class="example-toolbar">
+    <button mat-icon-button (click)="back()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <h1 class="example-app-name">Go to dashboard</h1>
 
-      <div class="badge-style">
+    <div class="badge-style">
+      
+      <mat-menu #menu="matMenu">
         
-        <mat-menu #menu="matMenu">
-          
-        </mat-menu>
-      </div>
-    </mat-toolbar>
-
-      <div  class="card1" *ngFor="let m of prescriptions">
-          <mat-card>
-      {{m.doctor.doctorEmail}}
-      <br>
-      {{m.findings}}
-      <br>
-      {{m.medicine}}
-    </mat-card>
-    <mat-divider></mat-divider>
+      </mat-menu>
     </div>
- 
+  </mat-toolbar>
+
+<div  class="card1" *ngFor="let m of prescriptions">
+    <mat-card>
+{{m.doctor.doctorEmail}}
+<br>
+{{m.findings}}
+<br>
+{{m.medicine}}
+</mat-card>
+<mat-divider></mat-divider>
+</div>
+
+
+    
+    
+      
+        
