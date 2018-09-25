@@ -3,7 +3,6 @@ import { Appointment } from '../appointment';
 import { MatDialog } from '@angular/material';
 import { PrescriptionsComponent } from '../prescriptions/prescriptions.component';
 import { MatPaginator, MatTableDataSource } from '@angular/material'
-import { Router } from '@angular/router';
 import { AppointmentService } from '../appointment.service';
 import { DoctorTokenStorage } from '../doctorTokenStorage';
 @Component({
@@ -27,8 +26,10 @@ export class AppointmentComponent implements OnInit {
   listSize;
   diff;
   userId;
+  name;
+  patientEmail;
   dataSource = new MatTableDataSource<Appointment>(this.listOfAppointments);
-  constructor(private router: Router, public dialog: MatDialog, private doctorId: DoctorTokenStorage, private appService: AppointmentService) {
+  constructor( public dialog: MatDialog, private doctorId: DoctorTokenStorage, private appService: AppointmentService) {
   }
 
 
@@ -49,15 +50,14 @@ export class AppointmentComponent implements OnInit {
     console.log(this.displayAppointments)
 
   }
-//   open(m) {
-// console.log(m);
-  
-//    this.router.navigate(['add-prescription'],m);
-//   }
-
-  
 
 
+openDialog(book) {
+   this.dialog.open(PrescriptionsComponent, {
+    width: '600px', 
+    data: { name: book},
+  });
+  }
 
   ngAfterViewInit() {
     this.userId = this.doctorId.getUserId();
@@ -75,11 +75,6 @@ export class AppointmentComponent implements OnInit {
       this.displayAppointments = this.listOfAppointments.slice(0, this.numOfApp);
       console.log(this.displayAppointments);
        })
-      //  this.appService.getPatientByPatientId(this.userId).subscribe(( dataName: Appointment[])=>{
-      //   this.patientName=dataName;
-      //     console.log(dataName)
-      // })
-        
   }
 
 

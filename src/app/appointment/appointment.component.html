@@ -11,16 +11,16 @@
     <br>
     <mat-card>
       <div class="div1">
-        <a [routerLink]="['add-prescription',m.bookingBy]">
-  
       AppointmentId : {{m.appointmentId}}
-    </a>
-    </div>
+      {{m.bookingBy}}
     
     <div class="div1" id="div2">
-      {{m.bookingBy}}
+     
+        <button class="size" mat-raised-button (click)="openDialog(m.bookingBy)">Add Prescription</button>
   </div>
+</div>
   </mat-card>
+ 
   </div>
 
 

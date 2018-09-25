@@ -1,43 +1,15 @@
-<div class="example-container">
-  <mat-toolbar color="primary" class="example-toolbar">
-    <button mat-icon-button (click)="snav.toggle()">
-    <mat-icon>menu</mat-icon>
-    </button>
-    <h1 class="example-app-name">FindMeClinic</h1>
-  </mat-toolbar>
-  <mat-sidenav-container class="example-sidenav-container">
-      <mat-sidenav #snav fixedTopGap="5">
-        <mat-nav-list>
-          <mat-list-item (click)="show()">
-            <mat-icon>access_time</mat-icon>Go to Dashboard</mat-list-item>
- 
-        </mat-nav-list>
-      </mat-sidenav>
-      </mat-sidenav-container>
-</div>
-<h1 class="head">ADD PRESCRIPTIONS</h1>
+<h4 class="head">ADD PRESCRIPTIONS</h4>
 <br>
-<div class="div7">
-<mat-card >
-<mat-card class="aside">
-  <div class="inline">
-    <div class="col-sm-3">
-   <h4>{{prescriptions.doctor.doctorName}}</h4>
-    </div>
-    <div class="col-sm-3 aside1">
-      <h4>Name : {{prescriptions.patient.patientFirstName}}</h4>
-      <h4>Age: {{prescriptions.patient.patientAge}}</h4>
-      <h4>Blood Group: {{prescriptions.patient.patientBloodGroup}}</h4>
-    </div>
-  </div>
-</mat-card>
-<br>
+<h4>Dr.{{prescriptions.doctor.doctorName}}</h4>
+<h4>Name : {{prescriptions.patient.patientFirstName}}</h4>
+<h4>Age: {{prescriptions.patient.patientAge}}</h4>
+<h4>Blood Group: {{prescriptions.patient.patientBloodGroup}}</h4>
 <br>
 <div>
   <form class="example-form">
     <mat-form-field class="comment">
-      <textarea matInput placeholder="Findings" class="form-control" id="findings" [(ngModel)]="prescriptions.findings" name="findings"
-        required></textarea>
+      <textarea matInput placeholder="Findings" class="form-control" id="findings" [(ngModel)]="prescriptions.findings"
+        name="findings" required></textarea>
     </mat-form-field>
     <br>
     <mat-form-field class="comment">
@@ -47,6 +19,4 @@
     <br>
   </form>
   <button class="bot" mat-raised-button color="primary" (click)="savePres(prescriptions)">Save</button>
-</div>
-</mat-card>
 </div>
