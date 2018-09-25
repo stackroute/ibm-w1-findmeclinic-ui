@@ -9,6 +9,12 @@
       margin-bottom: 60px;
   }
 
+  .styles{
+	height: auto;
+	width: auto;
+	max-width: 200px;
+	float: left;
+}
   .pan{
     margin-left: 20px;
     margin-right: 20px;
@@ -28,6 +34,7 @@
     margin-right: auto;
     text-align: center;
     margin-top: 40px;
+    background-color:aliceblue;
   }
 
 
@@ -49,9 +56,9 @@
   .btn-group button {
     background-color: rgb(8, 138, 245); 
     border: 1px solid rgb(29, 29, 236);
-    color: white; /* White text */
+    color: white; 
     padding: 10px 24px; 
-    cursor: pointer; /* Pointer/hand icon */
+    cursor: pointer;
     float: left; /* Float the buttons side by side */
 }
 
@@ -73,4 +80,8 @@
 
 /* .super{
     background: url("../../assets/bgmain.jpg");
+    height: auto;
+    width:auto;
   } */
+
+ 

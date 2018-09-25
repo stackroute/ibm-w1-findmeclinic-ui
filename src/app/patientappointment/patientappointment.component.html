@@ -1,6 +1,7 @@
-<h1>LIST OF APPOINTMENTS</h1>
-<br>
-<div>
+
+<div class="appoint">
+    <h1 style="align-items: center">LIST OF APPOINTMENTS</h1>
+    <br>
     <button (click)="onPage()"><mat-paginator #paginator  [pageSizeOptions]="[5, 10, 25, 100]">
     </mat-paginator></button>
   <div *ngFor="let m of displayAppointments ">
@@ -8,13 +9,13 @@
     <mat-card>
       <div class="div1">
         <a (click)="open()">
-      AppointmentId : {{m.appointmentId}}
-    </a>
-    </div>
-    
-    <div class="div1" id="div2">
-       
+          AppointmentId : {{m.appointmentId}}
+        </a>
+      </div>
+
+      <div class="div1" id="div2">
+
         {{m.bookedFor}}
-  </div>
-  </mat-card>
+      </div>
+    </mat-card>
   </div>

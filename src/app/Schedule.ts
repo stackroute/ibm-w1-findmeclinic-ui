@@ -11,8 +11,5 @@ export class Schedule{
      timePerPatient: number;
      slots: Slot[] = [];
 
-     /**
-      * setCreatedBy
-      */
-    
+
 }

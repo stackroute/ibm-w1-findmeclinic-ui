@@ -17,6 +17,7 @@ import { DoctorlistService } from '../doctorlist.service';
   styleUrls: ['./landing-page.component.css']
 })
 export class LandingPageComponent implements OnInit {
+<<<<<<< HEAD
   userSettings = {}
   locationArray = [];
   mylocation;
@@ -38,6 +39,29 @@ export class LandingPageComponent implements OnInit {
     // })
     //do any necessery stuff.
   }
+=======
+//   userSettings = {}
+// locationArray=[];
+// mylocation;
+// 	autoCompleteCallback1(selectedData:any) {
+// this.mylocation = JSON.stringify(selectedData);
+// console.log("loc "+this.mylocation);
+// console.log("array  ");
+
+// console.log("bcshj  "+JSON.stringify(selectedData).split("\"").slice(9,10));
+// this.locationArray = JSON.stringify(selectedData).split("\"").slice(9,10);
+
+// console.log("gggggggggggggggggggggggggggggg"+this.locationArray[0]);
+
+// this.doctorService.getDoctorLocality(this.locationArray[0]).subscribe((data)=>{
+//   this.requiredDoctor=data;
+//   console.log("hiiiiii")
+//   console.log(data)
+//   console.log(this.requiredDoctor);
+// })
+// 		do any necessery stuff.
+// 	}
+>>>>>>> 3c4ed8da4a019804e3c17bb6f812d079ff3c4bad
 
   ws: any;
   doctorData: Doctor[] = [];
@@ -85,25 +109,7 @@ export class LandingPageComponent implements OnInit {
     const dialogRef = this.dialog.open(DoctorLoginComponent);
 
   }
-  // getLocation() {
-  //   var x = document.getElementById('output');
-  //   var locApi = "http://api.ipstack.com/180.151.35.146?access_key=c0bf349832d1dacf74b5fb62feca0460";
-
-
-  //   $.get({
-  //     url: locApi,
-  //     success: function (data) {
-  //       console.log(data);
-  //       x.innerHTML=data.city +","+data.region_name;
-  //       $("#output").val(data.city +","+data.region_name);
-
-  //       this.loc=data.city +","+data.region_name;
-
-  //     }
-  //   });
-  // }
-
-
+  
   private stompClient;
   name: string;
   private serverurl = 'http://localhost:8080/socket/'
@@ -123,10 +129,8 @@ export class LandingPageComponent implements OnInit {
 
         that.ws.subscribe("/topic/getList", function (data) {
           that.doctorData = JSON.parse(data.body);
-          // console.log(that.doctorData);
           that.doctorList.saveDoctors(that.doctorData);
           that.router.navigate(['search-doctor']);
-          // that.saveDoctor.push(that.doctorData);
         });
 
 
@@ -143,9 +147,4 @@ export class LandingPageComponent implements OnInit {
     console.log(loc);
 
   }
-
-  
-
-
-
 }
