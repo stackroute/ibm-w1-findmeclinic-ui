@@ -43,7 +43,7 @@ h1{
   }
   #div2
   {
-      margin-left: 400px
+      margin-left: 500px
   }
  
   .aside{
@@ -57,13 +57,9 @@ h1{
 .aside1{
     margin-left: 250px;
     
-} 
-.appoint{
-    display: flex;
-    flex-direction: column;
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-} 
+}
+.size{
+    width: 150px;
+}
+
+

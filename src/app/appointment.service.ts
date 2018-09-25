@@ -16,6 +16,7 @@ export class AppointmentService {
 
   
  private baseUrl= "http://localhost:8091/bookingappointment/api/v1/appointment"
+
   constructor(private http: HttpClient) { }
 
   getAllAppointments(userId):Observable<Appointment[]>
