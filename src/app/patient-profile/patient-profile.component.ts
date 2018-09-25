@@ -41,7 +41,7 @@ export class PatientProfileComponent implements OnInit {
     return this.showFiller
   }
 
-
+patientAge;
   patientMail:string;
   patientData:Patient;
   registerForm: FormGroup;
@@ -99,6 +99,18 @@ this.appoint=false;
     get f() { return this.registerForm.controls; }
     get g() { return this.settingForm.controls; }
 
+myFilter = (d: Date)=> {
+
+  var currentDate = new Date();
+      const day = d.getDay();
+      this.patientAge = currentDate.getFullYear() - d.getFullYear();
+      //  var m = currentDate.getMonth() - d.getMonth();
+    const year= d.getFullYear();
+    
+      console.log(this.patientAge);
+    return day!=7;
+  }
+
  
 onChange()
 {
@@ -111,21 +123,23 @@ onChange()
           }
   alert('SUCCESS!! :-)')
 }
-     onSubmit(patient) {
+onSubmit(patient) {
          this.submitted = true;
-  
+
          // stop here if form is invalid
          if (this.registerForm.invalid) {
              return;
          }
  else
  {
+       this.check=true;
+
 
   this.list=true;
   this.submit=true;
   this.check3=false;
   this.appoint=false;
-  this.check=true;
+  patient.patientAge=this.patientAge;
   this.patientService.updatePatientProfile(patient).subscribe(data1=>{this.patientData=data1;console.log(data1)})
   this.snackBar.openFromComponent(PatientUpdateComponent, {
     duration: 1000,

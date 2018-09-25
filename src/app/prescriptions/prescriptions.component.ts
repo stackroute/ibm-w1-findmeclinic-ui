@@ -59,6 +59,17 @@ export class PrescriptionsComponent implements OnInit {
   prescriptions: Prescription = {
     findings: '', medicine: [''],
     patient: {
+<<<<<<< HEAD
+      patientEmail:'',
+      patientPhoneNumber:'',
+      patientPassword:'',
+      patientFirstName:'',
+      patientLastName:'',
+      patientAddress:'',
+      patientGender:'',
+      patientBloodGroup:'',
+      patientAge:''
+=======
       patientEmail: '',
       patientPhoneNumber: '',
       patientPassword: '',
@@ -71,6 +82,7 @@ export class PrescriptionsComponent implements OnInit {
       patientDobYear: '',
       patientBloodGroup: '',
       patientAge: ''
+>>>>>>> 8a5ff1e901b0c17461fd23b5549e88ba3f66fa76
     }
     , doctor: {
       doctorFirstName: '',

@@ -94,11 +94,7 @@
                         </mat-list-item>
                         <mat-divider></mat-divider>
                         <div *ngIf="list">
-                            <mat-list-item>DateOfBirth
-                                <h4 id="l7">{{patientData.patientDobDate}}/{{patientData.patientDobMonth}}/{{patientData.patientDobYear}}</h4>
-                            </mat-list-item>
-                            <mat-divider></mat-divider>
-                            <mat-list-item>Age
+                                <mat-list-item>Age
                                 <h4 id="l8">{{patientData.patientAge}}</h4>
                             </mat-list-item>
                             <mat-divider></mat-divider>
@@ -165,42 +161,16 @@
                             </mat-select>
                         </mat-form-field>
                     </div>
-                    <div class="col-md-4 form">
+                    <div>
                         <label>Date Of Birth </label>
-                        <br>
-                        <input type="text" formControlName="day" placeholder="enter date (dd)" class="dob form-control"
-                            [ngClass]="{ 'is-invalid': submitted && f.day.errors }" [(ngModel)]="patientData.patientDobDate" />
-
-                        <div *ngIf="submitted && f.day.errors" class="invalid-feedback">
-                            <div *ngIf="f.day.errors.required">Date Of Birth is required</div>
-                            <div *ngIf="f.phone.errors.minlength">Date must be at least 2 digits</div>
-                            <div *ngIf="f.phone.errors.maxlength">Date must be at most 2 digits</div>
 
 
-                        </div>
-                        </div>
-                        <div class="col-md-4 form">
-                        <input type="text" formControlName="month" placeholder="enter month (mm)" class="dob form-control" [ngClass]="{ 'is-invalid': submitted && f.month.errors }"
-                            [(ngModel)]="patientData.patientDobMonth" />
+                        <mat-form-field class="example-full-width">
+                            <input matInput [matDatepickerFilter]="myFilter" [matDatepicker]="picker" placeholder="Choose a date">
+                            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                            <mat-datepicker touchUi #picker></mat-datepicker>
+                        </mat-form-field>
 
-                        <div *ngIf="submitted && f.month.errors" class="invalid-feedback">
-                            <div *ngIf="f.month.errors.required">Date Of Birth is required</div>
-                            <div *ngIf="f.month.errors.minlength">Month must be at least 2 digits</div>
-                            <div *ngIf="f.month.errors.maxlength">Month must be at most 2 digits</div>
-
-                        </div>
-                        </div>
-                        <div class="col-md-4 form">
-                        <input type="text" formControlName="year" placeholder="enter year (yyyy)" class="dob form-control" [ngClass]="{ 'is-invalid': submitted && f.year.errors }"
-                            [(ngModel)]="patientData.patientDobYear" />
-
-                        <div *ngIf="submitted && f.year.errors" class="invalid-feedback">
-                            <div *ngIf="f.year.errors.required">Year is required</div>
-                            <div *ngIf="f.year.errors.minlength">Year must be at least 4 digits</div>
-                            <div *ngIf="f.year.errors.maxlength">Year must be at most 4 digits</div>
-
-                        </div>
-            
                     </div>
 
                     <div class="form-group">
@@ -212,8 +182,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <button [disabled]="loading" mat-raised-button class="pButon2" color="primary" (click)="onSubmit(patientData)"
-                            color="primary">Submit</button>
+                        <button [disabled]="loading" mat-raised-button class="pButon2" color="primary" (click)="onSubmit(patientData)" color="primary">Submit</button>
 
                     </div>
                 </form>
@@ -271,22 +240,22 @@
                                     <br>
                                     <div class="form-group">
                                         <label>Password</label>
-                                        <input type="password" formControlName="password" class="form-control"
-                                            [ngClass]="{ 'is-invalid': submitted && g.password.errors }" />
+                                        <input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && g.password.errors }"
+                                        />
                                         <div *ngIf="sub && g.password.errors" class="invalid-feedback">
                                             <div *ngIf="g.password.errors.required">Password is required</div>
-                                            <div *ngIf="g.password.errors.minlength">Password must be at least 6
-                                                characters</div>
+                                            <div *ngIf="g.password.errors.minlength">Password must be at least 6 characters
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label>Confirm Password</label>
-                                        <input type="password" formControlName="confirmPassword" class="form-control"
-                                            [ngClass]="{ 'is-invalid': submitted && g.password.errors }" />
+                                        <input type="password" formControlName="confirmPassword" class="form-control" [ngClass]="{ 'is-invalid': submitted && g.password.errors }"
+                                        />
                                         <div *ngIf="sub && g.confirmPassword.errors" class="invalid-feedback">
                                             <div *ngIf="g.confirmPassword.errors.required">Password is required</div>
-                                            <div *ngIf="g.confirmPassword.errors.minlength">Password must be at least 6
-                                                characters</div>
+                                            <div *ngIf="g.confirmPassword.errors.minlength">Password must be at least 6 characters
+                                            </div>
                                         </div>
                                     </div>
 

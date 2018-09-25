@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, BehaviorSubject } from 'rxjs';
 import { Appointment } from './appointment';
 import {HttpClient} from '@angular/common/http';
 
@@ -10,6 +10,10 @@ import {HttpClient} from '@angular/common/http';
 export class AppointmentService {
 
   docId: string;
+
+  private messageSource = new BehaviorSubject('default message');
+  currentMessage = this.messageSource.asObservable();
+
   
  private baseUrl= "http://localhost:8081/api/v1/appointment"
   constructor(private http: HttpClient) { }
@@ -28,5 +32,10 @@ export class AppointmentService {
   }
   
   
+  
+
+  changeMessage(message: string) {
+    this.messageSource.next(message)
+  }
   
 }
