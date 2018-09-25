@@ -38,7 +38,7 @@ export class PrescriptionsComponent implements OnInit {
   ngOnInit() {
 
     this.patientNam = this.route.snapshot.params['bookingBy'];
-   this.docId= this.token.getUserId();
+  this.docId = this.service.doctorId;
    this.service.getByEmail(this.docId).subscribe(data=>{console.log(data),
   this.myDoctor=data;
   this.prescriptions.patient.patientEmail=this.patientNam;

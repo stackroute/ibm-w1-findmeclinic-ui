@@ -18,12 +18,13 @@ export class DoctorService {
   constructor(private http: HttpClient) { }
   doctor;
   doctorLoc:Doctor;
-
+ doctorId;
   registerDoctor(doctor): Observable<Doctor> {
     return this.http.post<Doctor>(this.addUrl,doctor);
   }
 
   login(doctor:Doctor):Observable<any> {
+    this.doctorId=doctor.doctorEmail;
     //this.doctorMail = new BehaviorSubject(doctor.doctorEmail).asObservable();
     return this.http.post(this.addUrl+"/login",doctor,{responseType: 'text'});
 }
