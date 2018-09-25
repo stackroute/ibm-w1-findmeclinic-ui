@@ -1,62 +1,28 @@
-
 <h1>LIST OF APPOINTMENTS</h1>
 <br>
 
 
 
 <div>
-    <button (click)="onPage()"><mat-paginator #paginator  [pageSizeOptions]="[5, 10, 25, 100]">
-    </mat-paginator></button>
+  <button (click)="onPage()">
+    <mat-paginator #paginator [pageSizeOptions]="[5, 10, 25, 100]">
+    </mat-paginator>
+  </button>
   <div *ngFor="let m of displayAppointments ">
     <br>
     <mat-card>
       <div class="div1">
         <a [routerLink]="['add-prescription',m.bookingBy]">
-  
-      AppointmentId : {{m.appointmentId}}
-    </a>
-    </div>
-    
-    <div class="div1" id="div2">
-      {{m.bookingBy}}
+
+          AppointmentId : {{m.appointmentId}}
+        </a>
+      </div>
+
+      <div class="div1" id="div2">
+        {{m.bookingBy}}
+      </div>
+    </mat-card>
   </div>
-  </mat-card>
-  </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- <div>
-  <button (click)="onPage()"><mat-paginator #paginator  [pageSizeOptions]="[5, 10, 25, 100]">
-  </mat-paginator></button>
-<div *ngFor="let m of displayAppointments ">
-  <br>
-  <mat-card>
-    <div class="div1">
-      <a (click)="open(m)">
-    AppointmentId : {{m.appointmentId}}
-  </a>
-  </div>
-  <div class="div1" id="div2">
-{{m.appointmentStatus}}
-</div>
-</mat-card>
-</div> -->
 
 
 
@@ -80,8 +46,7 @@
 
 
 
-
-<!-- 
+  <!-- 
   <div *ngIf="show">
     <div *ngFor="let l of displayAppointments ">
       <mat-card class="aside">
