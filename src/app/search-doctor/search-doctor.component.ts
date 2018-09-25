@@ -49,14 +49,9 @@ console.log(this.doctorList);
   //  this.docEmail="a@gmail.com";
   //  this.calendarService.getAllScheduleByDoctor(this.docEmail);
   
+    this.router.navigate(['book']);
 
-
-  if(this.tokenStorage.getUserId()==null){
-    this.router.navigate(['landing-page']);
-  }
-    else{
-      this.router.navigate(['book']);
-    } 
+  
   
 
    }
