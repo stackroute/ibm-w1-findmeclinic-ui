@@ -149,7 +149,7 @@ export class BookComponentComponent implements OnInit {
 
   openDialog() {
 
-    if(this.tokenStorage.getUserId()==null){
+    if(this.tokenStorage.getToken==null){
       this.router.navigate(['landing-page']);
     }
       else{
