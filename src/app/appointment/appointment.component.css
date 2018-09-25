@@ -1,6 +1,6 @@
-/* h1{
+h1{
     text-align: center;
-    color: white;
+    color: rgb(22, 20, 20);
 }
 .mat-card{
     width:750px;
@@ -10,16 +10,16 @@
 .mat-cell {
     display:block; 
     min-height:auto; 
-     padding: 0px 0px 0px 0; 
+     /* padding: 0px 0px 0px 0;  */
   }
 
   .name{
       padding: 20px;
       padding-right: 30px;
   }
-  .bot{
+  /* .bot{
       margin:30px;
-  } 
+  }  */
   .head{
       text-align: center;
       margin-left: 100px;
@@ -57,14 +57,8 @@
 .aside1{
     margin-left: 250px;
     
-<<<<<<< HEAD
 }
-
-.size{
-    width: 150px;
-=======
-} */
-.appoint{
+/* .appoint{
     display: flex;
     flex-direction: column;
         position: absolute;
@@ -72,5 +66,4 @@
         bottom: 0;
         left: 0;
         right: 0;
->>>>>>> 3c4ed8da4a019804e3c17bb6f812d079ff3c4bad
-}
+} */

@@ -1,20 +1,14 @@
-<<<<<<< HEAD
 <br>
-=======
->>>>>>> 3c4ed8da4a019804e3c17bb6f812d079ff3c4bad
 <h1>LIST OF APPOINTMENTS</h1>
 <br>
 
-
-
-<div class="appoint">
+<div>
     <button (click)="onPage()"><mat-paginator #paginator  [pageSizeOptions]="[5, 10, 25, 100]">
     </mat-paginator></button>
   <div *ngFor="let m of displayAppointments ">
     <br>
     <mat-card>
       <div class="div1">
-<<<<<<< HEAD
       AppointmentId : {{m.appointmentId}}
       {{m.bookingBy}}
     
@@ -26,6 +20,7 @@
   </mat-card>
  
   </div>
+  </div>
 
 
 
@@ -43,10 +38,7 @@
 
 
 
-=======
-        <a [routerLink]="['add-prescription',m.bookingBy]">
->>>>>>> 3c4ed8da4a019804e3c17bb6f812d079ff3c4bad
-
+<!-- 
           AppointmentId : {{m.appointmentId}}
         </a>
       </div>
@@ -55,7 +47,7 @@
         {{m.bookingBy}}
       </div>
     </mat-card>
-  </div>
+  </div> -->
 
 
 

@@ -37,7 +37,6 @@ export class PrescriptionsComponent implements OnInit {
     this.dialog.closeAll();
   }
   ngOnInit() {
-<<<<<<< HEAD
     this.docId = this.token.getUserId();
     this.patientId= this.data.name;
     console.log(this.data.patientName);
@@ -56,23 +55,6 @@ export class PrescriptionsComponent implements OnInit {
       this.prescriptions.patient.patientAge = this.myPatient.patientAge;
       this.prescriptions.patient.patientBloodGroup = this.myPatient.patientBloodGroup;
     })
-=======
-    this.patientNam = this.route.snapshot.params['bookingBy'];
-  this.docId = this.service.doctorId;
-   this.service.getByEmail(this.docId).subscribe(data=>{console.log(data),
-  this.myDoctor=data;
-  this.prescriptions.patient.patientEmail=this.patientNam;
-  this.prescriptions.doctor.doctorEmail=this.docId;
-  this.prescriptions.doctor.doctorName=this.myDoctor.doctorName;
-})
-this.patientService.getPatientByMail(this.patientNam).subscribe(data=>{console.log(data),
-  this.myPatient=data;
-  this.prescriptions.patient.patientFirstName=this.myPatient.patientFirstName;
-  console.log(this.myPatient.patientFirstName);
-  this.prescriptions.patient.patientAge=this.myPatient.patientAge;
-  this.prescriptions.patient.patientBloodGroup=this.myPatient.patientBloodGroup;
-})
->>>>>>> 3c4ed8da4a019804e3c17bb6f812d079ff3c4bad
   }
   prescriptions: Prescription = {
     findings: '', medicine: [''],

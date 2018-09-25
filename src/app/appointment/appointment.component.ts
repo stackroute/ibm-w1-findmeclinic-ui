@@ -50,10 +50,6 @@ export class AppointmentComponent implements OnInit {
     console.log(this.displayAppointments)
 
   }
-<<<<<<< HEAD
-=======
-  
->>>>>>> 3c4ed8da4a019804e3c17bb6f812d079ff3c4bad
 
 
 openDialog(book) {
@@ -79,10 +75,6 @@ openDialog(book) {
       this.displayAppointments = this.listOfAppointments.slice(0, this.numOfApp);
       console.log(this.displayAppointments);
        })
-<<<<<<< HEAD
-=======
-        
->>>>>>> 3c4ed8da4a019804e3c17bb6f812d079ff3c4bad
   }
 
 
