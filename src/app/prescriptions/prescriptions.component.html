@@ -1,38 +1,16 @@
-<div class="example-container">
-  <mat-toolbar color="primary" class="example-toolbar">
-    <button mat-icon-button (click)="snav.toggle()">
-      <mat-icon>menu</mat-icon>
-    </button>
-    <h1 class="example-app-name">FindMeClinic</h1>
-  </mat-toolbar>
-  <mat-sidenav-container class="example-sidenav-container">
-    <mat-sidenav #snav fixedTopGap="5">
-      <mat-nav-list>
-        <mat-list-item (click)="show()">
-          <mat-icon>access_time</mat-icon>Go to Dashboard
-        </mat-list-item>
-
-      </mat-nav-list>
-    </mat-sidenav>
-  </mat-sidenav-container>
-</div>
-<h1 class="head">ADD PRESCRIPTIONS</h1>
+<h4 class="head">ADD PRESCRIPTIONS</h4>
 <br>
-<div class="div7">
-  <mat-card>
-    <mat-card class="aside">
-      <div class="inline">
-        <div class="col-sm-3">
-          <h4>{{prescriptions.doctor.doctorName}}</h4>
-        </div>
-        <div class="col-sm-3 aside1">
-          <h4>Name : {{prescriptions.patient.patientFirstName}}</h4>
-          <h4>Age: {{prescriptions.patient.patientAge}}</h4>
-          <h4>Blood Group: {{prescriptions.patient.patientBloodGroup}}</h4>
-        </div>
-      </div>
-    </mat-card>
+<h4>Dr.{{prescriptions.doctor.doctorName}}</h4>
+<h4>Name : {{prescriptions.patient.patientFirstName}}</h4>
+<h4>Age: {{prescriptions.patient.patientAge}}</h4>
+<h4>Blood Group: {{prescriptions.patient.patientBloodGroup}}</h4>
+<br>
+<div>
+  <form class="example-form">
+<<<<<<< HEAD
     <br>
+=======
+>>>>>>> 00d94117390d2bf557a5e7094eb2c4b5734c768d
     <br>
     <div>
       <form class="example-form">
@@ -48,6 +26,10 @@
         <br>
       </form>
       <button class="bot" mat-raised-button color="primary" (click)="savePres(prescriptions)">Save</button>
+<<<<<<< HEAD
     </div>
-  </mat-card>
+=======
+    </div>
+    </form>
 </div>
+>>>>>>> 00d94117390d2bf557a5e7094eb2c4b5734c768d

@@ -59,7 +59,8 @@ import { SlotDetailsComponent } from './slot-details/slot-details.component';
 import { PatientappointmentComponent } from './patientappointment/patientappointment.component';
 import { PrescriptionListComponent } from './prescription-list/prescription-list.component';
 import { AddressComponent } from './address/address.component';
-
+import { TokenInterceptorService } from './token-interceptor.service';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
 
 
 @NgModule({
@@ -129,7 +130,9 @@ import { AddressComponent } from './address/address.component';
   ],
   entryComponents:[PatientLoginComponent,InvalidPatientComponent,FailPatientComponent,PatientUpdateComponent,InvalidDoctorComponent,FailRegisterComponent,
   DoctorLoginComponent,DoctorProfileComponent,MedicalRecordsComponent,PatientUpdateComponent, AddScheduleComponent,PrescriptionsComponent,BookConfirmComponent,DetailsUploadComponent,FormUploadComponent,ListUploadComponent],
-  providers: [AddScheduleComponent],
+  providers: [AddScheduleComponent, {provide: HTTP_INTERCEPTORS,
+    useClass: TokenInterceptorService,
+    multi: true}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,27 +1,30 @@
-<nav class="navbar navbar-expand-lg navbar-light ">
-  <img src="../../assets/logo.png" class="styles">
-</nav>
+<div class="super">
 
-<div class="main">
+  <nav class="navbar navbar-expand-lg navbar-light ">
+    <img src="../../assets/logo.png" class="styles">
+  </nav>
 
   <div class="main">
-    <h2>Select a time slot to book the appointment</h2>
+
+    <div class="main">
+      <h2>Select a time slot to book the appointment</h2>
+    </div>
+
+    <div class="btn-group" *ngFor="let schedule of schedules">
+      <button style="width:100%"> {{schedule.scheduleDate}}
+      </button>
+      <mat-button-toggle value="slot.slotStart" *ngFor="let slot of schedule.slots" class="style" (click)="slotSelected(slot)">
+        {{slot.slotStart}}
+      </mat-button-toggle>
+
+
+    </div>
+
+    <div class="bttn">
+      <button mat-raised-button color="primary" (click)="openDialog()">Submit</button>
+    </div>
+
+
   </div>
-
-  <div class="btn-group" *ngFor="let schedule of schedules">
-    <button style="width:100%"> {{schedule.scheduleDate}}
-    </button>
-    <mat-button-toggle value="slot.slotStart" *ngFor="let slot of schedule.slots" class="style" (click)="slotSelected(slot)">
-      {{slot.slotStart}}
-    </mat-button-toggle>
-
-
-  </div>
-
-  <div class="bttn">
-    <button mat-raised-button color="primary" (click)="openDialog()">Submit</button>
-  </div>
-
 
 </div>
-
