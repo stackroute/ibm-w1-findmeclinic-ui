@@ -9,8 +9,9 @@ import {HttpClient} from '@angular/common/http';
 })
 export class AppointmentService {
 
+  docId: string;
   
- private baseUrl= "http://localhost:8085/api/v1/appointment"
+ private baseUrl= "http://localhost:8081/api/v1/appointment"
   constructor(private http: HttpClient) { }
 
   getAllAppointments(userId):Observable<Appointment[]>
@@ -26,6 +27,6 @@ export class AppointmentService {
     return this.http.get<Appointment[]>(this.baseUrl+"/patient/"+patientId);
   }
   
-
+  
   
 }

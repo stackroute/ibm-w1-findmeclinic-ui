@@ -17,19 +17,6 @@ import { DoctorlistService } from '../doctorlist.service';
   styleUrls: ['./landing-page.component.css']
 })
 export class LandingPageComponent implements OnInit {
-  userSettings = {}
-  locationArray = [];
-  mylocation;
-  autoCompleteCallback1(selectedData: any) {
-    this.mylocation = JSON.stringify(selectedData);
-    console.log("loc " + this.mylocation);
-    console.log("array  ");
-
-    console.log("bcshj  " + JSON.stringify(selectedData).split("\"").slice(9, 10));
-    this.locationArray = JSON.stringify(selectedData).split("\"").slice(9, 10);
-
-    console.log("gggggggggggggggggggggggggggggg" + this.locationArray[0])
-  }
 
   ws: any;
   doctorData: Doctor[] = [];
@@ -77,8 +64,7 @@ export class LandingPageComponent implements OnInit {
     const dialogRef = this.dialog.open(DoctorLoginComponent);
 
   }
-
-
+  
   private stompClient;
   name: string;
   private serverurl = 'http://localhost:8080/socket/'
