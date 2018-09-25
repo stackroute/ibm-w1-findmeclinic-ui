@@ -3,11 +3,9 @@
 
 
 
-<div>
-  <button (click)="onPage()">
-    <mat-paginator #paginator [pageSizeOptions]="[5, 10, 25, 100]">
-    </mat-paginator>
-  </button>
+<div class="appoint">
+    <button (click)="onPage()"><mat-paginator #paginator  [pageSizeOptions]="[5, 10, 25, 100]">
+    </mat-paginator></button>
   <div *ngFor="let m of displayAppointments ">
     <br>
     <mat-card>
