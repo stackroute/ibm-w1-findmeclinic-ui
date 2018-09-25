@@ -1,25 +1,25 @@
-
 <h3>Add Schedule</h3>
 <mat-form-field class="fullwidth">
-  <input matInput type = "text" placeholder="Description"[(ngModel)]="schedule.description" >
+  <input matInput type="text" placeholder="Description" [(ngModel)]="schedule.description">
 </mat-form-field>
 <br>
 <mat-form-field class="fullwidth">
-  <input matInput type = "text" placeholder="Work Place" [(ngModel)]="schedule.workPlace">
+  <input matInput type="text" placeholder="Work Place" [(ngModel)]="schedule.workPlace">
 </mat-form-field>
 <br>
 <mat-form-field>
-  <input matInput [matDatepicker]="picker" placeholder="Choose a Schedule date" [(ngModel)]="schedule.scheduleDate" [min]="minDate">
+  <input matInput [matDatepicker]="picker" placeholder="Choose a Schedule date" [(ngModel)]="schedule.scheduleDate"
+    [min]="minDate">
   <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
   <mat-datepicker #picker></mat-datepicker>
 </mat-form-field>
 <br>
 <mat-form-field class="fullwidth">
-  <input matInput type ="time" [(ngModel)]="schedule.startTime" placeholder="Start Time">
+  <input matInput type="time" [(ngModel)]="schedule.startTime" placeholder="Start Time">
 </mat-form-field>
 <br>
 <mat-form-field class="fullwidth">
-  <input matInput type ="time" [(ngModel)]="schedule.endTime" placeholder="End Time">
+  <input matInput type="time" [(ngModel)]="schedule.endTime" placeholder="End Time">
 </mat-form-field>
 <br>
 <mat-form-field class="fullwidth">

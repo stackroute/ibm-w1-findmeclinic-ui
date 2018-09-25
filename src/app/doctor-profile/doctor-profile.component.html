@@ -14,11 +14,14 @@
 
             <mat-menu #menu="matMenu">
                 <button mat-menu-item (click)="click()">
-                    <mat-icon>supervised_user_circle</mat-icon>Profile</button>
+                    <mat-icon>supervised_user_circle</mat-icon>Profile
+                </button>
                 <button mat-menu-item>
-                    <mat-icon>settings</mat-icon>Settings</button>
+                    <mat-icon>settings</mat-icon>Settings
+                </button>
                 <button mat-menu-item (click)="logout()">
-                    <mat-icon>directions_walk</mat-icon>Logout</button>
+                    <mat-icon>directions_walk</mat-icon>Logout
+                </button>
             </mat-menu>
         </div>
     </mat-toolbar>
@@ -30,11 +33,14 @@
         <mat-sidenav #snav fixedTopGap="5">
             <mat-nav-list>
                 <mat-list-item (click)="display()" (click)="snav.toggle()">
-                    <mat-icon>list_alt</mat-icon>My Appointments</mat-list-item>
+                    <mat-icon>list_alt</mat-icon>My Appointments
+                </mat-list-item>
                 <mat-list-item>
-                    <mat-icon>library_books</mat-icon>Reports</mat-list-item>
+                    <mat-icon>library_books</mat-icon>Reports
+                </mat-list-item>
                 <mat-list-item (click)="show()" (click)="snav.toggle()">
-                    <mat-icon>access_time</mat-icon>Scheduling</mat-list-item>
+                    <mat-icon>access_time</mat-icon>Scheduling
+                </mat-list-item>
 
             </mat-nav-list>
         </mat-sidenav>
@@ -71,15 +77,7 @@
                 <br>
                 <br>
 
-                <!-- <img class="image"src="/assets/doctorHie.gif"> -->
-
             </div>
-
-            <!-- <div *ngIf="profile1">
-    <div>
-        <img class="image"src="/assets/doctorHie.gif">
-    </div> 
-</div>-->
             <div *ngIf="create1" class="card1">
                 <mat-card>
 
@@ -125,12 +123,11 @@
                             <h4 id="l8">{{doctordata.doctorExperience}}</h4>
                         </mat-list-item>
                         <mat-divider></mat-divider>
-                     
+
                         <br>
                         <br>
                     </mat-list>
                     <button mat-raised-button color="primary" class="pButon" (click)="editProfile()">Edit</button>
-                    <!-- <button mat-raised-button color="primary" class="dButton" (click)="address()">Add Address</button>  -->
                     <button mat-raised-button color="primary" class="pButon1" (click)="closeCard()">close</button>
                 </mat-card>
             </div>
@@ -182,7 +179,6 @@
                                 </mat-option>
                             </mat-select>
                         </mat-form-field>
-                        <!-- <h5>{{doctordata.doctorGender}}</h5> -->
                     </div>
 
 
@@ -221,99 +217,6 @@
                     </div>
                 </form>
             </div>
-            <!-- <div *ngIf="create3" class="card1"> 
-                
-            
-                    <mat-card>
-                        <mat-list>
-                                <mat-list-item >HospitalName<h4 id="l1">{{doctordata.hospitalName}}</h4></mat-list-item>
-                                <mat-divider></mat-divider>
-                                <mat-list-item >Street Name<h4 id="l2">{{doctordata.streetName}}</h4></mat-list-item>
-                                <mat-divider></mat-divider>
-                                <mat-list-item >Locality<h4 id="l3">{{doctordata.locality}}</h4></mat-list-item>
-                                <mat-divider></mat-divider>
-                                <mat-list-item >State<h4 id="l4">{{doctordata.state}}</h4></mat-list-item>
-                                <mat-divider></mat-divider>
-                                
-                             
-                    <br>
-                        <br>
-                        </mat-list>
-                        <button mat-raised-button color="primary" class="pButon"(click)="editAddress1()">Edit</button>
-                    
-                        <button mat-raised-button color="primary" class="pButon1" (click)="closeAddress()">close</button>
-                    </mat-card>
-        </div> -->
-            <!-- <div *ngIf="address1">
-    <div class="form-group">
-        <h4>Address</h4>
-        <form [formGroup]="registerForm">
-
-                <div class="form-group">
-                        <label>Hospital Name</label>
-                        <input type="text" formControlName="hospiatalName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.hospiatalName.errors }"
-                            [(ngModel)]="doctordata.hospitalName" />
-                        <div *ngIf="submitted && f.hospiatalName.errors" class="invalid-feedback">
-                            <div *ngIf="f.hospital.errors.required">Hospital Name is required</div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                            <label>Street</label>
-                            <input type="text" formControlName="street" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.street.errors }"
-                                [(ngModel)]="doctordata.streetName" />
-                            <div *ngIf="submitted && f.street.errors" class="invalid-feedback">
-                                <div *ngIf="f.street.errors.required">Street Name is required</div>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                                <label>locality</label>
-                                <input type="text" formControlName="locality" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.locality.errors }"
-                                    [(ngModel)]="doctordata.locality" />
-                                <div *ngIf="submitted && f.locality.errors" class="invalid-feedback">
-                                    <div *ngIf="f.locality.errors.required">Locality is required</div>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                    <label>Area</label>
-                                    <input type="text" formControlName="area" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.area.errors }"
-                                        [(ngModel)]="doctordata.state" />
-                                    <div *ngIf="submitted && f.area.errors" class="invalid-feedback">
-                                        <div *ngIf="f.area.errors.required">Area  is required</div>
-                                    </div>
-                                </div> -->
-
-            <!-- <div class="form-group">
-            <label>HospitalName</label>
-            <input type="text" [(ngModel)]="doctordata.hospitalName" />
-            </div>
-       <br>
-       <div class="form-group">
-        <label>Street</label>
-        <input type="text" [(ngModel)]="doctordata.streetName" />
-        </div>
-        <br>
-        <br>
-        <div class="form-group">
-            <label>locality</label>
-            <input type="text" [(ngModel)]="doctordata.locality" />
-            </div>
-          <br>
-          <br>
-          <div class="form-group">
-            <label>State</label>
-            <input type="text" [(ngModel)]="doctordata.state" />
-            
-   <br>
-       <br>
-      </div> -->
-            <!-- </form>
-            <button mat-raised-button color="primary" class="dButton1" (click)="addAddress(doctordata)">Save</button>
-            <button mat-raised-button color="primary" class="dButton" (click)="closeAdd()">Exit</button>
-      </div>
-
-    
-    </div>
-       -->
 
             <div *ngIf="showFiller" style="margin-top: 5%">
                 <app-calendar></app-calendar>

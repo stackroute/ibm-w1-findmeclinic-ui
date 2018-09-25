@@ -22,36 +22,12 @@ doctor$:Observable<Doctor[]>;
     private doctorObject:DoctorTokenStorage,
     private router:Router,
   public doctorArray: DoctorlistService) { 
-    //this.doctor=new Doctor();
   }
 
   ngOnInit() {
 
 this.doctorList = this.doctorArray.getDoctorList();
 console.log(this.doctorList);
-
-// this.doctorService.doctor.subscribe(data=>
-//   {
-//     console.log("data is",data);
-//     this.docName=data;
-//   }
-//   );
-// console.log(this.docName);
-// // console.log("hi"+this.docName);
-// console.log("hello"+this.docName);
-  // this.doctorService.getDoctorByDoctorName(this.docName).subscribe((data1:Doctor[]) => { this.doctorList=data1; console.log(data1)});
-//     }
-
-
   }
 
-  // onBook()
-  // {
-  
-  //   this.doctorName1=this.doctorObject.getDoctorName();
-  //   this.doctorService.getDoctorEmail(this.doctorName1).subscribe(data=>{this.doctorEmail=data;console.log(this.doctorEmail)});
-  //   this.doctorObject.saveUserId(this.doctorEmail);
-  //   this.router.navigate(['book']);
-
-  // }
 }

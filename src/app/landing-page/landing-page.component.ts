@@ -84,10 +84,8 @@ export class LandingPageComponent implements OnInit {
 
         that.ws.subscribe("/topic/getList", function (data) {
           that.doctorData = JSON.parse(data.body);
-          // console.log(that.doctorData);
           that.doctorList.saveDoctors(that.doctorData);
           that.router.navigate(['search-doctor']);
-          // that.saveDoctor.push(that.doctorData);
         });
 
 
@@ -105,7 +103,7 @@ export class LandingPageComponent implements OnInit {
 
   }
 
-  
+
 
 
 

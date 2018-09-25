@@ -47,26 +47,17 @@ export class BookComponentComponent implements OnInit {
     .subscribe(data=>{
       console.log(data);
       this.schedules =data
-    //   ;
-    //  this.slotLists =data.getSlots()
-    });
 
-      // this.slotLists=this.schedule.slots;
-      // console.log(this.slotLists);
+    });
   }
 
   openDialog() {
 
     const dialogRef = this.dialog.open(BookConfirmComponent);
-// console.log(this.appointment)
       this.appointment.appointmentStatus=true;
-    // console.log( this.appointment.appointmentStatus)
-    // console.log(this.tokenStorage.getUserId())
+
    this.appointment.bookingBy=this.tokenStorage.getUserId();
 console.log("iddddd"+this.appointment.bookingBy)
-    // if(this.appointment.bookingBy==null){
-    //   this.router.navigate(['patient-login'])
-    // }
 
      this.appointment.bookedFor=this.docId;
      this.appointment.slot=this.s2;

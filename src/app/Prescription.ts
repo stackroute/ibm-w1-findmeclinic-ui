@@ -9,14 +9,3 @@ export class Prescription {
 }
 
 
-// export class Patient {
-//     patientFirstName: string;
-//     patientAge: string;
-//     patientEmail: string;
-// }
-
-// export class Doctor {
-//     doctorEmail:string;
-//     doctorName: string;
-//     doctorSpeciality: string;
-// }
