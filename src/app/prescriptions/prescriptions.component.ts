@@ -68,6 +68,19 @@ export class PrescriptionsComponent implements OnInit {
       patientGender:'',
       patientBloodGroup:'',
       patientAge:''
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+     
+>>>>>>> 2c36ce95d3397ad3fe9cd3a47155300d4cc0d33c
+>>>>>>> 9f14a678b21533c446c3cf2af91e9b42195d9e99
+>>>>>>> 034e210171c27323302077936ec1ee834c1bc357
+>>>>>>> 5a8c11227270170d1a0e1e6c6820e7b85d16539b
     }
     , doctor: {
       doctorFirstName: '',

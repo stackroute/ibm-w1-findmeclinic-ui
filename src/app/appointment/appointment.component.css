@@ -43,7 +43,11 @@ h1{
   }
   #div2
   {
+<<<<<<< HEAD
+      margin-left: 350px
+=======
       margin-left: 500px
+>>>>>>> 034e210171c27323302077936ec1ee834c1bc357
   }
  
   .aside{
@@ -58,6 +62,10 @@ h1{
     margin-left: 250px;
     
 }
+.size{
+    width: 150px;
+}
+
 .size{
     width: 150px;
 }
