@@ -10,8 +10,8 @@ export class PatientService {
   patientMailId;
 
 
-  private firstUrl="http://localhost:8090/api/v1/patientauth";
-  private secondUrl="http://localhost:8091/patient/api/v1/patient"
+  private firstUrl="http://localhost:8086/api/v1/patientauth";
+  private secondUrl="http://localhost:8091/patient-services/api/v1/patient"
 
   constructor(private http: HttpClient) { }
 

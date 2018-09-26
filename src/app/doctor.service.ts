@@ -13,8 +13,8 @@ export class DoctorService {
   private addUrl = "http://localhost:8082/doctor/auth";
 
   private secUrl="http://localhost:8080/api/v1/search/";
-  private thirdUrl="http://localhost:8091/doctor/api/v2/doctor/docserv";
-  private prescUrl="http://localhost:8088/api/v1/send";
+  private thirdUrl="http://localhost:8091/doctor-services/api/v2/doctor/docserv";
+  private prescUrl="http://localhost:8091/upstream-service/api/v1/send";
   constructor(private http: HttpClient) { }
   doctor;
   doctorLoc:Doctor;
