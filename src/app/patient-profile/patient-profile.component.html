@@ -174,12 +174,15 @@
                     </div>
 
                     <div class="form-group">
-                        <label>Blood Group </label>
-                        <input type="text" formControlName="bloodGroup" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.bloodGroup.errors }"
-                            [(ngModel)]="patientData.patientBloodGroup" />
-                        <div *ngIf="submitted && f.bloodGroup.errors" class="invalid-feedback">
-                            <div *ngIf="f.bloodGroup.errors.required">Blood Group is required</div>
-                        </div>
+                        <label class="lbl">Blood Group</label>
+
+                        <mat-form-field>
+                            <mat-select class="select" placeholder="select you Blood group" [(value)]="patientData.patientBloodGroup">
+                                <mat-option *ngFor="let patientBloodGroup of bloodGroups" [value]="patientBloodGroup.value">
+                                    {{patientBloodGroup.viewValue}}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
                     </div>
                     <div class="form-group">
                         <button [disabled]="loading" mat-raised-button class="pButon2" color="primary" (click)="onSubmit(patientData)" color="primary">Submit</button>
@@ -265,16 +268,7 @@
                                 </form>
 
 
-                                <!-- <label for="password">New Password</label>
-                        <input type="password" id="password" class="form-control"  formControlName="password" [ngClass]="{ 'is-invalid': submitted && g.password.errors }"
-                          [formGroup]="form">    
-                      </div>
-                      <div class="form-group">
-                        <label for="confirmPassword">Confirm Password</label>
-                        <input type="password" class="form-control" id="confirmPassword" formControlName="confirmPassword" 
-                          [formGroup]="form">
-                      </div> -->
-
+                              
                             </div>
                         </div>
                         <div class="div2">

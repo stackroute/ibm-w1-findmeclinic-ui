@@ -10,7 +10,7 @@ import { Prescription } from './Prescription';
 export class DoctorService {
 
   // private addUrl = "http://172.23.239.228:8080/doctor/auth";
-  private addUrl = "http://localhost:8082/doctor/auth";
+  private addUrl = "http://localhost:8092/doctor/auth";
 
   private secUrl="http://localhost:8080/api/v1/search/";
   private thirdUrl="http://localhost:8091/doctor/api/v2/doctor/docserv";
