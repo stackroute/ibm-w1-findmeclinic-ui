@@ -11,7 +11,11 @@ export class PatientService {
 
 
   private firstUrl="http://localhost:8086/api/v1/patientauth";
+<<<<<<< HEAD
   private secondUrl="http://localhost:8091/patient/api/v1/patient"
+=======
+  private secondUrl="http://localhost:8091/patient-services/api/v1/patient"
+>>>>>>> b1bfffbf244dec8132d92f49493b5d5a21fb3272
 
   constructor(private http: HttpClient) { }
 

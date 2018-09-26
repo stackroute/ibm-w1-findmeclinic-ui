@@ -42,9 +42,7 @@
                     Reports
                 </mat-list-item>
 
-                <!-- <mat-list-item>
-                    <mat-icon>group_add</mat-icon>Family Tree
-                </mat-list-item> -->
+                
             </mat-nav-list>
 
 
@@ -154,7 +152,7 @@
                         <label class="lbl">Gender</label>
 
                         <mat-form-field>
-                            <mat-select class="select" placeholder="select you gender" [(value)]="patientData.patientGender">
+                            <mat-select class="select" placeholder="select your gender" [(value)]="patientData.patientGender">
                                 <mat-option *ngFor="let patientGender of genders" [value]="patientGender.value">
                                     {{patientGender.viewValue}}
                                 </mat-option>
@@ -177,7 +175,11 @@
                         <label class="lbl">Blood Group</label>
 
                         <mat-form-field>
+<<<<<<< HEAD
                             <mat-select class="select" placeholder="select you Blood group" [(value)]="patientData.patientBloodGroup">
+=======
+                            <mat-select class="select" placeholder="select your blood group " [(value)]="patientData.patientBloodGroup">
+>>>>>>> b1bfffbf244dec8132d92f49493b5d5a21fb3272
                                 <mat-option *ngFor="let patientBloodGroup of bloodGroups" [value]="patientBloodGroup.value">
                                     {{patientBloodGroup.viewValue}}
                                 </mat-option>
@@ -208,8 +210,8 @@
                                     <strong>2</strong> records
                                 </div>
                                 <div class="col-sm-3 dc">
-                                    Your upcoming appointment is on
-                                    <strong>23rd september 2018 </strong>at
+                                    Upcoming appointment is on
+                                    <strong>23rd sept 2018 </strong>at
                                     <strong>11:00 am</strong>
                                 </div>
                             </mat-card-content>

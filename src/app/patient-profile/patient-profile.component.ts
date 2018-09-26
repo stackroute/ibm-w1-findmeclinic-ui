@@ -13,7 +13,11 @@ export interface Gender {
   viewValue: string;
 }
 
+<<<<<<< HEAD
 export interface BloodGroup{
+=======
+export interface BloodGroup {
+>>>>>>> b1bfffbf244dec8132d92f49493b5d5a21fb3272
   value:string;
   viewValue:string;
 }
@@ -42,6 +46,7 @@ export class PatientProfileComponent implements OnInit {
     {value: 'O-ve',viewValue: 'O-ve'},
     {value: 'AB+ve',viewValue: 'AB+ve'},
     {value: 'AB-ve',viewValue: 'AB-ve'}
+<<<<<<< HEAD
 
 
 
@@ -50,6 +55,8 @@ export class PatientProfileComponent implements OnInit {
 
 
 
+=======
+>>>>>>> b1bfffbf244dec8132d92f49493b5d5a21fb3272
   ]
 
  appoint=false;
@@ -94,7 +101,11 @@ sub=false;
                   firstName: ['', Validators.required],
                   lastName: ['', Validators.required],
                   phone: ['', [Validators.required, Validators.minLength(10)]],
+<<<<<<< HEAD
                  
+=======
+                  
+>>>>>>> b1bfffbf244dec8132d92f49493b5d5a21fb3272
               });
 
       this.settingForm = this.formBuilder.group(
