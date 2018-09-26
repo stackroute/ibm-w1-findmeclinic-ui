@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { HttpClient} from '@angular/common/http';
 import { Doctor } from './Doctor';
 import { Observable, BehaviorSubject} from 'rxjs';
-import { Prescription } from './Prescription';
 
 @Injectable({
   providedIn: 'root'
@@ -10,15 +9,12 @@ import { Prescription } from './Prescription';
 export class DoctorService {
 
   // private addUrl = "http://172.23.239.228:8080/doctor/auth";
-  private addUrl = "http://localhost:8082/doctor/auth";
+  private addUrl = "http://localhost:8100/doctor/auth";
 
   private secUrl="http://localhost:8080/api/v1/search/";
-  private thirdUrl="http://localhost:8091/doctor/api/v2/doctor/docserv";
-  private prescUrl="http://localhost:8088/api/v1/send";
+  private thirdUrl="http://localhost:8091/api/v2/doctor/docserv"
   constructor(private http: HttpClient) { }
   doctor;
-  doctorLoc:Doctor;
-  doctoName;
 
   registerDoctor(doctor): Observable<Doctor> {
     return this.http.post<Doctor>(this.addUrl,doctor);
@@ -43,7 +39,6 @@ return this.http.get<Doctor>(this.thirdUrl+"/"+doctorEmail);
 //   return this.http.get<Doctor[]>(this.secUrl+"/get/"+doctorName);
 // }
 getDoctorByDoctorName(doctorName:String):Observable<any>{
-  this.doctoName=this.doctor.doctorName;
   return this.http.get<any>(this.secUrl+doctorName);
 }
 
@@ -71,8 +66,4 @@ getDoctorEmail(docName:string):Observable<any>{
   return this.http.get(this.addUrl+"/email/"+docName);
 
 }
-
-savePrescription(prescription): Observable<Prescription> {
-      return this.http.post<Prescription>(this.prescUrl,prescription);
-    } 
-  }
+}
