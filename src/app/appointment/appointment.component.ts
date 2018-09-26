@@ -41,7 +41,7 @@ export class AppointmentComponent implements OnInit {
 
   }
   onPage() {
-    this.numOfApp = this.listSize - 1;
+    this.numOfApp = this.listSize-1;
     this.diff = this.listSize - this.paginator.pageSize;
     if (this.diff > 0) {
       this.numOfApp = this.paginator.pageSize;
@@ -67,7 +67,7 @@ openDialog(book) {
       this.lengthlist = this.listOfAppointments.length;
 
       this.listSize = this.lengthlist
-      this.numOfApp = this.listSize - 1;
+      this.numOfApp = this.listSize;
       this.diff = this.listSize - this.paginator.pageSize;
       if (this.diff > 0) {
         this.numOfApp = this.paginator.pageSize;

@@ -14,11 +14,7 @@ export class DoctorService {
 
   private secUrl="http://localhost:8080/api/v1/search/";
   private thirdUrl="http://localhost:8091/doctor-services/api/v2/doctor/docserv";
-<<<<<<< HEAD
-  private prescUrl="http://localhost:8088/api/v1/send";
-=======
   private prescUrl="http://localhost:8091/upstream-service/api/v1/send";
->>>>>>> b1bfffbf244dec8132d92f49493b5d5a21fb3272
   constructor(private http: HttpClient) { }
   doctor;
   doctorLoc:Doctor;
@@ -47,7 +43,7 @@ return this.http.get<Doctor>(this.thirdUrl+"/"+doctorEmail);
 //   return this.http.get<Doctor[]>(this.secUrl+"/get/"+doctorName);
 // }
 getDoctorByDoctorName(doctorName:String):Observable<any>{
-  this.doctoName=this.doctor.doctorName;
+  // this.doctoName=doctorName;
   return this.http.get<any>(this.secUrl+doctorName);
 }
 

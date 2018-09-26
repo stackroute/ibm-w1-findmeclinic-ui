@@ -6,7 +6,7 @@ import {HttpClient} from '@angular/common/http';
 })
 export class NotificationService {
 
-  private firstUrl="http://localhost:8081/api/v1/notify";
+  private firstUrl="http://localhost:8091/notification-service/api/v1/notify";
   constructor(private http:HttpClient) { }
   notificationObj:Notification;
 sendNotification(notificationObj):Observable<Notification>{

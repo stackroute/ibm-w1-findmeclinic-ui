@@ -1,7 +1,7 @@
 export class Notification{
     notifyId:number;
-    doctor:string;
-    patient:string;
+    doctorId:string;
+    patientId:string;
     content:string;
     notifgenDate:any;
     }

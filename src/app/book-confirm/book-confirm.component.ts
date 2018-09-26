@@ -18,7 +18,7 @@ export class BookConfirmComponent implements OnInit {
   }
 
   close(){
-    this.notifyObj.sendNotification(this.note).subscribe(data=>console.log("Hello"+data))
+    this.notifyObj.sendNotification(this.note).subscribe(data=>console.log("Hello"+data));
     this.router.navigate(['patient-profile']);
     this.dialogRef.close();
   }

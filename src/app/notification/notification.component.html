@@ -4,14 +4,14 @@
 
   <div *ngFor="let not of notification">
 
-    <button mat-menu-item class="notifButton"><p>you have an appointment with<br> {{not.doctor}} on <br> {{not.notifgenDate}}</p></button>
+    <button mat-menu-item class="notifButton"><p>you have an appointment booked with<br> {{not.doctorId}} on <br> {{not.notifgenDate}}</p></button>
 </div>  
 </div>
 <div *ngIf="doctorFlag">
 
   <div *ngFor="let not of notification">
 
-    <button mat-menu-item class="notifButton"><p>you have an appointment with<br> {{not.patient}} on <br> {{not.notifgenDate}}</p></button>
+    <button mat-menu-item class="notifButton"><p>{{not.patientId}} has booked an appointment <br>with you on <br> {{not.notifgenDate}}</p></button>
 </div>   
 </div>
 

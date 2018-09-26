@@ -13,11 +13,7 @@ export interface Gender {
   viewValue: string;
 }
 
-<<<<<<< HEAD
-export interface BloodGroup{
-=======
 export interface BloodGroup {
->>>>>>> b1bfffbf244dec8132d92f49493b5d5a21fb3272
   value:string;
   viewValue:string;
 }
@@ -46,17 +42,6 @@ export class PatientProfileComponent implements OnInit {
     {value: 'O-ve',viewValue: 'O-ve'},
     {value: 'AB+ve',viewValue: 'AB+ve'},
     {value: 'AB-ve',viewValue: 'AB-ve'}
-<<<<<<< HEAD
-
-
-
-
-
-
-
-
-=======
->>>>>>> b1bfffbf244dec8132d92f49493b5d5a21fb3272
   ]
 
  appoint=false;
@@ -101,11 +86,7 @@ sub=false;
                   firstName: ['', Validators.required],
                   lastName: ['', Validators.required],
                   phone: ['', [Validators.required, Validators.minLength(10)]],
-<<<<<<< HEAD
-                 
-=======
                   
->>>>>>> b1bfffbf244dec8132d92f49493b5d5a21fb3272
               });
 
       this.settingForm = this.formBuilder.group(
@@ -120,7 +101,7 @@ sub=false;
       }
 
 this.check2=true;
-this.patientMail = this.patientService.patientMailId;
+this.patientMail = this.token.getUserId();
 this.appoint=false;
   //this.patientService.patientMailId.subscribe(mailId =>{ console.log(mailId);this.patientMail = mailId})
     this.patientService.getBadgeName(this.patientMail).subscribe(data=>
@@ -138,7 +119,7 @@ myFilter = (d: Date)=> {
       //  var m = currentDate.getMonth() - d.getMonth();
     const year= d.getFullYear();
     
-      console.log(this.patientAge);
+     // console.log(this.patientAge);
     return day!=7;
   }
 

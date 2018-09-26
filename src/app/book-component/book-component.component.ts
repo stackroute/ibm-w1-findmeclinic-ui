@@ -10,6 +10,9 @@ import { TokenStorage } from '../tokenStorage';
 import { DoctorTokenStorage } from '../doctorTokenStorage';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Schedule } from '../Schedule';
+import { Notification} from '../Notification';
+import { NotificationService } from '../notification.service';
+
 @Component({
   selector: 'app-book-component',
   templateUrl: './book-component.component.html',
@@ -24,11 +27,12 @@ export class BookComponentComponent implements OnInit {
   appointment: Appointment;
   schedule: Schedule;
   s2: Slot;
+  note:Notification;
 
   constructor(public dialog: MatDialog, private calenderService: CalendarService
     , private appointmentService: AppointmentService, private tokenStorage: TokenStorage,
     private doctorTokenStorage: DoctorTokenStorage, private activatedroute: ActivatedRoute,
-    private router: Router) { this.appointment = new Appointment() }
+    private router: Router,private notifyObj:NotificationService) { this.appointment = new Appointment() }
 
   ngOnInit() {
 
@@ -76,6 +80,14 @@ export class BookComponentComponent implements OnInit {
           console.log(data);
           this.appointment = data
         });
+
+        // console.log(this.docId);
+        // console.log(this.appointment.bookingBy)
+        // this.note.doctor = this.docId;
+        // this.note.patient = this.appointment.bookingBy;
+
+        // this.notifyObj.sendNotification(this.note).subscribe(data=>console.log("Hello"+data))
+
 
       const dialogRef = this.dialog.open(BookConfirmComponent);
     }
