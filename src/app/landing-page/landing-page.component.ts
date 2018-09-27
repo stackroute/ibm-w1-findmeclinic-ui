@@ -115,7 +115,7 @@ export class LandingPageComponent implements OnInit {
     return that.doctorData;
   }
   sendData() {
-
+    
     this.doctorService.getDoctorByDoctorName(this.docName).subscribe(data => console.log(data));
   }
 

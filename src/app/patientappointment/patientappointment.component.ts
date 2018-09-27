@@ -53,7 +53,7 @@ export class PatientappointmentComponent implements OnInit {
       this.lengthlist = this.listOfAppointments.length;
 
       this.listSize = this.lengthlist
-      this.numOfApp = this.listSize - 1;
+      this.numOfApp = this.listSize ;
       this.diff = this.listSize - this.paginator.pageSize;
       if (this.diff > 0) {
         this.numOfApp = this.paginator.pageSize;

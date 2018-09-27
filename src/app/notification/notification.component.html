@@ -1,17 +1,46 @@
-<button mat-icon-button [matMenuTriggerFor]="menu">
-  <mat-icon>notifications_active</mat-icon>
-</button>
-<mat-menu #menu="matMenu">
-  <button mat-menu-item>
 
-    <span>notification 1</span>
-  </button>
-  <button mat-menu-item disabled>
+  <mat-menu #appMenu="matMenu"> 
+    <div *ngIf="patientFlag">
 
-    <span>notification 2</span>
-  </button>
-  <button mat-menu-item>
+  <div *ngFor="let not of notification">
 
-    <span>notification 3</span>
+    <button mat-menu-item class="notifButton"><p>you have an appointment booked with<br> {{not.doctorId}} on <br> {{not.notifgenDate}}</p></button>
+</div>  
+</div>
+<div *ngIf="doctorFlag">
+
+  <div *ngFor="let not of notification">
+
+    <button mat-menu-item class="notifButton"><p>{{not.patientId}} has booked an appointment <br>with you on <br> {{not.notifgenDate}}</p></button>
+</div>   
+</div>
+
+  </mat-menu>
+   
+
+  <button  mat-icon-button [matMenuTriggerFor]="appMenu" (click)="getNotify()">
+    <mat-icon>notifications_active</mat-icon>
   </button>
-</mat-menu>
+
+  
+    
+
+
+<!-- <button mat-icon-button [matMenuTriggerFor]="menu">
+    <mat-icon>more_vert</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item>
+      <mat-icon>dialpad</mat-icon>
+      <span>Redial</span>
+    </button>
+    <button mat-menu-item disabled>
+      <mat-icon>voicemail</mat-icon>
+      <span>Check voicemail</span>
+    </button>
+    <button mat-menu-item>
+      <mat-icon>notifications_off</mat-icon>
+      <span>Disable alerts</span>
+    </button>
+  </mat-menu>
+   -->

@@ -10,7 +10,9 @@ import { TokenStorage } from '../tokenStorage';
 import { DoctorTokenStorage } from '../doctorTokenStorage';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Schedule } from '../Schedule';
-// import { AuthGuardService } from '../auth-guard.service';
+import { Notification} from '../Notification';
+import { NotificationService } from '../notification.service';
+
 @Component({
   selector: 'app-book-component',
   templateUrl: './book-component.component.html',
@@ -25,24 +27,20 @@ export class BookComponentComponent implements OnInit {
   appointment: Appointment;
   schedule: Schedule;
   s2: Slot;
-  flag:boolean;
+  note:Notification;
 
   constructor(public dialog: MatDialog, private calenderService: CalendarService
     , private appointmentService: AppointmentService, private tokenStorage: TokenStorage,
-    private doctorTokenStorage: DoctorTokenStorage, private activatedroute: ActivatedRoute,
-    private router: Router
-  ) { this.appointment = new Appointment() }
+    private activatedroute: ActivatedRoute,
+    private router: Router,private notifyObj:NotificationService) { this.appointment = new Appointment() }
 
   ngOnInit() {
 
-    // if (this.appointmentService.docId) {
-    //   this.docId = this.appointmentService.docId;
-    // }
 
-    // this.appointmentService.currentMessage
-    //   .subscribe(message => this.docId = message);
+    this.appointmentService.currentMessage
+      .subscribe(message => this.docId = message);
 
-    this.docId="a@gmail.com";
+    // this.docId="a@gmail.com";
 
     this.calenderService.getScheduleSlot(this.docId)
       .subscribe(data => {
@@ -81,6 +79,9 @@ export class BookComponentComponent implements OnInit {
           console.log(data);
           this.appointment = data
         });
+
+      
+
 
       const dialogRef = this.dialog.open(BookConfirmComponent);
     // }

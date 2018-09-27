@@ -4,14 +4,14 @@
             <mat-icon>menu</mat-icon>
         </button>
         <h1 class="example-app-name">FindMeClinic</h1>
-
+        <app-notification></app-notification>
         <div class="button-group">
             <button mat-button type="submit" class="btn btn-success" (click)="moveTolanding()">Book</button>
         </div>
 
 
         <div class="badge-style">
-            <app-notification></app-notification>
+           
             <button [matMenuTriggerFor]="menu" mat-mini-fab color="warn">{{badgeName}}</button>
 
             <mat-menu #menu="matMenu">
@@ -42,9 +42,7 @@
                     Reports
                 </mat-list-item>
 
-                <!-- <mat-list-item>
-                    <mat-icon>group_add</mat-icon>Family Tree
-                </mat-list-item> -->
+                
             </mat-nav-list>
 
 
@@ -154,7 +152,7 @@
                         <label class="lbl">Gender</label>
 
                         <mat-form-field>
-                            <mat-select class="select" placeholder="select you gender" [(value)]="patientData.patientGender">
+                            <mat-select class="select" placeholder="select your gender" [(value)]="patientData.patientGender">
                                 <mat-option *ngFor="let patientGender of genders" [value]="patientGender.value">
                                     {{patientGender.viewValue}}
                                 </mat-option>
@@ -174,12 +172,15 @@
                     </div>
 
                     <div class="form-group">
-                        <label>Blood Group </label>
-                        <input type="text" formControlName="bloodGroup" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.bloodGroup.errors }"
-                            [(ngModel)]="patientData.patientBloodGroup" />
-                        <div *ngIf="submitted && f.bloodGroup.errors" class="invalid-feedback">
-                            <div *ngIf="f.bloodGroup.errors.required">Blood Group is required</div>
-                        </div>
+                        <label class="lbl">Blood Group</label>
+
+                        <mat-form-field>
+                            <mat-select class="select" placeholder="select your blood group " [(value)]="patientData.patientBloodGroup">
+                                <mat-option *ngFor="let patientBloodGroup of bloodGroups" [value]="patientBloodGroup.value">
+                                    {{patientBloodGroup.viewValue}}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
                     </div>
                     <div class="form-group">
                         <button [disabled]="loading" mat-raised-button class="pButon2" color="primary" (click)="onSubmit(patientData)" color="primary">Submit</button>
@@ -205,8 +206,8 @@
                                     <strong>2</strong> records
                                 </div>
                                 <div class="col-sm-3 dc">
-                                    Your upcoming appointment is on
-                                    <strong>23rd september 2018 </strong>at
+                                    Upcoming appointment is on
+                                    <strong>23rd sept 2018 </strong>at
                                     <strong>11:00 am</strong>
                                 </div>
                             </mat-card-content>
@@ -265,16 +266,7 @@
                                 </form>
 
 
-                                <!-- <label for="password">New Password</label>
-                        <input type="password" id="password" class="form-control"  formControlName="password" [ngClass]="{ 'is-invalid': submitted && g.password.errors }"
-                          [formGroup]="form">    
-                      </div>
-                      <div class="form-group">
-                        <label for="confirmPassword">Confirm Password</label>
-                        <input type="password" class="form-control" id="confirmPassword" formControlName="confirmPassword" 
-                          [formGroup]="form">
-                      </div> -->
-
+                              
                             </div>
                         </div>
                         <div class="div2">

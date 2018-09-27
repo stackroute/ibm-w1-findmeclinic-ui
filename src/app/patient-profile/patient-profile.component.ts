@@ -13,6 +13,11 @@ export interface Gender {
   viewValue: string;
 }
 
+export interface BloodGroup {
+  value:string;
+  viewValue:string;
+}
+
 @Component({
   selector: 'app-patient-profile',
   templateUrl: './patient-profile.component.html',
@@ -27,6 +32,17 @@ export class PatientProfileComponent implements OnInit {
     {value: 'Male', viewValue: 'Male'},
     {value: 'Others', viewValue: 'Others'}
   ];
+
+  bloodGroups: BloodGroup[]=[
+    {value: 'A+ve',viewValue: 'A+ve'},
+    {value: 'A-ve',viewValue: 'A-ve'},
+    {value: 'B+ve',viewValue: 'B+ve'},
+    {value: 'B-ve',viewValue: 'B-ve'},
+    {value: 'O+ve',viewValue: 'O+ve'},
+    {value: 'O-ve',viewValue: 'O-ve'},
+    {value: 'AB+ve',viewValue: 'AB+ve'},
+    {value: 'AB-ve',viewValue: 'AB-ve'}
+  ]
 
  appoint=false;
   showFiller = false;
@@ -70,10 +86,6 @@ sub=false;
                   firstName: ['', Validators.required],
                   lastName: ['', Validators.required],
                   phone: ['', [Validators.required, Validators.minLength(10)]],
-                  day: ['', [Validators.required, Validators.minLength(2),Validators.maxLength(2)]],
-                  month: ['', [Validators.required, Validators.minLength(2),Validators.maxLength(2)]],
-                  year: ['', [Validators.required, Validators.minLength(4),Validators.maxLength(4)]],
-                  bloodGroup: ['',Validators.required]
                   
               });
 
@@ -89,7 +101,7 @@ sub=false;
       }
 
 this.check2=true;
-this.patientMail = this.patientService.patientMailId;
+this.patientMail = this.token.getUserId();
 this.appoint=false;
   //this.patientService.patientMailId.subscribe(mailId =>{ console.log(mailId);this.patientMail = mailId})
     this.patientService.getBadgeName(this.patientMail).subscribe(data=>
@@ -107,7 +119,7 @@ myFilter = (d: Date)=> {
       //  var m = currentDate.getMonth() - d.getMonth();
     const year= d.getFullYear();
     
-      console.log(this.patientAge);
+     // console.log(this.patientAge);
     return day!=7;
   }
 

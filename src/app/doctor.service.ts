@@ -10,11 +10,11 @@ import { Prescription } from './Prescription';
 export class DoctorService {
 
   // private addUrl = "http://172.23.239.228:8080/doctor/auth";
-  private addUrl = "http://localhost:8082/doctor/auth";
+  private addUrl = "http://localhost:8092/doctor/auth";
 
   private secUrl="http://localhost:8080/api/v1/search/";
-  private thirdUrl="http://localhost:8091/doctor/api/v2/doctor/docserv";
-  private prescUrl="http://localhost:8088/api/v1/send";
+  private thirdUrl="http://localhost:8091/doctor-services/api/v2/doctor/docserv";
+  private prescUrl="http://localhost:8091/upstream-service/api/v1/send";
   constructor(private http: HttpClient) { }
   doctor;
   doctorLoc:Doctor;
@@ -43,7 +43,7 @@ return this.http.get<Doctor>(this.thirdUrl+"/"+doctorEmail);
 //   return this.http.get<Doctor[]>(this.secUrl+"/get/"+doctorName);
 // }
 getDoctorByDoctorName(doctorName:String):Observable<any>{
-  this.doctoName=this.doctor.doctorName;
+  // this.doctoName=doctorName;
   return this.http.get<any>(this.secUrl+doctorName);
 }
 

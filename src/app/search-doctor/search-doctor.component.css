@@ -1,3 +1,12 @@
+.main{
+	background: url("../../assets/mainbg.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	
+}
+
+
 .doctor-pic{
     float: left;
     height: 100%;
@@ -41,23 +50,20 @@ mat-card-subtitle{
     float: left;
 }
  .detail{
+
      align-content: center;
      width: 60%;
      margin-left: 20%;
  }
  .doctor-cards{
-	 background: url("/assets/searchbg.jpg");
-     display: flex;
-flex-direction: column;
-   
-   top:0;
-   bottom: 0;
-   left: 0;
-   right: 0;
+
+    
  }
+
+
  
  #myFooter {
-	 margin-top: 40%;
+	 margin-top: 30%;
     background-color:  rgba(128, 128, 133, 0.7);
     color: white;
     padding-top: 30px;
