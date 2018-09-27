@@ -1,0 +1,55 @@
+.example-selected-value {
+    margin: 15px 0;
+  }
+
+  .style{
+      margin: 40px 40px 60px 40px;
+  }
+
+  .style:active{
+    background-color:green;
+  }
+
+  .style:focus{
+    background-color:green;
+  }
+
+  .styles{
+	height: auto;
+	width: auto;
+	max-width: 200px;
+	float: left;
+}
+
+.styless{
+  width:100%;
+  background-color: lightskyblue;
+}
+  .pan{
+    margin: 40px 20px 20px 20px;
+    
+  }
+
+  .bttn{
+    text-align: center;
+    margin-top: 20px;
+    
+  }
+
+  .main{
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    margin-top: 40px;
+    background-color:aliceblue;
+  }
+
+  .btn-group button {
+    /* background-color: rgb(8, 138, 245);  */
+    border: 1px solid rgb(29, 29, 236);
+    color: black; 
+    padding: 10px 24px; 
+    cursor: pointer;
+    float: left; 
+} 
+

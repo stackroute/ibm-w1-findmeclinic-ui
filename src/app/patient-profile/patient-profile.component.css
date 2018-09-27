@@ -1,5 +1,6 @@
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
+
 .example-container {
     display: flex;
     flex-direction: column;
@@ -8,6 +9,9 @@
     bottom: 0;
     left: 0;
     right: 0;
+    height: 1000px;
+    
+    
   }
   
   .example-is-mobile .example-toolbar {
@@ -34,13 +38,14 @@
 
   .button-group{
       position: absolute;
-      right:70px;
+      right:100px;
       margin:0;
   }
 
   .badge-style{
     position: absolute;
     right:30px;
+    
     margin:0;
   }
 
@@ -48,6 +53,7 @@
     background-color:  rgba(128, 128, 133, 0.7);
     color: white;
     padding-top: 30px;
+    
    }
   
   #myFooter .footer-copyright {
@@ -147,3 +153,296 @@
       text-align: center;
     }
    }
+
+
+.appointclass{
+  
+  align-content: center;
+  width: 550px;
+  height: auto;
+
+
+}
+.matitem{
+  margin-right: 100%;
+  align-items: center;
+}
+/* .example-card
+{
+  height: 500px;
+}
+.content
+{
+  font-size: 30px;
+}
+
+.numberCard
+{
+ /* margin-left: 10%;
+  margin-top: 5%;
+  width: 15%;
+  height: 40%;
+  border-radius: 5px 5px 5px 5px;
+  background-color:#3f51b5;
+  height: 400px;
+
+
+}
+.cardTitle
+{
+
+  font-family: 'Cabin', helvetica, arial, sans-serif;
+  text-align: center;
+  font-size: 20px;
+  border-radius: 5px 5px 5px 5px;
+  background-color: lightgray;
+  height: 180px;
+  padding-top: 12%;
+
+}
+.cardContent
+{
+  font-family: 'Cabin', helvetica, arial, sans-serif;
+  text-align: center;
+  font-size: 38px;
+  border-radius: 5px 5px 5px 5px;
+  background-color: white;
+  height: 130px;
+  padding-top: 12%;
+
+
+
+}
+
+.cardContent1
+{
+  font-family: sans-serif;
+  text-align: center;
+  font-size: 19px;
+  border-radius: 5px 5px 5px 5px;
+  background-color: white;
+  height: 130px;
+  padding-top: 12%;
+
+
+
+}
+.mainCard{
+ margin-left: 20%;
+
+ padding-top: 80px;
+ padding-bottom: 80px;  
+ display: inline-flex;
+ flex-flow: row wrap;
+ }
+ 
+ #subcard
+ {
+   margin-left: 10%;
+ }
+ .cardTitle1
+ {
+   margin-left: 100%;
+   font-family: 'Cabin', helvetica, arial, sans-serif;
+
+ }
+ .alertCard
+ {
+   width: 600px;
+ } */
+ .btn{
+  margin-left: 50px;
+  font-size: 20px;
+  border-radius: 5px 5px 5px 5px;
+
+ }
+ .btn1 {
+  margin-left: 15%;
+  font-size: 25px;
+  border-radius: 5px 5px 5px 5px;
+  padding: 2px 5px ;
+
+ }
+
+ /* .pForm
+ {
+   word-spacing: 300px;
+ } */
+
+.pButon
+ {
+  margin-left: 60%;
+
+ }
+.pButon1{
+  margin-left: 5%;
+
+}
+.pButon2
+ {
+  margin-left: 70%;
+  background-color: #3f51b5;
+  color:white;
+ }
+ /* h4{
+   margin-left: 30%;
+ }  */
+ .image
+ {
+   width: 100px;
+ }
+ .hname{
+  margin-left: 50%;
+margin-top: 20px;
+ }
+
+/* .dob
+ {
+width:20%;
+
+ } */
+ 
+ .upForm
+ {
+    
+  display: flex;
+  flex-direction: column;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+ }
+ /* input{
+   width:60%;
+ } */
+
+ .select{
+   width:300px;
+ }
+ .lbl{
+   padding-right: 8%;
+ }
+.row-1{
+  margin-right: 20%;
+  display: inline;
+}
+.list{
+width:60px;
+}
+.row-2{
+  margin-right: 5px;
+}
+
+#l1,#l2{
+margin-left: 40%;
+}
+
+#l3
+{
+  margin-left: 41.5%;
+}
+#l4
+{
+  margin-left: 37.5%;
+}
+#l5
+{
+  margin-left: 41.5%;
+}
+
+#l6,#l7
+{
+  margin-left: 39.5%;
+}
+
+#l8
+{
+  margin-left: 43.5%;
+}
+.pForm{
+  margin-left:15%;
+width:1300px;
+}
+.sButon
+{
+
+  padding: 80px;
+
+}
+
+
+
+.div2
+{
+  margin-top:13%;
+}
+.cardHeader
+{
+  margin-top: 30px;
+}
+ .cardCont
+{
+  margin-top: 10%;
+}  
+
+.setCard
+{
+  margin-left: 35%;
+  width:600px;
+  height: 630px;
+}
+
+.hname
+{
+  margin-top: 3.5%;
+    margin-left: 5%;
+}
+
+.display
+{
+  margin-left: 25%;
+    margin-top: 6%;
+}
+.dashboard
+{
+  height: 250px;
+  background-color:  #3f51b5;
+  border-radius: 5px 5px 5px 5px;
+
+}
+/* .mcon{
+  margin-left: 8%;
+
+} */
+.mcon{
+  text-align: center;
+background-color: #3f51b5;
+font-family: sans-serif;
+font-size: 20px;
+/* height: 200px; */
+height: auto;
+width: auto;
+}
+.dc{
+  margin-left: 6%;
+  background-color: lightgrey;
+  border-radius: 5px 5px 5px 5px;
+  height: 200px;
+  padding-top: 50px;
+
+
+}
+
+
+.super{
+  background: url("../../assets/bgmain.jpg");
+}
+
+.form{
+ 
+    padding-left: 40px;
+  padding-right: 40px;
+  padding-bottom: 40px;
+ 
+}

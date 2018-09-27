@@ -24,9 +24,11 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
 })
 export class PatientLoginComponent implements OnInit {
   patient;
+  currentUser;
+  patientEmail:String;
   registeredPatient;
   constructor(private dialogRef: MatDialogRef<PatientLoginComponent>, private snackBar: MatSnackBar,
-    private alerts: AlertsService, private router: Router, private patientService: PatientService, public dialog: MatDialog, private token: TokenStorage) {
+    private alerts: AlertsService,private tokenData:TokenStorage, private router: Router, private patientService: PatientService, public dialog: MatDialog, private token: TokenStorage) {
     this.patient = new Patient();
     this.registeredPatient = new Patient();
   }
@@ -40,19 +42,21 @@ export class PatientLoginComponent implements OnInit {
   }
 
 
-  addPatient(Patientdata) {
-    return this.patientService.registerPatient(Patientdata).subscribe(data => {
-      this.dialog.open(PatientLoginComponent)
-      console.log("the patient added")
+  addPatient(patientData) {
+  
+    this.patientService.registerPatient(patientData).subscribe(data=>console.log(data));
+    return this.patientService.registerPatientAuth(patientData).subscribe(data => {
+     this.dialog.open(PatientLoginComponent)
+    console.log("the patient added")
     },
       error => {
 
-        {
-          this.snackBar.openFromComponent(FailPatientComponent, {
-            duration: 1000,
-          });
-        }
-      })
+     {
+           this.snackBar.openFromComponent(FailPatientComponent, {
+             duration: 1000,
+           });
+         }
+       })
   }
   closeRegister() {
     this.dialogRef.close();
@@ -62,7 +66,11 @@ export class PatientLoginComponent implements OnInit {
 
     return this.patientService.login(patient).subscribe(data => {
       this.dialogRef.close();
+      console.log(data);
+      console.log(patient.patientEmail)
+      this.patientEmail=data
       this.token.saveToken(data);
+      this.token.saveUserId(patient.patientEmail);
       this.router.navigate(['patient-profile']);
     }
 
@@ -84,6 +92,14 @@ export class PatientLoginComponent implements OnInit {
 
 
   emailPasswordFormControl = new FormControl('', [
+    Validators.required,
+  ])
+
+  firstNameFormControl = new FormControl('', [
+    Validators.required,
+  ])
+
+  lastNameFormControl = new FormControl('', [
     Validators.required,
   ])
 

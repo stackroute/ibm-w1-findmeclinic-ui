@@ -1,23 +1,7 @@
-/* .example-container {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .example-container > * {
-    width: 100%;
-  }
-  
-  .modelform {
-    width: 350px;
-    height: 390px;
-    text-align: center;
-  }
-.fullwidth {
-  width: 100%;
-} */
+
 .modelform {
   width: auto;
-  height: 390px;
+  height: 400px;
   text-align: center;
 }
 

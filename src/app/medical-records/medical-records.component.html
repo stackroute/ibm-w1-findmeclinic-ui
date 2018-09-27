@@ -1,0 +1,63 @@
+<div class="mainCard">
+	<div class="col-sm-4 display">
+		<mat-card class="example-card">
+			<mat-card-header>
+				<mat-card-title>
+					<h2>Prescription</h2>
+				</mat-card-title>
+
+			</mat-card-header>
+			<img mat-card-image src="../../src/assets/2.jpg">
+			<mat-card-content>
+				<h3>
+					List Of Prescriptions
+				</h3>
+			</mat-card-content>
+			<mat-card-actions>
+				<button mat-button (click)="openPrescription()">Click here</button>
+			</mat-card-actions>
+		</mat-card>
+
+	</div>
+
+		<div class="col-md-4 display">
+			<mat-card class="example-card">
+				<mat-card-header>
+					<mat-card-title>
+						<h2>My Records</h2>
+					</mat-card-title>
+
+				</mat-card-header>
+				<img mat-card-image src="../../assets/3.jpg">
+				<mat-card-content>
+
+					<h3>
+						List of Uploaded records
+					</h3>
+
+				</mat-card-content>
+				<mat-card-actions>
+					<button mat-button (click)="openUploadList()">Click here</button>
+				</mat-card-actions>
+			</mat-card>
+
+		</div>
+		<div class="col-md-4 display">
+			<mat-card class="example-card">
+				<mat-card-header>
+					<mat-card-title>
+						<h2>Add Records</h2>
+					</mat-card-title>
+
+				</mat-card-header>
+				<img mat-card-image src="../../assets/1.jpg">
+				<mat-card-content>
+					<h3>
+						Add new records
+					</h3>
+				</mat-card-content>
+				<mat-card-actions>
+					<button mat-button (click)="openUpload()">Click here</button>
+				</mat-card-actions>
+			</mat-card>
+		</div>

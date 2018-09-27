@@ -1,0 +1,65 @@
+h1{
+    text-align: center;
+    color: rgb(22, 20, 20);
+}
+.mat-card{
+    width:750px;
+    margin-left: 500px;
+}
+
+.mat-cell {
+    display:block; 
+    min-height:auto; 
+     /* padding: 0px 0px 0px 0;  */
+  }
+
+  .name{
+      padding: 20px;
+      padding-right: 30px;
+  }
+  /* .bot{
+      margin:30px;
+  }  */
+  .head{
+      text-align: center;
+      margin-left: 100px;
+  }
+
+
+  button
+  {
+      width: 1850px;
+  }
+
+  #div3
+  {
+      padding-left: 30px;
+       margin-left: 30px; 
+  }
+  .div1
+  {
+
+      display: inline;
+  }
+  #div2
+  {
+      margin-left: 500px
+  }
+ 
+  .aside{
+    height: 150px;
+    width: 850px;
+}
+.inline
+{
+    display: inline;
+}
+.aside1{
+    margin-left: 250px;
+    
+}
+.size{
+    width: 150px;
+}
+
+

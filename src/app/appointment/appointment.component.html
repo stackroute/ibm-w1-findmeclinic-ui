@@ -1,0 +1,48 @@
+<br>
+<h1>LIST OF APPOINTMENTS</h1>
+<br>
+
+<div>
+    <button (click)="onPage()"><mat-paginator #paginator  [pageSizeOptions]="[5, 10, 25, 100]">
+    </mat-paginator></button>
+  <div *ngFor="let m of displayAppointments ">
+    <br>
+    <mat-card>
+      <div class="div1">
+      AppointmentId : {{m.appointmentId}}
+      {{m.bookingBy}}
+    
+    <div class="div1" id="div2">
+     
+        <button class="size" mat-raised-button (click)="openDialog(m.bookingBy)">Add Prescription</button>
+  </div>
+</div>
+  </mat-card>
+ 
+  </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+  <router-outlet></router-outlet>

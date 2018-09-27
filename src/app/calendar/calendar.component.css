@@ -1,5 +1,6 @@
 h3 {
-    margin: 0 0 10px;
+	margin: 0 0 10px;
+	font-family: 'Ubuntu', 'san-serif';
   }
   
   pre {
@@ -58,4 +59,13 @@ only screen and (max-width: 760px),
 	td:nth-of-type(4):before { content: "Start Date"; }
 	td:nth-of-type(5):before { content: "End Date"; }
 	td:nth-of-type(6):before { content: "Delete"; }
+}
+
+.delete{
+	float: right;
+}
+
+.sched{
+	border-radius: 10px 10px 10px 10px;
+	font-family: 'Ubuntu', 'sans-serif';
 }

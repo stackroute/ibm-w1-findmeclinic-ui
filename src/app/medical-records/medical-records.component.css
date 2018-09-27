@@ -1,0 +1,10 @@
+ button{
+      text-align: center;
+      color: red;
+      font-size: 20px;
+      border-radius: 20px;
+}
+  
+.mat-card-title{
+    color:red;
+}

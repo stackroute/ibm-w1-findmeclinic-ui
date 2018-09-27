@@ -17,6 +17,9 @@
       <h3>{{ viewDate | calendarDate:(view + 'ViewTitle'):'en' }}</h3>
     </div>
     <div class="col-md-4">
+      <div class="btn btn-primary" (click)="view = CalendarView.Month" [class.active]="view === CalendarView.Month">
+        Month
+      </div>
       <div class="btn btn-primary" (click)="view = CalendarView.Week" [class.active]="view === CalendarView.Week">
         Week
       </div>
@@ -27,6 +30,8 @@
   </div>
   <br>
   <div [ngSwitch]="view">
+    <mwl-calendar-month-view *ngSwitchCase="CalendarView.Month" [viewDate]="viewDate" [events]="events" [refresh]="refresh">
+    </mwl-calendar-month-view>
     <mwl-calendar-week-view *ngSwitchCase="CalendarView.Week" [viewDate]="viewDate" [events]="events" [refresh]="refresh">
     </mwl-calendar-week-view>
     <mwl-calendar-day-view *ngSwitchCase="CalendarView.Day" [viewDate]="viewDate" [events]="events" [refresh]="refresh">
@@ -37,55 +42,28 @@
   <br>
   <br>
 
-  <h3>
-    Edit events
-    <button class="btn btn-primary pull-right" (click)="addEvent()">
-      Add new
-    </button>
-    <div class="clearfix"></div>
-  </h3>
 
-  <table class="table table-bordered">
+  <button class="btn btn-primary pull-right" (click)="openDialog()">
+    Add Slots
+  </button>
 
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Primary color</th>
-        <th>Secondary color</th>
-        <th>Starts at</th>
-        <th>Ends at</th>
-        <th>Remove</th>
-      </tr>
-    </thead>
+  <h3>My Schedules</h3>
+  <br>
+  <br>
+  <ul type="none">
+    <li *ngFor="let schedule of schedules">
+      <mat-card class="sched">
+        <br>Description: {{schedule.description}}
+        <br>Location: {{schedule.workPlace}}
+        <br>Date: {{schedule.scheduleDate}}
+        <br>Schedule Beginning: {{schedule.startTime}}
+        <br>Schedule Ending: {{schedule.endTime}}
+        <br>Time Per Patient: {{schedule.timePerPatient}}
+        <button class="delete" mat-raised-button color="warn" (click)="deleteSchedule(schedule.scheduleId)">Delete</button>
+      </mat-card>
+    </li>
+  </ul>
 
-    <tbody>
-      <tr *ngFor="let event of events; let index = index">
-        <td>
-          <input type="text" class="form-control" [(ngModel)]="event.title" (keyup)="refresh.next()">
-        </td>
-        <td>
-          <input type="color" [(ngModel)]="event.color.primary" (change)="refresh.next()">
-        </td>
-        <td>
-          <input type="color" [(ngModel)]="event.color.secondary" (change)="refresh.next()">
-        </td>
-        <td>
-          <input class="form-control" type="text" mwlFlatpickr [(ngModel)]="event.start" (ngModelChange)="refresh.next()"
-            [altInput]="true" [convertModelValue]="true" [enableTime]="true" dateFormat="Y-m-dTH:i" altFormat="F j, Y H:i"
-            placeholder="Not set">
-        </td>
-        <td>
-          <input class="form-control" type="text" mwlFlatpickr [(ngModel)]="event.end" (ngModelChange)="refresh.next()"
-            [altInput]="true" [convertModelValue]="true" [enableTime]="true" dateFormat="Y-m-dTH:i" altFormat="F j, Y H:i"
-            placeholder="Not set">
-        </td>
-        <td>
-          <button class="btn btn-danger" (click)="events.splice(index, 1); refresh.next()">
-            Delete
-          </button>
-        </td>
-      </tr>
-    </tbody>
+  <br>
 
-  </table>
 </div>

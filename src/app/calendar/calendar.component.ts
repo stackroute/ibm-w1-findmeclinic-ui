@@ -1,4 +1,9 @@
-import { Component, OnInit, ChangeDetectionStrategy, ViewChild, TemplateRef } from '@angular/core';
+import {
+  Component,
+  ViewChild,
+  OnInit,
+  TemplateRef
+} from '@angular/core';
 import {
   startOfDay,
   endOfDay,
@@ -13,10 +18,14 @@ import { Subject } from 'rxjs';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import {
   CalendarEvent,
-  CalendarEventAction,
   CalendarEventTimesChangedEvent,
   CalendarView
 } from 'angular-calendar';
+import {AddScheduleComponent} from '../add-schedule/add-schedule.component'
+import { MatDialog, MatDialogRef } from '@angular/material';
+import { CalendarService } from '../calendar.service';
+import { Schedule } from '../Schedule';
+import { DoctorTokenStorage } from '../doctorTokenStorage';
 
 const colors: any = {
   red: {
@@ -39,39 +48,33 @@ const colors: any = {
   styleUrls: ['./calendar.component.css']
 })
 export class CalendarComponent implements OnInit {
+  
   @ViewChild('modalContent')
   modalContent: TemplateRef<any>;
 
-  view: CalendarView = CalendarView.Week;
+  view: CalendarView = CalendarView.Month;
 
   CalendarView = CalendarView;
 
   viewDate: Date = new Date();
 
-  actions: CalendarEventAction[] = [];
+  schedules: Schedule[];
 
-  refresh: Subject<any> = new Subject();
-
-  events: CalendarEvent[] = [];
+  ngOnInit() {
+    this.calendarService.getAllScheduleByDoctor(this.token.getUserId()).subscribe(schedule => this.schedules = schedule);
+  }
 
   activeDayIsOpen: boolean = true;
 
-  constructor(private modal: NgbModal) { }
+  constructor(private dialog:MatDialog, private calendarService: CalendarService, private token: DoctorTokenStorage) {}
 
-  addEvent(): void {
-    this.events.push({
-      title: '',
-      start: startOfDay(new Date()),
-      end: endOfDay(new Date()),
-      color: colors.red,
-    });
-    this.refresh.next();
-    console.log(this.addEvent);
+
+  openDialog() {
+     this.dialog.open(AddScheduleComponent);
   }
 
-
-
-  ngOnInit() {
+  deleteSchedule(scheduleId):void{
+    this.calendarService.deleteSchedule(scheduleId).subscribe();
   }
-
+  
 }

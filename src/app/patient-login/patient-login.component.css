@@ -1,20 +1,21 @@
-
- 
- 
- .form {
+.form {
  
   width: auto;
-  height: 390px;
+  height: 500px;
   text-align: center;
  
   }
   
-  .formheight{
+  /* .formheight{
     width:auto;
+    font-size: 25px;
+
+  } */
+
+  .log
+  {
+    padding: 5px 30px 5px 30px; 
+    font-size: 20px;
   }
-  .p {
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 200px;
-  }
-  
+
    

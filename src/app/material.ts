@@ -16,6 +16,9 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatTableModule} from '@angular/material/table';
 import {MatBadgeModule} from '@angular/material/badge';
 import {MatExpansionModule} from '@angular/material/expansion';
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatRadioModule} from '@angular/material/radio';
 
 
 
@@ -42,7 +45,10 @@ import {MatExpansionModule} from '@angular/material/expansion';
   MatSidenavModule,
   MatTableModule,
   MatBadgeModule,
-  MatExpansionModule
+  MatExpansionModule,
+  MatButtonToggleModule,
+  MatPaginatorModule,
+  MatRadioModule
 
       ],
  exports: [
@@ -67,7 +73,10 @@ import {MatExpansionModule} from '@angular/material/expansion';
      MatSidenavModule,
      MatTableModule,
      MatBadgeModule,
-     MatExpansionModule
+     MatExpansionModule,
+     MatButtonToggleModule,
+     MatPaginatorModule,
+     MatRadioModule
 
  ]
 })

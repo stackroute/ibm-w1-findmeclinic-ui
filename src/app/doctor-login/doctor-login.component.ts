@@ -22,7 +22,8 @@ export class DoctorLoginComponent implements OnInit {
   loginDoctor;
   id;
   isRegistered = false;
-
+  doctorMail:string;
+  
   constructor(private doctorService: DoctorService,private snackBar:MatSnackBar,private token:DoctorTokenStorage, private dialogRef: MatDialogRef<DoctorLoginComponent>, public dialog: MatDialog, private router: Router,private alert:AlertsService)
    { this.doctor = new Doctor();
     this.loginDoctor = new Doctor();
@@ -31,11 +32,9 @@ export class DoctorLoginComponent implements OnInit {
   ngOnInit() {
   }
 
-
-
   addDoctor(doctorData) {
     
-  
+   this.doctorService.addDoctorDetails(doctorData).subscribe(data =>{console.log(data)});
     return this.doctorService.registerDoctor(doctorData).subscribe(data =>{
               this.dialog.open(DoctorLoginComponent)
        this.dialogRef.close();
@@ -50,8 +49,13 @@ export class DoctorLoginComponent implements OnInit {
     
   }
   move(doctorData){
+
+     this.token.saveUserId(doctorData.doctorEmail);
+
     return this.doctorService.login(doctorData).subscribe(data=>
       {
+       
+        this.doctorMail=data;
         this.token.saveToken(data);
         this.router.navigate(['doctor-profile']);
       },
@@ -94,8 +98,6 @@ export class DoctorLoginComponent implements OnInit {
   logFormControl = new FormControl('', [
     Validators.required,
     Validators.email,
-  ])
-
-  ;
+  ]) ;
 
 }
