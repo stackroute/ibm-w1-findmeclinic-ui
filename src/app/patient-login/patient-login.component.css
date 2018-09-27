@@ -14,10 +14,7 @@
 
   .log
   {
-    padding-top: 5px;
-    padding-bottom: 5px;
-    padding-right: 30px;
-    padding-left: 30px;
+    padding: 5px 30px 5px 30px; 
     font-size: 20px;
   }
 

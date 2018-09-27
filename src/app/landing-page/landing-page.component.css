@@ -240,7 +240,7 @@
   }
 
   .mat-card-content{
-	  text-align: center !important;
+	  text-align: center;
 	  color: darkblue;
 	  font-size: 16px;
   }
