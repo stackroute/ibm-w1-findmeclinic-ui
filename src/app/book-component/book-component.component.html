@@ -10,15 +10,14 @@
       <h2>Select a time slot to book the appointment</h2>
     </div>
 
-    <div class="btn-group" *ngFor="let schedule of schedules">
-      <button style="width:100%"> {{schedule.scheduleDate}}
+   <div class="btn-group" *ngFor="let schedule of schedules">
+      <button class="styless"> {{schedule.scheduleDate}}
       </button>
-      <mat-button-toggle value="slot.slotStart" *ngFor="let slot of schedule.slots" class="style" (click)="slotSelected(slot)">
-        {{slot.slotStart}}
-      </mat-button-toggle>
+      <button value="slot.slotStart" *ngFor="let slot of schedule.slots" class="style" (click)="slotSelected(slot)">
+          {{slot.slotStart}}
+      </button> 
 
-
-    </div>
+   </div>
 
     <div class="bttn">
       <button mat-raised-button color="primary" (click)="openDialog()">Submit</button>

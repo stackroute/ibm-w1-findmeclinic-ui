@@ -62,6 +62,9 @@ import { AddressComponent } from './address/address.component';
 import { TokenInterceptorService } from './token-interceptor.service';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 
+import { AuthService } from './auth.service';
+import { AuthGuardService } from './auth-guard.service';
+
 
 @NgModule({
   declarations: [
@@ -132,7 +135,7 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
   DoctorLoginComponent,DoctorProfileComponent,MedicalRecordsComponent,PatientUpdateComponent, AddScheduleComponent,PrescriptionsComponent,BookConfirmComponent,DetailsUploadComponent,FormUploadComponent,ListUploadComponent],
   providers: [AddScheduleComponent, {provide: HTTP_INTERCEPTORS,
     useClass: TokenInterceptorService,
-    multi: true}],
+    multi: true},AuthService,AuthGuardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

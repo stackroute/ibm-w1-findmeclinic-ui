@@ -10,6 +10,7 @@ import { TokenStorage } from '../tokenStorage';
 import { DoctorTokenStorage } from '../doctorTokenStorage';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Schedule } from '../Schedule';
+// import { AuthGuardService } from '../auth-guard.service';
 @Component({
   selector: 'app-book-component',
   templateUrl: './book-component.component.html',
@@ -24,11 +25,13 @@ export class BookComponentComponent implements OnInit {
   appointment: Appointment;
   schedule: Schedule;
   s2: Slot;
+  flag:boolean;
 
   constructor(public dialog: MatDialog, private calenderService: CalendarService
     , private appointmentService: AppointmentService, private tokenStorage: TokenStorage,
     private doctorTokenStorage: DoctorTokenStorage, private activatedroute: ActivatedRoute,
-    private router: Router) { this.appointment = new Appointment() }
+    private router: Router
+  ) { this.appointment = new Appointment() }
 
   ngOnInit() {
 
@@ -36,9 +39,10 @@ export class BookComponentComponent implements OnInit {
     //   this.docId = this.appointmentService.docId;
     // }
 
-    this.appointmentService.currentMessage
-      .subscribe(message => this.docId = message);
+    // this.appointmentService.currentMessage
+    //   .subscribe(message => this.docId = message);
 
+    this.docId="a@gmail.com";
 
     this.calenderService.getScheduleSlot(this.docId)
       .subscribe(data => {
@@ -57,10 +61,11 @@ export class BookComponentComponent implements OnInit {
 
   openDialog() {
 
-    if (this.tokenStorage.getToken == null) {
-      this.router.navigate(['landing-page']);
-    }
-    else {
+    // this.flag=this.authGaurdService.canActivate();
+    // if (this.flag==false) {
+    //   this.router.navigate(['landing-page']);
+    // }
+    // else {
 
       this.appointment.appointmentStatus = true;
 
@@ -78,7 +83,7 @@ export class BookComponentComponent implements OnInit {
         });
 
       const dialogRef = this.dialog.open(BookConfirmComponent);
-    }
+    // }
   }
 
   slotSelected(s1: Slot) {

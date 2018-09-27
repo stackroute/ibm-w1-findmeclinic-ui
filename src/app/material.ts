@@ -18,6 +18,7 @@ import {MatBadgeModule} from '@angular/material/badge';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatRadioModule} from '@angular/material/radio';
 
 
 
@@ -46,7 +47,8 @@ import {MatPaginatorModule} from '@angular/material/paginator';
   MatBadgeModule,
   MatExpansionModule,
   MatButtonToggleModule,
-  MatPaginatorModule
+  MatPaginatorModule,
+  MatRadioModule
 
       ],
  exports: [
@@ -73,7 +75,8 @@ import {MatPaginatorModule} from '@angular/material/paginator';
      MatBadgeModule,
      MatExpansionModule,
      MatButtonToggleModule,
-     MatPaginatorModule
+     MatPaginatorModule,
+     MatRadioModule
 
  ]
 })
