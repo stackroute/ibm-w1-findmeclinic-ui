@@ -25,7 +25,7 @@ export interface BloodGroup {
 })
 export class PatientProfileComponent implements OnInit {
   
-
+currentDate;
 
   genders: Gender[] = [
     {value: 'Female', viewValue: 'Female'},
@@ -113,9 +113,9 @@ this.appoint=false;
 
 myFilter = (d: Date)=> {
 
-  var currentDate = new Date();
+   this.currentDate = new Date();
       const day = d.getDay();
-      this.patientAge = currentDate.getFullYear() - d.getFullYear();
+      this.patientAge = this.currentDate.getFullYear() - d.getFullYear();
       //  var m = currentDate.getMonth() - d.getMonth();
     const year= d.getFullYear();
     
